@@ -95,6 +95,7 @@ PROVIDERS = [
 
 def _ask(name, fn, key, prompt):
     for attempt in range(3):
+        r = None
         try:
             r, extract = fn(prompt, key)
             if r.status_code == 429:
@@ -111,7 +112,8 @@ def _ask(name, fn, key, prompt):
         except QuotaExhausted:
             raise
         except Exception as ex:  # keys are in headers, so they never appear in this message
-            print(f"  {name} attempt {attempt + 1} failed: {type(ex).__name__}")
+            body = r.text[:200].replace("\n", " ") if r is not None else ""
+            print(f"  {name} attempt {attempt + 1} failed: {type(ex).__name__} {r.status_code if r is not None else ''} {body}")
             time.sleep(15 * (attempt + 1))
     raise QuotaExhausted("3 failed attempts")
 
