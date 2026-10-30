@@ -48,7 +48,7 @@ def keyword_pass(it, kw):
         return True
     weak = sum(1 for x in kw.get("weak", []) if re.search(rf"\b{re.escape(x)}", text))
     ctx = sum(1 for x in kw.get("context", []) if x in text)
-    return weak >= 1 and ctx >= 1 and weak + ctx >= 3
+    return weak >= 2 and ctx >= 2  # loose words (gps, navigation…) need strong support
 
 
 PROMPT = """You classify items for a GNSS (satellite navigation) researcher's news feed.

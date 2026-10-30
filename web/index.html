@@ -2,66 +2,155 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GNSS Pulse</title>
-<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><meta name="theme-color" content="#0b1220">
+<title>GNSS Pulse: Satellite Navigation Intelligence</title>
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><meta name="theme-color" content="#0f2a4a">
 <style>
-:root{--bg:#0b1220;--card:#131c2e;--text:#e5e9f0;--muted:#8b98ad;--accent:#38bdf8}
-@media (prefers-color-scheme:light){:root{--bg:#f4f6fa;--card:#fff;--text:#111827;--muted:#5b6475}}
-*{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,sans-serif;background:var(--bg);color:var(--text)}
-header{position:sticky;top:0;background:var(--bg);padding:12px 16px 8px;border-bottom:1px solid #8882;z-index:1}
-h1{margin:0 0 4px;font-size:20px}h1 span{color:var(--accent)}#meta{color:var(--muted);font-size:12px}
-nav{display:flex;gap:6px;margin:10px 0 8px;overflow-x:auto}
-nav button{border:1px solid #8884;background:none;color:var(--text);padding:6px 12px;border-radius:99px;cursor:pointer;white-space:nowrap}
-nav button.on{background:var(--accent);color:#000;border-color:var(--accent)}
-.row{display:flex;gap:8px}input,select{flex:1;padding:8px;border-radius:8px;border:1px solid #8884;background:var(--card);color:var(--text)}
-select{flex:0 0 auto}.row{flex-wrap:wrap}input{min-width:160px}
-main{max-width:860px;margin:auto;padding:12px 16px 40px}
-.card{background:var(--card);border-radius:12px;padding:12px 14px;margin:10px 0;border-left:4px solid #8884}
-.card.imp4{border-left-color:#f59e0b}.card.imp5{border-left-color:#ef4444}
-.card a{color:var(--text);font-weight:600;text-decoration:none}.card a:hover{color:var(--accent)}
-.tags{font-size:12px;color:var(--muted);margin-top:4px}.tag{display:inline-block;background:#8882;border-radius:6px;padding:1px 6px;margin-right:4px}
-.sum{margin:6px 0 0;font-size:14px;color:var(--muted)}.star{float:right;background:none;border:0;font-size:18px;cursor:pointer;color:var(--muted)}
-.empty{text-align:center;color:var(--muted);padding:40px}
+:root{--bg:#f5f7fa;--surface:#fff;--text:#1a2433;--muted:#5f6b7a;--line:#e3e8ef;--brand:#0f2a4a;--accent:#1f6feb;
+  --paper:#1f6feb;--job:#0e8a5f;--news:#b4580f;--hot:#c2410c;--chip:#eef2f7}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--surface:#161b22;--text:#e6edf3;--muted:#8b949e;--line:#262d36;
+  --brand:#0b1f38;--accent:#58a6ff;--paper:#58a6ff;--job:#3fb950;--news:#e3a14a;--hot:#f0883e;--chip:#21262d}}
+*{box-sizing:border-box}
+body{margin:0;font:14.5px/1.5 -apple-system,"Segoe UI",Inter,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+a{color:inherit}
+.top{background:var(--brand);color:#fff}
+.top .in{max-width:1080px;margin:auto;padding:14px 20px 0;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.2px}
+.logo img{width:30px;height:30px}.logo small{display:block;font-weight:400;font-size:11.5px;opacity:.7;letter-spacing:.3px}
+.search{margin-left:auto;flex:1 1 260px;max-width:360px}
+.search input{width:100%;padding:8px 12px;border-radius:8px;border:0;background:#ffffff1f;color:#fff;font-size:14px}
+.search input::placeholder{color:#ffffffa0}
+nav{max-width:1080px;margin:auto;padding:0 20px;display:flex;gap:2px;overflow-x:auto}
+nav button{background:none;border:0;color:#ffffffb0;padding:12px 14px 11px;font-size:14px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+nav button.on{color:#fff;border-bottom-color:#58a6ff;font-weight:600}
+nav .n{font-size:11px;background:#ffffff26;border-radius:10px;padding:1px 7px;margin-left:5px}
+main{max-width:1080px;margin:auto;padding:20px}
+.meta{color:var(--muted);font-size:12.5px;margin-bottom:14px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;cursor:pointer}
+.tile b{display:block;font-size:26px;line-height:1.1}.tile span{color:var(--muted);font-size:12.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.panel h3{margin:0;padding:12px 16px;font-size:13px;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.panel h3 a{text-transform:none;letter-spacing:0;color:var(--accent);cursor:pointer;font-weight:500;text-decoration:none}
+.panel .row{padding:10px 16px;border-bottom:1px solid var(--line)}.panel .row:last-child{border:0}
+.panel .row a{font-weight:600;text-decoration:none;font-size:13.5px}.panel .row a:hover{color:var(--accent)}
+.panel .sub{color:var(--muted);font-size:12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:5px 12px;border-radius:16px;font-size:13px;cursor:pointer}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.sep{width:1px;height:22px;background:var(--line);margin:0 4px}
+select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:13px}
+.day{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin:22px 0 8px;display:flex;gap:8px;align-items:center}
+.day:after{content:"";flex:1;height:1px;background:var(--line)}
+.item{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line);border-radius:8px;padding:12px 16px;margin-bottom:8px;position:relative}
+.item.k-paper{border-left-color:var(--paper)}.item.k-job{border-left-color:var(--job)}.item.k-news{border-left-color:var(--news)}
+.item .t{font-weight:600;font-size:15px;text-decoration:none;padding-right:28px;display:block}.item .t:hover{color:var(--accent)}
+.item .m{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:5px;font-size:12.5px;color:var(--muted)}
+.tag{background:var(--chip);color:var(--text);border-radius:4px;padding:1px 7px;font-size:11.5px;font-weight:500}
+.tag.tier{background:#1f6feb1a;color:var(--paper)}.tag.hot{background:#c2410c1a;color:var(--hot)}.tag.dl{background:#0e8a5f1a;color:var(--job)}
+.item p{margin:6px 0 0;color:var(--muted);font-size:13.5px}
+.star{position:absolute;top:10px;right:10px;background:none;border:0;font-size:17px;cursor:pointer;color:var(--muted)}
+.star.on{color:#e3a400}
+.empty{text-align:center;color:var(--muted);padding:50px 0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}
 </style>
 </head>
 <body>
-<header>
-  <h1>🛰️ GNSS <span>Pulse</span></h1><div id="meta">Loading…</div>
+<div class="top">
+  <div class="in">
+    <div class="logo"><img src="icon.svg" alt=""><div>GNSS Pulse<small>Satellite navigation research, jobs &amp; industry</small></div></div>
+    <div class="search"><input id="q" placeholder="Search papers, jobs, news…" autocomplete="off"></div>
+  </div>
   <nav id="tabs"></nav>
-  <div class="row"><input id="q" placeholder="Search title, venue, summary…"><select id="region"><option value="">🌍 All</option><option>India</option><option>Europe</option><option>Other</option></select><select id="days">
-    <option value="1">24h</option><option value="7" selected>7 days</option><option value="30">30 days</option><option value="9999">All</option></select></div>
-</header>
-<main id="list"></main>
+</div>
+<main id="view"></main>
+<footer>Updated automatically 4× daily from OpenAlex, arXiv, journals, EURAXESS, ESA, ISRO, EUSPA and more.</footer>
 <script>
-const JOBS=["job","internship","phd","postdoc"], PAPERS=["paper","preprint","conference","book_chapter","thesis","article"];
-const TABS={Today:i=>Date.now()-new Date(i.added)<864e5, Papers:i=>PAPERS.includes(i.category),
-  Jobs:i=>JOBS.includes(i.category), "News & more":i=>!JOBS.includes(i.category)&&!PAPERS.includes(i.category),
-  "★ Saved":i=>saved.has(i.id)};
-let items=[], tab="Today", saved=new Set(JSON.parse(localStorage.saved||"[]"));
-const $=s=>document.querySelector(s), esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-$("#tabs").innerHTML=Object.keys(TABS).map(t=>`<button data-t="${t}">${t}</button>`).join("");
-$("#tabs").onclick=e=>{if(e.target.dataset.t){tab=e.target.dataset.t;render()}};
-$("#q").oninput=$("#days").onchange=$("#region").onchange=render;
-$("#list").onclick=e=>{const id=e.target.dataset.star;if(!id)return;saved.has(id)?saved.delete(id):saved.add(id);
-  localStorage.saved=JSON.stringify([...saved]);render()};
+const KIND={paper:"paper",preprint:"paper",conference:"paper",book_chapter:"paper",thesis:"paper",article:"paper",
+  job:"job",phd:"job",postdoc:"job",internship:"job"};
+const kind=i=>KIND[i.category]||"news";
+const LABEL={paper:"Journal",preprint:"Preprint",conference:"Conference",book_chapter:"Book chapter",thesis:"Thesis",
+  job:"Job",phd:"PhD",postdoc:"Postdoc",internship:"Internship",news:"News",product:"Product",event:"Event",cfp:"Call for papers",
+  dataset:"Dataset",software:"Software",other:"Other"};
+const TABS=[["overview","Today"],["paper","Papers"],["job","Jobs"],["news","News & Industry"],["saved","Saved"]];
+const SUB={paper:["paper","conference","preprint","book_chapter","thesis"],job:["phd","postdoc","job","internship"],
+  news:["news","product","event","cfp","dataset","software"]};
+let items=[],updated,tab=location.hash.slice(1)||"overview",sub="",region="",days=30;
+const saved=new Set(JSON.parse(localStorage.saved||"[]"));
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const when=i=>(i.date&&i.date<=i.added.slice(0,10)?i.date:i.added.slice(0,10));
+const isNew=i=>Date.now()-new Date(i.added)<864e5;
+function dayLabel(d){const t=new Date().toISOString().slice(0,10),y=new Date(Date.now()-864e5).toISOString().slice(0,10);
+  return d==t?"Today":d==y?"Yesterday":new Date(d+"T00:00").toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short",year:"numeric"})}
+function matches(i){const q=$("#q").value.trim().toLowerCase();
+  return !q||[i.title,i.venue,i.source,i.ai_summary,i.summary,i.location].join(" ").toLowerCase().includes(q)}
+const byDate=(a,b)=>when(b).localeCompare(when(a))||b.added.localeCompare(a.added);
+
+function card(i){const k=kind(i),s=saved.has(i.id);
+  return `<div class="item k-${k}"><button class="star ${s?"on":""}" data-star="${i.id}" title="Save">${s?"★":"☆"}</button>
+  <a class="t" href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>
+  <div class="m"><span class="tag">${esc(LABEL[i.category]||i.category)}</span>
+   ${i.tier&&!["unknown","conference","preprint","book"].includes(i.tier)?`<span class="tag tier">${esc(i.tier)}</span>`:""}
+   ${i.importance>=4?`<span class="tag hot">Key</span>`:""}
+   ${i.deadline?`<span class="tag dl">Deadline ${esc(i.deadline)}</span>`:""}
+   <span>${esc(i.venue||i.source)}</span>
+   ${k=="job"&&(i.location||i.region)?`<span>· 📍 ${esc(i.location||i.region)}</span>`:""}
+   ${i.date?`<span>· ${esc(i.date)}</span>`:""}</div>
+  ${i.ai_summary||i.summary?`<p>${esc(i.ai_summary||i.summary.slice(0,280)+(i.summary.length>280?"…":""))}</p>`:""}</div>`}
+
+function list(rows){if(!rows.length)return`<div class="empty">No items match these filters.</div>`;
+  let out="",last="";for(const i of rows){const d=when(i);if(d!=last){out+=`<div class="day">${dayLabel(d)}</div>`;last=d}out+=card(i)}return out}
+
+function panel(title,t,rows,n=6){return`<div class="panel"><h3>${title}<a data-go="${t}">View all →</a></h3>
+  ${rows.slice(0,n).map(i=>`<div class="row"><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>
+  <div class="sub">${esc(LABEL[i.category]||i.category)} · ${esc(i.venue||i.source)}${kind(i)=="job"&&i.region?" · "+esc(i.region):""}</div></div>`).join("")
+  ||`<div class="row sub">Nothing new in the last 24 hours.</div>`}</div>`}
+
 function render(){
-  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.t==tab));
-  const q=$("#q").value.toLowerCase(), cut=Date.now()-$("#days").value*864e5, reg=$("#region").value;
-  const rows=items.filter(TABS[tab]).filter(i=>tab=="★ Saved"||new Date(i.added)>=cut)
-    .filter(i=>!reg||(i.region||"Other")==reg)
-    .filter(i=>!q||(i.title+i.venue+i.ai_summary+i.summary+i.source).toLowerCase().includes(q))
-    .sort((a,b)=>b.importance-a.importance||b.added.localeCompare(a.added));
-  $("#list").innerHTML=rows.length?rows.map(i=>`<div class="card imp${i.importance}">
-    <button class="star" data-star="${i.id}">${saved.has(i.id)?"★":"☆"}</button>
-    <a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>
-    <div class="tags"><span class="tag">${esc(i.category)}</span>${i.tier&&i.tier!="unknown"?`<span class="tag">${esc(i.tier)}</span>`:""}
-    ${esc(i.venue||i.source)} · ${esc(i.date||"")}${i.deadline?` · ⏰ ${esc(i.deadline)}`:""}${i.location||i.region?` · 📍 ${esc(i.location||i.region)}`:""}</div>
-    <p class="sum">${esc(i.ai_summary||(i.summary||"").slice(0,260))}</p></div>`).join("")
-    :`<div class="empty">Nothing here yet.</div>`;
+  history.replaceState(null,"","#"+tab);
+  const all=items.filter(matches),count=k=>all.filter(i=>kind(i)==k).length;
+  $("#tabs").innerHTML=TABS.map(([k,l])=>`<button data-tab="${k}" class="${tab==k?"on":""}">${l}${
+    k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${saved.size}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
+  const meta=`<div class="meta">${items.length} items tracked · last updated ${updated?new Date(updated).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}):"n/a"}</div>`;
+  let html=meta;
+  if(tab=="overview"){
+    const fresh=all.filter(isNew).sort((a,b)=>b.importance-a.importance||byDate(a,b));
+    const recent=k=>{const f=fresh.filter(i=>kind(i)==k);return f.length?f:all.filter(i=>kind(i)==k).sort(byDate)};
+    const t=k=>fresh.filter(i=>kind(i)==k).length;
+    html+=`<div class="tiles">
+      <div class="tile" data-go="paper"><b style="color:var(--paper)">${t("paper")}</b><span>New papers today</span></div>
+      <div class="tile" data-go="job"><b style="color:var(--job)">${t("job")}</b><span>New positions today</span></div>
+      <div class="tile" data-go="news"><b style="color:var(--news)">${t("news")}</b><span>News &amp; industry today</span></div>
+      <div class="tile" data-go="job" data-region="India"><b>${all.filter(i=>kind(i)=="job"&&i.region=="India").length}</b><span>Open positions in India</span></div>
+      <div class="tile" data-go="job" data-region="Europe"><b>${all.filter(i=>kind(i)=="job"&&i.region=="Europe").length}</b><span>Open positions in Europe</span></div></div>
+      <div class="grid">${panel("📄 Latest papers","paper",recent("paper"),8)}${panel("💼 Latest positions","job",recent("job"))}${panel("📰 News & industry","news",recent("news"))}</div>`;
+  }else{
+    let rows=tab=="saved"?all.filter(i=>saved.has(i.id)):all.filter(i=>kind(i)==tab);
+    if(SUB[tab]){
+      const present=SUB[tab].filter(c=>rows.some(i=>i.category==c));
+      html+=`<div class="filters"><button class="chip ${sub?"":"on"}" data-sub="">All</button>${present.map(c=>
+        `<button class="chip ${sub==c?"on":""}" data-sub="${c}">${LABEL[c]} (${rows.filter(i=>i.category==c).length})</button>`).join("")}
+        ${tab=="job"?`<span class="sep"></span>${["","India","Europe","Other"].map(r=>`<button class="chip ${region==r?"on":""}" data-region="${r}">${r||"🌍 All regions"}</button>`).join("")}`:""}
+        <span class="sep"></span><select id="days">${[[1,"Last 24 h"],[7,"Last 7 days"],[30,"Last 30 days"],[9999,"All time"]].map(([v,l])=>`<option value="${v}" ${days==v?"selected":""}>${l}</option>`).join("")}</select></div>`;
+      if(sub)rows=rows.filter(i=>i.category==sub);
+      if(tab=="job"&&region)rows=rows.filter(i=>(i.region||"Other")==region);
+      const cut=new Date(Date.now()-days*864e5).toISOString();rows=rows.filter(i=>i.added>=cut);
+    }
+    html+=list(rows.sort(byDate));
+  }
+  $("#view").innerHTML=html;
 }
-fetch("data/items.json?"+Date.now()).then(r=>r.json()).then(d=>{items=d.items;
-  $("#meta").textContent=`${items.length} items · updated ${new Date(d.updated).toLocaleString()}`;render()})
-  .catch(()=>{$("#meta").textContent="No data yet: run the collector first.";render()});
+document.addEventListener("click",e=>{const d=e.target.closest("[data-tab],[data-go],[data-sub],[data-region],[data-star]");if(!d)return;
+  if(d.dataset.star){const id=d.dataset.star;saved.has(id)?saved.delete(id):saved.add(id);localStorage.saved=JSON.stringify([...saved])}
+  else if(d.dataset.tab||d.dataset.go){tab=d.dataset.tab||d.dataset.go;sub="";region=d.dataset.region||"";scrollTo(0,0)}
+  else if(d.dataset.sub!==undefined)sub=d.dataset.sub;
+  else if(d.dataset.region!==undefined)region=d.dataset.region;
+  render()});
+document.addEventListener("change",e=>{if(e.target.id=="days"){days=+e.target.value;render()}});
+$("#q").addEventListener("input",render);
+fetch("data/items.json?"+Date.now()).then(r=>r.json()).then(d=>{items=d.items;updated=d.updated;render()})
+  .catch(()=>{$("#view").innerHTML=`<div class="empty">No data yet. The collector hasn't run.</div>`});
 </script>
 </body>
 </html>
