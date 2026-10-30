@@ -73,10 +73,13 @@ arxiv_queries:
 rss:
   papers:
     - name: GPS Solutions
+      trusted: true
       url: https://link.springer.com/search.rss?facet-journal-id=10291&channel-name=GPS%20Solutions
     - name: Journal of Geodesy
+      trusted: true
       url: https://link.springer.com/search.rss?facet-journal-id=190&channel-name=Journal%20of%20Geodesy
     - name: NAVIGATION (ION)
+      trusted: true
       url: https://navi.ion.org/rss/current.xml
     # MDPI (Remote Sensing, Sensors) blocks RSS bots; covered via OpenAlex.
   jobs:
@@ -94,4 +97,46 @@ rss:
     - name: Google News GNSS
       url: https://news.google.com/rss/search?hl=en&q=GNSS+OR+%22satellite+navigation%22+OR+NavIC+OR+BeiDou+OR+Galileo+satellite
     - name: Inside GNSS
+      trusted: true
       url: https://insidegnss.com/feed/
+    - name: EUSPA
+      trusted: true
+      url: https://www.euspa.europa.eu/rss.xml
+    - name: GPS.gov
+      trusted: true
+      url: https://www.gps.gov/rss.xml
+    - name: ESA Navigation
+      trusted: true
+      url: https://www.esa.int/rssfeed/Our_Activities/Navigation
+    - name: IGS
+      trusted: true
+      url: https://igs.org/feed/
+    - name: RNTF (Resilient PNT)
+      trusted: true
+      url: https://rntfnd.org/feed/
+    - name: SpaceNews
+      url: https://spacenews.com/feed/
+    - name: Google News GNSS products
+      url: https://news.google.com/rss/search?hl=en&q=GNSS+receiver+(launch+OR+launches+OR+unveils+OR+introduces)
+    - name: Google News NavIC / ISRO
+      url: https://news.google.com/rss/search?hl=en&q=NavIC+OR+%22ISRO+navigation%22
+    - name: Google News LEO-PNT / jamming / spoofing
+      url: https://news.google.com/rss/search?hl=en&q=%22LEO+PNT%22+OR+%22GPS+jamming%22+OR+%22GNSS+spoofing%22
+
+# Job search result pages (scraped). link = regex for posting links.
+job_pages:
+  - name: EURAXESS (GNSS)
+    url: https://euraxess.ec.europa.eu/jobs/search?f%5B0%5D=keywords%3AGNSS
+    link: ^/jobs/\d+$
+  - name: EURAXESS (satellite navigation)
+    url: https://euraxess.ec.europa.eu/jobs/search?f%5B0%5D=keywords%3Asatellite%20navigation
+    link: ^/jobs/\d+$
+  - name: ESA Jobs (navigation)
+    url: https://jobs.esa.int/search/?q=navigation
+    link: ^/job/
+  - name: ESA Jobs (GNSS)
+    url: https://jobs.esa.int/search/?q=GNSS
+    link: ^/job/
+  - name: Nature Careers (GNSS)
+    url: https://www.nature.com/naturecareers/jobs/?keywords=GNSS
+    link: /naturecareers/job/\d+

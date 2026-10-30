@@ -35,7 +35,7 @@ main{max-width:860px;margin:auto;padding:12px 16px 40px}
 <script>
 const JOBS=["job","internship","phd","postdoc"], PAPERS=["paper","preprint","conference","book_chapter","thesis","article"];
 const TABS={Today:i=>Date.now()-new Date(i.added)<864e5, Papers:i=>PAPERS.includes(i.category),
-  Jobs:i=>JOBS.includes(i.category), Other:i=>!JOBS.includes(i.category)&&!PAPERS.includes(i.category),
+  Jobs:i=>JOBS.includes(i.category), "News & more":i=>!JOBS.includes(i.category)&&!PAPERS.includes(i.category),
   "★ Saved":i=>saved.has(i.id)};
 let items=[], tab="Today", saved=new Set(JSON.parse(localStorage.saved||"[]"));
 const $=s=>document.querySelector(s), esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));

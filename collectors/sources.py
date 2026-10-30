@@ -4,8 +4,10 @@ import datetime as dt
 import re
 import feedparser
 import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
-UA = {"User-Agent": "GNSS-Pulse/0.1 (personal research aggregator; mailto:none@example.com)"}
+UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) GNSS-Pulse/0.2 (personal research aggregator)"}
 TIMEOUT = 30
 
 
@@ -59,16 +61,39 @@ def rss(name, url, kind_hint, since):
     return out
 
 
+def html_jobs(name, url, link_pattern, since):
+    """Scrape a job-search results page: each link matching link_pattern is one posting."""
+    r = requests.get(url, headers=UA, timeout=TIMEOUT)
+    r.raise_for_status()
+    soup, out, seen = BeautifulSoup(r.text, "html.parser"), [], set()
+    for a in soup.find_all("a", href=re.compile(link_pattern)):
+        link, title = urljoin(url, a["href"].strip()), a.get_text(" ", strip=True)
+        if link in seen or len(title) < 8 or title.lower().startswith("view details"):
+            continue
+        seen.add(link)
+        card = a
+        for _ in range(6):  # climb to the listing card for context text
+            if card.parent is None or len(card.get_text(" ", strip=True)) > 150:
+                break
+            card = card.parent
+        out.append(_item(title, link, card.get_text(" ", strip=True)[:800], name,
+                         dt.date.today().isoformat(), "job", venue=name))
+    return out
+
+
 def collect_all(cfg):
     since = (dt.date.today() - dt.timedelta(days=cfg.get("lookback_days", 3))).isoformat()
-    jobs = [(f"OpenAlex '{q}'", openalex, (q, since)) for q in cfg.get("openalex_queries", [])]
-    jobs += [(f"arXiv '{q}'", arxiv, (q, since)) for q in cfg.get("arxiv_queries", [])]
+    jobs = [(f"OpenAlex '{q}'", openalex, (q, since), False) for q in cfg.get("openalex_queries", [])]
+    jobs += [(f"arXiv '{q}'", arxiv, (q, since), False) for q in cfg.get("arxiv_queries", [])]
     for kind, feeds in cfg.get("rss", {}).items():
-        jobs += [(f["name"], rss, (f["name"], f["url"], {"papers": "paper", "jobs": "job", "news": "news"}.get(kind, kind), since)) for f in feeds]
+        jobs += [(f["name"], rss, (f["name"], f["url"], {"papers": "paper", "jobs": "job", "news": "news"}.get(kind, kind), since), f.get("trusted")) for f in feeds]
+    jobs += [(p["name"], html_jobs, (p["name"], p["url"], p["link"], since), True) for p in cfg.get("job_pages", [])]
     items, errors = [], []
-    for label, fn, args in jobs:
+    for label, fn, args, trusted in jobs:
         try:
             got = fn(*args)
+            for it in got:
+                it["trusted"] = bool(trusted)  # GNSS-specific source: skip keyword filter
             print(f"  {label}: {len(got)}")
             items += got
         except Exception as ex:  # one bad source must not stop the run

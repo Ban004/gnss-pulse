@@ -32,6 +32,8 @@ def dedup(new, existing_ids, existing_titles):
 
 
 def keyword_pass(it, kw):
+    if it.get("trusted"):
+        return True
     text = f"{it['title']} {it['summary']}".lower()
     if any(x in text for x in kw.get("exclude", [])):
         return False
@@ -76,8 +78,12 @@ def gemini_classify(items, batch=10):
             try:
                 r = requests.post(url, headers={"x-goog-api-key": key}, json=body, timeout=180)
                 if r.status_code == 429:
-                    print("  Gemini quota hit; rest stay keyword-only")
-                    return True
+                    if attempt == 2:
+                        print("  Gemini quota exhausted; remaining items retried next run")
+                        return True
+                    print("  Gemini rate limit; waiting 60s")
+                    time.sleep(60)
+                    continue
                 r.raise_for_status()
                 results = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
                 for res in results:
@@ -87,7 +93,7 @@ def gemini_classify(items, batch=10):
             except Exception as ex:  # key is in a header, so it never appears in this message
                 print(f"  Gemini batch {start // batch} attempt {attempt + 1} failed: {type(ex).__name__} {getattr(ex, 'response', None) and ex.response.status_code}")
                 time.sleep(15 * (attempt + 1))
-        time.sleep(4)  # stay under free-tier rate limit
+        time.sleep(7)  # stay under free-tier rate limit (~10 requests/min)
     return True
 
 
@@ -98,13 +104,18 @@ TYPE_MAP = {"article": "paper", "review": "paper", "letter": "paper", "conferenc
 
 def finalize(it):
     it["kind_hint"] = TYPE_MAP.get(it["kind_hint"], it["kind_hint"])
+    it.pop("trusted", None)
     ai = it.pop("ai", None)
+    if not ai and it.get("ai_tries") is not None:  # retried old item, still no AI: keep as is
+        it["ai_tries"] += 1
+        return it
     if ai:
         it.update(relevant=bool(ai.get("relevant")), category=ai.get("category") if ai.get("category") in CATEGORIES else it["kind_hint"],
                   tier=ai.get("tier", "unknown"), ai_summary=ai.get("summary"),
                   importance=int(ai.get("importance") or 2), deadline=ai.get("deadline"),
                   location=ai.get("location"))
+        it.pop("ai_tries", None)
     else:
-        it.update(relevant=True, category=it["kind_hint"], tier="unknown", ai_summary=None,
+        it.update(ai_tries=1, relevant=True, category=it["kind_hint"], tier="unknown", ai_summary=None,
                   importance=2, deadline=None, location=None)
     return it
