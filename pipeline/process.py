@@ -79,7 +79,8 @@ def gemini_classify(items, batch=10):
                 r = requests.post(url, headers={"x-goog-api-key": key}, json=body, timeout=180)
                 if r.status_code == 429:
                     if attempt == 2:
-                        print("  Gemini quota exhausted; remaining items retried next run")
+                        msg = r.json().get("error", {}).get("message", "")[:300]
+                        print(f"  Gemini quota exhausted ({msg}); remaining items retried next run")
                         return True
                     print("  Gemini rate limit; waiting 60s")
                     time.sleep(60)
