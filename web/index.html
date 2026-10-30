@@ -52,6 +52,14 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .star{position:absolute;top:10px;right:10px;background:none;border:0;font-size:17px;cursor:pointer;color:var(--muted)}
 .star.on{color:#e3a400}
 .empty{text-align:center;color:var(--muted);padding:50px 0}
+.pop{position:absolute;z-index:20;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 28px #0003;padding:10px;width:250px}
+.pop h4{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+.pop label{display:flex;gap:8px;align-items:center;padding:5px 4px;border-radius:6px;cursor:pointer;font-size:14px}
+.pop label:hover{background:var(--chip)}.pop .new{display:flex;gap:6px;margin-top:8px;border-top:1px solid var(--line);padding-top:8px}
+.pop input[type=text]{flex:1;min-width:0;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text)}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:6px;padding:5px 10px;font-size:13px;cursor:pointer}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}.btn.del{color:#d1242f}
+.folderbar{display:flex;gap:8px;align-items:center;margin:-4px 0 14px;color:var(--muted);font-size:13px}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}
 </style>
 </head>
@@ -76,7 +84,15 @@ const TABS=[["overview","Today"],["paper","Papers"],["job","Jobs"],["news","News
 const SUB={paper:["paper","conference","preprint","book_chapter","thesis"],job:["phd","postdoc","job","internship"],
   news:["news","product","event","cfp","dataset","software"]};
 let items=[],updated,tab=location.hash.slice(1)||"overview",sub="",region="",days=30;
-const saved=new Set(JSON.parse(localStorage.saved||"[]"));
+// Saved folders live in this browser: {folder name: [item ids]}, plus a copy of each saved item
+let folders=JSON.parse(localStorage.folders||"null")||{"General":JSON.parse(localStorage.saved||"[]")};
+const savedData=JSON.parse(localStorage.savedData||"{}");
+let folder="";  // selected folder in Saved tab ("" = all)
+const store=()=>{localStorage.folders=JSON.stringify(folders);localStorage.savedData=JSON.stringify(savedData)};
+const isSaved=id=>Object.values(folders).some(f=>f.includes(id));
+const savedIds=()=>new Set(Object.values(folders).flat());
+function toggle(name,id){const f=folders[name];const k=f.indexOf(id);k<0?f.push(id):f.splice(k,1);
+  if(isSaved(id)){const it=items.find(i=>i.id==id);if(it)savedData[id]=it}else delete savedData[id];store()}
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const when=i=>(i.date&&i.date<=i.added.slice(0,10)?i.date:i.added.slice(0,10));
@@ -87,8 +103,8 @@ function matches(i){const q=$("#q").value.trim().toLowerCase();
   return !q||[i.title,i.venue,i.source,i.ai_summary,i.summary,i.location].join(" ").toLowerCase().includes(q)}
 const byDate=(a,b)=>when(b).localeCompare(when(a))||b.added.localeCompare(a.added);
 
-function card(i){const k=kind(i),s=saved.has(i.id);
-  return `<div class="item k-${k}"><button class="star ${s?"on":""}" data-star="${i.id}" title="Save">${s?"★":"☆"}</button>
+function card(i){const k=kind(i),s=isSaved(i.id);
+  return `<div class="item k-${k}"><button class="star ${s?"on":""}" data-star="${i.id}" title="Save to folder">${s?"★":"☆"}</button>
   <a class="t" href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>
   <div class="m"><span class="tag">${esc(LABEL[i.category]||i.category)}</span>
    ${i.tier&&!["unknown","conference","preprint","book"].includes(i.tier)?`<span class="tag tier">${esc(i.tier)}</span>`:""}
@@ -111,7 +127,7 @@ function render(){
   history.replaceState(null,"","#"+tab);
   const all=items.filter(matches),count=k=>all.filter(i=>kind(i)==k).length;
   $("#tabs").innerHTML=TABS.map(([k,l])=>`<button data-tab="${k}" class="${tab==k?"on":""}">${l}${
-    k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${saved.size}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
+    k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${savedIds().size}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
   const meta=`<div class="meta">${items.length} items tracked · last updated ${updated?new Date(updated).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}):"n/a"}</div>`;
   let html=meta;
   if(tab=="overview"){
@@ -126,7 +142,16 @@ function render(){
       <div class="tile" data-go="job" data-region="Europe"><b>${all.filter(i=>kind(i)=="job"&&i.region=="Europe").length}</b><span>Open positions in Europe</span></div></div>
       <div class="grid">${panel("📄 Latest papers","paper",recent("paper"),8)}${panel("💼 Latest positions","job",recent("job"))}${panel("📰 News & industry","news",recent("news"))}</div>`;
   }else{
-    let rows=tab=="saved"?all.filter(i=>saved.has(i.id)):all.filter(i=>kind(i)==tab);
+    let rows;
+    if(tab=="saved"){
+      if(folder&&!folders[folder])folder="";
+      const pool=[...new Map([...Object.values(savedData),...items].map(i=>[i.id,i])).values()].filter(matches);
+      const ids=folder?new Set(folders[folder]):savedIds();rows=pool.filter(i=>ids.has(i.id));
+      html+=`<div class="filters"><button class="chip ${folder?"":"on"}" data-folder="">All saved (${savedIds().size})</button>${
+        Object.keys(folders).map(f=>`<button class="chip ${folder==f?"on":""}" data-folder="${esc(f)}">📁 ${esc(f)} (${folders[f].length})</button>`).join("")}
+        <button class="btn" data-act="newfolder">+ New folder</button></div>
+        ${folder?`<div class="folderbar">📁 <b>${esc(folder)}</b><button class="btn" data-act="rename">Rename</button><button class="btn del" data-act="delete">Delete folder</button></div>`:""}`;
+    }else rows=all.filter(i=>kind(i)==tab);
     if(SUB[tab]){
       const present=SUB[tab].filter(c=>rows.some(i=>i.category==c));
       html+=`<div class="filters"><button class="chip ${sub?"":"on"}" data-sub="">All</button>${present.map(c=>
@@ -141,8 +166,28 @@ function render(){
   }
   $("#view").innerHTML=html;
 }
-document.addEventListener("click",e=>{const d=e.target.closest("[data-tab],[data-go],[data-sub],[data-region],[data-star]");if(!d)return;
-  if(d.dataset.star){const id=d.dataset.star;saved.has(id)?saved.delete(id):saved.add(id);localStorage.saved=JSON.stringify([...saved])}
+function closePop(){document.querySelector(".pop")?.remove()}
+function openPop(btn,id){closePop();const p=document.createElement("div");p.className="pop";p.dataset.id=id;
+  const draw=()=>{p.innerHTML=`<h4>Save to folder</h4>${Object.keys(folders).map(f=>
+    `<label><input type="checkbox" data-pf="${esc(f)}" ${folders[f].includes(id)?"checked":""}> 📁 ${esc(f)}</label>`).join("")}
+    <div class="new"><input type="text" placeholder="New folder name" maxlength="40"><button class="btn pri" data-pnew>Create</button></div>`};
+  draw();document.body.appendChild(p);
+  const r=btn.getBoundingClientRect();p.style.top=(scrollY+r.bottom+4)+"px";p.style.left=Math.max(8,Math.min(scrollX+r.right-250,innerWidth-262))+"px";
+  p.addEventListener("click",e=>{e.stopPropagation();
+    if(e.target.dataset.pf!==undefined){toggle(e.target.dataset.pf,id);render(true)}
+    if(e.target.dataset.pnew!==undefined){const n=p.querySelector("input[type=text]").value.trim();
+      if(n&&!folders[n]){folders[n]=[];toggle(n,id);draw();render(true)}}});
+  p.querySelector("input[type=text]").addEventListener("keydown",e=>{if(e.key=="Enter")p.querySelector("[data-pnew]").click()})}
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".pop"))closePop();
+  const d=e.target.closest("[data-tab],[data-go],[data-sub],[data-region],[data-star],[data-folder],[data-act]");if(!d)return;
+  if(d.dataset.star){openPop(d,d.dataset.star);return}
+  if(d.dataset.folder!==undefined)folder=d.dataset.folder;
+  else if(d.dataset.act=="newfolder"){const n=prompt("Folder name:")?.trim();if(n&&!folders[n]){folders[n]=[];store();folder=n}}
+  else if(d.dataset.act=="rename"){const n=prompt("Rename folder:",folder)?.trim();
+    if(n&&n!=folder&&!folders[n]){folders[n]=folders[folder];delete folders[folder];folder=n;store()}}
+  else if(d.dataset.act=="delete"){if(confirm(`Delete folder "${folder}"? Items saved only in it will be unsaved.`)){
+    const ids=folders[folder];delete folders[folder];ids.forEach(id=>{if(!isSaved(id))delete savedData[id]});folder="";store()}}
   else if(d.dataset.tab||d.dataset.go){tab=d.dataset.tab||d.dataset.go;sub="";region=d.dataset.region||"";scrollTo(0,0)}
   else if(d.dataset.sub!==undefined)sub=d.dataset.sub;
   else if(d.dataset.region!==undefined)region=d.dataset.region;
