@@ -28,7 +28,7 @@ def main():
     # retry recent items that missed the AI step (quota/timeouts), up to 3 times
     retry = [i for i in old if not i.get("ai_summary") and i.get("ai_tries", 3) < 3]
     old = [i for i in old if i not in retry]
-    process.gemini_classify(new + retry)
+    process.classify(new + retry)
     now = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     new = [process.finalize(i) | {"added": now} for i in new]
     retry = [process.finalize(i) for i in retry]

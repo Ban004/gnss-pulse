@@ -60,42 +60,93 @@ Items:
 %s"""
 
 
-def gemini_classify(items, batch=10):
-    key = os.environ.get("GEMINI_API_KEY")
+class QuotaExhausted(Exception):
+    pass
+
+
+def _gemini(prompt, key):
     model = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
-    if not key:
-        print("  No GEMINI_API_KEY: keyword-only mode")
-        return False
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                      headers={"x-goog-api-key": key}, timeout=180, json={
+                          "contents": [{"parts": [{"text": prompt}]}],
+                          "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}})
+    return r, lambda j: j["candidates"][0]["content"]["parts"][0]["text"]
+
+
+def _openai_compatible(url, model):
+    def call(prompt, key):
+        r = requests.post(url, headers={"Authorization": f"Bearer {key}"}, timeout=180, json={
+            "model": model, "temperature": 0.1, "messages": [{"role": "user", "content": prompt}]})
+        return r, lambda j: j["choices"][0]["message"]["content"]
+    return call
+
+
+# Tried in order; a provider is skipped if its key is missing, and dropped once its quota runs out.
+PROVIDERS = [
+    ("Gemini", "GEMINI_API_KEY", _gemini),
+    ("GitHub Models", "GITHUB_TOKEN", _openai_compatible(
+        "https://models.github.ai/inference/chat/completions", os.environ.get("GITHUB_MODEL", "openai/gpt-4.1-mini"))),
+    ("Groq", "GROQ_API_KEY", _openai_compatible(
+        "https://api.groq.com/openai/v1/chat/completions", os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"))),
+    ("OpenRouter", "OPENROUTER_API_KEY", _openai_compatible(
+        "https://openrouter.ai/api/v1/chat/completions", os.environ.get("OPENROUTER_MODEL", "deepseek/deepseek-chat-v3-0324:free"))),
+]
+
+
+def _ask(name, fn, key, prompt):
+    for attempt in range(3):
+        try:
+            r, extract = fn(prompt, key)
+            if r.status_code == 429:
+                if attempt == 2 or "quota" in r.text.lower() and "day" in r.text.lower():
+                    raise QuotaExhausted(r.text[:200])
+                print(f"  {name} rate limit; waiting 60s")
+                time.sleep(60)
+                continue
+            if r.status_code in (401, 403):
+                raise QuotaExhausted(f"auth {r.status_code}")
+            r.raise_for_status()
+            text = extract(r.json())
+            return json.loads(text[text.index("["):text.rindex("]") + 1])  # tolerate ```json fences
+        except QuotaExhausted:
+            raise
+        except Exception as ex:  # keys are in headers, so they never appear in this message
+            print(f"  {name} attempt {attempt + 1} failed: {type(ex).__name__}")
+            time.sleep(15 * (attempt + 1))
+    raise QuotaExhausted("3 failed attempts")
+
+
+def classify(items, batch=10):
+    """Fill item["ai"] using the first provider that still has quota."""
+    providers = [(n, fn, os.environ[k]) for n, k, fn in PROVIDERS if os.environ.get(k)]
+    if not providers:
+        print("  No LLM keys: keyword-only mode")
+        return
+    print("  LLM chain: " + " → ".join(n for n, _, _ in providers))
+    used = {}
     for start in range(0, len(items), batch):
         chunk = items[start:start + batch]
         listing = "\n".join(
             f"[{i}] ({it['kind_hint']}, {it.get('venue') or it['source']}) {it['title']} :: {it['summary'][:600]}"
             for i, it in enumerate(chunk))
-        body = {"contents": [{"parts": [{"text": PROMPT % (CATEGORIES, listing)}]}],
-                "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}}
-        for attempt in range(3):
+        prompt = PROMPT % (CATEGORIES, listing)
+        while providers:
+            name, fn, key = providers[0]
             try:
-                r = requests.post(url, headers={"x-goog-api-key": key}, json=body, timeout=180)
-                if r.status_code == 429:
-                    if attempt == 2:
-                        msg = r.json().get("error", {}).get("message", "")[:300]
-                        print(f"  Gemini quota exhausted ({msg}); remaining items retried next run")
-                        return True
-                    print("  Gemini rate limit; waiting 60s")
-                    time.sleep(60)
-                    continue
-                r.raise_for_status()
-                results = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
-                for res in results:
-                    if 0 <= int(res.get("i", -1)) < len(chunk):
-                        chunk[int(res["i"])]["ai"] = res
+                results = _ask(name, fn, key, prompt)
                 break
-            except Exception as ex:  # key is in a header, so it never appears in this message
-                print(f"  Gemini batch {start // batch} attempt {attempt + 1} failed: {type(ex).__name__} {getattr(ex, 'response', None) and ex.response.status_code}")
-                time.sleep(15 * (attempt + 1))
-        time.sleep(7)  # stay under free-tier rate limit (~10 requests/min)
-    return True
+            except QuotaExhausted as ex:
+                print(f"  {name} out of quota/unauthorized ({ex}); switching provider")
+                providers.pop(0)
+        else:
+            print("  All LLM providers exhausted; remaining items retried next run")
+            break
+        for res in results or []:
+            if isinstance(res, dict) and 0 <= int(res.get("i", -1)) < len(chunk):
+                chunk[int(res["i"])]["ai"] = res | {"by": name}
+        used[name] = used.get(name, 0) + 1
+        time.sleep(7)  # stay under free-tier per-minute limits
+    print(f"  LLM batches: {used}")
 
 
 TYPE_MAP = {"article": "paper", "review": "paper", "letter": "paper", "conference-paper": "conference",
