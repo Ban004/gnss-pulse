@@ -13,6 +13,7 @@ def _chat_id(token):
         updates = requests.get(f"https://api.telegram.org/bot{token}/getUpdates", timeout=30).json()["result"]
         chat = next(u["message"]["chat"]["id"] for u in reversed(updates) if "message" in u)
         os.environ["TELEGRAM_CHAT_ID"] = str(chat)
+        print(f"  Telegram chat id detected: {chat}")
         return chat
     except Exception:
         print("  Telegram: no chat found. Send any message to your bot first.")
