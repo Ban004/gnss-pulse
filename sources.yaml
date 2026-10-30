@@ -93,6 +93,8 @@ rss:
       url: https://news.google.com/rss/search?hl=en&q=%22GNSS+engineer%22+OR+%22navigation+engineer%22+hiring
     - name: Satellite navigation careers
       url: https://news.google.com/rss/search?hl=en&q=%22satellite+navigation%22+(vacancy+OR+career+OR+recruitment)
+    - name: Google News India GNSS jobs
+      url: https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=(GNSS+OR+NavIC+OR+%22satellite+navigation%22+OR+ISRO)+(JRF+OR+SRF+OR+%22project+associate%22+OR+%22project+scientist%22+OR+recruitment+OR+vacancy+OR+internship)
   news:
     - name: Google News GNSS
       url: https://news.google.com/rss/search?hl=en&q=GNSS+OR+%22satellite+navigation%22+OR+NavIC+OR+BeiDou+OR+Galileo+satellite
@@ -131,6 +133,19 @@ job_pages:
   - name: EURAXESS (satellite navigation)
     url: https://euraxess.ec.europa.eu/jobs/search?f%5B0%5D=keywords%3Asatellite%20navigation
     link: ^/jobs/\d+$
+  - name: EURAXESS (Galileo)
+    url: https://euraxess.ec.europa.eu/jobs/search?f%5B0%5D=keywords%3AGalileo
+    link: ^/jobs/\d+$
+  - name: EURAXESS (geodesy)
+    url: https://euraxess.ec.europa.eu/jobs/search?f%5B0%5D=keywords%3Ageodesy
+    link: ^/jobs/\d+$
+  - name: EURAXESS (navigation)
+    url: https://euraxess.ec.europa.eu/jobs/search?f%5B0%5D=keywords%3Anavigation
+    link: ^/jobs/\d+$
+  - name: ISRO Careers (India)
+    url: https://www.isro.gov.in/Careers.html
+    link: (?i)recruit
+    title_include: inviting|applications|recruitment of|apprentice|fellow|JRF|walk-in
   - name: ESA Jobs (navigation)
     url: https://jobs.esa.int/search/?q=navigation
     link: ^/job/

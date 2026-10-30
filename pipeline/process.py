@@ -31,10 +31,17 @@ def dedup(new, existing_ids, existing_titles):
     return out
 
 
+JOB_TERMS = ("gnss", "gps", "galileo", "beidou", "glonass", "navic", "satellite navigation", "navigation",
+             "positioning", "pnt", "geodes", "isro", "ionospher", "localization", "orbit", "timing",
+             "surveying", "satélite", "satellite", "geolocaliz", "rfi")
+
+
 def keyword_pass(it, kw):
+    text = f"{it['title']} {it['summary']}".lower()
+    if it["kind_hint"] == "job":  # jobs: always require a domain term, even from trusted sources
+        return any(t in text for t in JOB_TERMS)
     if it.get("trusted"):
         return True
-    text = f"{it['title']} {it['summary']}".lower()
     if any(x in text for x in kw.get("exclude", [])):
         return False
     if any(x in text for x in kw.get("strong", [])):
@@ -47,13 +54,20 @@ def keyword_pass(it, kw):
 PROMPT = """You classify items for a GNSS (satellite navigation) researcher's news feed.
 For each item return a JSON object with:
  "i": the item index,
- "relevant": true only if it is genuinely about GNSS / satellite navigation / PNT,
+ "relevant": true only if it is genuinely about GNSS / satellite navigation / PNT.
+   For job/PhD/postdoc/internship items be STRICT: relevant only if the role's main focus is GNSS,
+   satellite navigation, PNT, positioning/navigation algorithms, GNSS geodesy, or navigation payloads;
+   also accept scientific/engineering/research posts at ISRO and its centres (Scientist/Engineer, JRF, RA, project posts),
+   but NOT administrative, medical, clerical, technician or admit-card/result notices. Generic jobs that merely
+   mention a keyword (e.g. unrelated physics, CS, chemistry) are NOT relevant.
+   News articles about recruitment are category "news" unless they describe a specific opening,
  "category": one of %s,
  "tier": one of "Q1","Q2","Q3","Q4","conference","book","preprint","unknown" (journal quality guess for papers, else "unknown"),
  "summary": a plain 2-line summary (max 40 words),
  "importance": 1-5 (5 = must-see: major result, open position matching GNSS, big launch/product),
  "deadline": "YYYY-MM-DD" or null,
- "location": country/city or null.
+ "location": "City, Country" or null,
+ "region": "India", "Europe", or "Other" (based on location/organisation; null if unknown).
 Return ONLY a JSON array.
 
 Items:
@@ -149,6 +163,23 @@ def classify(items, batch=10):
     print(f"  LLM batches: {used}")
 
 
+EUROPE = ("europe", "euraxess", "esa ", "euspa", "germany", "france", "spain", "italy", "netherlands", "belgium",
+          "switzerland", "austria", "sweden", "norway", "denmark", "finland", "poland", "portugal", "ireland",
+          "united kingdom", " uk", "czech", "croatia", "greece", "hungary", "romania", "estonia", "luxembourg",
+          "noordwijk", "darmstadt", "delft", "munich", "paris", "toulouse", "madrid", "zagreb")
+INDIA = ("india", "isro", "navic", "bengaluru", "bangalore", "ahmedabad", "hyderabad", "delhi", "mumbai", "chennai",
+         "pune", "kolkata", "goa", "iit ", "iisc", "drdo", "sac ", "ursc", "nrsc")
+
+
+def guess_region(it):
+    text = f" {it.get('location') or ''} {it['source']} {it['title']} {it['summary'][:300]} ".lower()
+    if any(w in text for w in INDIA):
+        return "India"
+    if any(w in text for w in EUROPE):
+        return "Europe"
+    return "Other"
+
+
 TYPE_MAP = {"article": "paper", "review": "paper", "letter": "paper", "conference-paper": "conference",
             "conference-abstract": "conference", "proceedings-article": "conference", "book-chapter": "book_chapter",
             "book": "book_chapter", "dissertation": "thesis", "posted-content": "preprint"}
@@ -165,9 +196,10 @@ def finalize(it):
         it.update(relevant=bool(ai.get("relevant")), category=ai.get("category") if ai.get("category") in CATEGORIES else it["kind_hint"],
                   tier=ai.get("tier", "unknown"), ai_summary=ai.get("summary"),
                   importance=int(ai.get("importance") or 2), deadline=ai.get("deadline"),
-                  location=ai.get("location"))
+                  location=ai.get("location"), region=ai.get("region") or guess_region(it))
         it.pop("ai_tries", None)
     else:
+        it.update(region=guess_region(it))
         it.update(ai_tries=1, relevant=True, category=it["kind_hint"], tier="unknown", ai_summary=None,
                   importance=2, deadline=None, location=None)
     return it

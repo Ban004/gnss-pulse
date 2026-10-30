@@ -61,14 +61,16 @@ def rss(name, url, kind_hint, since):
     return out
 
 
-def html_jobs(name, url, link_pattern, since):
+def html_jobs(name, url, link_pattern, since, title_include=None):
     """Scrape a job-search results page: each link matching link_pattern is one posting."""
     r = requests.get(url, headers=UA, timeout=TIMEOUT)
     r.raise_for_status()
     soup, out, seen = BeautifulSoup(r.text, "html.parser"), [], set()
     for a in soup.find_all("a", href=re.compile(link_pattern)):
         link, title = urljoin(url, a["href"].strip()), a.get_text(" ", strip=True)
-        if link in seen or len(title) < 8 or title.lower().startswith("view details"):
+        title = " ".join(title.split())
+        if link in seen or len(title) < 8 or title.lower().startswith("view details") \
+                or (title_include and not re.search(title_include, title, re.I)):
             continue
         seen.add(link)
         card = a
@@ -87,7 +89,7 @@ def collect_all(cfg):
     jobs += [(f"arXiv '{q}'", arxiv, (q, since), False) for q in cfg.get("arxiv_queries", [])]
     for kind, feeds in cfg.get("rss", {}).items():
         jobs += [(f["name"], rss, (f["name"], f["url"], {"papers": "paper", "jobs": "job", "news": "news"}.get(kind, kind), since), f.get("trusted")) for f in feeds]
-    jobs += [(p["name"], html_jobs, (p["name"], p["url"], p["link"], since), True) for p in cfg.get("job_pages", [])]
+    jobs += [(p["name"], html_jobs, (p["name"], p["url"], p["link"], since, p.get("title_include")), True) for p in cfg.get("job_pages", [])]
     items, errors = [], []
     for label, fn, args, trusted in jobs:
         try:

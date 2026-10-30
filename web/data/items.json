@@ -19,7 +19,8 @@
    "importance": 4,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T07:08:19+00:00"
+   "added": "2026-10-30T07:08:19+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO Launches NVS-03 Satellite to Strengthen NavIC System - Udaipur Kiran",
@@ -38,147 +39,8 @@
    "importance": 4,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T07:08:19+00:00"
-  },
-  {
-   "title": "Employment as a doctoral student in Computer Science",
-   "url": "https://euraxess.ec.europa.eu/jobs/476291",
-   "summary": "Malmö University Posted on: 30 October 2026 Employment as a doctoral student in Computer Science Malmö University is an innovative, urban, and internationally-oriented academic institution that, thanks to its committed and experienced staff, contributes to societal development. Here, teachers, researchers, and other employees with various competencies work together to conduct high-quality... Work Locations: Number of offers: 1, Sweden, Malmö universitet Research Field: Computer science Researcher Profile: First Stage Researcher (R1) Funding Programme: Not funded by a EU programme Application Deadline: 20 Nov 2026 - 12:00 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "54a3cabd6fa6634d",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
-  },
-  {
-   "title": "Research Assistant/Associate in Sustainable Carbon-Based Electrodes for Flow Batteries",
-   "url": "https://euraxess.ec.europa.eu/jobs/476293",
-   "summary": "Newcastle University Posted on: 30 October 2026 Research Assistant/Associate in Sustainable Carbon-Based Electrodes for Flow Batteries The Role We are seeking an enthusiastic Research Assistant/Associate to join an exciting Innovate UK-funded feasibility project focused on developing sustainable electrode materials for vanadium redox flow batteries (VRFBs). The collaboration between Newcastle University and industry partners... Work Locations: Number of offers: 1, United Kingdom, Newcastle University, Newcastle, NE1 7RU Research Field: Educational sciences » Education Researcher Profile: First Stage Researcher (R1) Funding Programme: Not funded by a EU programme Application Deadline: 12 Nov 2026 - 23:59 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "1544a37cc6bf386f",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
-  },
-  {
-   "title": "Call for Applications for Associate Professor or Lecturer Position in Division of Liberal Arts and Basic Sciences（Field of Information Science (tentative)）, Center for General Education, Nippon Veterinary and Life Science University.",
-   "url": "https://euraxess.ec.europa.eu/jobs/476294",
-   "summary": "Call for Applications for Associate Professor or Lecturer Position in Division of Liberal Arts and Basic Sciences（Field of Information Science (tentative)）, Center for General Education, Nippon Veterinary and Life Science University.",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "034ff7f1fb8aefc0",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
-  },
-  {
-   "title": "Associate Professor Position in the Institute of Laser Engineering, The University of Osaka",
-   "url": "https://euraxess.ec.europa.eu/jobs/476295",
-   "summary": "JREC-IN Portal Posted on: 30 October 2026 Associate Professor Position in the Institute of Laser Engineering, The University of Osaka [Background of the recruitment and description of the project] * Background of the recruitment and description of the project The Institute of Laser Engineering, Division of Quantum Beam Science, is committed to advancing rapidly evolving laser technologies and creating new academic fields and... Department: General Affairs Section, Institute of Laser Engineering Work Locations: Number of offers: 1, Japan, The University of Osaka, Osaka Research Field: Technology Engineering Chemistry Physics Researcher Profile: Established Researcher (R3) Funding Programme: Not funded by a EU programme Application Deadline: 19 Nov 2026 - 23:59 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "d714780fd161d2b7",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
-  },
-  {
-   "title": "Associate Professor（Division of Architecture）",
-   "url": "https://euraxess.ec.europa.eu/jobs/476296",
-   "summary": "JREC-IN Portal Posted on: 30 October 2026 Associate Professor（Division of Architecture） [Background of the recruitment and description of the project] * Background of the recruitment and description of the project At Hokkaido University, we are actively promoting both education and research activities while relying on diverse human resources and gender-equality. Therefore, we... Work Locations: Number of offers: 1, Japan, Hokkaido University, Hokkaido Research Field: Technology Architecture Engineering Researcher Profile: Established Researcher (R3) Funding Programme: Not funded by a EU programme Application Deadline: 15 Dec 2026 - 23:59 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "4e82eadf498532e0",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
-  },
-  {
-   "title": "A tenure-track associate professor",
-   "url": "https://euraxess.ec.europa.eu/jobs/476297",
-   "summary": "JREC-IN Portal Posted on: 30 October 2026 A tenure-track associate professor [Background of the recruitment and description of the project] * Background of the recruitment and description of the project Please see the URL below https://www.tuat.ac.jp/en/outline/kyousyoku/kyouin/ [Work content and job description] Duties as an Associate Professor (tenure-track) in the... Work Locations: Number of offers: 1, Japan, Tokyo University of Agriculture and Technology, Tokyo Research Field: Other All Researcher Profile: Established Researcher (R3) Funding Programme: Not funded by a EU programme Application Deadline: 14 Dec 2026 - 23:59 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "0cffc4c52d5a0109",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
-  },
-  {
-   "title": "Assistant Professor（Laboratory of Groundwater and Mass Transport, Division of Sustainable Resources Engineering）",
-   "url": "https://euraxess.ec.europa.eu/jobs/476298",
-   "summary": "JREC-IN Portal Posted on: 30 October 2026 Assistant Professor（Laboratory of Groundwater and Mass Transport, Division of Sustainable Resources Engineering） [Background of the recruitment and description of the project] * Background of the recruitment and description of the project At Hokkaido University, we are actively promoting both education and research activities while relying on diverse human resources and gender-equality. Therefore, we... Work Locations: Number of offers: 1, Japan, Hokkaido University, Hokkaido Research Field: Technology Engineering Researcher Profile: Recognised Researcher (R2) Established Researcher (R3) Funding Programme: Not funded by a EU programme Application Deadline: 27 Nov 2026 - 23:59 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "c25161280021f0d2",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
+   "added": "2026-10-30T07:08:19+00:00",
+   "region": "India"
   },
   {
    "title": "LEO PNT Market worth $0.95 billion by 2031 - Exclusive Report by MarketsandMarkets™ - PR Newswire",
@@ -197,7 +59,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:43:59+00:00"
+   "added": "2026-10-30T06:43:59+00:00",
+   "region": "Other"
   },
   {
    "title": "Security and Service Engineer",
@@ -217,7 +80,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "ESA at Spaceport Norway 2026",
@@ -237,7 +101,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "ESA and Norway pen projects for resilient satellite navigation",
@@ -257,7 +122,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "New contracts to modernise Galileo ground segment for next generation",
@@ -277,7 +143,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "ESA procures four new Galileo Second Generation satellites",
@@ -297,7 +164,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "War in Space? The US has to be ready – Washington Post",
@@ -317,7 +185,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Other"
   },
   {
    "title": "UK is asking users about 60kHz time signal",
@@ -337,7 +206,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "ARK Electronics Introduces G5 P8 RTK GPS with GNSS Interference Protection - Unmanned Systems Technology",
@@ -357,7 +227,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Other"
   },
   {
    "title": "India to launch NVS-03 satellite to bolster NAVIC - GPS World",
@@ -377,7 +248,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "George Municipality faces renewed criticism over restrictions on NAVIC monitoring access - George Herald",
@@ -397,7 +269,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "‘NavIC remarks twisted into anti-China narrative’: Army flags digitally altered video - The Statesman",
@@ -417,7 +290,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "Cyclone Arnab poses challenge to ISRO’s NavIC revival mission - DT Next",
@@ -437,7 +311,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO to launch GSLV-F18 carrying NVS-03 satellite to restore NavIC positioning services - Startup Pedia",
@@ -457,7 +332,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO GSLV-F18 launch on October 30: NVS-03 satellite launch time, where to watch LIVE, NavIC features and significance - ET Now",
@@ -477,7 +353,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO to launch NVS-03 satellite tomorrow to revive NavIC - NewsBytes",
@@ -497,7 +374,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO’s NVS-03 launch set for October 30 to boost NavIC - Kalinga TV",
@@ -517,7 +395,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "India"
   },
   {
    "title": "Ukraine finds Russia’s Geran drones fitted with a compass that works through GPS jamming, but Western electronics still at their core - Euromaidan Press",
@@ -537,7 +416,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "GPS jamming over Europe is also disrupting satellites in space - Technology Org",
@@ -557,7 +437,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "LEO PNT Market worth $0.95 billion by 2031 - Exclusive Report by MarketsandMarkets™ - Yahoo Finance",
@@ -577,27 +458,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Lecturer I - Surveying",
-   "url": "https://euraxess.ec.europa.eu/jobs/475276",
-   "summary": "Times Higher Education Posted on: 24 October 2026 Lecturer I - Surveying THE PAPUA NEW GUINEA UNIVERSITY OF TECHNOLOGY The Papua New Guinea University of Technology’s School of Surveying and Land Studies is actively looking for qualified professionals to fill the Lecturer 1 in Surveying position for the Surveying Section. SCHOOL OF SURVEYING & LAND STUDIES Lecturer I... ... Research Field: Geography Researcher Profile: Recognised Researcher (R2) Established Researcher (R3) Funding Programme: Not funded by a EU programme Application Deadline: 4 Nov 2026 - 00:00 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "ff2f067897b62744",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Other"
   },
   {
    "title": "PhD Researcher: Event-Based GNSS Receivers for Ultra-Low-Power Positioning (fixed-term)",
@@ -617,7 +479,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "CPI-26-580. Proyecto: «Autonomous robot navigation in the wild using satellite-based 3D geographical information (ROBOSAT).",
@@ -637,7 +500,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "SLAM & Autonomous Navigation Researcher",
@@ -657,7 +521,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "Postdoctoral Researcher: Event-Driven GNSS Receivers for Ultra-Low-Power Positioning (Fixed-term)",
@@ -677,47 +542,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Research Scholarship (BI)",
-   "url": "https://euraxess.ec.europa.eu/jobs/473947",
-   "summary": "Universidade Politécnica de Coimbra Posted on: 19 October 2026 Research Scholarship (BI) Two R&D Research Grants (BI) within the framework of the CRIARTE project – Ref. COMPETE2030-FEDER-01192200 - 17402, co-financed by Portugal 2030 through the European Regional Development Fund (ERDF), under the Thematic Programme for Innovation and Digital Transition – Compete 2030.The grant is... Department: DGRH Work Locations: Number of offers: 2, Portugal, Instituto Superior de Engenharia de Coimbra, Coimbra, 3030-199, Coimbra,  R. Pedro Nunes, Alto de São João, 3030-199 Coimbra Research Field: Engineering » Other Researcher Profile: First Stage Researcher (R1) Funding Programme: Not funded by a EU programme Application Deadline: 2 Nov 2026 - 23:59 (Europe/Lisbon)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "bdc04bc7ff4256e2",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "R1 – PhD position in Neuromorphic Devices and Hardware Implementation",
-   "url": "https://euraxess.ec.europa.eu/jobs/472818",
-   "summary": "FUNDACIO INSTITU DE RECERCA EN ENERGIA DE CATALUNYA Posted on: 14 October 2026 R1 – PhD position in Neuromorphic Devices and Hardware Implementation The Nanoionics and Fuel Cells group at the Catalonia Institute for Energy Research (IREC) is seeking a motivated MSc graduate in Physics, Electronic Engineering, Materials Science, Nanoscience or a related field to pursue a PhD within SELDON – Smart Edge and Low-power Neuromorphic Computing Devices... Work Locations: Number of offers: 1, Spain, IREC, BARCELONA, 08930, Barcelona Research Field: Other Researcher Profile: First Stage Researcher (R1) Funding Programme: Other EU programme Application Deadline: 4 Nov 2026 - 16:51 (Europe/Madrid)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "210dc6cdc446b7bb",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "Open Competition for the Position of POST DOC Assistant Professor (M/F/N) in the Research Staff Group at the Institute of Geodesy and Geoinformatics",
@@ -737,67 +563,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Coupled physical modeling of subglacial hydrology and ice flow dynamics in Greenland, from seasonal to long-term scales (M/F)",
-   "url": "https://euraxess.ec.europa.eu/jobs/471975",
-   "summary": "CNRS - National Center for Scientific Research Posted on: 10 October 2026 Coupled physical modeling of subglacial hydrology and ice flow dynamics in Greenland, from seasonal to long-term scales (M/F) The primary objective of this position is to bring about this paradigm shift by making quantitative predictions through coupled modeling using the modified GlaDS subglacial hydrology model and the Elmer/Ice ice flow model. The research project will proceed in the following three successive stages... Department: Institut des géosciences de l'environnement Work Locations: Number of offers: 1, France, Institut des géosciences de l'environnement, ST MARTIN D HERES Research Field: Environmental science Environmental science » Earth science Environmental science » Global change Researcher Profile: F",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "1eee356316d16d60",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Marie Sklodowska-Curie Actions Doctoral Network BlueOcean",
-   "url": "https://euraxess.ec.europa.eu/jobs/471660",
-   "summary": "Times Higher Education Posted on: 9 October 2026 Marie Sklodowska-Curie Actions Doctoral Network BlueOcean This PhD aims to develop novel robotic monitoring and data processing methods to document changes in dynamic seafloor environments over large spatial scales. Motivation: Understanding how the seafloor evolves is critical for environmental monitoring and subsea infrastructure inspection. Natural... Work Locations: Number of offers: 1, United Kingdom, UNIVERSITY OF SOUTHAMPTON, Southampton Research Field: Engineering Researcher Profile: Recognised Researcher (R2) First Stage Researcher (R1) Funding Programme: Horizon 2020 Application Deadline: 4 Nov 2026 - 00:00 (UTC)",
-   "source": "EURAXESS (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (GNSS)",
-   "id": "7cb6050b653234c5",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "HRS2026/445 Investigador/a postdoctoral - detección y geolocalización RFI por satélite / Postdoctoral Researcher - Satellite RFI Detection and Geolocation",
-   "url": "https://euraxess.ec.europa.eu/jobs/474839",
-   "summary": "HRS2026/445 Investigador/a postdoctoral - detección y geolocalización RFI por satélite / Postdoctoral Researcher - Satellite RFI Detection and Geolocation",
-   "source": "EURAXESS (satellite navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (satellite navigation)",
-   "id": "93c36b223c1cf0d5",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "LLVM Compiler Toolchain for Vector Processors Targeting AI Applications in Space and Defence",
@@ -817,47 +584,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Postdoc in 5G/6G Non-Terrestrial Networks & Signal Processing",
-   "url": "https://euraxess.ec.europa.eu/jobs/470912",
-   "summary": "University of Luxembourg Posted on: 7 October 2026 Postdoc in 5G/6G Non-Terrestrial Networks & Signal Processing About us The University of Luxembourg is an international research university with a distinctly multilingual and interdisciplinary character. The Interdisciplinary Centre for Security, Reliability and Trust (SnT) at the University of Luxembourg is a leading international research and innovation... Work Locations: Number of offers: 1, Luxembourg, University of Luxembourg, Luxembourg Research Field: Educational sciences » Education Researcher Profile: Recognised Researcher (R2) Funding Programme: Not funded by a EU programme Application Deadline: 6 Oct 2027 - 03:00 (UTC)",
-   "source": "EURAXESS (satellite navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (satellite navigation)",
-   "id": "cbadcfd532dd2bcf",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "PhD Candidate in AI for ship traffic monitoring",
-   "url": "https://euraxess.ec.europa.eu/jobs/470716",
-   "summary": "NTNU Norwegian University of Science and Technology Posted on: 6 October 2026 PhD Candidate in AI for ship traffic monitoring This is NTNUNTNU is a broad-based university with a technical-scientific profile and a focus in professional education. The university is located in three cities with headquarters in Trondheim.At NTNU, 9,000 employees and 43,000 students work to create knowledge for a better world.You will find more... Department: Department of Engineering Cybernetics (ITK) Work Locations: Number of offers: 1, Norway, Department of Engineering Cybernetics (ITK), Trondheim, 7491, Høgskoleringen 1 Research Field: Engineering » Control engineering Engineering » Maritime engineering Mathematics » Statistics Computer science » Informatics Researcher Profile: First Stage Researcher (R1) F",
-   "source": "EURAXESS (satellite navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (satellite navigation)",
-   "id": "d2c7371d79de7832",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "Doctoral researcher in GNSS Reflectometry",
@@ -877,27 +605,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Postdoctoral Researcher in AI for Digital Forensics",
-   "url": "https://euraxess.ec.europa.eu/jobs/468931",
-   "summary": "University of Luxembourg Posted on: 29 September 2026 Postdoctoral Researcher in AI for Digital Forensics About us The University of Luxembourg is an international research university with a distinctly multilingual and interdisciplinary character. The Interdisciplinary Centre for Security, Reliability and Trust (SnT) at the University of Luxembourg is a leading international research and innovation... Work Locations: Number of offers: 1, Luxembourg, University of Luxembourg, Luxembourg Research Field: Educational sciences » Education Researcher Profile: Recognised Researcher (R2) Funding Programme: Not funded by a EU programme Application Deadline: 28 Sep 2027 - 03:43 (UTC)",
-   "source": "EURAXESS (satellite navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "EURAXESS (satellite navigation)",
-   "id": "d436a9b38040273c",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "End-to-End Navigation System Engineer (2 Posts)",
@@ -917,47 +626,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Propagation Engineer",
-   "url": "https://jobs.esa.int/job/Noordwijk-Propagation-Engineer/1447668733/",
-   "summary": "Title Propagation Engineer Type of Appointment 4 years, extendable to indefinite Closing Date 4 November 2026 23:59 CET/CEST Workplace Noordwijk, NL Title Propagation Engineer Type of Appointment 4 years, extendable to indefinite Closing Date 4 November 2026 23:59 CET/CEST Workplace Noordwijk, NL Title Propagation Engineer Type of Appointment 4 years, extendable to indefinite Closing Date 4 November 2026 23:59 CET/CEST Workplace Noordwijk, NL Select with space bar to view the full contents of the job information.",
-   "source": "ESA Jobs (navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "ESA Jobs (navigation)",
-   "id": "71e0b8d6dfb2558c",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Head of the Systems and Project Support Section",
-   "url": "https://jobs.esa.int/job/Darmstadt-Head-of-the-Systems-and-Project-Support-Section/1450262033/",
-   "summary": "Title Head of the Systems and Project Support Section Type of Appointment 4 years, extendable to indefinite Closing Date 12 November 2026 23:59 CET/CEST Workplace Darmstadt, DE",
-   "source": "ESA Jobs (navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "ESA Jobs (navigation)",
-   "id": "3f0d69bf185f7364",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "Galileo Services Implementation Coordinator",
@@ -977,87 +647,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Product Assurance and Safety Manager",
-   "url": "https://jobs.esa.int/job/Noordwijk-Product-Assurance-and-Safety-Manager/1449912333/",
-   "summary": "Title Product Assurance and Safety Manager Type of Appointment 4 years, extendable to indefinite Closing Date 11 November 2026 23:59 CET/CEST Workplace Noordwijk, NL",
-   "source": "ESA Jobs (navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "ESA Jobs (navigation)",
-   "id": "44e7d985f5b25ecc",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Lead End-to-End Performance Engineer",
-   "url": "https://jobs.esa.int/job/Noordwijk-Lead-End-to-End-Performance-Engineer/1448559633/",
-   "summary": "Title Lead End-to-End Performance Engineer Type of Appointment 4 years, extendable to indefinite Closing Date 7 November 2026 23:59 CET/CEST Workplace Noordwijk, NL",
-   "source": "ESA Jobs (navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "ESA Jobs (navigation)",
-   "id": "97424f707799e8a3",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "CAT Project Manager",
-   "url": "https://jobs.esa.int/job/Noordwijk-CAT-Project-Manager/1448589833/",
-   "summary": "Title CAT Project Manager Type of Appointment 4 years, extendable to indefinite Closing Date 6 November 2026 23:59 CET/CEST Workplace Noordwijk, NL Title CAT Project Manager Type of Appointment 4 years, extendable to indefinite Closing Date 6 November 2026 23:59 CET/CEST Workplace Noordwijk, NL Title CAT Project Manager Type of Appointment 4 years, extendable to indefinite Closing Date 6 November 2026 23:59 CET/CEST Workplace Noordwijk, NL Select with space bar to view the full contents of the job information.",
-   "source": "ESA Jobs (navigation)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "ESA Jobs (navigation)",
-   "id": "e30bc316b6b86d84",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
-  },
-  {
-   "title": "Full Professor, Associate Professor, or Assistant Professor in Defense-related Technologies for U...",
-   "url": "https://www.nature.com/naturecareers/job/12864589/full-professor-associate-professor-or-assistant-professor-in-defense-related-technologies-for-u-/",
-   "summary": "Full Professor, Associate Professor, or Assistant Professor in Defense-related Technologies for U... Odense, Fyn (DK) Competitive University of Southern Denmark (SDU) You will become part of an interdisciplinary and agile research environment with strong ties to the internationally recognized robotics ecosystem i...",
-   "source": "Nature Careers (GNSS)",
-   "date": "2026-10-30",
-   "kind_hint": "job",
-   "doi": null,
-   "venue": "Nature Careers (GNSS)",
-   "id": "5689e8eb31fae475",
-   "ai_tries": 0,
-   "relevant": true,
-   "category": "job",
-   "tier": "unknown",
-   "ai_summary": null,
-   "importance": 2,
-   "deadline": null,
-   "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "Distance-Gated 360-Degree Waypoint Views for Pedestrian Walks: Mapping Fused Step-Count and GNSS Distance onto Virtual Routes, with Walking-Triggered Auto-Close, Distance-Based Prefetch and Intro-plus-Loop Omnidirectional Video",
@@ -1076,7 +667,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Other"
   },
   {
    "title": "Industry Day: Multi-Component Security Monitoring System",
@@ -1095,7 +687,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:26:57+00:00"
+   "added": "2026-10-30T06:26:57+00:00",
+   "region": "Europe"
   },
   {
    "title": "Resolution of Polar Coordinate Singularities and Jacobian Collapse in GNSS Satellite Tracking via Kalimuthu Boundary Regularization",
@@ -1114,7 +707,8 @@
    "importance": 1,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "region": "Other"
   },
   {
    "title": "Kalimuthu Degenerated Triangle Calculus [K-DTC] as a Unified Geometric Regulator for UAV Collision Avoidance, GNSS Polar Navigation Singularities, and Computer Gimbal Lock",
@@ -1133,7 +727,8 @@
    "importance": 1,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "region": "Other"
   },
   {
    "title": "Neural Terrain Classification and Fuzzy Adaptive Covariance Tuning for Improved Outdoor Mobile Robot Localization",
@@ -1152,7 +747,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "region": "Other"
   },
   {
    "title": "GNSS Polar Navigation and Chart Singularity Resolution via K-DTC Frameworks",
@@ -1171,7 +767,8 @@
    "importance": 1,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "region": "Other"
   },
   {
    "title": "Dynamic Digital Elevation Model of the Green Heart: regional time-dependent elevation models",
@@ -1191,7 +788,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Reproducibility materials for frame-wise segmentation and drift estimation of equatorial plasma bubbles",
@@ -1211,7 +809,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Comment on egusphere-2026-4242",
@@ -1231,7 +830,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "STM32-Based Landmine Detection and GPS Localization Robotic Vehicle",
@@ -1251,7 +851,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Search and Rescue in Tunnels, an Integrated Approach Using Robotic Platforms",
@@ -1271,7 +872,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Excavations at Cobholden Farm, Site E, Eaton Socon, Staploe, Bedfordshire. Archaeological Archive Report",
@@ -1291,7 +893,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "India"
   },
   {
    "title": "Closing Hormuz Without Closing It: Operational Openness and Risk-Mediated Sovereignty",
@@ -1311,7 +914,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Aerodynamic Optimization of Freight Trains. Part 1: Characterization of real-world operation from a full-scale measurement campaign",
@@ -1331,7 +935,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Secure Satellite Communications Using Machine Learning",
@@ -1351,7 +956,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "A new method for detecting aerosols: combining atmospheric detection LiDAR technology with intelligent driving technology",
@@ -1371,7 +977,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Outer Space: The Use of Outer Space in Armed Conflict and its Effects on Civilian Infrastructure",
@@ -1391,7 +998,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Space communications technologies, protocols, and constellations",
@@ -1411,7 +1019,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Spatial Reasoning through Artificial Intelligence",
@@ -1431,7 +1040,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "A multi-stage hybrid optimization framework based on Crocodile Optimization and Beetle Antennae Search for high-precision air quality analytics",
@@ -1451,7 +1061,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "CMOS VCXO",
@@ -1471,7 +1082,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "3.2×2.5mm for Real Time Clock, Portable Instruments, Timing Synchronization TCXO",
@@ -1491,7 +1103,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Children at Risk in Iranian Criminal Policy: Legal Innovations of the 2019 Law on Protection of Children and Adolescents",
@@ -1511,7 +1124,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Recognition-for-access: recognition as an instrument of economic statecraft in the Red Sea–Horn of Africa competition",
@@ -1531,7 +1145,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "ISRO schedules GSLV-F18 launch carrying NavIC satellite NVS-03 - Telangana Today",
@@ -1551,7 +1166,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "India"
   },
   {
    "title": "Plotting scripts for: Global Sampling Characteristics and Coverage Complementarity of 12 GNSS Radio Occultation Constellations",
@@ -1570,7 +1186,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Localize Anywhere Through Adaptive V2X Cooperative Localization for Robust and Precise Urban positioning",
@@ -1589,7 +1206,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Onboard-navigation-aided federated fusion for telemetry tracking of high-dynamic flight-test targets",
@@ -1608,7 +1226,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Rapid earthquake magnitude estimation from fuzzy C-means clustering-weighted fusion of seismogeodetic PGD and PGV",
@@ -1627,7 +1246,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Coseismic Surface Deformation and Fault Slip Distribution of the 2026 Mw 6.8 Kumamoto Earthquake from Multi-Sensor InSAR and GNSS Observations",
@@ -1646,7 +1266,8 @@
    "importance": 2,
    "deadline": null,
    "location": "Japan/Kumamoto",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Improving Water Detection at Tianmu-1 GNSS-R Reflection Points in the Amazon Basin Using Dual-Polarization Observations",
@@ -1665,7 +1286,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Rapid Initial Alignment of Dual-Axis Rotational Inertial Navigation Using Phase-Preserving Angular-Rate Reconstruction and Dynamic Lever-Arm Compensation",
@@ -1684,7 +1306,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Derived observation and model products for sunset-sector F-region restructuring over Taiwan during the 20 January 2026 storm",
@@ -1703,7 +1326,8 @@
    "importance": 2,
    "deadline": null,
    "location": "Taiwan",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Accuracy assessment of real-time single-receiver GNSS velocimetry in marine dynamic environments",
@@ -1722,7 +1346,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "AGGO: Concept and realization of a geodetic observatory in South-America",
@@ -1741,7 +1366,8 @@
    "importance": 2,
    "deadline": null,
    "location": "Argentina",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Multi-constellation and multi-frequency GNSS-IR sea level retrieval using sliding-window and helmert variance component estimation",
@@ -1760,7 +1386,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "KineGuard: An Exogenous Kinematic Gatekeeper Against Feature-Space Illusion and Slow Drag-Off Attacks on Visual-Inertial UAV Navigation.",
@@ -1779,7 +1406,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Are Smartphones Viable for the V2X Transition? A Platoon-Perspective Stability Analysis under Real-World Errors",
@@ -1798,7 +1426,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Gümüşhane – Trabzon Hattı Boyunca Yerkabuğu Hareketlerinin GNSS Verileri ile İzlenmesi",
@@ -1817,7 +1446,8 @@
    "importance": 2,
    "deadline": null,
    "location": "Turkey",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "A method for monitoring aircraft height above ground across diverse landforms using GNSS reflected signals: a field study",
@@ -1836,7 +1466,8 @@
    "importance": 4,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "BDSBAS/MSAS Fusion Positioning Algorithm Based on Sliding Window Variance Component Estimation Enhanced by Feedforward Neural Network and Factor Graph Optimization",
@@ -1855,7 +1486,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Measuring Precipitable Water Vapor through Dual-Band GPS at Rubin Observatory",
@@ -1874,7 +1506,8 @@
    "importance": 3,
    "deadline": null,
    "location": "Chile",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Adaptive Orbit-Aided Vector Tracking for Orbit Determination of LEO Satellites",
@@ -1893,7 +1526,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Gradient flow of magnetic inclination and intensity as a GPS-free guidance mechanism",
@@ -1912,7 +1546,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Site-specific GNSS observation quality assessment and adaptive weighting using LightGBM for RTK deformation monitoring",
@@ -1931,7 +1566,8 @@
    "importance": 4,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "AetherMMS: a space-time GNSS mission planning framework for mobile mapping systems",
@@ -1950,7 +1586,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Global ionospheric modeling based on spherical radial basis functions",
@@ -1969,7 +1606,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "A Recursive Bayesian Overbounding Filter Using Gaussian-Pareto Distributions",
@@ -1988,7 +1626,8 @@
    "importance": 4,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Orbit Uncertainty Covariance Adaptation for LEO Phase and Doppler Differential Positioning",
@@ -2007,7 +1646,8 @@
    "importance": 4,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "ISRO to launch NVS-03 with third atomic clock to enhance NavIC - The News Mill",
@@ -2026,7 +1666,8 @@
    "importance": 4,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "NVS-03 and NavIC Navigation System - Drishti IAS",
@@ -2045,7 +1686,8 @@
    "importance": 2,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Isro NVS-03 satellite launch: The science and setbacks behind NavIC, India’s version of GPS | HT Explainers - Hindustan Times",
@@ -2064,7 +1706,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "ESA and Norway pen projects for resilient satellite navigation - European Space Agency",
@@ -2083,7 +1726,8 @@
    "importance": 3,
    "deadline": null,
    "location": "Norway",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "Isro all set to launch latest NavIC constellation satellite on Friday - Business Standard",
@@ -2102,7 +1746,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "GSLV-F18 set to launch on Friday night 11.51 for give rebirth to the indigenous navigation system NavIC - DT Next",
@@ -2121,7 +1766,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Contract for two additional Galileo satellites - Airbus",
@@ -2140,7 +1786,8 @@
    "importance": 4,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "ISRO to launch NVS-03 satellite as India looks to revive NavIC navigation system - ThePrint",
@@ -2159,7 +1806,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO’s GSLV-F18 To Carry NVS-03, Next-Gen NavIC Satellite With Homegrown Atomic Clock, On 30 October - Swarajya",
@@ -2178,7 +1826,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Isro to launch NVS-03 on Oct 30, but NavIC has a long way to go - The Times of India",
@@ -2197,7 +1846,8 @@
    "importance": 4,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Airbus takes off with contract for two additional Galileo satellites - Computer Weekly",
@@ -2216,7 +1866,8 @@
    "importance": 4,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "u-blox sets a new benchmark for secure GNSS timing with ZED-X20T - TradingView",
@@ -2235,7 +1886,8 @@
    "importance": 3,
    "deadline": null,
    "location": "Switzerland",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "Isro to launch NVS-03: What it means for India's NavIC navigation system - Business Standard",
@@ -2254,7 +1906,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO Schedules NVS-03 Navigation Satellite Launch for October 30, Aims to Strengthen NavIC Services - www.nationpathindia.com",
@@ -2273,7 +1926,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Airbus receives order for two more Galileo satellites with stronger anti-jamming protection - Defence Industry Europe",
@@ -2292,7 +1946,8 @@
    "importance": 4,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "SAT-JAM online map shows where satellites experience GNSS interference - Shipping Telegraph",
@@ -2311,7 +1966,8 @@
    "importance": 4,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "ISRO GSLV-F18 to Launch NVS-03 Navigation Satellite on October 30 - Techgenyz",
@@ -2330,7 +1986,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Airbus Wins Contract For Two More Galileo Satellites - Aviation Business Middle East",
@@ -2349,7 +2006,8 @@
    "importance": 3,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "From Ukraine’s Starlink dependency to India’s NavIC challenge—lessons in space sovereignty - ThePrint",
@@ -2368,7 +2026,8 @@
    "importance": 2,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Airbus and Thales Contracted for 2 Galileo Satellites Each - Via Satellite",
@@ -2387,7 +2046,8 @@
    "importance": 4,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "ESA orders four new Galileo satellites - Nordic Defence Sector",
@@ -2406,7 +2066,8 @@
    "importance": 4,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "ISRO to launch NVS-03 navigation satellite on October 30, 2026, enhancing NavIC services across India - The Economic Times",
@@ -2425,7 +2086,8 @@
    "importance": 4,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "ISRO to launch NVS-03 navigation satellite on October 30: Why the mission is crucial for NavIC - The Economic Times",
@@ -2444,7 +2106,8 @@
    "importance": 4,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Airbus wins contract to build two more Galileo satellites - Investing.com",
@@ -2463,7 +2126,8 @@
    "importance": 3,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "The Indian Space Research Organisation (ISRO) is set to launch its NVS-03 navigation satellite aboard the GSLV-F18 rocket from the Second Launch Pad at Satish Dhawan Space Centre (SDSC-SHAR), in Sriharikota on Friday, October 30, at 11:51 p.m., as p - Instagram",
@@ -2482,7 +2146,8 @@
    "importance": 3,
    "deadline": null,
    "location": "India",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "India"
   },
   {
    "title": "Airbus awarded contract for additional Galileo satellites - ADS Advance",
@@ -2501,7 +2166,8 @@
    "importance": 3,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "Europe Adds Galileo Satellites With Airbus, Thales Alenia Space Deals - Aviation Week",
@@ -2520,7 +2186,8 @@
    "importance": 4,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "Why Autonomous Vehicles Cannot Rely on GNSS Alone for Reliable Positioning - Unmanned Systems Technology",
@@ -2539,7 +2206,8 @@
    "importance": 3,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Other"
   },
   {
    "title": "Airbus wins two Galileo satellites. Airbus stock sits 11.89 percent below its high - ad-hoc-news.de",
@@ -2558,7 +2226,8 @@
    "importance": 2,
    "deadline": null,
    "location": "Europe",
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "region": "Europe"
   },
   {
    "title": "ISRO set to launch NVS-03 tonight to strengthen India’s NavIC navigation network - Madhyamam",
@@ -2578,7 +2247,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "India"
   },
   {
    "title": "ION GNSS+ 2026: Trust, Resilience and a Sky Getting Fuller",
@@ -2598,7 +2268,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "6 Pulsar Satellites Launched into LEO, Marking the Start of Xona’s Production Constellation",
@@ -2618,7 +2289,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   },
   {
    "title": "Inertial Labs, a VIAVI Solutions Company, Accelerates Complex Alt-PNT and Guidance Systems Design with Programmable INS Development Platform",
@@ -2638,7 +2310,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "ai_tries": 0
+   "ai_tries": 0,
+   "region": "Other"
   }
  ]
 }

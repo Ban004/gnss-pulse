@@ -14,7 +14,7 @@ nav{display:flex;gap:6px;margin:10px 0 8px;overflow-x:auto}
 nav button{border:1px solid #8884;background:none;color:var(--text);padding:6px 12px;border-radius:99px;cursor:pointer;white-space:nowrap}
 nav button.on{background:var(--accent);color:#000;border-color:var(--accent)}
 .row{display:flex;gap:8px}input,select{flex:1;padding:8px;border-radius:8px;border:1px solid #8884;background:var(--card);color:var(--text)}
-select{flex:0 0 auto}
+select{flex:0 0 auto}.row{flex-wrap:wrap}input{min-width:160px}
 main{max-width:860px;margin:auto;padding:12px 16px 40px}
 .card{background:var(--card);border-radius:12px;padding:12px 14px;margin:10px 0;border-left:4px solid #8884}
 .card.imp4{border-left-color:#f59e0b}.card.imp5{border-left-color:#ef4444}
@@ -28,7 +28,7 @@ main{max-width:860px;margin:auto;padding:12px 16px 40px}
 <header>
   <h1>🛰️ GNSS <span>Pulse</span></h1><div id="meta">Loading…</div>
   <nav id="tabs"></nav>
-  <div class="row"><input id="q" placeholder="Search title, venue, summary…"><select id="days">
+  <div class="row"><input id="q" placeholder="Search title, venue, summary…"><select id="region"><option value="">🌍 All</option><option>India</option><option>Europe</option><option>Other</option></select><select id="days">
     <option value="1">24h</option><option value="7" selected>7 days</option><option value="30">30 days</option><option value="9999">All</option></select></div>
 </header>
 <main id="list"></main>
@@ -41,20 +41,21 @@ let items=[], tab="Today", saved=new Set(JSON.parse(localStorage.saved||"[]"));
 const $=s=>document.querySelector(s), esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 $("#tabs").innerHTML=Object.keys(TABS).map(t=>`<button data-t="${t}">${t}</button>`).join("");
 $("#tabs").onclick=e=>{if(e.target.dataset.t){tab=e.target.dataset.t;render()}};
-$("#q").oninput=$("#days").onchange=render;
+$("#q").oninput=$("#days").onchange=$("#region").onchange=render;
 $("#list").onclick=e=>{const id=e.target.dataset.star;if(!id)return;saved.has(id)?saved.delete(id):saved.add(id);
   localStorage.saved=JSON.stringify([...saved]);render()};
 function render(){
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.t==tab));
-  const q=$("#q").value.toLowerCase(), cut=Date.now()-$("#days").value*864e5;
+  const q=$("#q").value.toLowerCase(), cut=Date.now()-$("#days").value*864e5, reg=$("#region").value;
   const rows=items.filter(TABS[tab]).filter(i=>tab=="★ Saved"||new Date(i.added)>=cut)
+    .filter(i=>!reg||(i.region||"Other")==reg)
     .filter(i=>!q||(i.title+i.venue+i.ai_summary+i.summary+i.source).toLowerCase().includes(q))
     .sort((a,b)=>b.importance-a.importance||b.added.localeCompare(a.added));
   $("#list").innerHTML=rows.length?rows.map(i=>`<div class="card imp${i.importance}">
     <button class="star" data-star="${i.id}">${saved.has(i.id)?"★":"☆"}</button>
     <a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>
     <div class="tags"><span class="tag">${esc(i.category)}</span>${i.tier&&i.tier!="unknown"?`<span class="tag">${esc(i.tier)}</span>`:""}
-    ${esc(i.venue||i.source)} · ${esc(i.date||"")}${i.deadline?` · ⏰ ${esc(i.deadline)}`:""}${i.location?` · 📍 ${esc(i.location)}`:""}</div>
+    ${esc(i.venue||i.source)} · ${esc(i.date||"")}${i.deadline?` · ⏰ ${esc(i.deadline)}`:""}${i.location||i.region?` · 📍 ${esc(i.location||i.region)}`:""}</div>
     <p class="sum">${esc(i.ai_summary||(i.summary||"").slice(0,260))}</p></div>`).join("")
     :`<div class="empty">Nothing here yet.</div>`;
 }
