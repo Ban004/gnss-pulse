@@ -87,21 +87,47 @@ def _gemini(prompt, key):
     return r, lambda j: j["candidates"][0]["content"]["parts"][0]["text"]
 
 
-def _openai_compatible(url, model):
+def _pick_model(models_url, key, env, prefer, free_only=False):
+    """Choose a model the provider offers right now, so retired model names never break the run."""
+    if os.environ.get(env):
+        return os.environ[env]
+    try:
+        ids = [m["id"] for m in requests.get(models_url, headers={"Authorization": f"Bearer {key}"}, timeout=30).json()["data"]]
+    except Exception:
+        return None
+    if free_only:
+        ids = [i for i in ids if i.endswith(":free")]
+    ids = [i for i in ids if not re.search(r"guard|safety|whisper|tts|embed|vision|-vl|omni|code|audio", i)]
+    for p in prefer:
+        if hit := next((i for i in ids if p in i), None):
+            return hit
+    return ids[0] if ids else None
+
+
+def _openai_compatible(url, models_url, env, prefer, free_only=False):
+    model = {}
+
     def call(prompt, key):
+        if "id" not in model:
+            model["id"] = _pick_model(models_url, key, env, prefer, free_only)
+            print(f"  using model {model['id']}")
+        if not model["id"]:
+            raise QuotaExhausted("no usable model")
         r = requests.post(url, headers={"Authorization": f"Bearer {key}"}, timeout=180, json={
-            "model": model, "temperature": 0.1, "messages": [{"role": "user", "content": prompt}]})
+            "model": model["id"], "temperature": 0.1, "messages": [{"role": "user", "content": prompt}]})
         return r, lambda j: j["choices"][0]["message"]["content"]
     return call
 
 
-# Tried in order; a provider is skipped if its key is missing, and dropped once its quota runs out.
+# Tried in order; a provider is skipped if its key is missing, and dropped once it fails or runs out of quota.
 PROVIDERS = [
     ("Gemini", "GEMINI_API_KEY", _gemini),
     ("Groq", "GROQ_API_KEY", _openai_compatible(
-        "https://api.groq.com/openai/v1/chat/completions", os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"))),
+        "https://api.groq.com/openai/v1/chat/completions", "https://api.groq.com/openai/v1/models", "GROQ_MODEL",
+        ["llama-4-maverick", "gpt-oss-120b", "llama-4", "qwen3", "kimi", "llama"])),
     ("OpenRouter", "OPENROUTER_API_KEY", _openai_compatible(
-        "https://openrouter.ai/api/v1/chat/completions", os.environ.get("OPENROUTER_MODEL", "deepseek/deepseek-chat-v3-0324:free"))),
+        "https://openrouter.ai/api/v1/chat/completions", "https://openrouter.ai/api/v1/models", "OPENROUTER_MODEL",
+        ["deepseek", "gemma-4-31b", "nemotron-3.5-super", "nemotron-3-ultra", "inkling:", "gemma"], free_only=True)),
 ]
 
 
@@ -116,8 +142,8 @@ def _ask(name, fn, key, prompt):
                 print(f"  {name} rate limit; waiting 60s")
                 time.sleep(60)
                 continue
-            if r.status_code in (401, 403):
-                raise QuotaExhausted(f"auth {r.status_code}")
+            if 400 <= r.status_code < 500:
+                raise QuotaExhausted(f"HTTP {r.status_code}: {r.text[:150]}")
             r.raise_for_status()
             text = extract(r.json())
             return json.loads(text[text.index("["):text.rindex("]") + 1])  # tolerate ```json fences
