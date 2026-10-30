@@ -90,6 +90,12 @@ crossref:
     - {name: IEEE Aerospace & Electronic Systems Magazine, issn: 0885-8985}
     - {name: IEEE J. Indoor & Seamless Positioning and Navigation, issn: 2832-7322}
     - {name: IEEE Access, issn: 2169-3536}
+    # Core GNSS journals (also in RSS; Crossref makes sure nothing is missed)
+    - {name: GPS Solutions, issn: 1080-5370}
+    - {name: Journal of Geodesy, issn: 0949-7714}
+    - {name: NAVIGATION (ION), issn: 0028-1522}
+    - {name: Satellite Navigation, issn: 2662-9291}
+    - {name: Journal of Navigation, issn: 0373-4633}
   conferences:  # IEEE conference proceedings (PLANS, IGARSS, ITSC, VTC, ICC…)
     - name: IEEE conferences
       query: GNSS GPS satellite navigation positioning
@@ -185,3 +191,31 @@ job_pages:
   - name: Nature Careers (GNSS)
     url: https://www.nature.com/naturecareers/jobs/?keywords=GNSS
     link: /naturecareers/job/\d+
+
+# Journal quartiles (SCImago SJR, best category). Shown as the Q-badge in the app.
+# Matched against the venue name (case-insensitive substring; prefix "=" for exact match). Journals not listed show no quartile.
+# Edit/extend freely.
+journal_quartiles:
+  ieee transactions on aerospace and electronic systems: Q1
+  ieee transactions on geoscience and remote sensing: Q1
+  ieee transactions on instrumentation and measurement: Q1
+  ieee transactions on vehicular technology: Q1
+  ieee transactions on intelligent transportation systems: Q1
+  ieee transactions on signal processing: Q1
+  ieee transactions on industrial informatics: Q1
+  ieee transactions on industrial electronics: Q1
+  ieee transactions on wireless communications: Q1
+  ieee sensors journal: Q1
+  ieee internet of things journal: Q1
+  ieee journal of selected topics in applied earth observations: Q1
+  ieee geoscience and remote sensing letters: Q1
+  ieee access: Q1
+  gps solutions: Q1
+  journal of geodesy: Q1
+  "navigation: journal of the institute of navigation": Q1
+  navigation (ion): Q1
+  remote sensing of environment: Q1
+  isprs journal of photogrammetry: Q1
+  "=measurement": Q1          # "=" means exact name only (Elsevier Measurement)
+  space weather: Q1
+  "=remote sensing": Q1       # MDPI Remote Sensing, exact name only

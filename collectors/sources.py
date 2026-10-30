@@ -35,7 +35,7 @@ def openalex(query, since):
         src = (w.get("primary_location") or {}).get("source") or {}
         out.append(_item(w.get("title"), w.get("doi") or w.get("id"), abstract, "OpenAlex",
                          w.get("publication_date"), w.get("type") or "paper",
-                         w.get("doi"), src.get("display_name")))
+                         w.get("doi"), src.get("display_name")) | {"issn": src.get("issn") or []})
     return out
 
 
@@ -45,7 +45,7 @@ def crossref(label, query, since, issn=None, extra_filter="", rows=40):
     r = requests.get(url, headers=UA, timeout=60, params={
         "filter": f"from-created-date:{since}" + (f",{extra_filter}" if extra_filter else ""),
         "query.bibliographic": query, "rows": rows,
-        "select": "DOI,title,abstract,container-title,type,published,URL,author"})
+        "select": "DOI,title,abstract,container-title,type,published,URL,author,ISSN"})
     r.raise_for_status()
     out = []
     for w in r.json()["message"]["items"]:
@@ -56,7 +56,7 @@ def crossref(label, query, since, issn=None, extra_filter="", rows=40):
         authors = ", ".join(f"{a.get('given', '')} {a.get('family', '')}".strip() for a in w.get("author", [])[:4])
         venue = (w.get("container-title") or [label])[0]
         out.append(_item(w["title"][0], f"https://doi.org/{w['DOI']}", w.get("abstract", ""), label,
-                         date, w.get("type", "paper"), w["DOI"], venue) | {"authors": authors})
+                         date, w.get("type", "paper"), w["DOI"], venue) | {"authors": authors, "issn": w.get("ISSN", [])})
     return out
 
 

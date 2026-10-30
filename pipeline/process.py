@@ -62,7 +62,6 @@ For each item return a JSON object with:
    mention a keyword (e.g. unrelated physics, CS, chemistry) are NOT relevant.
    News articles about recruitment are category "news" unless they describe a specific opening,
  "category": one of %s,
- "tier": one of "Q1","Q2","Q3","Q4","conference","book","preprint","unknown" (journal quality guess for papers, else "unknown"),
  "summary": a plain 2-line summary (max 40 words),
  "importance": 1-5 (5 = must-see: major result, open position matching GNSS, big launch/product),
  "deadline": "YYYY-MM-DD" or null,
@@ -211,21 +210,55 @@ TYPE_MAP = {"journal-article": "paper", "article": "paper", "review": "paper", "
             "book": "book_chapter", "dissertation": "thesis", "posted-content": "preprint"}
 
 
+QUARTILES = {}  # venue-name table from sources.yaml (filled by main.py)
+SJR = {}        # ISSN -> quartile from data/scimagojr.csv, if present (filled by main.py)
+
+
+def load_sjr(path):
+    """Parse the SCImago export (semicolon CSV, 'Issn' like '15579603, 00189251')."""
+    import csv
+    if not path.exists():
+        return {}
+    out = {}
+    with open(path, encoding="utf-8", errors="replace") as f:
+        for row in csv.DictReader(f, delimiter=";"):
+            q = (row.get("SJR Best Quartile") or "").strip()
+            if q in ("Q1", "Q2", "Q3", "Q4"):
+                for issn in (row.get("Issn") or "").split(","):
+                    if issn.strip():
+                        out[issn.strip().upper()] = q
+    return out
+
+
+def journal_tier(it):
+    venue = (it.get("venue") or "").lower().replace("&", "and")
+    if it["category"] not in ("paper", "article"):
+        return "unknown"
+    for issn in it.get("issn") or []:
+        if q := SJR.get(issn.replace("-", "").upper()):
+            return q
+    # exact name first, then the longest matching key (so "remote sensing" doesn't beat a specific title)
+    hits = [k for k in QUARTILES if (k[1:] == venue if k.startswith("=") else k in venue)]
+    return QUARTILES[max(hits, key=len)] if hits else "unknown"
+
+
 def finalize(it):
     it["kind_hint"] = TYPE_MAP.get(it["kind_hint"], it["kind_hint"])
     it.pop("trusted", None)
     ai = it.pop("ai", None)
     if not ai and it.get("ai_tries") is not None:  # retried old item, still no AI: keep as is
         it["ai_tries"] += 1
+        it["tier"] = journal_tier(it)
         return it
     if ai:
         it.update(relevant=bool(ai.get("relevant")), category=ai.get("category") if ai.get("category") in CATEGORIES else it["kind_hint"],
-                  tier=ai.get("tier", "unknown"), ai_summary=ai.get("summary"),
+                  ai_summary=ai.get("summary"),
                   importance=int(ai.get("importance") or 2), deadline=ai.get("deadline"),
                   location=ai.get("location"), region=ai.get("region") or guess_region(it))
         it.pop("ai_tries", None)
     else:
         it.update(region=guess_region(it))
-        it.update(ai_tries=1, relevant=True, category=it["kind_hint"], tier="unknown", ai_summary=None,
+        it.update(ai_tries=1, relevant=True, category=it["kind_hint"], ai_summary=None,
                   importance=2, deadline=None, location=None)
+    it["tier"] = journal_tier(it)
     return it

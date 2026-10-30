@@ -15,6 +15,9 @@ MAX_ITEMS = 5000
 
 def main():
     cfg = yaml.safe_load((ROOT / "sources.yaml").read_text())
+    process.QUARTILES = {k.lower(): v for k, v in (cfg.get("journal_quartiles") or {}).items()}
+    process.SJR = process.load_sjr(ROOT / "data" / "scimagojr.csv")
+    print(f"Journal rankings: {len(process.SJR)} ISSNs from SCImago, {len(process.QUARTILES)} names from sources.yaml")
     store = json.loads(DATA.read_text()) if DATA.exists() else {"items": []}
     old = store["items"]
 
@@ -38,6 +41,10 @@ def main():
 
     store = {"updated": now, "failed_sources": errors,
              "items": sorted(new + old, key=lambda x: x["added"], reverse=True)[:MAX_ITEMS]}
+    DATA.write_text(json.dumps(store, ensure_ascii=False, indent=1))
+
+    for i in store["items"]:  # keep quartiles current if the ranking file changes
+        i["tier"] = process.journal_tier(i)
     DATA.write_text(json.dumps(store, ensure_ascii=False, indent=1))
 
     telegram.urgent([i for i in new if i["importance"] >= 5])
