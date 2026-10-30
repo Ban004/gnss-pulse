@@ -65,6 +65,36 @@ openalex_queries:
   - BeiDou
   - NavIC
 
+# Crossref: all publishers (IEEE, Elsevier, Springer, Wiley, MDPI, T&F, ION…), all tiers
+crossref:
+  lookback_days: 10
+  queries:
+    - GNSS
+    - satellite navigation
+    - precise point positioning
+    - GNSS reflectometry
+    - GPS BeiDou Galileo positioning
+    - GNSS spoofing jamming interference
+  journal_query: GNSS GPS BeiDou Galileo satellite navigation positioning PNT ionosphere
+  journals:   # IEEE journals & transactions
+    - {name: IEEE Trans. Aerospace & Electronic Systems, issn: 0018-9251}
+    - {name: IEEE Trans. Geoscience & Remote Sensing, issn: 0196-2892}
+    - {name: IEEE Trans. Instrumentation & Measurement, issn: 0018-9456}
+    - {name: IEEE Trans. Vehicular Technology, issn: 0018-9545}
+    - {name: IEEE Trans. Intelligent Transportation Systems, issn: 1524-9050}
+    - {name: IEEE Trans. Signal Processing, issn: 1053-587X}
+    - {name: IEEE Sensors Journal, issn: 1530-437X}
+    - {name: IEEE Internet of Things Journal, issn: 2327-4662}
+    - {name: IEEE JSTARS, issn: 1939-1404}
+    - {name: IEEE Geoscience & Remote Sensing Letters, issn: 1545-598X}
+    - {name: IEEE Aerospace & Electronic Systems Magazine, issn: 0885-8985}
+    - {name: IEEE J. Indoor & Seamless Positioning and Navigation, issn: 2832-7322}
+    - {name: IEEE Access, issn: 2169-3536}
+  conferences:  # IEEE conference proceedings (PLANS, IGARSS, ITSC, VTC, ICC…)
+    - name: IEEE conferences
+      query: GNSS GPS satellite navigation positioning
+      filter: member:263,type:proceedings-article
+
 arxiv_queries:
   - all:GNSS
   - all:"satellite navigation"

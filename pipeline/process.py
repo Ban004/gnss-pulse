@@ -206,7 +206,7 @@ def guess_region(it):
     return "Other"
 
 
-TYPE_MAP = {"article": "paper", "review": "paper", "letter": "paper", "conference-paper": "conference",
+TYPE_MAP = {"journal-article": "paper", "article": "paper", "review": "paper", "letter": "paper", "conference-paper": "conference",
             "conference-abstract": "conference", "proceedings-article": "conference", "book-chapter": "book_chapter",
             "book": "book_chapter", "dissertation": "thesis", "posted-content": "preprint"}
 

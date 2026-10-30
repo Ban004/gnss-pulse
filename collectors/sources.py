@@ -39,6 +39,27 @@ def openalex(query, since):
     return out
 
 
+def crossref(label, query, since, issn=None, extra_filter="", rows=40):
+    """Crossref works whose DOI was first registered since `since` (genuinely new papers)."""
+    url = f"https://api.crossref.org/journals/{issn}/works" if issn else "https://api.crossref.org/works"
+    r = requests.get(url, headers=UA, timeout=60, params={
+        "filter": f"from-created-date:{since}" + (f",{extra_filter}" if extra_filter else ""),
+        "query.bibliographic": query, "rows": rows,
+        "select": "DOI,title,abstract,container-title,type,published,URL,author"})
+    r.raise_for_status()
+    out = []
+    for w in r.json()["message"]["items"]:
+        if not w.get("title"):
+            continue
+        d = (w.get("published") or {}).get("date-parts", [[None]])[0]
+        date = "-".join(f"{x:02d}" for x in d) if d and d[0] else None
+        authors = ", ".join(f"{a.get('given', '')} {a.get('family', '')}".strip() for a in w.get("author", [])[:4])
+        venue = (w.get("container-title") or [label])[0]
+        out.append(_item(w["title"][0], f"https://doi.org/{w['DOI']}", w.get("abstract", ""), label,
+                         date, w.get("type", "paper"), w["DOI"], venue) | {"authors": authors})
+    return out
+
+
 def arxiv(query, since):
     feed = feedparser.parse(requests.get("http://export.arxiv.org/api/query", headers=UA, timeout=TIMEOUT,
         params={"search_query": query, "sortBy": "submittedDate", "sortOrder": "descending",
@@ -87,6 +108,14 @@ def collect_all(cfg):
     since = (dt.date.today() - dt.timedelta(days=cfg.get("lookback_days", 3))).isoformat()
     jobs = [(f"OpenAlex '{q}'", openalex, (q, since), False) for q in cfg.get("openalex_queries", [])]
     jobs += [(f"arXiv '{q}'", arxiv, (q, since), False) for q in cfg.get("arxiv_queries", [])]
+    cr = cfg.get("crossref", {})
+    since = (dt.date.today() - dt.timedelta(days=cr.get("lookback_days", 10))).isoformat()  # publishers index in bursts
+    jobs += [(f"Crossref '{q}'", crossref, ("Crossref", q, since), False) for q in cr.get("queries", [])]
+    jobs += [(j["name"], crossref, (j["name"], cr.get("journal_query", "GNSS"), since, j["issn"]), False)
+             for j in cr.get("journals", [])]
+    jobs += [(c["name"], crossref, (c["name"], c["query"], since, None, c["filter"]), False)
+             for c in cr.get("conferences", [])]
+    since = (dt.date.today() - dt.timedelta(days=cfg.get("lookback_days", 3))).isoformat()
     for kind, feeds in cfg.get("rss", {}).items():
         jobs += [(f["name"], rss, (f["name"], f["url"], {"papers": "paper", "jobs": "job", "news": "news"}.get(kind, kind), since), f.get("trusted")) for f in feeds]
     jobs += [(p["name"], html_jobs, (p["name"], p["url"], p["link"], since, p.get("title_include")), True) for p in cfg.get("job_pages", [])]
