@@ -58,9 +58,9 @@ Items:
 %s"""
 
 
-def gemini_classify(items, batch=20):
+def gemini_classify(items, batch=10):
     key = os.environ.get("GEMINI_API_KEY")
-    model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+    model = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
     if not key:
         print("  No GEMINI_API_KEY: keyword-only mode")
         return False
@@ -72,17 +72,21 @@ def gemini_classify(items, batch=20):
             for i, it in enumerate(chunk))
         body = {"contents": [{"parts": [{"text": PROMPT % (CATEGORIES, listing)}]}],
                 "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}}
-        try:
-            r = requests.post(url, params={"key": key}, json=body, timeout=120)
-            r.raise_for_status()
-            results = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
-            for res in results:
-                if 0 <= int(res.get("i", -1)) < len(chunk):
-                    chunk[int(res["i"])]["ai"] = res
-        except Exception as ex:
-            print(f"  Gemini batch failed ({ex}); falling back to keywords for this batch")
-            if "429" in str(ex):
-                return True  # quota hit: stop calling, rest stay keyword-only
+        for attempt in range(3):
+            try:
+                r = requests.post(url, headers={"x-goog-api-key": key}, json=body, timeout=180)
+                if r.status_code == 429:
+                    print("  Gemini quota hit; rest stay keyword-only")
+                    return True
+                r.raise_for_status()
+                results = json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
+                for res in results:
+                    if 0 <= int(res.get("i", -1)) < len(chunk):
+                        chunk[int(res["i"])]["ai"] = res
+                break
+            except Exception as ex:  # key is in a header, so it never appears in this message
+                print(f"  Gemini batch {start // batch} attempt {attempt + 1} failed: {type(ex).__name__} {getattr(ex, 'response', None) and ex.response.status_code}")
+                time.sleep(15 * (attempt + 1))
         time.sleep(4)  # stay under free-tier rate limit
     return True
 
