@@ -84,8 +84,6 @@ def _openai_compatible(url, model):
 # Tried in order; a provider is skipped if its key is missing, and dropped once its quota runs out.
 PROVIDERS = [
     ("Gemini", "GEMINI_API_KEY", _gemini),
-    ("GitHub Models", "GITHUB_TOKEN", _openai_compatible(
-        "https://models.github.ai/inference/chat/completions", os.environ.get("GITHUB_MODEL", "openai/gpt-4.1-mini"))),
     ("Groq", "GROQ_API_KEY", _openai_compatible(
         "https://api.groq.com/openai/v1/chat/completions", os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"))),
     ("OpenRouter", "OPENROUTER_API_KEY", _openai_compatible(

@@ -13,7 +13,6 @@ permissions:
   contents: write
   pages: write
   id-token: write
-  models: read     # free GitHub Models LLM
 concurrency: { group: collect, cancel-in-progress: false }
 jobs:
   collect:
@@ -26,7 +25,6 @@ jobs:
       - name: Run pipeline
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.8-flash' }}
