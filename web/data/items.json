@@ -50,7 +50,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "54a3cabd6fa6634d",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -70,7 +70,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "1544a37cc6bf386f",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -90,7 +90,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "034ff7f1fb8aefc0",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -110,7 +110,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "d714780fd161d2b7",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -130,7 +130,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "4e82eadf498532e0",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -150,7 +150,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "0cffc4c52d5a0109",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -170,7 +170,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "c25161280021f0d2",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -209,7 +209,7 @@
    "doi": null,
    "venue": "EUSPA",
    "id": "51a161ad72d5ac10",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -229,7 +229,7 @@
    "doi": null,
    "venue": "ESA Navigation",
    "id": "e4c24c201ea4d7f5",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -249,7 +249,7 @@
    "doi": null,
    "venue": "ESA Navigation",
    "id": "d963859f72e38c36",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -269,7 +269,7 @@
    "doi": null,
    "venue": "ESA Navigation",
    "id": "d45e2c68c72da5d1",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -289,7 +289,7 @@
    "doi": null,
    "venue": "ESA Navigation",
    "id": "8208ea1217733b38",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -309,7 +309,7 @@
    "doi": null,
    "venue": "RNTF (Resilient PNT)",
    "id": "5123c45eb1072f10",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -329,7 +329,7 @@
    "doi": null,
    "venue": "RNTF (Resilient PNT)",
    "id": "b7683e6afd0c9d31",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -349,7 +349,7 @@
    "doi": null,
    "venue": "Google News GNSS products",
    "id": "b4a9a8a78a28c2ad",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -369,7 +369,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "af65da8434d4bade",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -389,7 +389,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "05433e1559fbd0e3",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -409,7 +409,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "7b5b03d08638fd12",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -429,7 +429,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "f390ab49a57a09df",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -449,7 +449,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "38c7177d7d81995b",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -469,7 +469,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "5e0e0f33f455b7d2",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -489,7 +489,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "b24c75917d1cfc7d",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -509,7 +509,7 @@
    "doi": null,
    "venue": "Google News NavIC / ISRO",
    "id": "ad3b7e5922896e40",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -529,7 +529,7 @@
    "doi": null,
    "venue": "Google News LEO-PNT / jamming / spoofing",
    "id": "68d12af16bf3b452",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -549,7 +549,7 @@
    "doi": null,
    "venue": "Google News LEO-PNT / jamming / spoofing",
    "id": "18a644d6c7864fdf",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -569,7 +569,7 @@
    "doi": null,
    "venue": "Google News LEO-PNT / jamming / spoofing",
    "id": "b1001601aa6c27e8",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "news",
    "tier": "unknown",
@@ -589,7 +589,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "ff2f067897b62744",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -609,7 +609,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "66b2f0bcda035388",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -629,7 +629,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "7cae635525b053b2",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -649,7 +649,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "4e951e7db3ec0825",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -669,7 +669,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "2e40f2567acb987e",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -689,7 +689,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "bdc04bc7ff4256e2",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -709,7 +709,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "210dc6cdc446b7bb",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -729,7 +729,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "df3e7b908a052f9b",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -749,7 +749,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "1eee356316d16d60",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -769,7 +769,7 @@
    "doi": null,
    "venue": "EURAXESS (GNSS)",
    "id": "7cb6050b653234c5",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -789,7 +789,7 @@
    "doi": null,
    "venue": "EURAXESS (satellite navigation)",
    "id": "93c36b223c1cf0d5",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -809,7 +809,7 @@
    "doi": null,
    "venue": "EURAXESS (satellite navigation)",
    "id": "fa6f1dfa697186ab",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -829,7 +829,7 @@
    "doi": null,
    "venue": "EURAXESS (satellite navigation)",
    "id": "cbadcfd532dd2bcf",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -849,7 +849,7 @@
    "doi": null,
    "venue": "EURAXESS (satellite navigation)",
    "id": "d2c7371d79de7832",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -869,7 +869,7 @@
    "doi": null,
    "venue": "EURAXESS (satellite navigation)",
    "id": "299448291fa345a6",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -889,7 +889,7 @@
    "doi": null,
    "venue": "EURAXESS (satellite navigation)",
    "id": "d436a9b38040273c",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -909,7 +909,7 @@
    "doi": null,
    "venue": "ESA Jobs (navigation)",
    "id": "fd52ff1c4ee65872",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -929,7 +929,7 @@
    "doi": null,
    "venue": "ESA Jobs (navigation)",
    "id": "71e0b8d6dfb2558c",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -949,7 +949,7 @@
    "doi": null,
    "venue": "ESA Jobs (navigation)",
    "id": "3f0d69bf185f7364",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -969,7 +969,7 @@
    "doi": null,
    "venue": "ESA Jobs (navigation)",
    "id": "e556f0e62b0ab538",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -989,7 +989,7 @@
    "doi": null,
    "venue": "ESA Jobs (navigation)",
    "id": "44e7d985f5b25ecc",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -1009,7 +1009,7 @@
    "doi": null,
    "venue": "ESA Jobs (navigation)",
    "id": "97424f707799e8a3",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -1029,7 +1029,7 @@
    "doi": null,
    "venue": "ESA Jobs (navigation)",
    "id": "e30bc316b6b86d84",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -1049,7 +1049,7 @@
    "doi": null,
    "venue": "Nature Careers (GNSS)",
    "id": "5689e8eb31fae475",
-   "ai_tries": 3,
+   "ai_tries": 0,
    "relevant": true,
    "category": "job",
    "tier": "unknown",
@@ -1190,7 +1190,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Reproducibility materials for frame-wise segmentation and drift estimation of equatorial plasma bubbles",
@@ -1209,7 +1210,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Comment on egusphere-2026-4242",
@@ -1228,7 +1230,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "STM32-Based Landmine Detection and GPS Localization Robotic Vehicle",
@@ -1247,7 +1250,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Search and Rescue in Tunnels, an Integrated Approach Using Robotic Platforms",
@@ -1266,7 +1270,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Excavations at Cobholden Farm, Site E, Eaton Socon, Staploe, Bedfordshire. Archaeological Archive Report",
@@ -1285,7 +1290,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Closing Hormuz Without Closing It: Operational Openness and Risk-Mediated Sovereignty",
@@ -1304,7 +1310,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Aerodynamic Optimization of Freight Trains. Part 1: Characterization of real-world operation from a full-scale measurement campaign",
@@ -1323,7 +1330,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Secure Satellite Communications Using Machine Learning",
@@ -1342,7 +1350,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "A new method for detecting aerosols: combining atmospheric detection LiDAR technology with intelligent driving technology",
@@ -1361,7 +1370,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Outer Space: The Use of Outer Space in Armed Conflict and its Effects on Civilian Infrastructure",
@@ -1380,7 +1390,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Space communications technologies, protocols, and constellations",
@@ -1399,7 +1410,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Spatial Reasoning through Artificial Intelligence",
@@ -1418,7 +1430,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "A multi-stage hybrid optimization framework based on Crocodile Optimization and Beetle Antennae Search for high-precision air quality analytics",
@@ -1437,7 +1450,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "CMOS VCXO",
@@ -1456,7 +1470,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "3.2×2.5mm for Real Time Clock, Portable Instruments, Timing Synchronization TCXO",
@@ -1475,7 +1490,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Children at Risk in Iranian Criminal Policy: Legal Innovations of the 2019 Law on Protection of Children and Adolescents",
@@ -1494,7 +1510,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Recognition-for-access: recognition as an instrument of economic statecraft in the Red Sea–Horn of Africa competition",
@@ -1513,7 +1530,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "ISRO schedules GSLV-F18 launch carrying NavIC satellite NVS-03 - Telangana Today",
@@ -1532,7 +1550,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T06:05:30+00:00"
+   "added": "2026-10-30T06:05:30+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Plotting scripts for: Global Sampling Characteristics and Coverage Complementarity of 12 GNSS Radio Occultation Constellations",
@@ -2558,7 +2577,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "ai_tries": 0
   },
   {
    "title": "ION GNSS+ 2026: Trust, Resilience and a Sky Getting Fuller",
@@ -2577,7 +2597,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "ai_tries": 0
   },
   {
    "title": "6 Pulsar Satellites Launched into LEO, Marking the Start of Xona’s Production Constellation",
@@ -2596,7 +2617,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "ai_tries": 0
   },
   {
    "title": "Inertial Labs, a VIAVI Solutions Company, Accelerates Complex Alt-PNT and Guidance Systems Design with Programmable INS Development Platform",
@@ -2615,7 +2637,8 @@
    "importance": 2,
    "deadline": null,
    "location": null,
-   "added": "2026-10-30T05:51:50+00:00"
+   "added": "2026-10-30T05:51:50+00:00",
+   "ai_tries": 0
   }
  ]
 }
