@@ -5,8 +5,22 @@ ICON = {"job": "💼", "internship": "🎓", "phd": "🎓", "postdoc": "🔬", "
         "conference": "🎤", "book_chapter": "📚", "product": "🛰️", "news": "📰", "cfp": "📢", "event": "📅"}
 
 
+def _chat_id(token):
+    """Use TELEGRAM_CHAT_ID if set, else the latest chat that messaged the bot."""
+    if chat := os.environ.get("TELEGRAM_CHAT_ID"):
+        return chat
+    try:
+        updates = requests.get(f"https://api.telegram.org/bot{token}/getUpdates", timeout=30).json()["result"]
+        chat = next(u["message"]["chat"]["id"] for u in reversed(updates) if "message" in u)
+        os.environ["TELEGRAM_CHAT_ID"] = str(chat)
+        return chat
+    except Exception:
+        print("  Telegram: no chat found. Send any message to your bot first.")
+
+
 def send(text):
-    token, chat = os.environ.get("TELEGRAM_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+    token = os.environ.get("TELEGRAM_TOKEN")
+    chat = token and _chat_id(token)
     if not (token and chat):
         print("  Telegram not configured; skipping")
         return
