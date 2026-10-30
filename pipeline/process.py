@@ -211,7 +211,11 @@ TYPE_MAP = {"journal-article": "paper", "article": "paper", "review": "paper", "
 
 
 QUARTILES = {}  # venue-name table from sources.yaml (filled by main.py)
-SJR = {}        # ISSN -> quartile from data/scimagojr.csv, if present (filled by main.py)
+SJR = {}        # ISSN and "title:<name>" -> quartile from data/scimagojr.csv, if present (filled by main.py)
+
+
+def _norm(name):
+    return re.sub(r"[^a-z0-9]+", " ", name.lower().replace("&amp;", "and").replace("&", "and")).strip()
 
 
 def load_sjr(path):
@@ -224,6 +228,7 @@ def load_sjr(path):
         for row in csv.DictReader(f, delimiter=";"):
             q = (row.get("SJR Best Quartile") or "").strip()
             if q in ("Q1", "Q2", "Q3", "Q4"):
+                out.setdefault("title:" + _norm(row.get("Title", "")), q)  # file is rank-sorted: keep best-known
                 for issn in (row.get("Issn") or "").split(","):
                     if issn.strip():
                         out[issn.strip().upper()] = q
@@ -237,9 +242,11 @@ def journal_tier(it):
     for issn in it.get("issn") or []:
         if q := SJR.get(issn.replace("-", "").upper()):
             return q
-    # exact name first, then the longest matching key (so "remote sensing" doesn't beat a specific title)
+    # curated table next: longest matching key wins (so "remote sensing" doesn't beat a specific title)
     hits = [k for k in QUARTILES if (k[1:] == venue if k.startswith("=") else k in venue)]
-    return QUARTILES[max(hits, key=len)] if hits else "unknown"
+    if hits:
+        return QUARTILES[max(hits, key=len)]
+    return SJR.get("title:" + _norm(it.get("venue") or ""), "unknown")
 
 
 def finalize(it):
