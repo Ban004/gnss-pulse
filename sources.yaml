@@ -1,0 +1,97 @@
+# Edit this file to add feeds/keywords — no code changes needed.
+lookback_days: 3
+
+keywords:
+  strong:   # any one of these => GNSS-related
+    - gnss
+    - global navigation satellite
+    - satellite navigation
+    - galileo satellite
+    - glonass
+    - beidou
+    - navic
+    - irnss
+    - qzss
+    - sbas
+    - precise point positioning
+    - ppp-rtk
+    - real-time kinematic
+    - gnss reflectometry
+    - gnss-r
+    - radio occultation
+    - pseudorange
+    - carrier phase
+    - leo pnt
+    - positioning, navigation and timing
+    - spoofing
+    - jamming
+  weak:     # need a second context word
+    - gps
+    - rtk
+    - ppp
+    - positioning
+    - navigation
+    - ionospher
+    - tec
+    - multipath
+    - geodesy
+    - receiver
+  context:
+    - satellite
+    - signal
+    - receiver
+    - orbit
+    - clock
+    - antenna
+    - ionospher
+    - geodetic
+    - positioning
+    - integrity
+    - ins
+    - inertial
+  exclude:  # noise
+    - gps tracking of patients
+    - gps collar
+    - animal movement
+    - wildlife tracking
+    - gprs
+
+openalex_queries:
+  - GNSS
+  - "satellite navigation"
+  - "precise point positioning"
+  - "GNSS reflectometry"
+  - "GNSS spoofing"
+  - BeiDou
+  - NavIC
+
+arxiv_queries:
+  - all:GNSS
+  - all:"satellite navigation"
+  - all:"precise point positioning"
+
+rss:
+  papers:
+    - name: GPS Solutions
+      url: https://link.springer.com/search.rss?facet-journal-id=10291&channel-name=GPS%20Solutions
+    - name: Journal of Geodesy
+      url: https://link.springer.com/search.rss?facet-journal-id=190&channel-name=Journal%20of%20Geodesy
+    - name: NAVIGATION (ION)
+      url: https://navi.ion.org/rss/current.xml
+    # MDPI (Remote Sensing, Sensors) blocks RSS bots; covered via OpenAlex.
+  jobs:
+    - name: GNSS postdoc
+      url: https://news.google.com/rss/search?hl=en&q=GNSS+postdoc
+    - name: GNSS PhD position
+      url: https://news.google.com/rss/search?hl=en&q=GNSS+%22PhD+position%22
+    - name: GNSS internship
+      url: https://news.google.com/rss/search?hl=en&q=GNSS+internship
+    - name: GNSS engineer jobs
+      url: https://news.google.com/rss/search?hl=en&q=%22GNSS+engineer%22+OR+%22navigation+engineer%22+hiring
+    - name: Satellite navigation careers
+      url: https://news.google.com/rss/search?hl=en&q=%22satellite+navigation%22+(vacancy+OR+career+OR+recruitment)
+  news:
+    - name: Google News GNSS
+      url: https://news.google.com/rss/search?hl=en&q=GNSS+OR+%22satellite+navigation%22+OR+NavIC+OR+BeiDou+OR+Galileo+satellite
+    - name: Inside GNSS
+      url: https://insidegnss.com/feed/
