@@ -39,14 +39,26 @@ def openalex(query, since):
     return out
 
 
+def _crossref_get(url, params):
+    """Crossref asks clients to stay slow; back off on 429."""
+    import time
+    for wait in (2, 10, 30, 60):
+        time.sleep(1.5)
+        r = requests.get(url, headers=UA, timeout=60, params=params)
+        if r.status_code != 429:
+            r.raise_for_status()
+            return r
+        time.sleep(wait)
+    r.raise_for_status()
+
+
 def crossref(label, query, since, issn=None, extra_filter="", rows=40):
     """Crossref works whose DOI was first registered since `since` (genuinely new papers)."""
     url = f"https://api.crossref.org/journals/{issn}/works" if issn else "https://api.crossref.org/works"
-    r = requests.get(url, headers=UA, timeout=60, params={
+    r = _crossref_get(url, {
         "filter": f"from-created-date:{since}" + (f",{extra_filter}" if extra_filter else ""),
         "query.bibliographic": query, "rows": rows,
         "select": "DOI,title,abstract,container-title,type,published,URL,author,ISSN"})
-    r.raise_for_status()
     out = []
     for w in r.json()["message"]["items"]:
         if not w.get("title"):

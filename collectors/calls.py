@@ -5,7 +5,7 @@ import re
 import feedparser
 import requests
 from bs4 import BeautifulSoup
-from collectors.sources import UA, TIMEOUT
+from collectors.sources import UA, TIMEOUT, _crossref_get
 
 MONTHS = r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?"
 
@@ -71,10 +71,9 @@ def ieee_special_issues(journals, quartile_of, days=365):
     out = []
     for j in journals:
         try:
-            r = requests.get(f"https://api.crossref.org/journals/{j['issn']}/works", headers=UA, timeout=60, params={
+            r = _crossref_get(f"https://api.crossref.org/journals/{j['issn']}/works", {
                 "filter": f"from-created-date:{since}", "query.bibliographic": "call for papers special issue section",
                 "rows": 20, "select": "DOI,title,created,container-title"})
-            r.raise_for_status()
         except Exception as ex:
             print(f"  {j['name']}: CFP lookup failed ({type(ex).__name__})")
             continue
