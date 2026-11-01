@@ -99,6 +99,9 @@ const fmt=d=>d?new Date(d+"T00:00").toLocaleDateString(undefined,{day:"numeric",
 const DL=[["submission_opens","Submission opens"],["abstract_deadline","Abstract deadline"],["full_paper_deadline","Full paper deadline"],
   ["notification","Notification"],["camera_ready","Camera-ready"],["start","Conference starts"]];
 function confStatus(c){
+  // abstract-based conferences: once abstracts close, the full-paper date is only for accepted authors
+  if(c.abstract_deadline&&c.abstract_deadline<today&&!(c.submission_type=="full paper")){
+    const st=c.start&&c.start>=today;return["closed",`Abstracts closed${c.full_paper_deadline>=today?" · final papers due "+fmt(c.full_paper_deadline):""}${st?" · conference "+fmt(c.start):""}`,st?"9"+c.start:"99"]}
   const subs=["abstract_deadline","full_paper_deadline"].map(k=>c[k]).filter(Boolean).sort();
   const next=subs.find(d=>d>=today);
   if(next){const n=daysTo(next);
