@@ -264,5 +264,11 @@ calls:
   extra_journals:
     - {name: IEEE Journal of Selected Topics in Signal Processing, issn: 1932-4553}
     - {name: IEEE Trans. Aerospace & Electronic Systems (electronic), issn: 1557-9603}
+  # Special-issue calls you spot yourself (Springer, MDPI, Elsevier and IEEE society pages block bots).
+  # Add one entry per call; it shows in the app with its quartile and a countdown, and is hidden after the deadline.
+  # Example:
+  #   - {title: "Special Issue on Resilient PNT", journal: GPS Solutions, issn: 1080-5370,
+  #      deadline: 2027-03-31, url: "https://link.springer.com/journal/10291/collections", guest_editors: "A. Author"}
+  my_calls: []
   wikicfp_categories: [gnss, navigation, positioning, localization, geodesy]
   wikicfp_keywords: [gnss, gps, navigation, positioning, localization, localisation, pnt, geodes, satellite, beidou, galileo]

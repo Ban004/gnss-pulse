@@ -65,6 +65,10 @@ def conferences(cfg, previous, llm_json):
     return out
 
 
+GNSS_TOPIC = (r"gnss|gps|galileo|beidou|navic|satellite navigation|navigation|positioning|localization|localisation|pnt|"
+              r"timing|geodes|ionospher|space weather|reflectometry|spoofing|jamming|interference|integrity|inertial|leo")
+
+
 def ieee_special_issues(journals, quartile_of, days=365):
     """IEEE publishes each 'Call for Papers: Special Issue on …' as a DOI document; find them via Crossref."""
     since = (dt.date.today() - dt.timedelta(days=days)).isoformat()
@@ -79,7 +83,10 @@ def ieee_special_issues(journals, quartile_of, days=365):
             continue
         for w in r.json()["message"]["items"]:
             title = (w.get("title") or [""])[0]
-            if not re.search(r"call for (papers|submissions)|special (issue|section)", title, re.I):
+            # only open calls ("Guest Editorial…" = already published issue), and only GNSS-type topics
+            if not re.search(r"call for (papers|submissions|contributions)", title, re.I) or re.search(r"conference|symposium|meeting|workshop", title, re.I):
+                continue
+            if not re.search(GNSS_TOPIC, title, re.I):
                 continue
             q = quartile_of(j["issn"])
             if q not in ("Q1", "Q2"):
@@ -105,9 +112,26 @@ def wikicfp(categories, keywords):
             parsed = [dt.datetime.strptime(d, "%b %d, %Y").date() for d in dates]
             if parsed and max(parsed) < today:
                 continue  # past event
+            years = [int(y) for y in re.findall(r"\b(20\d\d)\b", e.title)]
+            if years and max(years) < today.year:
+                continue  # old edition (e.g. "Special Issue MDPI Sensors 2019")
             if not any(k in text.lower() for k in keywords):
                 continue
             kind = "journal" if re.search(r"special issue|journal|transactions", text, re.I) else "conference"
             out.append({"title": e.title, "summary": re.sub(r"<[^>]+>", " ", e.get("summary", ""))[:300],
                         "url": e.link, "kind": kind, "when": dates[0] if dates else None, "source": "WikiCFP"})
     return list({i["url"]: i for i in out}.values())
+
+
+def my_calls(entries, quartile_of):
+    """Calls you add by hand in sources.yaml (calls.my_calls). Hidden after their deadline."""
+    today = dt.date.today().isoformat()
+    out = []
+    for e in entries:
+        deadline = str(e.get("deadline") or "") or None
+        if deadline and deadline < today:
+            continue
+        out.append({"title": e["title"], "journal": e["journal"], "tier": quartile_of(str(e.get("issn", ""))) if e.get("issn") else e.get("tier"),
+                    "url": e.get("url"), "deadline": deadline, "guest_editors": e.get("guest_editors"),
+                    "posted": None, "source": "Added by you"})
+    return out

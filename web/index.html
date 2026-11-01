@@ -185,9 +185,9 @@ function render(){
       `<button class="chip ${callView==k?"on":""}" data-call="${k}">${l}</button>`).join("")}</div>`;
     if(callView=="conf"){html+=`<div class="hint">Major GNSS / navigation / geodesy conferences, sorted by the next submission deadline.</div>`+
       cfp.conferences.filter(m).sort((a,b)=>confStatus(a)[2].localeCompare(confStatus(b)[2])).map(confCard).join("")}
-    else if(callView=="journal"){html+=`<div class="hint">Open calls for special issues in Q1/Q2 journals (IEEE Transactions &amp; journals, WikiCFP). Open the notice for deadline and guest editors.</div>`+
-      (si.sort((a,b)=>(b.posted||"").localeCompare(a.posted||"")).map(x=>`<div class="item k-paper"><a class="t" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>
-        <div class="m">${x.tier?`<span class="tag tier">${esc(x.tier)}</span>`:""}<span>${esc(x.journal||x.source)}</span>${x.posted?`<span>· posted ${fmt(x.posted)}</span>`:""}${x.when?`<span>· ${esc(x.when)}</span>`:""}</div>
+    else if(callView=="journal"){html+=`<div class="hint">Open special-issue calls in Q1/Q2 GNSS journals. Publishers block automated access, so add calls you find under <code>my_calls</code> in sources.yaml; WikiCFP and IEEE notices are added automatically.</div>`+
+      (si.sort((a,b)=>(a.deadline||"9").localeCompare(b.deadline||"9")).map(x=>`<div class="item k-paper"><a class="t" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>
+        <div class="m">${x.tier&&x.tier!="unknown"?`<span class="tag tier">${esc(x.tier)}</span>`:""}${x.deadline?`<span class="st ${daysTo(x.deadline)<=14?"soon":"open"}">Deadline ${fmt(x.deadline)} · ${daysTo(x.deadline)} days left</span>`:""}<span>${esc(x.journal||x.source)}</span>${x.guest_editors?`<span>· Guest editors: ${esc(x.guest_editors)}</span>`:""}${x.posted?`<span>· posted ${fmt(x.posted)}</span>`:""}${x.when?`<span>· ${esc(x.when)}</span>`:""}</div>
         ${x.summary?`<p>${esc(x.summary)}</p>`:""}</div>`).join("")||`<div class="empty">No open special-issue calls found right now.</div>`)}
     else html+=`<div class="hint">Other GNSS-related calls from WikiCFP (workshops, smaller conferences). Check quality before submitting.</div>`+
       (wc.map(x=>`<div class="item"><a class="t" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><p>${esc(x.summary)}</p></div>`).join("")||`<div class="empty">Nothing right now.</div>`);

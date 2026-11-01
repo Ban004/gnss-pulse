@@ -72,6 +72,10 @@ def deadlines(cfps, site_url=None, days=14):
             d = c.get(key)
             if d and today <= d <= soon:
                 rows.append((d, f"⏰ <b>{escape(d)}</b>: <a href=\"{escape(c['url'])}\">{escape(c.get('edition') or c['name'])}</a> {label}"))
+    for x in cfps.get("special_issues", []):
+        d = x.get("deadline")
+        if d and today <= d <= soon:
+            rows.append((d, f"⏰ <b>{escape(d)}</b>: special issue <a href=\"{escape(x.get('url') or '')}\">{escape(x['title'])}</a> ({escape(x['journal'])})"))
     if rows:
         send("📢 <b>Upcoming deadlines (next 14 days)</b>\n\n" + "\n".join(r for _, r in sorted(rows))
              + (f"\n\nAll calls: {site_url}#calls" if site_url else ""))
