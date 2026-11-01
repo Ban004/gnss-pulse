@@ -60,6 +60,17 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:6px;padding:5px 10px;font-size:13px;cursor:pointer}
 .btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}.btn.del{color:#d1242f}
 .folderbar{display:flex;gap:8px;align-items:center;margin:-4px 0 14px;color:var(--muted);font-size:13px}
+.conf{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.conf .hd{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between}
+.conf .nm{font-weight:700;font-size:15.5px;text-decoration:none}.conf .nm:hover{color:var(--accent)}
+.conf .full{color:var(--muted);font-size:12.5px;margin-top:2px}
+.st{font-size:12px;font-weight:600;border-radius:12px;padding:2px 10px;white-space:nowrap}
+.st.open{background:#0e8a5f1f;color:var(--job)}.st.soon{background:#c2410c1f;color:var(--hot)}.st.up{background:#1f6feb1a;color:var(--accent)}.st.closed{background:var(--chip);color:var(--muted)}
+.dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 14px;margin-top:10px;font-size:12.5px}
+.dl div{border-left:2px solid var(--line);padding-left:8px}.dl b{display:block;font-size:13.5px;color:var(--text)}.dl span{color:var(--muted)}
+.dl .past b{color:var(--muted);text-decoration:line-through}.dl .next{border-left-color:var(--hot)}.dl .next b{color:var(--hot)}
+.conf .nt{margin-top:8px;font-size:12.5px;color:var(--muted)}
+.hint{color:var(--muted);font-size:12.5px;margin:-6px 0 14px}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}
 </style>
 </head>
@@ -80,7 +91,30 @@ const kind=i=>KIND[i.category]||"news";
 const LABEL={paper:"Journal",preprint:"Preprint",conference:"Conference",book_chapter:"Book chapter",thesis:"Thesis",
   job:"Job",phd:"PhD",postdoc:"Postdoc",internship:"Internship",news:"News",product:"Product",event:"Event",cfp:"Call for papers",
   dataset:"Dataset",software:"Software",other:"Other"};
-const TABS=[["overview","Today"],["paper","Papers"],["job","Jobs"],["news","News & Industry"],["saved","Saved"]];
+const TABS=[["overview","Today"],["paper","Papers"],["job","Jobs"],["news","News & Industry"],["calls","Calls for Papers"],["saved","Saved"]];
+let cfp={conferences:[],special_issues:[],wikicfp:[]},callView="conf";
+const today=new Date().toISOString().slice(0,10);
+const daysTo=d=>Math.round((new Date(d+"T00:00")-new Date(today+"T00:00"))/864e5);
+const fmt=d=>d?new Date(d+"T00:00").toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"}):"TBA";
+const DL=[["submission_opens","Submission opens"],["abstract_deadline","Abstract deadline"],["full_paper_deadline","Full paper deadline"],
+  ["notification","Notification"],["camera_ready","Camera-ready"],["start","Conference starts"]];
+function confStatus(c){
+  const subs=["abstract_deadline","full_paper_deadline"].map(k=>c[k]).filter(Boolean).sort();
+  const next=subs.find(d=>d>=today);
+  if(next){const n=daysTo(next);
+    if(c.submission_opens&&c.submission_opens>today)return["up",`Opens ${fmt(c.submission_opens)}`,next];
+    return[n<=14?"soon":"open",n==0?"Closes today":`Open · closes in ${n} day${n>1?"s":""}`,next]}
+  if(c.start&&c.start>=today)return["closed","Submissions closed · conference "+fmt(c.start),"9"+c.start];
+  return["closed",c.edition?"Closed · next edition TBA":"Dates TBA","99"]}
+function confCard(c){const[st,label]=confStatus(c);const nextKey=DL.map(([k])=>k).find(k=>c[k]&&c[k]>=today);
+  return`<div class="conf"><div class="hd"><div><a class="nm" href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.edition||c.short)}</a>
+    <span class="tag">${esc(c.rank||"")}</span> <span class="tag">${esc(c.area||"")}</span>
+    <div class="full">${esc(c.name)}${c.start?` · ${fmt(c.start)}${c.end&&c.end!=c.start?" – "+fmt(c.end):""}`:""}${c.location?" · 📍 "+esc(c.location):""}</div></div>
+    <span class="st ${st}">${label}</span></div>
+    ${DL.some(([k])=>c[k])?`<div class="dl">${DL.filter(([k])=>c[k]).map(([k,l])=>`<div class="${c[k]<today?"past":k==nextKey?"next":""}"><span>${l}</span><b>${fmt(c[k])}</b></div>`).join("")}</div>`
+      :`<div class="nt">Dates not published yet. <a href="${esc(c.url)}" target="_blank" rel="noopener">Check the official site →</a></div>`}
+    ${c.submission_type||c.publication||c.notes?`<div class="nt">${[c.submission_type&&"Submission: "+esc(c.submission_type),c.publication&&"Published in: "+esc(c.publication),esc(c.notes||"")].filter(Boolean).join(" · ")}</div>`:""}
+    ${c.checked?`<div class="nt" style="font-size:11.5px">Dates read from the official page on ${fmt(c.checked)}. Always confirm on the site.</div>`:""}</div>`}
 const SUB={paper:["paper","conference","preprint","book_chapter","thesis"],job:["phd","postdoc","job","internship"],
   news:["news","product","event","cfp","dataset","software"]};
 let items=[],updated,tab=location.hash.slice(1)||"overview",sub="",region="",days=30;
@@ -127,7 +161,7 @@ function render(){
   history.replaceState(null,"","#"+tab);
   const all=items.filter(matches),count=k=>all.filter(i=>kind(i)==k).length;
   $("#tabs").innerHTML=TABS.map(([k,l])=>`<button data-tab="${k}" class="${tab==k?"on":""}">${l}${
-    k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${savedIds().size}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
+    k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${savedIds().size}</span>`:k=="calls"?`<span class="n">${cfp.conferences.filter(c=>confStatus(c)[0]!="closed").length}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
   const meta=`<div class="meta">${items.length} items tracked · last updated ${updated?new Date(updated).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}):"n/a"}</div>`;
   let html=meta;
   if(tab=="overview"){
@@ -140,7 +174,23 @@ function render(){
       <div class="tile" data-go="news"><b style="color:var(--news)">${t("news")}</b><span>News &amp; industry today</span></div>
       <div class="tile" data-go="job" data-region="India"><b>${all.filter(i=>kind(i)=="job"&&i.region=="India").length}</b><span>Open positions in India</span></div>
       <div class="tile" data-go="job" data-region="Europe"><b>${all.filter(i=>kind(i)=="job"&&i.region=="Europe").length}</b><span>Open positions in Europe</span></div></div>
+      ${(()=>{const up=cfp.conferences.map(c=>[c,confStatus(c)]).filter(([,s])=>s[0]=="open"||s[0]=="soon"||s[0]=="up").sort((a,b)=>a[1][2].localeCompare(b[1][2])).slice(0,4);
+      return up.length?`<div class="panel" style="margin-bottom:18px"><h3>📢 Upcoming deadlines<a data-go="calls">All calls →</a></h3>${up.map(([c,s])=>`<div class="row"><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.edition||c.short)}</a> <span class="st ${s[0]}">${s[1]}</span><div class="sub">${esc(c.name)}${c.location?" · "+esc(c.location):""}</div></div>`).join("")}</div>`:""})()}
       <div class="grid">${panel("📄 Latest papers","paper",recent("paper"),8)}${panel("💼 Latest positions","job",recent("job"))}${panel("📰 News & industry","news",recent("news"))}</div>`;
+  }else if(tab=="calls"){
+    const q=$("#q").value.trim().toLowerCase(),m=o=>!q||JSON.stringify(o).toLowerCase().includes(q);
+    const si=[...cfp.special_issues.map(x=>({...x,kind:"journal"})),...cfp.wikicfp.filter(x=>x.kind=="journal")].filter(m);
+    const wc=cfp.wikicfp.filter(x=>x.kind=="conference").filter(m);
+    html+=`<div class="filters">${[["conf",`Conferences (${cfp.conferences.length})`],["journal",`Journal special issues (${si.length})`],["more",`More calls (${wc.length})`]].map(([k,l])=>
+      `<button class="chip ${callView==k?"on":""}" data-call="${k}">${l}</button>`).join("")}</div>`;
+    if(callView=="conf"){html+=`<div class="hint">Major GNSS / navigation / geodesy conferences, sorted by the next submission deadline.</div>`+
+      cfp.conferences.filter(m).sort((a,b)=>confStatus(a)[2].localeCompare(confStatus(b)[2])).map(confCard).join("")}
+    else if(callView=="journal"){html+=`<div class="hint">Open calls for special issues in Q1/Q2 journals (IEEE Transactions &amp; journals, WikiCFP). Open the notice for deadline and guest editors.</div>`+
+      (si.sort((a,b)=>(b.posted||"").localeCompare(a.posted||"")).map(x=>`<div class="item k-paper"><a class="t" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>
+        <div class="m">${x.tier?`<span class="tag tier">${esc(x.tier)}</span>`:""}<span>${esc(x.journal||x.source)}</span>${x.posted?`<span>· posted ${fmt(x.posted)}</span>`:""}${x.when?`<span>· ${esc(x.when)}</span>`:""}</div>
+        ${x.summary?`<p>${esc(x.summary)}</p>`:""}</div>`).join("")||`<div class="empty">No open special-issue calls found right now.</div>`)}
+    else html+=`<div class="hint">Other GNSS-related calls from WikiCFP (workshops, smaller conferences). Check quality before submitting.</div>`+
+      (wc.map(x=>`<div class="item"><a class="t" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><p>${esc(x.summary)}</p></div>`).join("")||`<div class="empty">Nothing right now.</div>`);
   }else{
     let rows;
     if(tab=="saved"){
@@ -180,7 +230,8 @@ function openPop(btn,id){closePop();const p=document.createElement("div");p.clas
   p.querySelector("input[type=text]").addEventListener("keydown",e=>{if(e.key=="Enter")p.querySelector("[data-pnew]").click()})}
 document.addEventListener("click",e=>{
   if(!e.target.closest(".pop"))closePop();
-  const d=e.target.closest("[data-tab],[data-go],[data-sub],[data-region],[data-star],[data-folder],[data-act]");if(!d)return;
+  const d=e.target.closest("[data-tab],[data-go],[data-sub],[data-region],[data-star],[data-folder],[data-act],[data-call]");if(!d)return;
+  if(d.dataset.call){callView=d.dataset.call;render();return}
   if(d.dataset.star){openPop(d,d.dataset.star);return}
   if(d.dataset.folder!==undefined)folder=d.dataset.folder;
   else if(d.dataset.act=="newfolder"){const n=prompt("Folder name:")?.trim();if(n&&!folders[n]){folders[n]=[];store();folder=n}}
@@ -194,6 +245,7 @@ document.addEventListener("click",e=>{
   render()});
 document.addEventListener("change",e=>{if(e.target.id=="days"){days=+e.target.value;render()}});
 $("#q").addEventListener("input",render);
+fetch("data/calls.json?"+Date.now()).then(r=>r.json()).then(d=>{cfp=d;if(items.length)render()}).catch(()=>{});
 fetch("data/items.json?"+Date.now()).then(r=>r.json()).then(d=>{items=d.items;updated=d.updated;render()})
   .catch(()=>{$("#view").innerHTML=`<div class="empty">No data yet. The collector hasn't run.</div>`});
 </script>

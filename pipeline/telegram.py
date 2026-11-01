@@ -58,3 +58,20 @@ def digest(items, site_url=None):
 def urgent(items):
     for it in items:
         send("🚨 <b>High priority</b>\n" + fmt(it))
+
+
+def deadlines(cfps, site_url=None, days=14):
+    """Remind about conference deadlines in the next `days` days."""
+    import datetime as dt
+    from html import escape
+    today, soon = dt.date.today().isoformat(), (dt.date.today() + dt.timedelta(days=days)).isoformat()
+    rows = []
+    for c in cfps.get("conferences", []):
+        for key, label in (("submission_opens", "submissions open"), ("abstract_deadline", "abstract deadline"),
+                           ("full_paper_deadline", "full-paper deadline"), ("camera_ready", "camera-ready")):
+            d = c.get(key)
+            if d and today <= d <= soon:
+                rows.append((d, f"⏰ <b>{escape(d)}</b>: <a href=\"{escape(c['url'])}\">{escape(c.get('edition') or c['name'])}</a> {label}"))
+    if rows:
+        send("📢 <b>Upcoming deadlines (next 14 days)</b>\n\n" + "\n".join(r for _, r in sorted(rows))
+             + (f"\n\nAll calls: {site_url}#calls" if site_url else ""))

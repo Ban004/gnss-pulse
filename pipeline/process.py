@@ -145,7 +145,9 @@ def _ask(name, fn, key, prompt):
                 raise QuotaExhausted(f"HTTP {r.status_code}: {r.text[:150]}")
             r.raise_for_status()
             text = extract(r.json())
-            return json.loads(text[text.index("["):text.rindex("]") + 1])  # tolerate ```json fences
+            if "[" in text and (text.find("[") < text.find("{") or "{" not in text):
+                return json.loads(text[text.index("["):text.rindex("]") + 1])  # tolerate ```json fences
+            return [json.loads(text[text.index("{"):text.rindex("}") + 1])]
         except QuotaExhausted:
             raise
         except Exception as ex:  # keys are in headers, so they never appear in this message
@@ -155,9 +157,27 @@ def _ask(name, fn, key, prompt):
     raise QuotaExhausted("3 failed attempts")
 
 
+_dead = set()  # providers that ran out during this run
+
+
+def llm_json(prompt):
+    """One prompt → parsed JSON array, using the first provider that still works."""
+    for name, key_env, fn in PROVIDERS:
+        if name in _dead or not os.environ.get(key_env):
+            continue
+        try:
+            res = _ask(name, fn, os.environ[key_env], prompt)
+            time.sleep(4)
+            return res
+        except QuotaExhausted as ex:
+            print(f"  {name} unavailable ({str(ex)[:80]}); trying next")
+            _dead.add(name)
+    return None
+
+
 def classify(items, batch=10):
     """Fill item["ai"] using the first provider that still has quota."""
-    providers = [(n, fn, os.environ[k]) for n, k, fn in PROVIDERS if os.environ.get(k)]
+    providers = [(n, fn, os.environ[k]) for n, k, fn in PROVIDERS if os.environ.get(k) and n not in _dead]
     if not providers:
         print("  No LLM keys: keyword-only mode")
         return
@@ -176,6 +196,7 @@ def classify(items, batch=10):
                 break
             except QuotaExhausted as ex:
                 print(f"  {name} out of quota/unauthorized ({ex}); switching provider")
+                _dead.add(name)
                 providers.pop(0)
         else:
             print("  All LLM providers exhausted; remaining items retried next run")

@@ -219,3 +219,50 @@ journal_quartiles:
   "=measurement": Q1          # "=" means exact name only (Elsevier Measurement)
   space weather: Q1
   "=remote sensing": Q1       # MDPI Remote Sensing, exact name only
+
+# ── Calls for papers ─────────────────────────────────────────────
+# Conferences: dates are AI-extracted daily from the official pages (only dates written there).
+calls:
+  conferences:
+    - {name: ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division), short: ION GNSS+, rank: Flagship, area: GNSS,
+       url: "https://www.ion.org/gnss/", pages: ["https://www.ion.org/gnss/call-for-abstracts.cfm"]}
+    - {name: IEEE/ION Position Location and Navigation Symposium, short: PLANS, rank: Flagship, area: PNT,
+       url: "https://www.ion.org/plans/", pages: ["https://www.ion.org/plans/call-for-abstracts.cfm"]}
+    - {name: ION International Technical Meeting, short: ION ITM, rank: Major, area: PNT,
+       url: "https://www.ion.org/itm/", pages: ["https://www.ion.org/itm/call-for-abstracts.cfm"]}
+    - {name: ION Joint Navigation Conference, short: ION JNC, rank: Major, area: PNT (defense),
+       url: "https://www.ion.org/jnc/", pages: ["https://www.ion.org/jnc/call-for-abstracts.cfm"]}
+    - {name: ION Pacific PNT Meeting, short: Pacific PNT, rank: Major, area: PNT,
+       url: "https://www.ion.org/pnt/", pages: ["https://www.ion.org/pnt/call-for-abstracts.cfm"]}
+    - {name: European Navigation Conference, short: ENC, rank: Flagship, area: GNSS/PNT (Europe),
+       url: "https://enc-series.org/"}
+    - {name: Indoor Positioning and Indoor Navigation (IEEE), short: IPIN, rank: Major, area: Positioning,
+       url: "https://ipin-conference.org/"}
+    - {name: Intl. Conference on Localization and GNSS, short: ICL-GNSS, rank: Major, area: GNSS,
+       url: "https://events.tuni.fi/icl-gnss/"}
+    - {name: IEEE Intl. Geoscience and Remote Sensing Symposium, short: IGARSS, rank: Flagship, area: GNSS-R / remote sensing,
+       url: "https://2027.ieeeigarss.org/", pages: ["https://2027.ieeeigarss.org/", "https://2027.ieeeigarss.org/important_dates.php"]}
+    - {name: IEEE India Geoscience and Remote Sensing Symposium, short: InGARSS, rank: Major, area: Remote sensing (India),
+       url: "https://ingarss2026.co.in/"}
+    - {name: IEEE Aerospace Conference, short: AeroConf, rank: Major, area: Aerospace / navigation,
+       url: "https://aeroconf.org/"}
+    - {name: Intl. Conference on Information Fusion, short: FUSION, rank: Major, area: Sensor fusion / navigation,
+       url: "https://fusion2027.org/"}
+    - {name: IEEE Intl. Conference on Acoustics, Speech and Signal Processing, short: ICASSP, rank: Flagship, area: Signal processing,
+       url: "https://2027.ieeeicassp.org/"}
+    - {name: IEEE Intelligent Transportation Systems Conference, short: ITSC, rank: Major, area: Vehicle positioning,
+       url: "https://www.ieee-itsc.org/"}
+    - {name: EGU General Assembly, short: EGU, rank: Flagship, area: Geodesy / ionosphere,
+       url: "https://www.egu27.eu/"}
+    - {name: AGU Annual Meeting, short: AGU, rank: Flagship, area: Geodesy / space weather,
+       url: "https://www.agu.org/annual-meeting"}
+    - {name: China Satellite Navigation Conference, short: CSNC, rank: Major, area: BeiDou / GNSS,
+       url: "http://www.beidou.org/"}
+    - {name: IGS Workshop, short: IGS, rank: Major, area: GNSS geodesy,
+       url: "https://igs.org/workshop/"}
+  # IEEE special-issue calls are looked up for every journal in crossref.journals (+ these), kept if SJR Q1/Q2
+  extra_journals:
+    - {name: IEEE Journal of Selected Topics in Signal Processing, issn: 1932-4553}
+    - {name: IEEE Trans. Aerospace & Electronic Systems (electronic), issn: 1557-9603}
+  wikicfp_categories: [gnss, navigation, positioning, localization, geodesy]
+  wikicfp_keywords: [gnss, gps, navigation, positioning, localization, localisation, pnt, geodes, satellite, beidou, galileo]

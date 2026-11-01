@@ -5,12 +5,31 @@ import os
 import sys
 from pathlib import Path
 import yaml
+from collectors import calls
 from collectors.sources import collect_all
 from pipeline import process, telegram
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "web" / "data" / "items.json"
+CALLS = ROOT / "web" / "data" / "calls.json"
 MAX_ITEMS = 5000
+
+
+def update_calls(cfg):
+    """Conference deadlines + journal special issues (once a day is enough)."""
+    old = json.loads(CALLS.read_text()) if CALLS.exists() else {}
+    if old.get("updated", "")[:10] == dt.date.today().isoformat() and "--calls" not in sys.argv:
+        return old
+    print("Calls for papers...")
+    c = cfg.get("calls", {})
+    sjr_q = lambda issn: process.SJR.get(issn.replace("-", "").upper()) or "unknown"
+    out = {"updated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+           "conferences": calls.conferences(c.get("conferences", []), old.get("conferences", []), process.llm_json),
+           "special_issues": calls.ieee_special_issues(cfg["crossref"]["journals"] + c.get("extra_journals", []), sjr_q),
+           "wikicfp": calls.wikicfp(c.get("wikicfp_categories", []), c.get("wikicfp_keywords", []))}
+    print(f"  {len(out['conferences'])} conferences, {len(out['special_issues'])} IEEE special issues, {len(out['wikicfp'])} WikiCFP")
+    CALLS.write_text(json.dumps(out, ensure_ascii=False, indent=1))
+    return out
 
 
 def main():
@@ -47,10 +66,13 @@ def main():
         i["tier"] = process.journal_tier(i)
     DATA.write_text(json.dumps(store, ensure_ascii=False, indent=1))
 
+    cfps = update_calls(cfg)
+
     telegram.urgent([i for i in new if i["importance"] >= 5])
     if "--digest" in sys.argv:
         cutoff = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=24)).isoformat()
         telegram.digest([i for i in store["items"] if i["added"] >= cutoff], os.environ.get("SITE_URL"))
+        telegram.deadlines(cfps, os.environ.get("SITE_URL"))
 
 
 if __name__ == "__main__":
