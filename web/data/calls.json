@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T09:58:26+00:00",
+ "updated": "2026-11-03T02:42:24+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -31,7 +31,7 @@
    "edition": "IEEE/ION PLANS 2027",
    "start": "2027-04-12",
    "end": "2027-04-15",
-   "location": null,
+   "location": "Portland, Oregon",
    "submission_opens": null,
    "abstract_deadline": "2026-10-16",
    "full_paper_deadline": "2027-02-01",
@@ -39,9 +39,9 @@
    "camera_ready": null,
    "submission_type": "both",
    "publication": null,
-   "notes": "Tutorials on April 12; manuscripts not received by Feb 1 will be withdrawn",
-   "page_hash": "df2beb0eb8f2",
-   "checked": "2026-11-01"
+   "notes": "Tutorials on April 12; manuscripts must be uploaded by February 1, 2027",
+   "page_hash": "3a3769d702d9",
+   "checked": "2026-11-03"
   },
   {
    "name": "ION International Technical Meeting",
@@ -301,7 +301,7 @@
    "url": "https://www.egu27.eu/",
    "rank": "Flagship",
    "area": "Geodesy / ionosphere",
-   "edition": "EGU27",
+   "edition": "EGU General Assembly 2027",
    "start": "2027-04-04",
    "end": "2027-04-09",
    "location": "Vienna, Austria",
@@ -312,9 +312,9 @@
    "camera_ready": null,
    "submission_type": "abstract",
    "publication": null,
-   "notes": "The assembly will be held both in‑person at the Austria Center Vienna and online.",
-   "page_hash": "4d8128934a72",
-   "checked": "2026-11-01"
+   "notes": "abstract submission open from 2026-11-02; financial support applications due 2026-12-01",
+   "page_hash": "fd25345d258b",
+   "checked": "2026-11-03"
   },
   {
    "name": "AGU Annual Meeting",
