@@ -1,13 +1,40 @@
 {
- "updated": "2026-11-05T01:05:08+00:00",
+ "updated": "2026-11-05T09:49:14+00:00",
  "failed_sources": [
   "OpenAlex 'GNSS'",
   "OpenAlex 'satellite navigation'",
+  "OpenAlex 'precise point positioning'",
+  "OpenAlex 'GNSS reflectometry'",
+  "OpenAlex 'GNSS spoofing'",
   "OpenAlex 'BeiDou'",
-  "OpenAlex 'NavIC'",
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "The study on consistency and reliability of GNSS receiver antenna type-mean and individual phase center corrections",
+   "url": "https://doi.org/10.1007/s10291-026-02174-x",
+   "summary": "Abstract \n                   This study investigates the consistency and reliability of GNSS receiver antenna type-mean phase center corrections by analyzing both individual and type-mean Phase Center Correction (PCC) models. Using data from approximately 70 geodetic-grade antennas within the Polish ASG-EUPOS network, we quantify variations in calibration models across multiple GNSS signals. Differences between individual and type-mean calibrations are assessed in both the pattern and position domains. The analysis reveals signal-specific discrepancies, particularly for GPS L2 (G02), where deviations reach up to 5 mm in dPCC RMS and 30 mm in MAX values, impacting ionosphere-free (IF) linear-combinations. Position-domain validation via Precise Point Positioning further demonstrates vertical offsets exceeding 5 mm due to outdated or incomplete PCC models, with systematic biases arising from cross-system substitutions, e.g., GPS corrections used for GALILEO signals. The findings emphasize the need for consistent, up-to-date calibration models, and propose robust, signal-specific metrics to support the reliable use of GNSS data in regional and global reference frames.",
+   "source": "Crossref",
+   "date": "2026-11-05",
+   "kind_hint": "paper",
+   "doi": "10.1007/s10291-026-02174-x",
+   "venue": "GPS Solutions",
+   "authors": "Grzegorz Krzan, Tobias Kersten, Karol Dawidowicz",
+   "issn": [
+    "1080-5370",
+    "1521-1886"
+   ],
+   "id": "813215a648e4ed25",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Evaluates consistency of GNSS receiver antenna type‑mean vs. individual phase‑center corrections using ~70 Polish ASG‑EUPOS antennas, highlighting signal‑specific discrepancies.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Poland",
+   "region": "Europe",
+   "tier": "Q1",
+   "added": "2026-11-05T09:49:14+00:00"
+  },
   {
    "title": "Design of a Real-Time Dynamic Compensation GNSS Receiver for Time Transfer",
    "url": "https://doi.org/10.1109/cpem68396.2026.11756892",
