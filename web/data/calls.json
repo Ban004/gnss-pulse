@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T00:58:35+00:00",
+ "updated": "2026-11-05T01:05:08+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -39,9 +39,9 @@
    "camera_ready": null,
    "submission_type": "both",
    "publication": null,
-   "notes": "Tutorials on April 12; manuscripts must be uploaded by February 1, 2027",
-   "page_hash": "3a3769d702d9",
-   "checked": "2026-11-03"
+   "notes": "Tutorials on April 12; manuscripts not received by Feb 1 will be withdrawn",
+   "page_hash": "28d08613a21b",
+   "checked": "2026-11-05"
   },
   {
    "name": "ION International Technical Meeting",
@@ -144,9 +144,9 @@
    "camera_ready": null,
    "submission_type": null,
    "publication": null,
-   "notes": "Unable to retrieve details from https://ipin-conference.org/; no dates or information could be extracted.",
-   "page_hash": "c1e8352c4ba7",
-   "checked": "2026-11-04"
+   "notes": "No future edition beyond 2026 is listed on the page.",
+   "page_hash": "272909b04b7b",
+   "checked": "2026-11-05"
   },
   {
    "name": "Intl. Conference on Localization and GNSS",
@@ -280,20 +280,20 @@
    "url": "https://www.ieee-itsc.org/",
    "rank": "Major",
    "area": "Vehicle positioning",
-   "edition": null,
+   "edition": "IEEE ITSC 2027",
    "start": null,
    "end": null,
-   "location": null,
+   "location": "Boston, United States",
    "submission_opens": null,
    "abstract_deadline": null,
    "full_paper_deadline": null,
    "notification": null,
    "camera_ready": null,
    "submission_type": null,
-   "publication": null,
+   "publication": "IEEE Xplore",
    "notes": null,
-   "page_hash": "c1e8352c4ba7",
-   "checked": "2026-11-04"
+   "page_hash": "e1fd340a158a",
+   "checked": "2026-11-05"
   },
   {
    "name": "EGU General Assembly",
@@ -367,14 +367,5 @@
   }
  ],
  "special_issues": [],
- "wikicfp": [
-  {
-   "title": "PLANS 2027 : IEEE/ION Position Location and Navigation Symposium",
-   "summary": "IEEE/ION Position Location and Navigation Symposium [Portland, Oregon, USA] [Apr 12, 2027 - Apr 15, 2027]",
-   "url": "http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=203440&copyownerid=181006",
-   "kind": "conference",
-   "when": "Apr 12, 2027",
-   "source": "WikiCFP"
-  }
- ]
+ "wikicfp": []
 }
