@@ -1,11 +1,79 @@
 {
- "updated": "2026-11-06T01:09:47+00:00",
+ "updated": "2026-11-06T09:50:10+00:00",
  "failed_sources": [
-  "arXiv 'all:GNSS'",
-  "arXiv 'all:\"precise point positioning\"'",
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Fault-tolerant LiDAR-Visual-GNSS Localization Using a Split Covariance Intersection Filter",
+   "url": "https://doi.org/10.5302/j.icros.2026.26.0200",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-11-30",
+   "kind_hint": "paper",
+   "doi": "10.5302/j.icros.2026.26.0200",
+   "venue": "Journal of Institute of Control, Robotics and Systems",
+   "authors": "Seoknam Jeon, Yunho Hong, Kanghee Kim",
+   "issn": [
+    "1976-5622",
+    "2233-4335"
+   ],
+   "id": "6c0d2f0dc82210ef",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Proposes a split covariance intersection filter combining LiDAR, visual, and GNSS data for fault‑tolerant localization in autonomous systems.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q4",
+   "added": "2026-11-06T09:50:10+00:00"
+  },
+  {
+   "title": "Towards reliable GNSS PPP: end-to-end integrity monitoring of real-time orbit and clock corrections",
+   "url": "https://doi.org/10.1007/s10291-026-02175-w",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-11-06",
+   "kind_hint": "paper",
+   "doi": "10.1007/s10291-026-02175-w",
+   "venue": "GPS Solutions",
+   "authors": "Zhen Lyu, Ningbo Wang, Lotfi Massarweh, Zishen Li",
+   "issn": [
+    "1080-5370",
+    "1521-1886"
+   ],
+   "id": "b5de9b03e581d75e",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Develops an end‑to‑end integrity monitoring framework for real‑time GNSS PPP orbit and clock corrections to enhance reliability.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-06T09:50:10+00:00"
+  },
+  {
+   "title": "Impact of corrections to ionospheric calibrations of legacy geodetic VLBI observations",
+   "url": "https://link.springer.com/article/10.1007/s00190-026-02128-8",
+   "summary": "Over the past decades, the computation of ionosphere calibrations for very long baseline interferometry (VLBI) legacy S/X band observations and especially the derivation of effective frequencies have undergone various changes as a reaction to the continuous development of the VLBI technique. However, we found that almost all of the 4194 databases since 2001.0 serving for the exchange of VLBI data between correlators and analysts distributed via International VLBI Service for Geodesy and Astrometry (IVS) data centers contain inconsistent and in some cases erroneous parameter values. Consequently, effective frequencies and ionospheric calibrations had been computed and/or stored incorrectly resulting in faulty calibrations of VLBI observations. Incorrect values of effective frequencies deviate by as much as 8 MHz with some blunders being even larger than that. Individual ionospheric calibrations differ by multiple tens of picoseconds. To prepare investigations in the impact of the corrections performed, we computed solutions using both currently distributed and state-of-the-art ionospheric calibrations with the Vienna VLBI and Satellite Software (VieVS) and compared them. As a result of a re-processing of 24-h geodetic and astrometric VLBI data of the IVS since 2001.0, we found serious impacts on results, especially from the year 2022 onward. The current solar maximum period amplifies the effects of the wrong ionospheric calibrations and produces, on a session-by-session basis,",
+   "source": "Journal of Geodesy",
+   "date": "2026-11-04",
+   "kind_hint": "paper",
+   "doi": null,
+   "venue": "Journal of Geodesy",
+   "id": "69042bb926a00042",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Examines errors in ionospheric calibration parameters of legacy VLBI S/X‑band observations, affecting geodetic accuracy.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Europe",
+   "tier": "Q1",
+   "added": "2026-11-06T09:50:10+00:00"
+  },
   {
    "title": "Autonomous Navigation and Safe Landing of an Aerial Vehicle in a GPS-Denied Martian Environment",
    "url": "https://doi.org/10.17485/ijst/v19i38.1238",
