@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T01:05:08+00:00",
+ "updated": "2026-11-06T01:09:47+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -238,10 +238,10 @@
    "url": "https://fusion2027.org/",
    "rank": "Major",
    "area": "Sensor fusion / navigation",
-   "edition": "30th International Conference on Information Fusion 2027",
+   "edition": "Fusion 2027",
    "start": "2027-06-28",
    "end": "2027-07-02",
-   "location": "Buffalo, United States",
+   "location": "Buffalo, USA",
    "submission_opens": null,
    "abstract_deadline": null,
    "full_paper_deadline": null,
@@ -249,9 +249,9 @@
    "camera_ready": null,
    "submission_type": null,
    "publication": "IEEE Xplore Digital Library",
-   "notes": "Accepted papers indexed in Scopus and Web of Science",
-   "page_hash": "37d726f6f543",
-   "checked": "2026-11-01"
+   "notes": "Accepted papers published in IEEE Xplore and indexed in Scopus and Web of Science.",
+   "page_hash": "f583f36cb406",
+   "checked": "2026-11-06"
   },
   {
    "name": "IEEE Intl. Conference on Acoustics",
