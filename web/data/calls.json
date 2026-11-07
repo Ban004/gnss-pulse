@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T01:09:47+00:00",
+ "updated": "2026-11-07T00:22:25+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -39,9 +39,9 @@
    "camera_ready": null,
    "submission_type": "both",
    "publication": null,
-   "notes": "Tutorials on April 12; manuscripts not received by Feb 1 will be withdrawn",
-   "page_hash": "28d08613a21b",
-   "checked": "2026-11-05"
+   "notes": "Pre‑conference tutorials on April 12; authors may revise manuscripts until April 23, 2027.",
+   "page_hash": "b93cc969300c",
+   "checked": "2026-11-07"
   },
   {
    "name": "ION International Technical Meeting",
@@ -186,9 +186,9 @@
    "camera_ready": "2027-04-30",
    "submission_type": "both",
    "publication": null,
-   "notes": "Early bird registration closes 30 April 2027",
-   "page_hash": "adb110a7e81f",
-   "checked": "2026-11-01"
+   "notes": "Hotel booking deadline 2026-11-30; payment due within 7 days after the 2027-03-12 acceptance notifications.",
+   "page_hash": "17f7f1563ead",
+   "checked": "2026-11-07"
   },
   {
    "name": "IEEE India Geoscience and Remote Sensing Symposium",
