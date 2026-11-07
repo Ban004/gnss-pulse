@@ -1,9 +1,54 @@
 {
- "updated": "2026-11-07T00:22:25+00:00",
+ "updated": "2026-11-07T09:09:44+00:00",
  "failed_sources": [
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Doppler-based pseudorange enhancement with temporal consistency weighting for smartphone GNSS PPP in urban canyons",
+   "url": "https://doi.org/10.1007/s10291-026-02176-9",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-11-07",
+   "kind_hint": "paper",
+   "doi": "10.1007/s10291-026-02176-9",
+   "venue": "GPS Solutions",
+   "authors": "Lingmin Tan, Ding Yi, Sunil Bisnath",
+   "issn": [
+    "1080-5370",
+    "1521-1886"
+   ],
+   "id": "eafd3469eb6df0c5",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Presents a Doppler-based pseudorange enhancement method with temporal consistency weighting to improve smartphone GNSS PPP in urban canyons.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-07T09:09:44+00:00"
+  },
+  {
+   "title": "Infleqtion Runs Optical Atomic Clock at Sea for Two Weeks During AUKUS Navy Exercise",
+   "url": "https://insidegnss.com/infleqtion-runs-optical-atomic-clock-at-sea-for-two-weeks-during-aukus-navy-exercise/",
+   "summary": "Infleqtion operated its Tiqker optical atomic clock aboard the U.S. Navy support vessel RV Merlin during the Maritime Big Play Pacific (MBP-P) military... \n The post  Infleqtion Runs Optical Atomic Clock at Sea for Two Weeks During AUKUS Navy Exercise  appeared first on  Inside GNSS - Global Navigation Satellite Systems Engineering, Policy, and Design .",
+   "source": "Inside GNSS",
+   "date": "2026-11-06",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Inside GNSS",
+   "id": "9f753c827e8b6cb4",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "Infleqtion operated its Tiqker optical atomic clock aboard the U.S. Navy vessel RV Merlin for two weeks during the AUKUS maritime exercise, demonstrating sea‑borne high‑precision timing.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-07T09:09:44+00:00"
+  },
   {
    "title": "A Multimodal Perception Unmanned System Based on GNN and SLAM",
    "url": "https://doi.org/10.4271/2026-99-0633",
