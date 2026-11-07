@@ -1,9 +1,33 @@
 {
- "updated": "2026-11-07T15:08:57+00:00",
+ "updated": "2026-11-07T23:59:44+00:00",
  "failed_sources": [
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Temporal variability of GNSS-derived precipitable water vapor over Uzbekistan during 2021–2025: Insights from GNSS meteorology",
+   "url": "https://doi.org/10.1016/j.jastp.2026.107003",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-11",
+   "kind_hint": "paper",
+   "doi": "10.1016/j.jastp.2026.107003",
+   "venue": "Journal of Atmospheric and Solar-Terrestrial Physics",
+   "authors": "Husan Eshkuvatov, Bahodir Ahmedov, Rustambek Ganiev, Bobomurat Ahmedov",
+   "issn": [
+    "1364-6826"
+   ],
+   "id": "ab3be1d55cee2139",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Analyzes temporal changes of GNSS‑derived precipitable water vapor over Uzbekistan (2021‑2025), highlighting GNSS meteorology applications.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Tashkent, Uzbekistan",
+   "region": "Other",
+   "tier": "Q2",
+   "added": "2026-11-07T23:59:44+00:00"
+  },
   {
    "title": "Adaptive Antenna for a GNSS Receiver of an Unmanned Aerial Vehicle",
    "url": "https://doi.org/10.21227/thjc-0d04",
