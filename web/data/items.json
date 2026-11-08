@@ -1,12 +1,34 @@
 {
- "updated": "2026-11-08T15:34:39+00:00",
+ "updated": "2026-11-08T23:58:37+00:00",
  "failed_sources": [
-  "OpenAlex 'satellite navigation'",
-  "OpenAlex 'GNSS spoofing'",
-  "OpenAlex 'NavIC'",
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "On the Error Distribution in Precise Levelling Sections",
+   "url": "https://doi.org/10.29227/im-2026-02-02-039",
+   "summary": "The assumption that measurement errors follow a Gaussian (normal) distribution is widely accepted in geodesy and related sciences. However, numerous studies over the past decades have reported observational evidence that challenges this assumption, particularly using modern measurement techniques such as Global Navigation Satellite Systems, Satellite Laser Ranging, gravimetry, and astronomical observations. Earlier investigations from the mid - 20th century also indicated deviations from normality in precise and hydrostatic levelling data.This study examines the statistical properties of levelling discrepancies from several national levelling campaigns: the Second Levelling of Bulgaria (1953 – 1957), the Third Levelling of Bulgaria (1975 – 1984), the Second Levelling of Finland (1935 – 1955), and the Third Levelling of Finland (1978 – 2006). The analysis focuses on testing the normality of the discrepancies using statistical measures of skewness and excess kurtosis, as well as chi - squared goodness - of - fit tests. The results reveal significant deviations from normality across all datasets examined. The Bulgarian levelling data show platykurtic distributions with kurtosis values of 2.386 and 2.516 for the Second and Third Levelling, respectively, both exceeding the three - sigma confidence limits, while their skewness values (0.134 and −0.087) remain within the threefold standard deviation range. In contrast, the Finnish datasets exhibit leptokurtic distributions with kurt",
+   "source": "Crossref",
+   "date": "2026-11-01",
+   "kind_hint": "paper",
+   "doi": "10.29227/im-2026-02-02-039",
+   "venue": "Inżynieria Mineralna",
+   "authors": "Vasil Cvetkov",
+   "issn": [
+    "1640-4920",
+    "1640-4920"
+   ],
+   "id": "627047719974697b",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Examines statistical properties of precise levelling data, highlighting deviations from Gaussian assumptions observed with GNSS and other geodetic techniques.",
+   "importance": 2,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q4",
+   "added": "2026-11-08T23:58:37+00:00"
+  },
   {
    "title": "Data-Centric Preprocessing for GNSS-Based Orbit Determination via AI, Signal Processing, and Orbital Dynamics",
    "url": "https://doi.org/10.5281/zenodo.24024826",
