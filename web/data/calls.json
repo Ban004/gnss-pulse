@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T15:34:39+00:00",
+ "updated": "2026-11-09T10:13:23+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -367,5 +367,14 @@
   }
  ],
  "special_issues": [],
- "wikicfp": []
+ "wikicfp": [
+  {
+   "title": "PLANS 2027 : IEEE/ION Position Location and Navigation Symposium",
+   "summary": "IEEE/ION Position Location and Navigation Symposium [Portland, Oregon, USA] [Apr 12, 2027 - Apr 15, 2027]",
+   "url": "http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=203440&copyownerid=181006",
+   "kind": "conference",
+   "when": "Apr 12, 2027",
+   "source": "WikiCFP"
+  }
+ ]
 }
