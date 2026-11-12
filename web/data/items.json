@@ -1,9 +1,53 @@
 {
- "updated": "2026-11-12T02:03:55+00:00",
+ "updated": "2026-11-12T10:18:26+00:00",
  "failed_sources": [
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Resilient navigation of optionally manned TAERO under GNSS-denied conditions",
+   "url": "https://doi.org/10.14311/ap.2026.66.0606",
+   "summary": "An increasing number of unmanned ground vehicles deployed in defence operations are operating in environments where Global Navigation Satellite System (GNSS) signals are degraded, jammed, or intentionally blocked. Therefore, reliable navigation under such conditions is a critical capability. This study presents the architecture and experimental validation of a resilient navigation system implemented on the TAERO optionally manned ground vehicle. The work focuses on assessing passive navigation modalities under GNSS-degraded and GNSS-denied conditions through real-world field experiments. The study’s contribution of the study lies in its system-level evaluation of the navigation performance and operational limitations of passive sensing modalities on a full-scale optionally manned ground vehicle operating under representative operational conditions. The system integrates a tactical-grade GPS-aided inertial navigation system (INS) with multi-constellation GNSS, wheel odometry, and a forward-mounted vision module.The field experiments were conducted in semi-structured environments with a temporary satellite signal degradation. The INS analysis confirmed stable short-term navigation continuity, but also revealed distance-dependent drift growth, which limits the accuracy of long-duration operations during GNSS outages. To improve the robustness of navigation, a deep learning-based visual odometry approach (DeepVO) was implemented and evaluated using real driving sequences recorded",
+   "source": "Crossref",
+   "date": "2026-11-10",
+   "kind_hint": "paper",
+   "doi": "10.14311/ap.2026.66.0606",
+   "venue": "Acta Polytechnica",
+   "authors": "Marek Nowakowski, Jakub Kurylo, Piotr Awramiuk, Mariusz Wesolowski",
+   "issn": [
+    "1805-2363"
+   ],
+   "id": "29b2b150e968e787",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Presents a resilient navigation architecture for the TAERO ground vehicle under GNSS‑denied conditions.\nIncludes experimental validation of passive navigation modalities.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Bucharest, Romania",
+   "region": "Europe",
+   "tier": "Q4",
+   "added": "2026-11-12T10:18:26+00:00"
+  },
+  {
+   "title": "Share Your Galileo Story: EUSPA Launches Call for User Testimonials",
+   "url": "https://www.euspa.europa.eu/newsroom-events/news/share-your-galileo-story-euspa-launches-call-user-testimonials",
+   "summary": "EUSPA  is inviting Galileo users to share short video testimonials showcasing how the European Union’s satellite navigation system supports their daily lives, operations, innovation and services, helping connect space to user needs.",
+   "source": "EUSPA",
+   "date": "2026-11-12",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "EUSPA",
+   "id": "750a8fb3511c5db2",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "EUSPA calls for Galileo user video testimonials that illustrate how the EU navigation system supports daily life, operations, and innovation.",
+   "importance": 3,
+   "deadline": null,
+   "location": "Prague, Czech Republic",
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-12T10:18:26+00:00"
+  },
   {
    "title": "Multi-observation robust regression for continuous coastal sea surface height monitoring using GNSS multipath reflectometry",
    "url": "https://doi.org/10.1088/1361-6501/aec0bb",
