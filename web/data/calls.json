@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T02:03:55+00:00",
+ "updated": "2026-11-13T01:24:50+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -7,20 +7,20 @@
    "url": "https://www.ion.org/gnss/",
    "rank": "Flagship",
    "area": "GNSS",
-   "edition": "ION GNSS+ 2026",
-   "start": "2026-09-14",
-   "end": "2026-09-18",
-   "location": "Orlando, USA",
+   "edition": "ION GNSS+ 2027",
+   "start": "2027-09-20",
+   "end": "2027-09-24",
+   "location": null,
    "submission_opens": null,
-   "abstract_deadline": "2026-03-03",
-   "full_paper_deadline": "2026-06-30",
-   "notification": "2026-04-21",
-   "camera_ready": "2026-09-04",
+   "abstract_deadline": "2027-03-03",
+   "full_paper_deadline": "2027-06-30",
+   "notification": null,
+   "camera_ready": "2027-09-10",
    "submission_type": "both",
-   "publication": "ION technical conference proceedings",
-   "notes": "Student paper competition form due June 30; pre‑recorded video presentation required by Sep 4.",
-   "page_hash": "1e8856a5ea95",
-   "checked": "2026-11-01"
+   "publication": "ION conference proceedings",
+   "notes": "Student Paper Competition form due June 30; video presentation required by September 10.",
+   "page_hash": "5ead2a2b8bb3",
+   "checked": "2026-11-13"
   },
   {
    "name": "IEEE/ION Position Location and Navigation Symposium",
@@ -73,17 +73,17 @@
    "edition": "JNC 2027",
    "start": "2027-06-07",
    "end": "2027-06-10",
-   "location": "Covington, KY, USA",
+   "location": "Covington, USA",
    "submission_opens": null,
    "abstract_deadline": "2027-02-03",
    "full_paper_deadline": null,
    "notification": null,
    "camera_ready": null,
    "submission_type": "abstract",
-   "publication": "CUI US‑Only proceedings",
-   "notes": "Conference includes CUI US‑Only sessions June 7‑9 in Covington, KY and a SECRET session June 10 at AFIT; US citizenship and clearance required.",
-   "page_hash": "4b8a6b2cf103",
-   "checked": "2026-11-01"
+   "publication": "CUI electronic proceedings",
+   "notes": "Includes classified session June 10 at AFIT; abstracts must be US‑only and CUI‑approved.",
+   "page_hash": "30c50c1a2299",
+   "checked": "2026-11-13"
   },
   {
    "name": "ION Pacific PNT Meeting",
