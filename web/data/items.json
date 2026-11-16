@@ -1,9 +1,52 @@
 {
- "updated": "2026-11-15T15:56:59+00:00",
+ "updated": "2026-11-16T00:15:34+00:00",
  "failed_sources": [
+  "OpenAlex 'satellite navigation'",
+  "OpenAlex 'GNSS reflectometry'",
+  "OpenAlex 'BeiDou'",
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Taoglas Introduces CRPA Reference Design for Resilient GNSS Development - GPS World",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdy03cnY5bGdIZ0swb3FTYlJRUnlIUWdNbHg5OWhFQW43clEzajdIWUQ0STNTaS1DbG4zOGx1di1fWWFlWkpqWGU3MnFUVXQzMExUckcydXh2bVVnbUdUM3ZGa2ltNzJVaGRxY2hJRzk2dlRxdWFNM0tsbC1YNTlYV0pESUdGbnYwNmpyLW04TXREZFhDLUVFcGxGUDRLdw?oc=5",
+   "summary": "Taoglas Introduces CRPA Reference Design for Resilient GNSS Development &nbsp;&nbsp; GPS World",
+   "source": "Google News GNSS",
+   "date": "2026-11-15",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News GNSS",
+   "id": "42d10d43076a1d00",
+   "relevant": true,
+   "category": "product",
+   "ai_summary": "Taoglas has released a new Controlled Reception Pattern Antenna (CRPA) reference design to aid resilient GNSS development.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-16T00:15:34+00:00"
+  },
+  {
+   "title": "Targeting GNSS Jamming in Uncrewed Systems: Resilient Satellite Positioning - Unmanned Systems Technology",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQOUs5MTJqVlBPTVd1WXREbEsxcnBLY1IyQnVtRG94MldmVExxemttVEJINnllT3gyR0RfRVdoRGpRZkhlSnkyaU90aEE3YWppQjlaLUZQTlc5RTZ4WmR0M1pyYWhKV3RqZjB1aXlOUGczNnVIVkxhdEtpZTlBR1hRS2hFUnBRckJyTDNnemh2eU16WTlFRXRFdDlDSzZtUjBkdGhWUzhZMlZRcDMtRlJtcDFrZnVfSlYxekE3aFhaVUpxeGF6TGxWNFZn?oc=5",
+   "summary": "Targeting GNSS Jamming in Uncrewed Systems: Resilient Satellite Positioning &nbsp;&nbsp; Unmanned Systems Technology",
+   "source": "Google News GNSS",
+   "date": "2026-11-15",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News GNSS",
+   "id": "135b10dfa647bb9b",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "Article discussing solutions and methods to target GNSS jamming and provide resilient satellite positioning for uncrewed systems.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-16T00:15:34+00:00"
+  },
   {
    "title": "GNSS实时动态定位技术在工程测量中的应用与精度控制研究",
    "url": "https://doi.org/10.67328/wslwpp2584",
