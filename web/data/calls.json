@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T03:11:42+00:00",
+ "updated": "2026-11-18T02:35:18+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -154,10 +154,10 @@
    "url": "https://events.tuni.fi/icl-gnss/",
    "rank": "Major",
    "area": "GNSS",
-   "edition": null,
-   "start": null,
-   "end": null,
-   "location": null,
+   "edition": "ICL‑GNSS 2027",
+   "start": "2027-10-05",
+   "end": "2027-10-07",
+   "location": "Barcelona, Spain",
    "submission_opens": null,
    "abstract_deadline": null,
    "full_paper_deadline": null,
@@ -165,9 +165,9 @@
    "camera_ready": null,
    "submission_type": null,
    "publication": null,
-   "notes": null,
-   "page_hash": "6cadb0e81bcc",
-   "checked": "2026-11-01"
+   "notes": "Details pending; current site still reflects the 2026 edition.",
+   "page_hash": "375729d6de0b",
+   "checked": "2026-11-18"
   },
   {
    "name": "IEEE Intl. Geoscience and Remote Sensing Symposium",
