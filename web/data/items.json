@@ -1,9 +1,52 @@
 {
- "updated": "2026-11-21T01:43:41+00:00",
+ "updated": "2026-11-21T10:09:31+00:00",
  "failed_sources": [
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Sistemas eletroeletrônicos embarcados aplicados à segurança da navegação fluvial",
+   "url": "https://doi.org/10.69849/ks4rh957",
+   "summary": "This article examines the contribution of onboard electrical and electronic systems to inland navigation safety in the Amazon, focusing on power supply, data integration and continuity of onboard functions. Bibliographic and documentary research is combined with a hypothetical engineering study, without tests on an actual vessel. Satellite positioning, radar, automatic identification, radio, depth measurement, heading references and monitoring are examined in relation to Amazonian hydrological and operational variability. The calculations distinguish a basic load inventory from an expanded scenario and account for losses, remaining capacity and discharge limits. The analysis shows that the initially considered battery bank does not meet the intended autonomy when these factors are included. The revised alternative meets the central scenario with a limited margin, while photovoltaic generation depends on solar availability and recovery after contingencies. Failure scenarios show that additional equipment or displays do not ensure independence when they share power or information sources. System benefits depend on appropriate installation, maintenance, training and combined interpretation of data. Quantitative results remain conditional on the adopted assumptions and require validation before application to a specific vessel.",
+   "source": "OpenAlex",
+   "date": "2026-11-19",
+   "kind_hint": "paper",
+   "doi": "10.69849/ks4rh957",
+   "venue": "Revista fisio&terapia.",
+   "issn": [
+    "1678-0817"
+   ],
+   "id": "9cfbbaaeeebb6909",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Examines onboard electronic systems for Amazon river navigation, highlighting satellite positioning, radar, AIS and depth sensors for safety.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-21T10:09:31+00:00"
+  },
+  {
+   "title": "IISER-Pune startup develops atomic clock for next-generation satellite navigation - The Times of India",
+   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPMDJyM3ZhNjVUTnBabk9Sd05TUXJCTmh5cjNIc1hTeTNWX1cyeTN3eDhTWVpkVkJCRTdYdHdDWDgycFlJLU5NZDBYVlpKRW9kc3pfZkZNYWdXLVRKa0hVU3RaajV0RjZ0Mlhuc1VqR2pSZkU1Y2NjWlZhUHhVRFFqWXlMaHdfZlpvcDhGY0xHTnVfYWVNT2lkSE1iQXpCU0JpaW92RTRwTTR1aE5DZ0RjNmdOR1NHMWl4emZVcXRIOUYyb1dkdkVpaUJCV1hocVZhck5UMExlVGowM0F1ekRRQXlabG40Z25Q0gHuAUFVX3lxTE50T2tuZ3dZN0NrdkN6M2Y4YmtsNURwdm9sa2FBOVROdkNWc0tPMXNVR1ZfS3VHcUdkMnYxTmI5cEFxWklyMm1MNF9lalkwU1YtUnM2ZVRYWGNJUlZFTl81MzlLaUlKLWRkcVA4LWM5akRidXlsT1k5LVlISmtoM3I0c2hGaWtTRWNsY2RmMkZrVG1tRmlNSUh3ZjZVamtiMnNjQzRnNS1xYUxLVHp1NlU0a09PSVJ0Uk52c1dCODM4alpleG1XWjBPNDFmOUt6b2NGS190TXd5LXY3eUlQOXdWRWROUFpwVGZvU2RkOUE?oc=5",
+   "summary": "IISER-Pune startup develops atomic clock for next-generation satellite navigation &nbsp;&nbsp; The Times of India",
+   "source": "Google News GNSS",
+   "date": "2026-11-21",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News GNSS",
+   "id": "43f77e962e986815",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "IISER‑Pune startup creates an atomic clock aimed at enhancing next‑generation satellite navigation accuracy.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Pune, India",
+   "region": "India",
+   "tier": "unknown",
+   "added": "2026-11-21T10:09:31+00:00"
+  },
   {
    "title": "V2X Infrastructure Support for GNSS Corrections",
    "url": "https://doi.org/10.4271/j3258_202611",
