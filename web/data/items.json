@@ -1,9 +1,29 @@
 {
- "updated": "2026-11-21T16:26:54+00:00",
+ "updated": "2026-11-22T00:51:01+00:00",
  "failed_sources": [
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "NavIC: India's Navigation Independence - varindia",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB1el9rZnkxZEtzZm91NGJLOHBNdVJoVFFiMFdGSXhCbEFDd0g5S3FuR2pTZG9fSTNiemNpRzNuUDRmQ1RJbW5NVm5JY3czeTEyZ0NPOHdnR2tjWWFnY1R0UjVOZFJObjA5YTRFcU9Kb0RHbDlPbkE?oc=5",
+   "summary": "NavIC: India's Navigation Independence &nbsp;&nbsp; varindia",
+   "source": "Google News NavIC / ISRO",
+   "date": "2026-11-21",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News NavIC / ISRO",
+   "id": "852a8fda06bb641b",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "Discusses India's NavIC constellation and its role in achieving strategic navigation independence.\nHighlights the growth and adoption of regional satellite positioning capabilities.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "India",
+   "tier": "unknown",
+   "added": "2026-11-22T00:51:01+00:00"
+  },
   {
    "title": "GNSS Data for \"The Accuracy of Global Digital Elevation Models on Mountain Summits\"",
    "url": "https://doi.org/10.5281/zenodo.24408334",
