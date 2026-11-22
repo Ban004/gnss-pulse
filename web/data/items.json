@@ -1,10 +1,77 @@
 {
- "updated": "2026-11-22T10:15:13+00:00",
+ "updated": "2026-11-22T16:38:58+00:00",
  "failed_sources": [
-  "ESA Navigation",
-  "RNTF (Resilient PNT)"
+  "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Hybrid Virtualized Certification Environment of EGNSS-Based Railway Positioning",
+   "url": "https://doi.org/10.1007/978-3-032-36098-4_71",
+   "summary": "A comprehensive understanding of rail user and system requirements is the foundation for the development of hybrid virtualized testing. Moreover, a specifically tailored framework for GNSS-based railway localization solutions within the European Rail Traffic Management System (ERTMS) is an important need for certification. The HyVICE (Hybrid Virtualized Certification Environment) platform, developed by the VICE4RAIL consortium, is envisaged as a comprehensive environment combining laboratory simulations and on-field testing to certify GNSS-based train positioning systems according to Safety Integrity Level 4 (SIL4), which is a safety need in railway transports. Additionally, the system must be resilient to various threats that may occur during operation, including intentional jamming and signal spoofing or meaconing attacks. Analysing European railway regulations and standards in the context of safety assessment and certification processes is a second step for the technical identification of needs corresponding to the complex certification landscape that GNSS-based solutions must tackle. As integrating satellite technology into the safety chain of railway operations poses significant technical and regulatory challenges, the third step is to develop a certification plan based on the initial outcomes. Finally, the former will consolidate the certification process for the targeted HyVICE test platform by incorporating both insights and processes previously identified.",
+   "source": "OpenAlex",
+   "date": "2026-11-22",
+   "kind_hint": "conference",
+   "doi": "10.1007/978-3-032-36098-4_71",
+   "venue": "Lecture notes in mobility",
+   "issn": [
+    "2196-5544",
+    "2196-5552"
+   ],
+   "id": "47d1a1b6e699f9a8",
+   "relevant": true,
+   "category": "conference",
+   "ai_summary": "Describes the HyVICE platform for virtualized testing and certification of GNSS‑based train positioning within the European Rail Traffic Management System.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-22T16:38:58+00:00"
+  },
+  {
+   "title": "High-precision GNSS for Slope Displacement Monitoring in Vietnam: From Experimental Validation to Field Application",
+   "url": "https://doi.org/10.1007/978-981-92-6722-4_231",
+   "summary": "",
+   "source": "OpenAlex",
+   "date": "2026-11-22",
+   "kind_hint": "conference",
+   "doi": "10.1007/978-981-92-6722-4_231",
+   "venue": "Lecture notes in civil engineering",
+   "issn": [
+    "2366-2565",
+    "2366-2557"
+   ],
+   "id": "8003fc3671fbf08c",
+   "relevant": true,
+   "category": "conference",
+   "ai_summary": "Reports field deployment of high‑precision GNSS for monitoring slope displacement in Vietnam, from lab validation to real‑world application.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-22T16:38:58+00:00"
+  },
+  {
+   "title": "Jamming is a much bigger problem than we think – SpaceNews Op-ed",
+   "url": "https://rntfnd.org/2026/11/21/jamming-is-a-much-bigger-problem-than-we-think-spacenews-op-ed/",
+   "summary": "Image: CoPilot AI What&#8217;s new: An opinion piece by the CEO of Cailabs, a company that develops operational optical ground systems for laser communications, including optical ground stations for secure, high capacity space and defense networks. Why it&#8217;s important: This piece is from an informed professional observing space from a bit of an adjacent discipline. He makes some great points that are somewhat common sense, though not all space-professionals seem to have internalized them. While he mostly discusses communications systems, they can apply to PNT and other capabilities.  For example (text in parens and italics added): &#8220;Part of the solution to this problem is to diversify&#8221; &#8220;Any enemy will look for vulnerabilities in whatever equipment and processes military forces use&#8221; &#8220;Switching between satellite networks, using communications (or navigation) equipment on the ground, or relying on other forms of technology that make jamming difficult are all viable ways to protect the integrity of [&#8230;]",
+   "source": "RNTF (Resilient PNT)",
+   "date": "2026-11-21",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "RNTF (Resilient PNT)",
+   "id": "19a788ad85887da0",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "SpaceNews op‑ed discusses the growing threat of jamming to space‑based PNT and communication systems.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-22T16:38:58+00:00"
+  },
   {
    "title": "NavIC: India's Navigation Independence - varindia",
    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB1el9rZnkxZEtzZm91NGJLOHBNdVJoVFFiMFdGSXhCbEFDd0g5S3FuR2pTZG9fSTNiemNpRzNuUDRmQ1RJbW5NVm5JY3czeTEyZ0NPOHdnR2tjWWFnY1R0UjVOZFJObjA5YTRFcU9Kb0RHbDlPbkE?oc=5",
