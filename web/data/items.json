@@ -1,7 +1,8 @@
 {
- "updated": "2026-11-22T00:51:01+00:00",
+ "updated": "2026-11-22T10:15:13+00:00",
  "failed_sources": [
-  "ESA Navigation"
+  "ESA Navigation",
+  "RNTF (Resilient PNT)"
  ],
  "items": [
   {
