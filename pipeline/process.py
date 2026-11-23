@@ -294,24 +294,48 @@ def finalize(it):
 
 # --- Media for the Reels view: the item's own photo / video from its page metadata ---
 MEDIA_SKIP = re.compile(r"logo|brand|favicon|/themes/|cover|default|placeholder|twitter\.png|successfactors|access|journalthumbnail", re.I)
-MEDIA_NO_FETCH = ("news.google.com",)  # redirect wrapper pages: only Google's own logo
+BROWSER_UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"}
+
+
+def google_news_url(url):
+    """Real article URL behind a news.google.com/rss/articles/... link, or None.
+    ponytail: uses Google News' undocumented batchexecute call (same as the googlenewsdecoder package);
+    if Google changes it this returns None and items just keep the Google link + NASA stock media."""
+    from urllib.parse import urlparse
+    from bs4 import BeautifulSoup
+    aid = urlparse(url).path.rsplit("/", 1)[-1]
+    try:
+        page = BeautifulSoup(requests.get(f"https://news.google.com/rss/articles/{aid}", headers=BROWSER_UA, timeout=15).text, "html.parser")
+        d = page.select_one("c-wiz > div[jscontroller]")
+        req = ["Fbv4je", '["garturlreq",[["X","X",["X","X"],null,null,1,1,"US:en",null,1,null,null,null,null,null,0,1],'
+               f'"X","X",1,[1,1,1],1,1,null,0,0,null,0],"{aid}",{d["data-n-a-ts"]},"{d["data-n-a-sg"]}"]']
+        r = requests.post("https://news.google.com/_/DotsSplashUi/data/batchexecute", timeout=15,
+                          headers=BROWSER_UA | {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"},
+                          data={"f.req": json.dumps([[req]])})
+        real = json.loads(json.loads(r.text.split("\n\n")[1])[0][2])[1]
+        return real if real.startswith("http") and "google.com" not in urlparse(real).netloc else None
+    except Exception:
+        return None
 
 
 def _page_media(url):
     from urllib.parse import urljoin, urlparse
     from bs4 import BeautifulSoup
-    if urlparse(url).netloc in MEDIA_NO_FETCH:
-        return {}
-    ua = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"}
+    out = {}
+    if urlparse(url).netloc == "news.google.com":
+        url = google_news_url(url)
+        if not url:
+            return None  # rate-limited or Google changed the call: retry next run
+        out["url"] = url  # link straight to the article
+    ua = BROWSER_UA
     try:
         r = requests.get(url, headers=ua, timeout=15)
         if r.status_code != 200 or "html" not in r.headers.get("content-type", ""):
-            return {}
+            return out
     except requests.RequestException:
-        return {}
+        return out
     s = BeautifulSoup(r.text, "html.parser")
     meta = {(t.get("property") or t.get("name") or "").lower(): t.get("content") for t in s.find_all("meta") if t.get("content")}
-    out = {}
     yt = [m.group(1) for f in s.find_all("iframe") if (m := re.search(r"youtube(?:-nocookie)?\.com/embed/([\w-]{11})", f.get("src") or ""))]
     vid = meta.get("og:video:secure_url") or meta.get("og:video:url") or meta.get("og:video") or meta.get("twitter:player:stream")
     if yt:
@@ -334,8 +358,9 @@ def add_media(items, limit=200):
     todo = [i for i in items if "media" not in i][:limit]
     with ThreadPoolExecutor(8) as ex:
         for it, m in zip(todo, ex.map(lambda i: _page_media(i["url"]), todo)):
-            it["media"] = 1
-            it.update(m)
+            if m is not None:
+                it["media"] = 1
+                it.update(m)
     for k in ("image", "video"):
         n = Counter(i.get(k) for i in items)
         for i in items:
