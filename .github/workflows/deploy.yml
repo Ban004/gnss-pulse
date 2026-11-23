@@ -1,0 +1,17 @@
+name: Deploy site
+on:
+  push:
+    branches: [main]
+    paths: ["web/**"]   # bot data commits use GITHUB_TOKEN, so they don't trigger this
+permissions:
+  pages: write
+  id-token: write
+concurrency: { group: collect, cancel-in-progress: false }   # queue behind a running collection
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: web }
+      - uses: actions/deploy-pages@v4
