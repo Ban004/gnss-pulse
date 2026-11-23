@@ -1,5 +1,5 @@
 {
-"title": "Position, Navigation, and Timing Technologies in the 21st Century — Volume 1",
+"title": "Position, Navigation, and Timing Technologies in the 21st Century — Volumes 1 & 2",
 "editors": "Y. T. Jade Morton, Frank van Diggelen, James J. Spilker Jr., Bradford W. Parkinson (eds.), Wiley-IEEE Press, 2021",
 "note": "Short study notes written in plain words; not text from the book.",
 "chapters": [
@@ -1210,6 +1210,968 @@
 {
 "title": "Summary",
 "text": "GNSS-R is a cheap, growing Earth-observation technique using signals that are already everywhere."
+}
+]
+},
+{
+"n": 35,
+"title": "Overview of Volume 2: Integrated PNT",
+"intro": "Beyond GNSS — every other way to know where you are.",
+"sections": [
+{
+"title": "One loop for all navigation",
+"text": "Every navigation system does the same thing: predict your state → observe something → compare → correct. GNSS, inertial, cameras, radio — all fit this loop."
+},
+{
+"title": "What Volume 2 covers",
+"text": "Signals of opportunity (cell, TV, LEO), inertial sensors and clocks, maps, lasers and cameras, celestial sources, animal navigation, and real applications from farms to the Arctic."
+}
+]
+},
+{
+"n": 36,
+"title": "Nonlinear Recursive Estimation",
+"intro": "The math engine of sensor fusion: Kalman filters and beyond.",
+"sections": [
+{
+"title": "Why Kalman filters rule",
+"text": "Since 1960 the Kalman filter has been THE tool for navigation: optimal, recursive and fast enough to run in real time."
+},
+{
+"title": "Linear foundations",
+"text": "A state (position, velocity…), a motion model with process noise, and measurements with noise. Predict, then update with a weighted correction."
+},
+{
+"title": "When things aren't linear",
+"text": "Real navigation is nonlinear. The extended KF linearises, the unscented KF uses sample points, and particle filters use many weighted guesses — each trading accuracy for compute."
+},
+{
+"title": "Choosing a filter",
+"text": "No filter is best everywhere. Hybrids often win — pick based on how nonlinear the problem is and your computing budget."
+}
+]
+},
+{
+"n": 37,
+"title": "Indoor Navigation Techniques",
+"intro": "Where GPS can't reach.",
+"sections": [
+{
+"title": "Why indoors is hard",
+"text": "GNSS signals are too weak to get through walls and roofs. Indoor positioning needs other signals and sensors."
+},
+{
+"title": "Key terms",
+"text": "Absolute vs relative location, symbolic location (\"room 204\"), and device-based vs infrastructure-based systems."
+},
+{
+"title": "How to judge a system",
+"text": "Accuracy, precision, coverage, latency, cost, power and privacy. Signal strength falls with distance — a rough way to estimate range."
+},
+{
+"title": "Signals used indoors",
+"text": "Wi-Fi, Bluetooth beacons, UWB, RFID, ultrasound, infrared, visible light and magnetic fields — each with its own range and accuracy."
+},
+{
+"title": "Techniques",
+"text": "Triangulation/trilateration, fingerprinting (matching a signal \"map\"), proximity, and dead reckoning with phone sensors. Hybrids work best."
+},
+{
+"title": "Open problems",
+"text": "Cost of infrastructure, keeping fingerprint maps up to date, device differences and privacy are still unsolved."
+}
+]
+},
+{
+"n": 38,
+"title": "Navigation with Cellular Signals of Opportunity",
+"intro": "Using phone towers like GPS satellites.",
+"sections": [
+{
+"title": "Why cellular signals",
+"text": "They're everywhere, 20+ dB stronger than GPS, cover many frequencies and come from many directions — and they're free to listen to."
+},
+{
+"title": "Cellular systems in brief",
+"text": "From 1G to 5G: CDMA and LTE broadcast known pilot and sync signals that a receiver can use for ranging."
+},
+{
+"title": "The clock problem",
+"text": "Towers aren't perfectly synchronised. Their clock errors must be modelled and estimated as part of navigation."
+},
+{
+"title": "Frameworks",
+"text": "Either map tower positions and clocks with a reference receiver, or estimate them on the fly (radio SLAM)."
+},
+{
+"title": "CDMA navigation",
+"text": "CDMA towers broadcast known codes with timing offsets, so receivers measure pseudoranges much like GPS."
+},
+{
+"title": "LTE navigation",
+"text": "LTE sync and reference signals give ranges good to a few metres in tests — in places where GPS struggles."
+},
+{
+"title": "Sector clock mismatch",
+"text": "One tower has several sectors that may have slightly different clock biases — something to model."
+},
+{
+"title": "Mixing with GNSS",
+"text": "Towers sit near the horizon and fill the geometry gaps GNSS leaves, especially improving vertical accuracy."
+},
+{
+"title": "Cellular-aided INS",
+"text": "When GNSS is lost, cellular signals keep inertial drift in check, for kilometres of driving."
+}
+]
+},
+{
+"n": 39,
+"title": "Metropolitan Beacon Systems",
+"intro": "Dedicated city beacons for indoor/urban PNT.",
+"sections": [
+{
+"title": "What MBS is",
+"text": "A network of terrestrial beacons broadcasting GPS-like signals in licensed spectrum, built for cities and indoors — for E911 and as a GNSS backup."
+},
+{
+"title": "Why it works",
+"text": "Synchronised transmitters on rooftops plus a barometer for height — reaching metre-level positioning and accurate timing where GNSS can't."
+}
+]
+},
+{
+"n": 40,
+"title": "Navigation with Digital TV Signals",
+"intro": "Broadcast towers as navigation beacons.",
+"sections": [
+{
+"title": "PNT from broadcasts",
+"text": "TV towers are powerful, fixed and well-known. Their signals carry timing structures you can use to measure ranges."
+},
+{
+"title": "Signal types",
+"text": "ATSC (USA), DVB-T (Europe), DTMB (China): each has sync patterns or pilots usable for time of arrival."
+},
+{
+"title": "Pseudoranges",
+"text": "Measure arrival times against your own clock. Like GNSS, tower clock offsets must be removed — with a reference receiver or by differencing."
+},
+{
+"title": "Practical issues",
+"text": "Multipath in cities, unknown tower clocks and poor geometry (towers are all on the horizon) are the main challenges."
+}
+]
+},
+{
+"n": 41,
+"title": "Low-Frequency Radio Navigation (Loran/eLoran)",
+"intro": "A powerful ground-based backup to GNSS.",
+"sections": [
+{
+"title": "Why we still need it",
+"text": "GNSS is weak and shares vulnerabilities. A very different, very strong signal (100 kHz, megawatts) makes a great backup."
+},
+{
+"title": "History",
+"text": "From WWII LORAN to Loran-C. It was switched off in the US in 2010 — and since revived interest as eLoran."
+},
+{
+"title": "Signals",
+"text": "Pulses at 100 kHz in timed sequences from chains of stations. eLoran adds precise timing and data."
+},
+{
+"title": "What eLoran adds",
+"text": "A data channel carrying corrections, integrity warnings and UTC time — enabling ~10 m positioning and ~50 ns timing."
+},
+{
+"title": "Propagation",
+"text": "Ground waves follow Earth's surface predictably. Sky waves bounce off the ionosphere and interfere. Land changes the speed (ASF corrections)."
+},
+{
+"title": "Noise",
+"text": "Atmospheric noise from lightning and man-made interference set limits. Magnetic loop antennas help."
+},
+{
+"title": "Receivers",
+"text": "Modern digital eLoran receivers use H-field antennas, track all stations together, and decode the data channel."
+},
+{
+"title": "Performance",
+"text": "Loran-C was certified for marine and en-route aviation. eLoran reaches harbour-entrance accuracy."
+},
+{
+"title": "Future",
+"text": "Low-frequency systems could also broadcast authenticated data and resilient time for critical infrastructure."
+}
+]
+},
+{
+"n": 42,
+"title": "Adaptive Radar Navigation",
+"intro": "Seeing the ground with radio echoes.",
+"sections": [
+{
+"title": "History",
+"text": "Radar was born for detection, but aircraft soon used ground-mapping radar to navigate by recognising terrain and landmarks."
+},
+{
+"title": "Modern radar localisation",
+"text": "Digital processing turned radar into a precise navigation sensor that works through clouds, smoke and darkness."
+},
+{
+"title": "Signal processing",
+"text": "Wideband signals give fine range resolution, but need heavy computing. Radar sees the world differently from cameras."
+},
+{
+"title": "SAR methods",
+"text": "Synthetic aperture radar builds high-resolution images by combining echoes along the flight path. Matching them to maps gives position."
+},
+{
+"title": "UWB-OFDM case study",
+"text": "Robust, interference-resistant radar waveforms tracking strong stationary reflectors can navigate without GNSS."
+},
+{
+"title": "Conclusion",
+"text": "As computing grew, radar went from analog aid to a powerful GNSS-independent navigation sensor."
+}
+]
+},
+{
+"n": 43,
+"title": "Navigation from Low Earth Orbit (LEO)",
+"intro": "The new mega-constellations as navigation sources.",
+"sections": [
+{
+"title": "Three orbit regimes",
+"text": "LEO (<2000 km), MEO (where GNSS lives) and GEO. Most satellites now fly in LEO — thousands of them."
+},
+{
+"title": "Why LEO is attractive",
+"text": "~20× closer than GNSS → ~30 dB stronger signals, fast geometry change (great for Doppler and convergence), but smaller footprints and fast passes."
+},
+{
+"title": "LEO navigation today",
+"text": "Transit was LEO. Iridium now offers a time and location service (STL), and LEO data can speed up PPP convergence."
+},
+{
+"title": "LEO navigation tomorrow",
+"text": "Dedicated LEO-PNT constellations with cheap commercial parts could match or beat GPS, with stronger, jam-resistant signals."
+},
+{
+"title": "Conclusion",
+"text": "LEO complements GNSS: stronger signals, better geometry dynamics and more resilience."
+},
+{
+"title": "Using broadband LEO as-is",
+"text": "Instead of new PNT satellites, exploit existing broadband signals (Starlink, OneWeb, Orbcomm) as signals of opportunity."
+},
+{
+"title": "Measurements",
+"text": "Pseudorange, carrier phase and Doppler can be pulled out of LEO signals with a suitable receiver."
+},
+{
+"title": "Orbits",
+"text": "LEO orbits are known only roughly (public TLEs). Simple dynamic models propagate them in the navigation filter."
+},
+{
+"title": "Error sources",
+"text": "Orbit errors of kilometres, unknown satellite clocks and atmosphere delays — they must be estimated or differenced away."
+},
+{
+"title": "Orbcomm",
+"text": "A LEO messaging constellation whose VHF downlinks give usable Doppler measurements."
+},
+{
+"title": "Starlink",
+"text": "Thousands of satellites with high-SNR signals. Doppler can be extracted even without knowing the full signal format."
+},
+{
+"title": "Differential LEO navigation",
+"text": "A base station and rover share LEO carrier-phase measurements, cancelling common errors much like RTK."
+},
+{
+"title": "STAN",
+"text": "Simultaneous Tracking And Navigation: estimate the LEO satellites' states and your own at the same time."
+},
+{
+"title": "Geometry",
+"text": "Even a few LEO satellites give useful DOP because they move so fast across the sky."
+},
+{
+"title": "Simulations",
+"text": "Large LEO constellations give metre-level navigation in simulation when GNSS is unavailable."
+},
+{
+"title": "Experiments",
+"text": "Real Orbcomm and Starlink tests navigated vehicles and aircraft without GNSS, with errors down to tens of metres."
+}
+]
+},
+{
+"n": 44,
+"title": "Inertial Navigation Sensors",
+"intro": "Accelerometers and gyros: navigation without any outside signal.",
+"sections": [
+{
+"title": "Dead reckoning, perfected",
+"text": "Sailors estimated position from speed and heading. An INS does it precisely: integrate acceleration and rotation, with no outside signal needed."
+},
+{
+"title": "Errors grow with time",
+"text": "Small sensor errors grow quickly once integrated. Schuler oscillation (84 min) bounds some of them, but position drifts."
+},
+{
+"title": "Performance classes",
+"text": "Strategic (~0.1 nmi/h), navigation (~1 nmi/h), tactical and consumer grades — cost and size fall as error grows by orders of magnitude."
+},
+{
+"title": "Accelerometers",
+"text": "Most use a proof mass: measure how a spring, pendulum or vibrating beam reacts to specific force. Atom interferometers are the future."
+},
+{
+"title": "Gyroscopes",
+"text": "Gyros keep track of heading. Mechanical, ring-laser, fibre-optic and vibrating gyros — navigation grade needs ~0.01°/h stability."
+},
+{
+"title": "Conclusion",
+"text": "Sixty years of progress made inertial sensors smaller and better — enabling new uses everywhere."
+}
+]
+},
+{
+"n": 45,
+"title": "MEMS Inertial Sensors",
+"intro": "The tiny sensors inside every phone.",
+"sections": [
+{
+"title": "What MEMS is",
+"text": "Micro-electro-mechanical systems: mechanical structures microns in size etched from silicon. Tiny, rugged, cheap and low-power."
+},
+{
+"title": "MEMS accelerometers",
+"text": "A tiny proof mass on springs. Its movement changes capacitance, which is read out as acceleration."
+},
+{
+"title": "MEMS gyroscopes",
+"text": "A vibrating structure feels the Coriolis force when rotated — that tiny sideways motion measures the rotation rate."
+},
+{
+"title": "MEMS IMUs",
+"text": "Consumer 3-axis gyros cost ~$0.30. Combined 6- and 9-axis IMUs are in phones, cars and drones."
+},
+{
+"title": "Using them for navigation",
+"text": "Great short-term, but biases drift with temperature and time — they need GNSS or other aids, plus calibration."
+}
+]
+},
+{
+"n": 46,
+"title": "GNSS-INS Integration",
+"intro": "Combining the best of both: GNSS is stable long-term, INS is smooth short-term.",
+"sections": [
+{
+"title": "Principles",
+"text": "The INS runs continuously, and a Kalman filter estimates its errors from GNSS and subtracts them (error-state filtering)."
+},
+{
+"title": "How INS errors grow",
+"text": "Attitude errors tilt gravity into false acceleration, biases integrate into drifting velocity and position — models predict this growth."
+},
+{
+"title": "Loose integration",
+"text": "Fuse GNSS position/velocity with INS. Simple, but needs a full GNSS fix (4+ satellites)."
+},
+{
+"title": "Tight integration",
+"text": "Fuse raw pseudoranges and Doppler. Still helpful with only 1–3 satellites in view."
+},
+{
+"title": "Deep integration",
+"text": "The INS helps the receiver's tracking loops directly — keeps lock with weaker signals and higher dynamics."
+},
+{
+"title": "Case studies",
+"text": "With a MEMS IMU in cities and under dense trees, integration bridges the gaps where GNSS alone fails."
+}
+]
+},
+{
+"n": 47,
+"title": "Atomic Clocks for GNSS",
+"intro": "The heart of every navigation satellite.",
+"sections": [
+{
+"title": "Why clocks matter",
+"text": "1 ns of clock error = 30 cm of range error. GNSS is really a system of very precise flying clocks."
+},
+{
+"title": "How an atomic clock works",
+"text": "An oscillator locked to an atomic transition, a counter, and a feedback loop. The atoms keep the frequency honest."
+},
+{
+"title": "Clocks in space",
+"text": "Rubidium and caesium standards, and passive hydrogen masers on Galileo. Accuracy and stability are different things."
+},
+{
+"title": "Future space clocks",
+"text": "Optical clocks and trapped-ion clocks could be 100× more stable, which would improve orbits and positioning."
+},
+{
+"title": "Relativity",
+"text": "Satellite clocks run fast by ~38 µs/day (weaker gravity beats speed). GNSS corrects for it — or positions would drift ~10 km/day."
+},
+{
+"title": "Clocks on the ground",
+"text": "Ground control uses even better ensembles of masers and caesium clocks as the master reference."
+},
+{
+"title": "GPS master clock",
+"text": "The US Naval Observatory keeps GPS's master clock using a huge array of atomic clocks."
+},
+{
+"title": "Chip-scale atomic clocks",
+"text": "DARPA-funded CSACs: a matchbox-size, ~100 mW atomic clock that helps receivers hold time during GNSS outages."
+}
+]
+},
+{
+"n": 48,
+"title": "Positioning Using Magnetic Fields",
+"intro": "From compasses to magnetic map matching.",
+"sections": [
+{
+"title": "Introduction",
+"text": "The compass is ~1000 years old. Today, magnetic anomaly maps allow absolute positioning without GNSS."
+},
+{
+"title": "Sources",
+"text": "The core field, crustal anomalies (rocks), and disturbances from the ionosphere, the Sun and your own vehicle all add together."
+},
+{
+"title": "Instruments",
+"text": "Fluxgate, optically pumped and other magnetometers. The platform itself (metal, electronics) corrupts measurements."
+},
+{
+"title": "Calibration",
+"text": "Aircraft magnetic fields must be modelled and removed (Tolles–Lawson) before the measurements are useful."
+},
+{
+"title": "Magnetic map matching",
+"text": "Compare measured anomalies to a map, like terrain matching — demonstrated on flights with errors of tens of metres."
+}
+]
+},
+{
+"n": 49,
+"title": "Laser-Based Navigation (Lidar)",
+"intro": "Measuring the world with light.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Lidar gives precise 3D point clouds used for collision avoidance, mapping and estimating your own motion."
+},
+{
+"title": "Sensor technology",
+"text": "Scanning lidars, flash lidars and solid-state units — getting cheaper thanks to self-driving cars."
+},
+{
+"title": "Navigation methods",
+"text": "Featureless: align whole point clouds (ICP). Feature-based: extract lines, planes or corners and track them."
+},
+{
+"title": "Considerations",
+"text": "SLAM builds the map while navigating. Without loop closure, drift accumulates."
+}
+]
+},
+{
+"n": 50,
+"title": "Image-Aided Navigation",
+"intro": "Cameras as navigation sensors.",
+"sections": [
+{
+"title": "Why cameras",
+"text": "Cheap, passive and information-rich. Inspired by how animals navigate by sight."
+},
+{
+"title": "Imaging model",
+"text": "An image is a 2D projection of the 3D world. The pinhole camera model links pixels to directions."
+},
+{
+"title": "Interest points",
+"text": "Pick features (corners, blobs) that can be found again in the next image."
+},
+{
+"title": "Correspondence",
+"text": "Match features between images using descriptors. Wrong matches must be found and rejected."
+},
+{
+"title": "Pose estimation",
+"text": "From matched points, solve for camera rotation and translation (e.g. with RANSAC to reject outliers)."
+},
+{
+"title": "One camera's limit",
+"text": "A single camera can't know scale — it sees motion direction but not distance travelled."
+},
+{
+"title": "Adding information",
+"text": "Inertial sensors, known landmarks, stereo or altitude fix the scale and reduce drift."
+},
+{
+"title": "Sensor fusion",
+"text": "Camera + IMU (visual-inertial odometry) is now standard in phones, drones and robots."
+},
+{
+"title": "Conclusion",
+"text": "Image-aided navigation is mature and keeps working where GNSS fails."
+}
+]
+},
+{
+"n": 51,
+"title": "Digital Photogrammetry",
+"intro": "Measuring 3D from images.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Photogrammetry: getting reliable measurements of objects and terrain from images. A long tradition, now merging with navigation."
+},
+{
+"title": "Optical imagery",
+"text": "Digital CCD/CMOS cameras replaced film. Sensor quality limits the final product."
+},
+{
+"title": "Basic definitions",
+"text": "Spatial, radiometric and spectral resolution; ground sample distance; noise."
+},
+{
+"title": "Fundamentals",
+"text": "Collinearity: camera centre, image point and object point lie on one line. Triangulation finds 3D points, backprojection maps them back to images."
+},
+{
+"title": "Workflow",
+"text": "Calibrate the camera → orient the images (bundle adjustment, often with GNSS/INS) → dense matching → 3D models and orthophotos."
+},
+{
+"title": "Applications",
+"text": "Orthomosaics, digital elevation models, city models, drone mapping, change detection."
+},
+{
+"title": "Conclusion",
+"text": "Mapping and navigation now feed each other: navigation geo-references images, and images help navigation."
+}
+]
+},
+{
+"n": 52,
+"title": "Navigation Using Pulsars and Celestial Sources",
+"intro": "A GPS for deep space.",
+"sections": [
+{
+"title": "The concept",
+"text": "Pulsars are cosmic clocks. Compare pulse arrival times at a spacecraft with predictions at the Solar System's centre → position anywhere in the Solar System."
+},
+{
+"title": "Variable celestial sources",
+"text": "Stars guided sailors and Apollo. X-ray pulsars, with their very stable spin, are the best candidates for autonomous space navigation."
+},
+{
+"title": "Applications",
+"text": "Deep-space probes, planetary vehicles, even localising gamma-ray bursts. NASA's SEXTANT demonstrated it on the ISS."
+},
+{
+"title": "Limits",
+"text": "Faint sources need big detectors and long observation times — today's technology limits accuracy and practicality."
+}
+]
+},
+{
+"n": 53,
+"title": "Neuroscience of Navigation",
+"intro": "How the brain knows where you are.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Navigation is vital for survival. Many animals — and humans — perform remarkable navigation feats."
+},
+{
+"title": "Spatial frameworks",
+"text": "Egocentric (relative to me: \"left of me\") vs allocentric (map-like: \"north of the station\")."
+},
+{
+"title": "Specialised cells",
+"text": "Place cells (hippocampus), grid cells, head-direction cells and border cells form the brain's internal GPS — Nobel Prize 2014."
+},
+{
+"title": "Brain systems",
+"text": "The hippocampus, entorhinal cortex, parietal cortex and others work together. Damage to them causes getting lost."
+},
+{
+"title": "Future directions",
+"text": "How brain areas combine into a full map is still debated. VR and brain imaging are opening new questions."
+},
+{
+"title": "Conclusion",
+"text": "Since 1978 the field has exploded. It's a rich source of ideas for robot navigation too."
+}
+]
+},
+{
+"n": 54,
+"title": "Orientation and Navigation in the Animal World",
+"intro": "Nature's navigation systems.",
+"sections": [
+{
+"title": "Animal senses",
+"text": "Animals use the Sun, stars, smell, polarised light, landmarks and the magnetic field — some senses we don't even have."
+},
+{
+"title": "Star compass",
+"text": "Night-migrating songbirds learn the rotation centre of the night sky to find north."
+},
+{
+"title": "Magnetic sense (radical pairs)",
+"text": "Light-triggered chemical reactions in the eye (cryptochrome) may let birds \"see\" the magnetic field."
+},
+{
+"title": "Other mechanisms",
+"text": "Tiny magnetite crystals might act as internal compass needles. How animals combine all these cues remains a big open question."
+}
+]
+},
+{
+"n": 55,
+"title": "Surveying and Mobile Mapping",
+"intro": "GNSS for measuring land and building maps.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Multi-GNSS and augmentation made centimetre positioning routine for surveyors."
+},
+{
+"title": "Requirements",
+"text": "Accuracy needs vary: cadastral boundaries need centimetres, GIS mapping can accept decimetres to metres."
+},
+{
+"title": "Land and marine surveying",
+"text": "RTK and network RTK for land, and DGNSS/PPP via satellite links for offshore and hydrographic surveys."
+},
+{
+"title": "Mobile mapping",
+"text": "Cars, drones and backpacks with GNSS/INS + lidar + cameras map roads and cities quickly."
+},
+{
+"title": "Emerging trends",
+"text": "Multi-frequency, cheap high-precision receivers, PPP-RTK and smartphone raw measurements are changing surveying."
+}
+]
+},
+{
+"n": 56,
+"title": "Precision Agriculture",
+"intro": "GNSS on the farm.",
+"sections": [
+{
+"title": "What it is",
+"text": "GIS maps plus GNSS guidance: auto-steering tractors, variable-rate seeding and spraying, yield maps."
+},
+{
+"title": "GNSS requirements",
+"text": "Repeatable centimetre accuracy (come back next season to the same row), ionospheric scintillation near the equator, and correction services."
+},
+{
+"title": "Plate motion matters",
+"text": "Continents move cm per year, so field coordinates drift against global frames — correction services must handle the datum."
+}
+]
+},
+{
+"n": 57,
+"title": "Wearables",
+"intro": "Navigation and sensing on your body.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Wearables were science fiction for a century — now they're on everyone's wrist."
+},
+{
+"title": "Origins",
+"text": "GPS in consumer devices after Selective Availability ended in 2000 opened the door to running watches and trackers."
+},
+{
+"title": "The wearable world",
+"text": "Fitness bands, smartwatches, hearables, smart glasses and clothing — a crowded market."
+},
+{
+"title": "Architecture",
+"text": "Wearable gathers data → phone processes and connects → cloud stores and analyses."
+},
+{
+"title": "Sensors",
+"text": "GNSS, MEMS motion sensors, barometers, heart-rate and other biosensors."
+},
+{
+"title": "Battery is king",
+"text": "Power is the biggest design constraint. GNSS duty-cycling and low-power chips extend battery life."
+},
+{
+"title": "Video and audio",
+"text": "Cameras and audio add features but drain batteries — always a trade-off."
+},
+{
+"title": "Wireless",
+"text": "Bluetooth Low Energy dominates. Wi-Fi and cellular are used sparingly because of power."
+},
+{
+"title": "Privacy & security",
+"text": "Location and health data are sensitive — studies found wearables leaking them."
+},
+{
+"title": "The future",
+"text": "Networked body sensors giving a holistic picture of health and performance."
+},
+{
+"title": "Summary",
+"text": "Wearables will become everywhere and nearly invisible — woven into daily life."
+}
+]
+},
+{
+"n": 58,
+"title": "Navigation for ADAS and Automated Driving",
+"intro": "How self-driving cars know where they are.",
+"sections": [
+{
+"title": "Introduction",
+"text": "~37,000 road deaths a year in the US and over a million worldwide. Automation promises safety — and it needs precise, reliable positioning."
+},
+{
+"title": "Useful GNSS measurements",
+"text": "Besides position: velocity, heading (course), road grade and time-differenced carrier phase for precise motion."
+},
+{
+"title": "Vehicle models",
+"text": "Combining GNSS with vehicle dynamics models and IMUs estimates slip, heading and tyre behaviour."
+},
+{
+"title": "Applications",
+"text": "Lane-level navigation, vehicle state estimation, and guidance and control — e.g. estimating tyre-road friction."
+}
+]
+},
+{
+"n": 59,
+"title": "Train Control and Rail Traffic Management",
+"intro": "GNSS on the railway.",
+"sections": [
+{
+"title": "The role of GNSS",
+"text": "Knowing train position precisely lets trains run closer together safely. GNSS could replace expensive track-side balises."
+},
+{
+"title": "Track-constrained PNT",
+"text": "Trains stay on tracks, so the problem becomes 1D along a known track map — a big help."
+},
+{
+"title": "GNSS + odometer",
+"text": "Wheel odometers bridge tunnels and GNSS gaps, while GNSS corrects odometer slip."
+},
+{
+"title": "Relative positioning",
+"text": "Differential positioning against reference stations, constrained to the track geometry, gives high accuracy."
+},
+{
+"title": "Which track am I on?",
+"text": "Parallel tracks are only a few metres apart, so track discrimination needs carrier phase and integrity."
+},
+{
+"title": "Detector performance",
+"text": "Multipath near stations and integrity requirements set how reliably the right track is identified."
+}
+]
+},
+{
+"n": 60,
+"title": "Commercial Unmanned Aircraft (UAS)",
+"intro": "Navigation for drones.",
+"sections": [
+{
+"title": "Context",
+"text": "Commercial drone uses are booming — delivery, inspection, mapping — while the military remains the biggest operator."
+},
+{
+"title": "Guidance and autonomy",
+"text": "A strategic layer plans the route, a tactical layer reacts in real time. Navigation feeds both."
+},
+{
+"title": "Avoiding terrain and obstacles",
+"text": "Path planning with sensors and maps keeps drones away from buildings, terrain and wires."
+},
+{
+"title": "Avoiding other aircraft",
+"text": "Detect-and-avoid systems issue warnings and manoeuvres to keep safe separation."
+},
+{
+"title": "Role of navigation",
+"text": "Navigation errors must be accounted for in safety zones — integrity matters for drones too."
+}
+]
+},
+{
+"n": 61,
+"title": "Navigation for Aviation",
+"intro": "Past, present and future of finding your way in the sky.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Airspace is modernising: more and different aircraft, more efficient routes — all built on precision navigation."
+},
+{
+"title": "History",
+"text": "From landmarks and beacons to radio ranges, VOR/DME, ILS and INS — each era added new tools."
+},
+{
+"title": "The 21st century",
+"text": "GNSS is primary, terrestrial radio is the backup, and new signals (cellular, LEO) serve drones."
+},
+{
+"title": "GNSS in aviation",
+"text": "RAIM, SBAS and GBAS are certified for all flight phases — from oceanic routes to landing."
+},
+{
+"title": "Terrestrial backups",
+"text": "NDB, VOR and DME remain as a safety net if GNSS fails — DME networks are getting renewed attention."
+},
+{
+"title": "Surveillance-based navigation",
+"text": "Radar and ADS-B tracking can also help aircraft know where they are."
+},
+{
+"title": "Signals of opportunity",
+"text": "Urban drone delivery needs metre-level navigation in places aviation never used — cellular and other signals may help."
+},
+{
+"title": "Natural sources",
+"text": "Inertial, barometric, magnetic and terrain-based navigation fill gaps, especially for drones."
+},
+{
+"title": "Vision",
+"text": "Enhanced and synthetic vision let pilots \"see\" through fog and darkness, and cameras increasingly navigate drones."
+},
+{
+"title": "Conclusions",
+"text": "More users, more variety, new vehicles like suborbital spaceflight — aviation navigation must become multi-source."
+}
+]
+},
+{
+"n": 62,
+"title": "Orbit Determination with GNSS",
+"intro": "GNSS receivers in space tracking satellites.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Almost every LEO satellite carries a GPS receiver — the most efficient and accurate way to track spacecraft."
+},
+{
+"title": "Formulation",
+"text": "Positioning a satellite with GNSS is like positioning a user on the ground — but it's moving at 7 km/s."
+},
+{
+"title": "Linearisation",
+"text": "Orbit models (gravity, drag, solar pressure) are linearised around an initial guess and refined iteratively."
+},
+{
+"title": "Kinematic, dynamic, reduced-dynamic",
+"text": "Kinematic: GNSS only. Dynamic: physics model only. Reduced-dynamic: both — the best of each."
+},
+{
+"title": "The reference matters",
+"text": "Precise GNSS orbits and clocks (from IGS/JPL) are the reference — their quality limits yours."
+},
+{
+"title": "Validation",
+"text": "Check against laser ranging (SLR) and orbit overlaps to know how good the solution really is."
+},
+{
+"title": "LEO, MEO, HEO",
+"text": "Higher orbits see GNSS signals only from the far side of Earth — weak, sparse, but still usable even at GEO."
+},
+{
+"title": "Formation flying",
+"text": "Differential GNSS between spacecraft gives millimetre-to-centimetre relative positions."
+},
+{
+"title": "Space receivers",
+"text": "Radiation hardening, export controls (above 18 km / 515 m/s) and high dynamics set space receivers apart."
+},
+{
+"title": "Timing",
+"text": "Receiver clock states can tie onboard instruments precisely to a known time scale."
+},
+{
+"title": "Earth science POD",
+"text": "Altimetry and gravity missions need cm- to mm-level orbits — GNSS made that possible."
+},
+{
+"title": "Combining data",
+"text": "SLR, DORIS, star trackers and accelerometers combine with GNSS for the best orbits."
+},
+{
+"title": "Onboard orbit determination",
+"text": "Real-time orbits computed on the satellite itself, with limited computing — getting closer to ground quality."
+},
+{
+"title": "Jason-3 case study",
+"text": "An ocean-altimetry satellite whose cm-level orbits rely on GNSS together with DORIS and SLR."
+}
+]
+},
+{
+"n": 63,
+"title": "Satellite Formation Flying and Rendezvous",
+"intro": "Spacecraft flying in tight formation.",
+"sections": [
+{
+"title": "Relative navigation",
+"text": "GNSS measurements give the relative positions of cooperating satellites — key for formations and docking."
+},
+{
+"title": "Relative orbit determination",
+"text": "Estimate how satellites move relative to each other. Carrier-phase differencing gives mm–cm precision."
+},
+{
+"title": "Mission results",
+"text": "Space Shuttle, PRISMA, TanDEM-X and NASA's MMS (using GPS far above the GNSS constellation!) all proved it."
+},
+{
+"title": "Conclusions",
+"text": "Accurate relative navigation enables precise formation control — the basis for distributed space systems."
+}
+]
+},
+{
+"n": 64,
+"title": "Navigation in the Arctic",
+"intro": "The hardest place on Earth to navigate.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Melting sea ice is opening Arctic shipping routes — but navigation there is extremely difficult."
+},
+{
+"title": "Ice navigation",
+"text": "Poor charts, moving ice, extreme cold and darkness. Ships rely on GNSS, radar, ice charts and experience."
+},
+{
+"title": "GNSS integrity in the Arctic",
+"text": "Satellites sit low on the horizon, the ionosphere is stormy, and SBAS coverage is thin. Multi-GNSS and new infrastructure help."
+},
+{
+"title": "Conclusions",
+"text": "Harsh conditions make the Arctic one of the most hostile places to navigate — and a growing priority."
 }
 ]
 }

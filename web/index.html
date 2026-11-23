@@ -76,7 +76,7 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .reel{height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;padding:24px}
 .reel .card{width:min(460px,100%);height:min(820px,100%);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;position:relative;
   background:linear-gradient(160deg,var(--g1),#05080f 75%)}
-.reel.k-call{--g1:#6d28d9}.reel.k-book{--g1:#0f766e}.reel.head h2{font-size:clamp(26px,7vw,34px)}.reel.k-paper{--g1:#1f4fa8}.reel.k-job{--g1:#0b6b49}.reel.k-news{--g1:#8a430b}
+.reel.k-call{--g1:#6d28d9}.reel.k-book{--g1:#0f766e}.reel .ans{position:relative;z-index:1;font-size:15px;background:#ffffff1f;border-radius:10px;padding:10px 12px;white-space:pre-line}.reel .ans summary{cursor:pointer;font-weight:600}.reel.head h2{font-size:clamp(26px,7vw,34px)}.reel.k-paper{--g1:#1f4fa8}.reel.k-job{--g1:#0b6b49}.reel.k-news{--g1:#8a430b}
 .reel .kind{position:absolute;top:22px;left:24px;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
 .reel h2{margin:0;font-size:clamp(20px,5vw,26px);line-height:1.25}
 .reel .sum{white-space:pre-line;font-size:15px;line-height:1.5;opacity:.9;max-height:40%;overflow:auto}
@@ -198,8 +198,11 @@ const topic=i=>kind(i)=="job"?"mission control":(TOPICS.find(([re])=>re.test(i.t
 let book=null,bookMode=localStorage.reelBook=="1";
 const bookFeed=()=>{const q=$("#q").value.trim().toLowerCase();
   return(book?.chapters||[]).flatMap(c=>[{book:1,head:1,id:c.n+".0",ch:c.n,title:c.title,text:c.intro,label:"Chapter "+c.n,pos:c.sections.length+" reels"},
-    ...c.sections.map((x,k)=>({book:1,id:c.n+"."+(k+1),ch:c.n,title:x.title,text:x.text,label:`Ch ${c.n} · ${c.title}`,pos:`${k+1}/${c.sections.length}`}))])
+    ...c.sections.flatMap((x,k)=>[{book:1,id:c.n+"."+(k+1),ch:c.n,title:x.title,text:x.text,label:`Ch ${c.n} · ${c.title}`,pos:`${k+1}/${c.sections.length}`},
+      // private deep-study cards (data/book-deep.json, git-ignored): {"2":{"1":[{"t":"eq","h":"…","x":"…","a":"quiz answer"}]}}
+      ...(deep?.[c.n]?.[k+1]||[]).map((d,j,all)=>({book:1,deep:d.t,id:`${c.n}.${k+1}.${j+1}`,ch:c.n,title:d.h,text:d.x,ans:d.a,label:`${DEEP[d.t]||"📖"} · ${x.title}`,pos:`${k+1}/${c.sections.length} · ${j+1}/${all.length}`}))])])
     .filter(x=>!q||(x.title+" "+x.text).toLowerCase().includes(q))};
+let deep=null;const DEEP={idea:"💡 Core idea",intuition:"🧠 Intuition",eq:"🧮 Equation",example:"🔢 Worked example",pitfall:"⚠️ Pitfall",quiz:"❓ Quiz"};
 const imgCache={},REEL_SECS=8;let auto=localStorage.reelAuto=="1",reelT;
 // NASA image/video library: free, no key, CORS-open. Videos use the ~1 MB "~mobile.mp4" rendition.
 const nasa=(q,t)=>imgCache[t+q]??=fetch(`https://images-api.nasa.gov/search?media_type=${t}&page_size=60&q=`+encodeURIComponent(q))
@@ -251,7 +254,7 @@ function render(){
     if(bookMode)feed=bookFeed();
     const y=$(".reels")?.scrollTop;
     $("#view").innerHTML=`<div class="reels ${auto?"auto":""}" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button><button class="bk" data-act="book" title="${bookMode?"Back to news reels":"Book reels"}">${bookMode?"📰":"📘"}</button>${bookMode&&book?`<select class="chap">${book.chapters.map(c=>`<option value="${c.n}">Ch ${c.n}: ${esc(c.title)}</option>`).join("")}</select>`:""}<button class="play" data-act="auto" title="Auto-advance every ${REEL_SECS}s">${auto?"❚❚":"▶"}</button><span class="cr">Stock images &amp; video: NASA</span>${feed.map((i,n)=>{if(i.book)return`<section class="reel k-book${i.head?" head":""}" data-q="${topic({title:i.title,ai_summary:i.text})}" data-id="${esc(i.id)}"${i.head?` id="ch-${i.ch}"`:""}><div class="card"><div class="bg"></div><i class="bar"></i>
-      <span class="kind">📘 ${esc(i.label)}</span><span class="pos">${i.pos}</span><h2>${esc(i.title)}</h2><div class="sum">${esc(i.text)}</div>${i.head?`<div class="src">${esc(book.title)}</div>`:""}</div></section>`;
+      <span class="kind">📘 ${esc(i.label)}</span><span class="pos">${i.pos}</span><h2>${esc(i.title)}</h2><div class="sum">${esc(i.text)}</div>${i.ans?`<details class="ans"><summary>Tap to reveal answer</summary>${esc(i.ans)}</details>`:""}${i.head?`<div class="src">${esc(book.title)}</div>`:""}</div></section>`;
       if(i.call)return`<section class="reel k-call" data-q="earth from space" data-id="${esc(i.title)}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
       <h2>${esc(i.title)}</h2><div class="m"><span class="st ${i.st[0]}">${esc(i.st[1])}</span></div>
       ${i.sum?`<div class="sum">${esc(i.sum)}</div>`:""}${i.src?`<div class="src">${esc(i.src)}</div>`:""}
@@ -350,6 +353,7 @@ document.addEventListener("change",e=>{if(e.target.id=="days"){days=+e.target.va
   if(e.target.classList.contains("chap"))document.getElementById("ch-"+e.target.value)?.scrollIntoView()});
 $("#q").addEventListener("input",render);
 document.addEventListener("keydown",e=>{if(e.key=="Escape"&&tab=="reels"&&!document.querySelector(".pop")){tab="overview";render()}});
+fetch("data/book-deep.json?"+Date.now()).then(r=>r.ok?r.json():null).then(d=>{deep=d;if(d&&items.length&&tab=="reels")render()}).catch(()=>{});
 fetch("data/book.json?"+Date.now()).then(r=>r.json()).then(d=>{book=d;if(items.length&&tab=="reels")render()}).catch(()=>{});
 fetch("data/calls.json?"+Date.now()).then(r=>r.json()).then(d=>{cfp=d;if(items.length)render()}).catch(()=>{});
 fetch("data/items.json?"+Date.now()).then(r=>r.json()).then(d=>{items=d.items;updated=d.updated;render()})
