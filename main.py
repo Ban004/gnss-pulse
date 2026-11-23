@@ -64,6 +64,7 @@ def main():
 
     for i in store["items"]:  # keep quartiles current if the ranking file changes
         i["tier"] = process.journal_tier(i)
+    process.add_media(store["items"])
     DATA.write_text(json.dumps(store, ensure_ascii=False, indent=1))
 
     cfps = update_calls(cfg)

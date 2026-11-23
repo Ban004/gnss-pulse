@@ -290,3 +290,55 @@ def finalize(it):
                   importance=2, deadline=None, location=None)
     it["tier"] = journal_tier(it)
     return it
+
+
+# --- Media for the Reels view: the item's own photo / video from its page metadata ---
+MEDIA_SKIP = re.compile(r"logo|brand|favicon|/themes/|cover|default|placeholder|twitter\.png|successfactors|access|journalthumbnail", re.I)
+MEDIA_NO_FETCH = ("news.google.com",)  # redirect wrapper pages: only Google's own logo
+
+
+def _page_media(url):
+    from urllib.parse import urljoin, urlparse
+    from bs4 import BeautifulSoup
+    if urlparse(url).netloc in MEDIA_NO_FETCH:
+        return {}
+    ua = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"}
+    try:
+        r = requests.get(url, headers=ua, timeout=15)
+        if r.status_code != 200 or "html" not in r.headers.get("content-type", ""):
+            return {}
+    except requests.RequestException:
+        return {}
+    s = BeautifulSoup(r.text, "html.parser")
+    meta = {(t.get("property") or t.get("name") or "").lower(): t.get("content") for t in s.find_all("meta") if t.get("content")}
+    out = {}
+    yt = [m.group(1) for f in s.find_all("iframe") if (m := re.search(r"youtube(?:-nocookie)?\.com/embed/([\w-]{11})", f.get("src") or ""))]
+    vid = meta.get("og:video:secure_url") or meta.get("og:video:url") or meta.get("og:video") or meta.get("twitter:player:stream")
+    if yt:
+        out["video"] = "yt:" + yt[0]
+    elif vid and (m := re.search(r"youtube\.com/(?:embed/|watch\?v=)([\w-]{11})", vid)):
+        out["video"] = "yt:" + m.group(1)
+    elif vid and re.search(r"\.(mp4|webm)(\?|$)", vid, re.I):
+        out["video"] = urljoin(r.url, vid)
+    img = meta.get("og:image") or meta.get("og:image:secure_url") or meta.get("twitter:image")
+    if img and not MEDIA_SKIP.search(img):
+        out["image"] = urljoin(r.url, img)
+    return out
+
+
+def add_media(items, limit=200):
+    """Fill image/video for items not checked yet (newest first, `limit` per run), then drop
+    site-wide stock media: the same picture/video on 3+ items is a site banner, not the item's own."""
+    from collections import Counter
+    from concurrent.futures import ThreadPoolExecutor
+    todo = [i for i in items if "media" not in i][:limit]
+    with ThreadPoolExecutor(8) as ex:
+        for it, m in zip(todo, ex.map(lambda i: _page_media(i["url"]), todo)):
+            it["media"] = 1
+            it.update(m)
+    for k in ("image", "video"):
+        n = Counter(i.get(k) for i in items)
+        for i in items:
+            if i.get(k) and n[i[k]] >= 3:
+                del i[k]
+    print(f"Media: checked {len(todo)} pages, {sum('image' in i for i in todo)} images, {sum('video' in i for i in todo)} videos")

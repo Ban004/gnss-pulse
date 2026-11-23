@@ -91,7 +91,7 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .reels .play{right:62px}
 .reel .card{overflow:hidden;user-select:none}
 .reel .card>*{z-index:1}.reel .card>h2,.reel .card>.m,.reel .card>.sum,.reel .card>.src,.reel .card>.acts{position:relative}
-.reel .bg{position:absolute;inset:0;z-index:0;background:center/cover;opacity:0;transition:opacity .8s}.reel .bg.ok{opacity:1}.reel .bg video{width:100%;height:100%;object-fit:cover}
+.reel .bg{position:absolute;inset:0;z-index:0;background:center/cover;opacity:0;transition:opacity .8s}.reel .bg.ok{opacity:1}.reel .bg video{width:100%;height:100%;object-fit:cover}.reel .bg iframe{width:100%;height:100%;border:0;pointer-events:none;transform:scale(1.6)}
 .reel .card::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(#0006,transparent 20%,transparent 30%,#000d 62%)}
 .reel.on .bg{animation:kb 14s ease-out forwards}@keyframes kb{to{transform:scale(1.18) translate(-3%,-2%)}}
 .reel .bar{position:absolute;top:0;left:0;height:3px;width:0;background:#fff;z-index:2}
@@ -199,14 +199,20 @@ const nasa=(q,t)=>imgCache[t+q]??=fetch(`https://images-api.nasa.gov/search?medi
   .then(r=>r.json()).then(d=>d.collection.items.map(i=>t=="video"?(id=>`https://images-assets.nasa.gov/video/${encodeURIComponent(id)}/${encodeURIComponent(id)}~mobile.mp4`)(i.data[0].nasa_id)
     :i.links?.[0]?.href).filter(Boolean)).catch(()=>[]);
 const hash=s=>[...s].reduce((h,c)=>h*31+c.charCodeAt(0)|0,0)>>>0;
-function loadBg(s){if(!s||s.dataset.bg)return;s.dataset.bg=1;
-  const b=s.querySelector(".bg"),h=hash(s.dataset.id),q=s.dataset.q;
-  const img=()=>nasa(q,"image").then(u=>{if(!u.length)return;const im=new Image();
-    im.onload=()=>{b.style.backgroundImage=`url("${im.src}")`;b.classList.add("ok")};im.src=u[h%u.length]});
-  if(h%2)return img();  // half the cards get a video, the rest a photo
-  nasa(q,"video").then(u=>{if(!u.length)return img();const v=document.createElement("video");
-    Object.assign(v,{muted:true,loop:true,playsInline:true,autoplay:s.classList.contains("on"),src:u[h%u.length]});
-    v.oncanplay=()=>b.classList.add("ok");v.onerror=()=>{v.remove();img()};b.append(v)})}
+function loadBg(s){if(!s||s.dataset.bg)return;
+  const b=s.querySelector(".bg"),h=hash(s.dataset.id),q=s.dataset.q,own=s.dataset.vid,on=s.classList.contains("on");
+  if(own?.startsWith("yt:")&&!on)return;  // YouTube can't be paused from here: only load it on the visible card
+  s.dataset.bg=1;
+  const showImg=(src,fail)=>{const im=new Image();im.onload=()=>{b.style.backgroundImage=`url("${im.src}")`;b.classList.add("ok")};im.onerror=fail;im.src=src};
+  const showVid=(src,fail)=>{const v=document.createElement("video");Object.assign(v,{muted:true,loop:true,playsInline:true,autoplay:on,src});
+    v.oncanplay=()=>b.classList.add("ok");v.onerror=()=>{v.remove();fail()};b.append(v)};
+  const nasaImg=()=>nasa(q,"image").then(u=>u.length&&showImg(u[h%u.length]));
+  const nasaVid=()=>nasa(q,"video").then(u=>u.length?showVid(u[h%u.length],nasaImg):nasaImg());
+  const stock=h%2?nasaImg:nasaVid;  // no media of its own: half get a NASA video, the rest a NASA photo
+  const ownImg=()=>s.dataset.img?showImg(s.dataset.img,stock):stock();
+  // the item's own video, then its own photo, then NASA stock
+  if(own?.startsWith("yt:")){const id=own.slice(3);b.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=1&loop=1&playlist=${encodeURIComponent(id)}&controls=0&playsinline=1" allow="autoplay" tabindex="-1"></iframe>`;b.classList.add("ok")}
+  else if(own)showVid(own,ownImg);else ownImg()}
 function reelOn(s){document.querySelectorAll(".reel.on").forEach(x=>x.classList.remove("on"));s.classList.add("on");
   document.querySelectorAll(".reels video").forEach(v=>v.pause());s.querySelector("video")?.play().catch(()=>{});
   loadBg(s);loadBg(s.nextElementSibling);clearTimeout(reelT);
@@ -235,12 +241,12 @@ function render(){
         title:x.title,label:"Special issue call",st:[daysTo(x.deadline)<=14?"soon":"open",`Deadline ${fmt(x.deadline)} · ${daysTo(x.deadline)} days left`],sum:x.summary,src:[x.journal||x.source,x.tier!="unknown"&&x.tier].filter(Boolean).join(" · "),url:x.url}))];
     for(let n=0;n<calls.length;n++)feed.splice(Math.min(n*6+2,feed.length),0,calls[n]);
     const y=$(".reels")?.scrollTop;
-    $("#view").innerHTML=`<div class="reels ${auto?"auto":""}" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button><button class="play" data-act="auto" title="Auto-advance every ${REEL_SECS}s">${auto?"❚❚":"▶"}</button><span class="cr">Images &amp; video: NASA</span>${feed.map((i,n)=>{if(i.call)return`<section class="reel k-call" data-q="earth from space" data-id="${esc(i.title)}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
+    $("#view").innerHTML=`<div class="reels ${auto?"auto":""}" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button><button class="play" data-act="auto" title="Auto-advance every ${REEL_SECS}s">${auto?"❚❚":"▶"}</button><span class="cr">Stock images &amp; video: NASA</span>${feed.map((i,n)=>{if(i.call)return`<section class="reel k-call" data-q="earth from space" data-id="${esc(i.title)}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
       <h2>${esc(i.title)}</h2><div class="m"><span class="st ${i.st[0]}">${esc(i.st[1])}</span></div>
       ${i.sum?`<div class="sum">${esc(i.sum)}</div>`:""}${i.src?`<div class="src">${esc(i.src)}</div>`:""}
       <div class="acts"><a href="${esc(i.url)}" target="_blank" rel="noopener">Open call ↗</a></div></div></section>`;
       const k=kind(i),s=isSaved(i.id);
-      return`<section class="reel k-${k}" data-q="${topic(i)}" data-id="${i.id}" data-save="${i.id}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">${esc(LABEL[i.category]||i.category)}${isNew(i)?" · 🔥 New":""}</span><span class="pos">${n+1}/${feed.length}</span>
+      return`<section class="reel k-${k}" data-q="${topic(i)}" data-id="${i.id}" data-save="${i.id}" data-img="${esc(i.image||"")}" data-vid="${esc(i.video||"")}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">${esc(LABEL[i.category]||i.category)}${isNew(i)?" · 🔥 New":""}</span><span class="pos">${n+1}/${feed.length}</span>
       <h2>${esc(i.title)}</h2>
       <div class="m">${i.tier&&!["unknown","conference","preprint","book"].includes(i.tier)?`<span class="tag">${esc(i.tier)}</span>`:""}${i.importance>=4?`<span class="tag">Key</span>`:""}${i.deadline?`<span class="tag">Deadline ${esc(i.deadline)}</span>`:""}</div>
       ${i.ai_summary||i.summary?`<div class="sum">${esc(i.ai_summary||i.summary.slice(0,400)+(i.summary.length>400?"…":""))}</div>`:""}
