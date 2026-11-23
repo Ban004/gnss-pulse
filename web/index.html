@@ -76,7 +76,7 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .reel{height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;padding:24px}
 .reel .card{width:min(460px,100%);height:min(820px,100%);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;position:relative;
   background:linear-gradient(160deg,var(--g1),#05080f 75%)}
-.reel.k-call{--g1:#6d28d9}.reel.k-paper{--g1:#1f4fa8}.reel.k-job{--g1:#0b6b49}.reel.k-news{--g1:#8a430b}
+.reel.k-call{--g1:#6d28d9}.reel.k-book{--g1:#0f766e}.reel.head h2{font-size:clamp(26px,7vw,34px)}.reel.k-paper{--g1:#1f4fa8}.reel.k-job{--g1:#0b6b49}.reel.k-news{--g1:#8a430b}
 .reel .kind{position:absolute;top:22px;left:24px;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
 .reel h2{margin:0;font-size:clamp(20px,5vw,26px);line-height:1.25}
 .reel .sum{white-space:pre-line;font-size:15px;line-height:1.5;opacity:.9;max-height:40%;overflow:auto}
@@ -86,9 +86,10 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .reel .acts a,.reel .acts button{flex:1;text-align:center;padding:11px;border-radius:10px;border:0;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;background:#ffffff26;color:#fff}
 .reel .acts a{background:#fff;color:#000}
 .reel .acts .star{position:static;font-size:15px}.reel .acts .star.on{color:#ffd33d}
-.reels .x,.reels .play{position:fixed;top:14px;right:16px;z-index:16;background:#0008;color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+.reels .x,.reels .play,.reels .bk{position:fixed;top:14px;right:16px;z-index:16;background:#0008;color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
 .reel .pos{position:absolute;top:42px;left:24px;font-size:12px;opacity:.6}
-.reels .play{right:62px}
+.reels .play{right:62px}.reels .bk{right:108px}
+.reels .chap{position:fixed;bottom:2px;right:8px;z-index:16;font-size:11px;background:#000a;color:#fff;border:0;max-width:60vw}
 .reel .card{overflow:hidden;user-select:none}
 .reel .card>*{z-index:1}.reel .card>h2,.reel .card>.m,.reel .card>.sum,.reel .card>.src,.reel .card>.acts{position:relative}
 .reel .bg{position:absolute;inset:0;z-index:0;background:center/cover;opacity:0;transition:opacity .8s}.reel .bg.ok{opacity:1}.reel .bg video{width:100%;height:100%;object-fit:cover}.reel .bg iframe{width:100%;height:100%;border:0;pointer-events:none;transform:scale(1.6)}
@@ -193,6 +194,12 @@ const TOPICS=[[/ionosph|scintill|\btec\b|space weather|solar/i,"aurora from spac
   [/vehicle|urban|autonomous|\bins\b|inertial|uav|drone|robot|lidar|slam|smartphone/i,"city lights at night from space"],[/geodes|earthquake|deformation|tecton|crust|reference frame|sea level|glacier/i,"earth topography"],
   [/clock|orbit|constellation|\bleo\b|launch|satellite/i,"satellite orbit earth"],[/antenna|receiver|signal|interference|jamming|spoof/i,"antenna tracking station"]];
 const topic=i=>kind(i)=="job"?"mission control":(TOPICS.find(([re])=>re.test(i.title+" "+(i.ai_summary||"")))||[0,"GPS satellite"])[1];
+// Book reels: one card per chapter + one per section, from data/book.json (resumes where you left off)
+let book=null,bookMode=localStorage.reelBook=="1";
+const bookFeed=()=>{const q=$("#q").value.trim().toLowerCase();
+  return(book?.chapters||[]).flatMap(c=>[{book:1,head:1,id:c.n+".0",ch:c.n,title:c.title,text:c.intro,label:"Chapter "+c.n,pos:c.sections.length+" reels"},
+    ...c.sections.map((x,k)=>({book:1,id:c.n+"."+(k+1),ch:c.n,title:x.title,text:x.text,label:`Ch ${c.n} · ${c.title}`,pos:`${k+1}/${c.sections.length}`}))])
+    .filter(x=>!q||(x.title+" "+x.text).toLowerCase().includes(q))};
 const imgCache={},REEL_SECS=8;let auto=localStorage.reelAuto=="1",reelT;
 // NASA image/video library: free, no key, CORS-open. Videos use the ~1 MB "~mobile.mp4" rendition.
 const nasa=(q,t)=>imgCache[t+q]??=fetch(`https://images-api.nasa.gov/search?media_type=${t}&page_size=60&q=`+encodeURIComponent(q))
@@ -214,6 +221,7 @@ function loadBg(s){if(!s||s.dataset.bg)return;
   if(own?.startsWith("yt:")){const id=own.slice(3);b.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=1&loop=1&playlist=${encodeURIComponent(id)}&controls=0&playsinline=1" allow="autoplay" tabindex="-1"></iframe>`;b.classList.add("ok")}
   else if(own)showVid(own,ownImg);else ownImg()}
 function reelOn(s){document.querySelectorAll(".reel.on").forEach(x=>x.classList.remove("on"));s.classList.add("on");
+  if(s.classList.contains("k-book")){localStorage.bookAt=s.dataset.id;const c=$(".chap");if(c)c.value=s.dataset.id.split(".")[0]}
   document.querySelectorAll(".reels video").forEach(v=>v.pause());s.querySelector("video")?.play().catch(()=>{});
   loadBg(s);loadBg(s.nextElementSibling);clearTimeout(reelT);
   if(auto)reelT=setTimeout(()=>{if(s.isConnected&&s.nextElementSibling)s.nextElementSibling.scrollIntoView({behavior:"smooth"})},REEL_SECS*1000)}
@@ -232,7 +240,7 @@ function render(){
   clearTimeout(reelT);
   if(tab=="reels"){
     // freshest + most important first, then everything else newest first
-    const feed=[...all].sort((a,b)=>isNew(b)-isNew(a)||(isNew(a)&&b.importance-a.importance)||byDate(a,b));
+    let feed=[...all].sort((a,b)=>isNew(b)-isNew(a)||(isNew(a)&&b.importance-a.importance)||byDate(a,b));
     // open calls (conferences + special issues), soonest deadline first, slotted in every 5th card
     const q=$("#q").value.trim().toLowerCase(),m=o=>!q||JSON.stringify(o).toLowerCase().includes(q);
     const calls=[...cfp.conferences.filter(m).map(c=>[c,confStatus(c)]).filter(([,s])=>s[0]!="closed").sort((a,b)=>a[1][2].localeCompare(b[1][2])).map(([c,s])=>({call:1,
@@ -240,8 +248,11 @@ function render(){
       ...[...cfp.special_issues,...cfp.wikicfp.filter(x=>x.kind=="journal")].filter(m).filter(x=>x.deadline&&x.deadline>=today).sort((a,b)=>a.deadline.localeCompare(b.deadline)).map(x=>({call:1,
         title:x.title,label:"Special issue call",st:[daysTo(x.deadline)<=14?"soon":"open",`Deadline ${fmt(x.deadline)} · ${daysTo(x.deadline)} days left`],sum:x.summary,src:[x.journal||x.source,x.tier!="unknown"&&x.tier].filter(Boolean).join(" · "),url:x.url}))];
     for(let n=0;n<calls.length;n++)feed.splice(Math.min(n*6+2,feed.length),0,calls[n]);
+    if(bookMode)feed=bookFeed();
     const y=$(".reels")?.scrollTop;
-    $("#view").innerHTML=`<div class="reels ${auto?"auto":""}" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button><button class="play" data-act="auto" title="Auto-advance every ${REEL_SECS}s">${auto?"❚❚":"▶"}</button><span class="cr">Stock images &amp; video: NASA</span>${feed.map((i,n)=>{if(i.call)return`<section class="reel k-call" data-q="earth from space" data-id="${esc(i.title)}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
+    $("#view").innerHTML=`<div class="reels ${auto?"auto":""}" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button><button class="bk" data-act="book" title="${bookMode?"Back to news reels":"Book reels"}">${bookMode?"📰":"📘"}</button>${bookMode&&book?`<select class="chap">${book.chapters.map(c=>`<option value="${c.n}">Ch ${c.n}: ${esc(c.title)}</option>`).join("")}</select>`:""}<button class="play" data-act="auto" title="Auto-advance every ${REEL_SECS}s">${auto?"❚❚":"▶"}</button><span class="cr">Stock images &amp; video: NASA</span>${feed.map((i,n)=>{if(i.book)return`<section class="reel k-book${i.head?" head":""}" data-q="${topic({title:i.title,ai_summary:i.text})}" data-id="${esc(i.id)}"${i.head?` id="ch-${i.ch}"`:""}><div class="card"><div class="bg"></div><i class="bar"></i>
+      <span class="kind">📘 ${esc(i.label)}</span><span class="pos">${i.pos}</span><h2>${esc(i.title)}</h2><div class="sum">${esc(i.text)}</div>${i.head?`<div class="src">${esc(book.title)}</div>`:""}</div></section>`;
+      if(i.call)return`<section class="reel k-call" data-q="earth from space" data-id="${esc(i.title)}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
       <h2>${esc(i.title)}</h2><div class="m"><span class="st ${i.st[0]}">${esc(i.st[1])}</span></div>
       ${i.sum?`<div class="sum">${esc(i.sum)}</div>`:""}${i.src?`<div class="src">${esc(i.src)}</div>`:""}
       <div class="acts"><a href="${esc(i.url)}" target="_blank" rel="noopener">Open call ↗</a></div></div></section>`;
@@ -252,7 +263,7 @@ function render(){
       ${i.ai_summary||i.summary?`<div class="sum">${esc(i.ai_summary||i.summary.slice(0,400)+(i.summary.length>400?"…":""))}</div>`:""}
       <div class="src">${esc(i.venue||i.source)}${i.authors?" · "+esc(i.authors.split(",").slice(0,3).join(",")):""}${k=="job"&&(i.location||i.region)?" · 📍 "+esc(i.location||i.region):""}${i.date?" · "+esc(i.date):""}</div>
       <div class="acts"><a href="${esc(i.url)}" target="_blank" rel="noopener">Open ↗</a><button class="star ${s?"on":""}" data-star="${i.id}">${s?"★ Saved":"☆ Save"}</button></div></div></section>`}).join("")||`<section class="reel"><div class="card"><h2>Nothing matches your search.</h2></div></section>`}</div>`;
-    const r=$(".reels");if(y)r.scrollTop=y;r.focus({preventScroll:true});reelIO.disconnect();r.querySelectorAll(".reel").forEach(x=>reelIO.observe(x));return;
+    const r=$(".reels");if(y)r.scrollTop=y;else if(bookMode)[...r.children].find(x=>x.dataset.id==localStorage.bookAt)?.scrollIntoView();r.focus({preventScroll:true});reelIO.disconnect();r.querySelectorAll(".reel").forEach(x=>reelIO.observe(x));return;
   }
   if(tab=="overview"){
     const fresh=all.filter(isNew).sort((a,b)=>b.importance-a.importance||byDate(a,b));
@@ -323,6 +334,7 @@ document.addEventListener("click",e=>{
   const d=e.target.closest("[data-tab],[data-go],[data-sub],[data-region],[data-star],[data-folder],[data-act],[data-call]");if(!d)return;
   if(d.dataset.call){callView=d.dataset.call;render();return}
   if(d.dataset.act=="auto"){auto=!auto;localStorage.reelAuto=auto?"1":"";render();return}
+  if(d.dataset.act=="book"){bookMode=!bookMode;localStorage.reelBook=bookMode?"1":"";$(".reels").scrollTop=0;render();return}
   if(d.dataset.star){openPop(d,d.dataset.star);return}
   if(d.dataset.folder!==undefined)folder=d.dataset.folder;
   else if(d.dataset.act=="newfolder"){const n=prompt("Folder name:")?.trim();if(n&&!folders[n]){folders[n]=[];store();folder=n}}
@@ -334,9 +346,11 @@ document.addEventListener("click",e=>{
   else if(d.dataset.sub!==undefined)sub=d.dataset.sub;
   else if(d.dataset.region!==undefined)region=d.dataset.region;
   render()});
-document.addEventListener("change",e=>{if(e.target.id=="days"){days=+e.target.value;render()}});
+document.addEventListener("change",e=>{if(e.target.id=="days"){days=+e.target.value;render()}
+  if(e.target.classList.contains("chap"))document.getElementById("ch-"+e.target.value)?.scrollIntoView()});
 $("#q").addEventListener("input",render);
 document.addEventListener("keydown",e=>{if(e.key=="Escape"&&tab=="reels"&&!document.querySelector(".pop")){tab="overview";render()}});
+fetch("data/book.json?"+Date.now()).then(r=>r.json()).then(d=>{book=d;if(items.length&&tab=="reels")render()}).catch(()=>{});
 fetch("data/calls.json?"+Date.now()).then(r=>r.json()).then(d=>{cfp=d;if(items.length)render()}).catch(()=>{});
 fetch("data/items.json?"+Date.now()).then(r=>r.json()).then(d=>{items=d.items;updated=d.updated;render()})
   .catch(()=>{$("#view").innerHTML=`<div class="empty">No data yet. The collector hasn't run.</div>`});

@@ -1,0 +1,1217 @@
+{
+"title": "Position, Navigation, and Timing Technologies in the 21st Century — Volume 1",
+"editors": "Y. T. Jade Morton, Frank van Diggelen, James J. Spilker Jr., Bradford W. Parkinson (eds.), Wiley-IEEE Press, 2021",
+"note": "Short study notes written in plain words; not text from the book.",
+"chapters": [
+{
+"n": 1,
+"title": "Introduction, Early History, and Assuring PNT",
+"intro": "How GPS was born — and why \"knowing where you are\" needs more than one source.",
+"sections": [
+{
+"title": "What PNT means",
+"text": "PNT = Position, Navigation, Timing. Satnav gives you 4 numbers: 3 for where you are + 1 for time. The goal is \"assured\" PNT — combine different sources so you're never lost."
+},
+{
+"title": "Navigation before satellites",
+"text": "Polynesians steered by stars, the Chinese used the magnetic compass, sailors measured star angles with sextants. Then came radio beacons. Humans always found clever ways to know where they were."
+},
+{
+"title": "The Sputnik spark",
+"text": "1957: scientists tracking Sputnik's Doppler shift could compute its orbit. Big idea: flip it — if you know the satellite's orbit, the Doppler shift tells you where YOU are."
+},
+{
+"title": "Transit: the first satnav",
+"text": "That flipped idea became the US Navy's Transit system. It worked, but slowly: one fix took ~15 minutes of listening to a single satellite."
+},
+{
+"title": "Timation and the race",
+"text": "The Navy's Timation put precise clocks on satellites. Several competing designs existed until a 1973 meeting merged the best ideas into one plan — GPS."
+},
+{
+"title": "GPS gets the green light",
+"text": "December 1973: after weeks of presentations at the Pentagon, the GPS concept was approved almost unchanged. Real building could begin."
+},
+{
+"title": "Three ideas that made GPS work",
+"text": "1) All satellites share one frequency using different codes (CDMA). 2) Ultra-stable atomic clocks in space. 3) Passive users — your receiver only listens. Every GNSS since copied these."
+},
+{
+"title": "Building it for real",
+"text": "The team had to predict orbits accurately, make satellites last for years, and build receivers for every kind of user — on a tight, often threatened budget."
+}
+]
+},
+{
+"n": 2,
+"title": "Fundamentals of Satellite-Based Navigation and Timing",
+"intro": "The core idea behind every GNSS, explained once.",
+"sections": [
+{
+"title": "Many ways to locate things",
+"text": "Satellites can locate things actively (you transmit) or passively (you only listen). GNSS is passive: billions of receivers, none of them sending anything."
+},
+{
+"title": "Trilateration in one minute",
+"text": "Your receiver measures the travel time of signals from satellites → distances. Its own clock is wrong, so we call them \"pseudoranges\" and use a 4th satellite to solve for that clock error."
+},
+{
+"title": "The space segment",
+"text": "Satellites carry atomic clocks and signal generators and fly in a carefully designed constellation, so you always see at least 4 of them."
+},
+{
+"title": "What the signals look like",
+"text": "GNSS signals are part radar (precise timing) and part radio (carry data). Spread-spectrum codes let many satellites share the same frequency and resist interference."
+},
+{
+"title": "The ground segment: the brains",
+"text": "Monitor stations listen to every satellite, a control center computes orbits and clock errors, and antennas upload fresh corrections to the satellites."
+},
+{
+"title": "Your receiver",
+"text": "Antenna → front end → digital tracking → position/velocity/time. Other sensors like inertial units or better clocks can help it when signals are weak."
+},
+{
+"title": "Augmentation",
+"text": "Extra help on top of the satellites: phone networks sending assistance data (A-GNSS), correction services, or inertial sensors that keep tracking alive."
+},
+{
+"title": "Where errors come from",
+"text": "Four sources: ground segment, satellites (orbit and clock errors), the atmosphere slowing the signal, and your receiver (noise, multipath)."
+},
+{
+"title": "DOP: geometry matters",
+"text": "Accuracy ≈ ranging error × DOP. Satellites spread across the sky = small DOP = good fix. Height is usually worse than horizontal because no satellites are below you."
+}
+]
+},
+{
+"n": 3,
+"title": "The Navstar Global Positioning System",
+"intro": "GPS itself: history, structure, satellites and signals.",
+"sections": [
+{
+"title": "GPS history in short",
+"text": "Tested 1974–85. After Korean Air 007 was shot down in 1983, the US promised free civil GPS. Fully operational in the mid-90s and still being modernized."
+},
+{
+"title": "Who runs GPS",
+"text": "A US national executive committee co-chaired by Defense and Transportation sets policy. The US Space Force operates the system."
+},
+{
+"title": "Reference frame and time",
+"text": "GPS positions use WGS 84, which is nearly the same as ITRF. GPS time started on 6 Jan 1980, has no leap seconds, and was 18 s ahead of UTC in 2017."
+},
+{
+"title": "The constellation",
+"text": "The baseline is 24 slots in 6 orbital planes, about 20,200 km up. In practice ~31 satellites fly for extra coverage."
+},
+{
+"title": "The ground segment",
+"text": "A master control station in Colorado with a backup in California, 15+ monitor stations, and ground antennas worldwide uploading corrections."
+},
+{
+"title": "GPS signals",
+"text": "Three civil frequencies: L1, L2, L5. Modern civil signals are L1C, L2C and L5, plus military ones. The broadcast \"Klobuchar\" model removes about half the ionosphere delay."
+},
+{
+"title": "Hidden extra payloads",
+"text": "GPS satellites also carry sensors that detect nuclear explosions — a secondary mission since 1980."
+},
+{
+"title": "GPS in one line",
+"text": "The first global satnav, used by billions, now being modernized with new satellites, signals and ground control — and increasingly used together with other GNSS."
+}
+]
+},
+{
+"n": 4,
+"title": "GLONASS",
+"intro": "Russia's global navigation system.",
+"sections": [
+{
+"title": "Origins",
+"text": "The USSR started with the Doppler-based Cicada system (slow, ~100 m). It then moved to a GPS-like ranging design: GLONASS, first launched in 1982."
+},
+{
+"title": "Its own frame and time",
+"text": "GLONASS uses the PZ-90.11 frame and a system time tied to Moscow UTC (UTC + 3 h)."
+},
+{
+"title": "Services",
+"text": "An open service for everyone and an authorized one for the military. A precise-positioning (PPP) service is coming."
+},
+{
+"title": "The constellation",
+"text": "24 satellites in 3 planes at ~19,100 km — slightly lower than GPS — giving good coverage at high latitudes like Russia."
+},
+{
+"title": "Ground control",
+"text": "A control center, central synchronizers built on hydrogen masers, measurement stations, and laser ranging to check the satellites' orbits."
+},
+{
+"title": "Signals: FDMA → CDMA",
+"text": "Classic GLONASS gives each satellite its own frequency (FDMA). Newer satellites add GPS-style CDMA signals such as L3OC, which makes mixing with GPS easier."
+},
+{
+"title": "More than navigation",
+"text": "Newer GLONASS satellites also relay distress beacons for COSPAS-SARSAT search and rescue."
+}
+]
+},
+{
+"n": 5,
+"title": "Galileo",
+"intro": "Europe's civil-controlled GNSS.",
+"sections": [
+{
+"title": "Why Europe built Galileo",
+"text": "To have an independent, civil-controlled system. EGNOS came first as a stepping stone. Galileo carries passive hydrogen masers — among the best clocks ever flown."
+},
+{
+"title": "Who runs it",
+"text": "Galileo belongs to the EU. The European Commission manages the program, ESA designs and buys it, and EUSPA runs services. A 2004 EU–US deal made GPS and Galileo work together."
+},
+{
+"title": "Reference frame and time",
+"text": "Galileo System Time (GST) and its terrestrial frame are kept within centimetres and nanoseconds of the international standards (ITRF, UTC)."
+},
+{
+"title": "Services",
+"text": "Open Service (free), High Accuracy Service, PRS (encrypted, government only), and Search & Rescue that confirms to the person in distress that help is coming."
+},
+{
+"title": "Satellites and launches",
+"text": "Launched by Soyuz and Ariane from French Guiana. 24 operating satellites plus spares in 3 planes at ~23,200 km."
+},
+{
+"title": "Ground segment",
+"text": "Two halves: one controls the satellites, the other computes orbits and clocks every 10 minutes and uploads the navigation message."
+},
+{
+"title": "Signals",
+"text": "E1, E5a, E5b, E6. E1 shares the MBOC modulation with GPS L1C, and E5a sits on the same frequency as GPS L5 — so receivers can easily combine them."
+},
+{
+"title": "Ionosphere model",
+"text": "Galileo broadcasts NeQuick-G, a model of the ionosphere that single-frequency users apply to correct the signal delay."
+},
+{
+"title": "How accurate",
+"text": "The error budget is satellite orbit/clock + atmosphere + receiver. Dual-frequency open-service users get roughly metre-level accuracy."
+},
+{
+"title": "Galileo's future",
+"text": "A second generation of Galileo satellites is planned, with better clocks, more flexible signals and more services — and measured accuracy is already better than promised."
+}
+]
+},
+{
+"n": 6,
+"title": "BeiDou Navigation Satellite System",
+"intro": "China's GNSS — built in three steps, from regional to global.",
+"sections": [
+{
+"title": "What makes BeiDou unique",
+"text": "\"BeiDou\" = the Big Dipper. It mixes three orbit types (GEO, IGSO, MEO). Besides positioning it also offers short messaging, augmentation and search & rescue."
+},
+{
+"title": "Three-step plan",
+"text": "Step 1: an experimental two-way system (2000). Step 2: a regional system covering Asia-Pacific (2012). Step 3: a global system (around 2020). From regional to global, from active to passive."
+},
+{
+"title": "Frame and time",
+"text": "Positions use BDCS/CGCS2000, which is aligned with ITRF. BeiDou Time started on 1 Jan 2006 with no leap seconds and stays within 50 ns of UTC."
+},
+{
+"title": "BDS-I: you had to talk back",
+"text": "The first BeiDou was active: your device transmitted to the satellite, and the ground centre computed your position. Bonus: you could send 120-character text messages."
+},
+{
+"title": "BDS-II: regional, GPS-like",
+"text": "One-way ranging like GPS, with 14 satellites covering China and Asia-Pacific (2012), while keeping the messaging service."
+},
+{
+"title": "BDS-III: global",
+"text": "About 30 satellites. New signals B1C and B2a share frequencies with GPS and Galileo, so multi-GNSS receivers can combine them easily."
+},
+{
+"title": "Smarter messages",
+"text": "New navigation messages use strong error-correcting codes (LDPC), so data still gets through when the signal is weak."
+}
+]
+},
+{
+"n": 7,
+"title": "IRNSS / NavIC",
+"intro": "India's own regional navigation system.",
+"sections": [
+{
+"title": "Why India built it",
+"text": "During the 1999 Kargil war, India depended on GPS that a foreign country controlled. Answer: NavIC — positioning over India and 1500 km around it."
+},
+{
+"title": "Frame and time",
+"text": "NavIC positions use WGS-84. Its system time started on 22 Aug 1999, kept in step with UTC like GPS time."
+},
+{
+"title": "Satellites always overhead",
+"text": "Only 7 satellites, but all on geostationary and geosynchronous orbits — so all of them are visible from India all the time."
+},
+{
+"title": "Ground segment",
+"text": "Ranging and monitoring stations across India estimate orbits and clocks, with an Indian time centre as the reference."
+},
+{
+"title": "Two bands: L5 and S",
+"text": "NavIC transmits on L5 and on the S band (~2.5 GHz) — an unusual choice that also helps correct the ionosphere. There's an open service and a restricted one."
+},
+{
+"title": "Signal guarantees",
+"text": "At least −159 dBW on L5 at the ground. Signals are right-hand circularly polarised, like all GNSS."
+},
+{
+"title": "Building a NavIC receiver",
+"text": "The antenna must cover L5 and S band. Good receivers combine NavIC with GPS and others for the best availability."
+},
+{
+"title": "Why it matters",
+"text": "India owns a constellation that keeps working in a crisis — and it's a great test bed for receiver research."
+}
+]
+},
+{
+"n": 8,
+"title": "Quasi-Zenith Satellite System (QZSS)",
+"intro": "Japan's \"satellite straight overhead\" system.",
+"sections": [
+{
+"title": "Why Japan needed it",
+"text": "Japan is mountains and tall cities: buildings block low satellites. A satellite almost straight overhead (quasi-zenith) solves that, using a figure-8 orbit."
+},
+{
+"title": "Who runs it",
+"text": "The Cabinet Office leads it. A private company runs operations from 2018 to 2033 under a public-private finance deal."
+},
+{
+"title": "Same time as GPS",
+"text": "QZSS uses GPS's time scale and an ITRF-aligned frame, so receivers treat QZSS satellites almost like extra GPS satellites."
+},
+{
+"title": "Services",
+"text": "Extra GPS-like signals, the SLAS (sub-metre) and CLAS (centimetre) correction services, and disaster messages."
+},
+{
+"title": "Constellation",
+"text": "Four satellites since 2018 (three on figure-8 orbits, one geostationary), growing to seven so Japan can position without other systems."
+},
+{
+"title": "Ground segment",
+"text": "Two control centres 500+ km apart in case of an earthquake, plus tracking stations and 25 monitor stations."
+},
+{
+"title": "Signals",
+"text": "L1C/A, L1C, L2C and L5 match GPS. L6 carries centimetre-level corrections, and L1S carries augmentation and disaster alerts."
+},
+{
+"title": "Summary",
+"text": "Operational since November 2018, QZSS makes GNSS work better in East Asia and Oceania."
+}
+]
+},
+{
+"n": 9,
+"title": "GNSS Interoperability",
+"intro": "How GPS, Galileo, BeiDou and the others work together.",
+"sections": [
+{
+"title": "What interoperability means",
+"text": "Using signals from several systems together to get a better result than any one alone. Coordinated through the UN's International Committee on GNSS (ICG)."
+},
+{
+"title": "The ingredients",
+"text": "Same centre frequency, similar waveforms, common time and coordinate references. Many satellites = a good fix even in city canyons."
+},
+{
+"title": "GLONASS goes CDMA",
+"text": "Old GLONASS gives each satellite its own frequency (FDMA). That causes biases in receivers, so new GLONASS signals use CDMA like everyone else."
+},
+{
+"title": "Why a shared frequency helps",
+"text": "Signals on the same frequency pass through the same filters with the same delay, so you don't need to calibrate between them."
+},
+{
+"title": "Different waveforms still work",
+"text": "GPS C/A (BPSK) and the modern MBOC signals look different but can be tracked together with standard correlators."
+},
+{
+"title": "Time and coordinate offsets",
+"text": "Each system has its own time and frame. Tiny offsets matter to scientists, while phones mostly struggle with multipath and blocked signals."
+},
+{
+"title": "Differential corrections fix it",
+"text": "Correction services like WAAS or commercial ones put every system on one common reference, which removes most offset problems."
+}
+]
+},
+{
+"n": 10,
+"title": "GNSS Signal Quality Monitoring",
+"intro": "Checking that what satellites transmit is actually healthy.",
+"sections": [
+{
+"title": "Why we monitor",
+"text": "At first, all that mattered was getting a position. Once GPS was operational, providers had to guarantee performance — and that means watching every signal all the time."
+},
+{
+"title": "Who needs it",
+"text": "Providers (to prove their service guarantees), safety users like aviation, and high-accuracy networks — they all rely on signals behaving exactly as documented."
+},
+{
+"title": "What to check",
+"text": "Power levels, code shape, code–carrier consistency, timing between signals… The GPS civil monitoring specification lists 136 signal requirements."
+},
+{
+"title": "Who's watching today",
+"text": "System operators monitor their own satellites. Aviation augmentation systems and the IGS add independent eyes on the ground."
+},
+{
+"title": "How monitors work",
+"text": "Track signals with several correlator taps and look at the shape of the correlation peak. A \"deformed\" peak = a distorted signal that could mislead receivers."
+},
+{
+"title": "What's next",
+"text": "More constellations and signals → standards and monitors need to keep up, especially for aviation and other safety uses."
+}
+]
+},
+{
+"n": 11,
+"title": "GNSS Orbit Determination and Time Synchronization",
+"intro": "How we know exactly where each satellite is and what its clock says.",
+"sections": [
+{
+"title": "What's measured",
+"text": "Ground stations record code and carrier-phase measurements. The model includes clocks, biases, ionosphere, troposphere, antenna offsets and relativity."
+},
+{
+"title": "What moves a satellite",
+"text": "Earth's lumpy gravity, Sun and Moon, solar radiation pressure, plus relativity (GPS clocks are tuned to run slightly slow before launch)."
+},
+{
+"title": "Solving for orbits",
+"text": "Least squares or Kalman filters estimate orbits and clocks together. Satellite manoeuvres are tricky because outsiders don't know when they happen."
+},
+{
+"title": "Products you can use",
+"text": "Broadcast orbits (~1 m) come from the control segment. IGS precise orbits reach the centimetre level — for science and PPP."
+}
+]
+},
+{
+"n": 12,
+"title": "Ground-Based Augmentation System (GBAS)",
+"intro": "GNSS-based precision landing at airports.",
+"sections": [
+{
+"title": "What GBAS is",
+"text": "A local differential GNSS station at an airport. It sends corrections and integrity data over VHF so aircraft know their position to about 1 m."
+},
+{
+"title": "Why replace ILS?",
+"text": "ILS (the classic landing system) needs one installation per runway end, is sensitive to terrain, and can't do curved approaches. One GBAS can serve the whole airport."
+},
+{
+"title": "History",
+"text": "1990s FAA trials made 400+ automatic landings using differential GPS. That led to LAAS, now called GBAS."
+},
+{
+"title": "Performance levels",
+"text": "Landing categories I, II and III set how low a pilot can go before seeing the runway. GBAS service types GAST C and GAST D aim to match them."
+},
+{
+"title": "What gets broadcast",
+"text": "Corrections twice per second plus integrity parameters. With them the aircraft gets about 1 m accuracy."
+},
+{
+"title": "Integrity monitors",
+"text": "Many checks on the ground — signal quality, data quality, consistency between reference receivers — catch faults before they reach the aircraft."
+},
+{
+"title": "Proving it's safe (CAT I)",
+"text": "Protection levels must stay below alert limits even if a satellite or reference receiver fails."
+},
+{
+"title": "Going further (CAT III)",
+"text": "Stricter rules: catch faults within 1.5 s and keep the risk of an undetected error >1.8 m below one in a billion."
+},
+{
+"title": "Where it is today",
+"text": "About 30 airports worldwide. Major airlines fly GBAS approaches. Dual-frequency and multi-constellation versions are coming."
+}
+]
+},
+{
+"n": 13,
+"title": "Satellite-Based Augmentation Systems (SBAS)",
+"intro": "WAAS, EGNOS, GAGAN & co: corrections and integrity from geostationary satellites.",
+"sections": [
+{
+"title": "What SBAS does",
+"text": "Ground networks monitor GNSS and send corrections plus \"trust bounds\" through geostationary satellites. If something goes wrong, pilots are warned within 6 seconds."
+},
+{
+"title": "Threats",
+"text": "Clock, orbit, ionosphere and other errors — some hit one satellite, some hit all. Threat models say how big and how likely each one is."
+},
+{
+"title": "Integrity monitors",
+"text": "WAAS uses 38 reference stations. It sends error bounds for each satellite (UDRE) and for the ionosphere (GIVE)."
+},
+{
+"title": "The message",
+"text": "250-bit messages every second from geostationary satellites: fast and slow corrections, ionosphere grids and integrity information."
+},
+{
+"title": "Systems worldwide",
+"text": "WAAS (USA), EGNOS (Europe), MSAS (Japan), GAGAN (India), SDCM (Russia), and plans in Africa and Asia. SBAS can guide aircraft down to about 200 ft."
+},
+{
+"title": "Next generation",
+"text": "Dual-frequency, multi-constellation SBAS uses GPS L5 and Galileo E5a to remove most of the ionosphere error."
+}
+]
+},
+{
+"n": 14,
+"title": "Fundamentals and Overview of GNSS Receivers",
+"intro": "What's inside the box that turns faint satellite signals into your position.",
+"sections": [
+{
+"title": "Three blocks",
+"text": "Every receiver has an RF front end (antenna signal → digital samples), a baseband processor (finds and tracks signals) and a system processor (computes your position)."
+},
+{
+"title": "The oscillator matters",
+"text": "The crystal oscillator is the receiver's heartbeat — and its only \"moving part\". Vibration and temperature shake it, and that limits how weak a signal you can track."
+},
+{
+"title": "The RF front end",
+"text": "It amplifies a signal of microvolts by over 100 dB, filters out interference, shifts the frequency down, and digitizes it. Noise figure and linearity are key."
+},
+{
+"title": "Sampling choices",
+"text": "Most receivers shift the frequency down before sampling. Sampling the RF directly is becoming possible, but needs fast ADCs and lots of power."
+},
+{
+"title": "Correlation: finding a buried signal",
+"text": "GNSS signals sit below the noise. The receiver multiplies the input by a local copy of the code — when they line up, a correlation peak pops out of the noise."
+},
+{
+"title": "Channel states",
+"text": "Each channel steps through search → acquire → track → read data, and estimates signal strength (C/N0) as it goes."
+},
+{
+"title": "Timekeeping inside",
+"text": "Measurements from all satellites must be taken at the same receiver instant. The receiver's own clock isn't accurate — GNSS corrects it."
+},
+{
+"title": "The future",
+"text": "Receivers specialise by application. Flexible, software-programmable chips will likely dominate."
+}
+]
+},
+{
+"n": 15,
+"title": "GNSS Receiver Signal Tracking",
+"intro": "How a receiver locks on to code and carrier — and stays locked.",
+"sections": [
+{
+"title": "What tracking does",
+"text": "Continuously estimates the code phase and carrier phase of each signal to get its time of arrival. It also finds data-bit edges so the navigation message can be read."
+},
+{
+"title": "The loop idea",
+"text": "Correlate → discriminator measures the error → filter smooths it → oscillator (NCO) adjusts the local copy. Repeat about every millisecond."
+},
+{
+"title": "Code tracking (DLL)",
+"text": "Early, prompt and late correlators. If early > late, the local code is lagging, so nudge it. Narrower spacing = more precise and less multipath."
+},
+{
+"title": "Carrier tracking (PLL/FLL)",
+"text": "A PLL follows carrier phase (most precise, but fragile). An FLL follows only frequency (tougher, but less precise). Carrier tracking is the weak link."
+},
+{
+"title": "Advanced carrier tracking",
+"text": "Kalman-filter (state-space) designs adapt to the signal strength, receiver dynamics and oscillator quality — key for cities, forests, scintillation and fast platforms."
+},
+{
+"title": "Takeaway",
+"text": "Classic loops work fine in normal conditions. Tougher conditions need optimised designs and help from other sensors."
+}
+]
+},
+{
+"n": 16,
+"title": "Vector Processing",
+"intro": "Track all satellites together, not one by one.",
+"sections": [
+{
+"title": "Scalar vs vector",
+"text": "A normal receiver tracks each satellite separately. A vector receiver predicts every signal from one shared position/velocity estimate — so strong satellites help the weak ones."
+},
+{
+"title": "Vector DLL/FLL",
+"text": "One central navigation filter drives every channel's code and frequency. More robust at low signal strength and in foliage, but the carrier phase isn't tracked."
+},
+{
+"title": "Hybrid designs",
+"text": "Combine vector robustness for code and frequency with classic PLLs for precise carrier phase."
+},
+{
+"title": "Vector phase tracking",
+"text": "Tracking carrier phase in vector form keeps centimetre-level phase alive through signal fades and blockages — hard, but powerful."
+},
+{
+"title": "Bottom line",
+"text": "Tests with real signals and simulators show vector receivers beat conventional ones in tough conditions."
+}
+]
+},
+{
+"n": 17,
+"title": "Assisted GNSS",
+"intro": "How your phone gets a fix in seconds.",
+"sections": [
+{
+"title": "A-GNSS is about search",
+"text": "Yes, A-GNSS sends orbits over the internet. But the real win is shrinking the search for signals — faster first fix AND higher sensitivity."
+},
+{
+"title": "The search space",
+"text": "Without help, a receiver must scan every frequency (unknown Doppler and clock offset) and every code delay for every satellite. Like scanning a radio dial in the dark."
+},
+{
+"title": "How assistance shrinks it",
+"text": "Know roughly the time, your position and the orbits → predict each satellite's Doppler. The search becomes about 100× smaller."
+},
+{
+"title": "Code-delay help",
+"text": "If the assisted time is accurate to microseconds, you can also predict where the code peak sits. A few km of position error barely matters."
+},
+{
+"title": "Satellite speed",
+"text": "GNSS satellites move at ~3–4 km/s, but the range to you changes at most ~800 m/s. That sets how big the Doppler uncertainty is."
+},
+{
+"title": "Real numbers",
+"text": "For each 1 km of position error, the predicted Doppler is off by only a few Hz — tiny. Time error matters more."
+},
+{
+"title": "Search tables",
+"text": "Handy lookup tables give the assisted search-space size for GPS, Galileo, BeiDou and GLONASS on each band."
+},
+{
+"title": "Where assistance comes from",
+"text": "Reference networks (IGS or company networks) collect ephemeris, and location servers send it to phones via cellular standards (3GPP, SUPL). Long-term orbits extend it to days."
+},
+{
+"title": "Summary",
+"text": "A-GNSS reduces the frequency search by 100×+, makes the first fix fast, and lets the receiver integrate longer for high sensitivity."
+}
+]
+},
+{
+"n": 18,
+"title": "High-Sensitivity GNSS",
+"intro": "Getting a fix indoors and inside a tiny phone.",
+"sections": [
+{
+"title": "Why sensitivity matters",
+"text": "Phone antennas are tiny and signals indoors are 100–1000× weaker. Acquisition is the hard part, tracking is easier."
+},
+{
+"title": "Signal → C/N0 → SNR",
+"text": "Follow the signal from the antenna through the front end to the correlator peak. Design goal: a tall peak even when the signal is weak."
+},
+{
+"title": "Receiver blocks",
+"text": "Satellite: code + data + carrier. Receiver: remove the carrier, multiply by a local code, add up over time. Every design follows that path."
+},
+{
+"title": "Front-end noise",
+"text": "The first amplifier (LNA) and any cable loss before it set the noise figure — every dB lost there is lost forever."
+},
+{
+"title": "Coherent integration",
+"text": "Adding correlator outputs in phase over longer times raises the SNR. But data bits and frequency error limit how long you can add."
+},
+{
+"title": "Non-coherent integration",
+"text": "Add up the magnitude of many short coherent sums. Phase changes no longer cancel the signal — the price is a \"squaring loss\"."
+},
+{
+"title": "How weak can phones go?",
+"text": "Phones acquire signals around −150 dBm and reach a practical limit near −156 dBm. Beyond that, search time and oscillator drift win."
+},
+{
+"title": "Simpler future signals?",
+"text": "The author's argument: each satellite has limited power. Fewer, simpler, stronger signals might help everyone more than many complex, weaker ones."
+}
+]
+},
+{
+"n": 19,
+"title": "Relative Positioning and RTK",
+"intro": "Centimetres by comparing your receiver with a nearby reference station.",
+"sections": [
+{
+"title": "Why go relative",
+"text": "Most devices are happy with metres. Surveying, construction and farming need centimetres — so we difference our measurements against a reference receiver."
+},
+{
+"title": "How differencing works",
+"text": "Errors common to both receivers (satellite clock, orbit, most of the atmosphere) cancel when you subtract their measurements. Double differences also remove the receiver clocks."
+},
+{
+"title": "Ambiguity resolution",
+"text": "Carrier phase is millimetre-precise, but its whole number of cycles is unknown. Fix those integers correctly and you get centimetre accuracy. RTK does this in real time."
+},
+{
+"title": "Network RTK",
+"text": "Single-base RTK works up to ~10–15 km. A network of stations models the atmosphere and orbit errors, so corrections cover whole regions — streamed via RTCM/NTRIP."
+},
+{
+"title": "Today and next",
+"text": "Network RTK is the standard for surveying and precision farming. It's now merging with PPP into PPP-RTK."
+}
+]
+},
+{
+"n": 20,
+"title": "GNSS Precise Point Positioning (PPP)",
+"intro": "High accuracy anywhere with one receiver.",
+"sections": [
+{
+"title": "What PPP is",
+"text": "Use precise satellite orbits and clocks (from IGS or a service) plus carrier phase on one receiver. Centimetre-to-decimetre accuracy anywhere — no local base station needed."
+},
+{
+"title": "The math in words",
+"text": "Model everything: geometry, clocks, hardware biases, ionosphere, troposphere, and the carrier-phase ambiguities, then estimate what's left."
+},
+{
+"title": "Single vs dual frequency",
+"text": "With two frequencies you can cancel the ionosphere. Single-frequency PPP must correct or estimate it — cheaper, but less accurate."
+},
+{
+"title": "Beyond positioning",
+"text": "The same processing gives water vapour for weather forecasts, ionosphere maps and precise time transfer."
+},
+{
+"title": "Orbit & clock services",
+"text": "Post-processed online services (CSRS-PPP, APPS…) and real-time streams over the internet or satellite (IGS RTS, Galileo HAS, commercial services)."
+},
+{
+"title": "Corrections you need",
+"text": "Antenna phase-centre offsets, relativity, phase wind-up, Earth tides and ocean loading — skip them and you lose centimetres."
+},
+{
+"title": "PPP-RTK",
+"text": "PPP's weakness is slow convergence (tens of minutes). Send satellite phase biases as well, and the integer ambiguities can be fixed — accuracy in minutes."
+},
+{
+"title": "Multi-frequency",
+"text": "Three or more frequencies make ambiguities easier to fix. Adding regional ionosphere corrections cut convergence from ~40 min to under 5 min in the book's example."
+},
+{
+"title": "Multi-GNSS",
+"text": "More satellites → faster convergence and more robustness. Remember to handle the inter-system biases between constellations."
+}
+]
+},
+{
+"n": 21,
+"title": "Direct Position Estimation (DPE)",
+"intro": "Skip the pseudoranges — go straight from raw signal to position.",
+"sections": [
+{
+"title": "One step instead of two",
+"text": "A normal receiver measures ranges, then solves for position. DPE tests candidate positions directly against the raw signal from all satellites at once."
+},
+{
+"title": "Conventional pipeline",
+"text": "Signal model → correlate → pseudoranges → least squares. DPE reuses the same building blocks, just in a different order."
+},
+{
+"title": "Making it practical",
+"text": "Searching a grid of positions is heavy. FFT-based correlation and parallel computing make it feasible."
+},
+{
+"title": "Variants",
+"text": "Duty-cycled DPE (receiver on only 2% of the time) saves power. Direct Time Estimation serves timing users with known positions."
+},
+{
+"title": "Verdict",
+"text": "More accurate and robust in cities and with weak signals, at the cost of computing power — getting cheaper every year."
+}
+]
+},
+{
+"n": 22,
+"title": "Multipath and NLOS",
+"intro": "The main error source in cities — reflected signals.",
+"sections": [
+{
+"title": "Two different problems",
+"text": "NLOS: you only receive a reflection → always a positive range error. Multipath: direct + reflected mixed → positive or negative error, depending on receiver design."
+},
+{
+"title": "How reflections behave",
+"text": "Smooth surfaces give strong mirror-like reflections that flip polarisation (RHCP → LHCP). Rough surfaces scatter. Low-elevation satellites get hit most."
+},
+{
+"title": "Receiver-side fixes",
+"text": "Choke-ring antennas, narrow and multipath-mitigating correlators, and polarisation tricks reduce multipath before measurements are formed."
+},
+{
+"title": "Carrier smoothing",
+"text": "Blend noisy-but-absolute code with smooth-but-ambiguous carrier phase (Hatch filter) → cleaner pseudoranges."
+},
+{
+"title": "Navigation-level fixes",
+"text": "De-weight low-C/N0 satellites, run consistency checks, use 3D city maps (\"shadow matching\") to spot and even exploit blocked signals."
+},
+{
+"title": "Post-processing tricks",
+"text": "Satellite geometry repeats (GPS every sidereal day), so multipath at a fixed site repeats too — measure it one day and subtract it the next (sidereal filtering)."
+},
+{
+"title": "Summary",
+"text": "Multipath is often the dominant error. Phones are the hardest case. Better maps, sensors and computing keep improving things."
+}
+]
+},
+{
+"n": 23,
+"title": "GNSS Integrity and RAIM",
+"intro": "How much can you trust your position?",
+"sections": [
+{
+"title": "What integrity is",
+"text": "Accuracy = typical error. Integrity = trust: knowing with tiny risk (like 1 in 10 million) that the error is below a bound — and getting warned in time if it isn't."
+},
+{
+"title": "The four requirements",
+"text": "Accuracy, integrity, continuity (don't drop out mid-operation) and availability. Tighter integrity can cost continuity and availability."
+},
+{
+"title": "Risk as a chain",
+"text": "Risk = chance a fault exists × chance the monitor misses it × chance the error then exceeds the bound. Add it up over all fault types."
+},
+{
+"title": "Protection levels",
+"text": "The receiver computes in real time a bound it guarantees the error stays within. Is it smaller than the alert limit? Then the operation is available."
+},
+{
+"title": "Bounding the unknown",
+"text": "Real error distributions have heavy tails we can't fully measure. So we \"overbound\" them with safely conservative Gaussians."
+},
+{
+"title": "Threat models",
+"text": "Each possible fault (satellite clock jump, bad orbit, ionosphere storm) gets a simplified model with bounded size and probability."
+},
+{
+"title": "RAIM",
+"text": "Receiver Autonomous Integrity Monitoring: with more satellites than needed, the receiver checks whether they agree. A disagreement points to a faulty one."
+},
+{
+"title": "Advanced RAIM (ARAIM)",
+"text": "Dual-frequency, multi-constellation RAIM. Lots of redundant, ionosphere-free measurements could let aircraft use RAIM even for vertical guidance."
+},
+{
+"title": "Summary",
+"text": "Integrity and continuity pull in opposite directions. Meeting both at aviation-level probabilities takes careful, conservative design."
+}
+]
+},
+{
+"n": 24,
+"title": "Interference: Origins, Effects, and Mitigation",
+"intro": "Jamming — and why GNSS is a \"stealth utility\".",
+"sections": [
+{
+"title": "The stealth utility",
+"text": "GNSS is hidden inside phone networks, power grids, ships and hospitals. When it's jammed, strange things fail — dropped calls, lost radar positions, broken pagers."
+},
+{
+"title": "Ways to attack",
+"text": "Jamming (noise that drowns the signal), data spoofing (fake corrections or ephemeris), and RF overlays (full fake GNSS signals)."
+},
+{
+"title": "How far jamming reaches",
+"text": "GNSS signals are about −160 dBW. A cheap jammer of a fraction of a watt can blind receivers for hundreds of metres to kilometres."
+},
+{
+"title": "Old signal weaknesses",
+"text": "GPS L1 C/A has short codes with spectral lines, so a tone at the wrong frequency hurts it a lot. Modern signals are much more robust."
+},
+{
+"title": "Mitigation",
+"text": "Better signals, notch filters, antenna arrays that null the jammer, and IMU aiding. Most civil \"PPDs\" (personal privacy devices) are crude."
+},
+{
+"title": "Situational awareness",
+"text": "Receivers can measure the noise floor and recognise jamming types (pulse, CW, wideband) — like a smoke alarm: it doesn't stop the fire, but you know."
+},
+{
+"title": "Authenticated signals",
+"text": "Cryptographic signatures or encrypted codes (like Galileo OSNMA) make faking signals much harder."
+},
+{
+"title": "Proof of location",
+"text": "Location is part of identity for banks, power grids and remote devices — so being able to prove where you are matters."
+},
+{
+"title": "Closing",
+"text": "Even military encryption depends on trusting thousands of keyed devices. There's no single silver bullet; layers of defence work best."
+}
+]
+},
+{
+"n": 25,
+"title": "Civilian GNSS Spoofing, Detection, and Recovery",
+"intro": "Fake satellites — and how receivers fight back.",
+"sections": [
+{
+"title": "What spoofing is",
+"text": "Broadcasting false GNSS signals to mislead a receiver. Civil codes are public, so they're easy to imitate. Demonstrated since 2003, now seen in the wild."
+},
+{
+"title": "Attack methods",
+"text": "From simple fake-signal generators, to meaconing (record & replay), to \"drag-off\" attacks that slowly pull your position away, to software-only attacks on the receiver."
+},
+{
+"title": "Detection",
+"text": "Watch for oddities: signals all arriving from one direction, suspicious power levels, distorted correlation peaks, clashes with IMU/clock, or missing authentication."
+},
+{
+"title": "Recovery",
+"text": "Detect → find the authentic signals hidden under the fakes → verify them → navigate on them again. Knowing you're lost beats trusting a fake fix."
+},
+{
+"title": "Testing defences",
+"text": "Defences need realistic testing with spoofing simulators and live-sky trials, under realistic power advantages."
+}
+]
+},
+{
+"n": 26,
+"title": "GNSS Receiver Antennas and Antenna Arrays",
+"intro": "The antenna shapes everything the receiver sees.",
+"sections": [
+{
+"title": "Antenna basics",
+"text": "Active antennas have a built-in LNA so long cables don't kill the signal. Key specs: gain pattern, polarisation (RHCP), bandwidth and phase centre."
+},
+{
+"title": "Antennas aren't points",
+"text": "The real \"phase centre\" moves with direction and frequency, adding millimetre-to-centimetre biases — that's why calibration (ANTEX) matters for precise work."
+},
+{
+"title": "Common types",
+"text": "Patch antennas (cheap, flat), helix, and choke-ring designs (big, great at blocking multipath) for reference stations."
+},
+{
+"title": "Antenna arrays",
+"text": "Several elements together can steer beams towards satellites or switch patterns — useful on aircraft and vehicles."
+},
+{
+"title": "Array processing",
+"text": "Combine element outputs digitally to place nulls on jammers and beams on satellites — the strongest defence against interference."
+},
+{
+"title": "Summary",
+"text": "Smaller devices, more signals, higher precision — the antenna is often the deciding factor. Don't treat it as an afterthought."
+}
+]
+},
+{
+"n": 27,
+"title": "Global Geodesy and Reference Frames",
+"intro": "Measuring a moving Earth — and agreeing on coordinates.",
+"sections": [
+{
+"title": "What geodesy is",
+"text": "The science of Earth's shape, gravity and rotation. All three change: plates drift, ice melts, water moves. Space techniques (GNSS, VLBI, SLR) measure them to millimetres."
+},
+{
+"title": "The IGS",
+"text": "The International GNSS Service: 400+ volunteer-run stations worldwide sharing data, producing precise orbits, clocks and station positions — free for everyone."
+},
+{
+"title": "Reference frames (ITRF)",
+"text": "A coordinate system needs a physical realisation: station positions AND velocities. ITRF combines GNSS, VLBI, SLR and DORIS, and is the backbone for WGS 84, GTRF and the others."
+}
+]
+},
+{
+"n": 28,
+"title": "GNSS Geodesy in Geophysics, Hazards, Climate, and Environment",
+"intro": "Using millimetre GNSS to watch the planet.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Permanent GNSS stations measure ground motion continuously — from slow plate drift to earthquake shaking."
+},
+{
+"title": "Geodetic-quality GPS",
+"text": "Choke-ring antennas, stable monuments and careful processing give millimetre-level daily positions."
+},
+{
+"title": "Tectonics",
+"text": "GNSS velocities show plates moving a few cm per year and strain building up on faults — the slow lead-up to earthquakes."
+},
+{
+"title": "Natural hazards",
+"text": "High-rate GNSS measures earthquake displacement in real time, helping rapid magnitude estimates and tsunami warnings. It also tracks volcanoes and landslides."
+},
+{
+"title": "Climate",
+"text": "GNSS tracks sea-level change (correcting tide gauges for land motion), ice loss via the ground rebounding, and water vapour in the atmosphere."
+},
+{
+"title": "Environment",
+"text": "Reflected signals at stations measure snow depth, soil moisture, vegetation and water levels, and loading shows groundwater changes."
+},
+{
+"title": "Conclusion",
+"text": "Dense GNSS networks have become a core instrument for Earth science and hazard response."
+}
+]
+},
+{
+"n": 29,
+"title": "Distributing Time and Frequency Information",
+"intro": "How the world shares one precise clock.",
+"sections": [
+{
+"title": "Clocks and statistics",
+"text": "Every clock drifts. The Allan variance describes how stable a clock is over different averaging times."
+},
+{
+"title": "Accuracy and traceability",
+"text": "Your time is only as good as the chain linking it back to UTC via national labs."
+},
+{
+"title": "Measuring delays (one-way)",
+"text": "To transfer time, you must know the signal delay — GNSS common-view and all-in-view compare clocks across continents."
+},
+{
+"title": "Measuring delays (two-way)",
+"text": "Two-way methods (satellite or fibre) cancel most of the path delay because the signal travels both ways."
+},
+{
+"title": "Synchronisation strategies",
+"text": "Choose by need: NTP over the internet (milliseconds), PTP on networks (microseconds or better), GNSS (nanoseconds)."
+},
+{
+"title": "Real data",
+"text": "Examples compare methods and show the noise and drift each one really has."
+},
+{
+"title": "Steering clocks",
+"text": "Control algorithms gently steer a local clock towards a reference without causing jumps."
+},
+{
+"title": "Summary",
+"text": "Precise time underpins power grids, telecoms and finance — and GNSS is the most widely used way to deliver it."
+}
+]
+},
+{
+"n": 30,
+"title": "GNSS for Neutral Atmosphere and Severe Weather",
+"intro": "Water vapour from GNSS delays.",
+"sections": [
+{
+"title": "Tropospheric delay",
+"text": "The lower atmosphere delays signals by ~2.4 m at zenith. The \"wet\" part depends on water vapour — so GNSS can measure it."
+},
+{
+"title": "Water vapour monitoring",
+"text": "Zenith wet delay converts to precipitable water vapour. Networks give continuous, all-weather humidity maps, and tomography gives 3D structure."
+},
+{
+"title": "Case studies",
+"text": "GNSS water vapour shows the moisture build-up before thunderstorms and heavy rain, and improves forecasts."
+},
+{
+"title": "Applications",
+"text": "Weather services feed GNSS data into forecasts every day. Real-time PPP and denser networks extend it further."
+}
+]
+},
+{
+"n": 31,
+"title": "Ionospheric Effects, Monitoring, and Mitigation",
+"intro": "The charged upper atmosphere and what it does to signals.",
+"sections": [
+{
+"title": "Introduction",
+"text": "The ionosphere (60–1000 km) is ionised by the Sun. It's the largest error source for single-frequency users and a playground for space-weather science."
+},
+{
+"title": "Ionosphere basics",
+"text": "Electron density changes with time of day, season, solar cycle, latitude and storms. TEC (total electron content) sums it along the signal path."
+},
+{
+"title": "Refraction effects",
+"text": "The ionosphere delays code and advances carrier phase — by an amount proportional to TEC/f². Dual-frequency users cancel most of it, and single-frequency users use models."
+},
+{
+"title": "Scintillation",
+"text": "Small-scale irregularities make signals flicker in amplitude and phase, mostly near the equator and poles — causing cycle slips and loss of lock."
+},
+{
+"title": "Conclusions",
+"text": "Robust tracking, multi-frequency signals and monitoring networks help — and GNSS itself is a great ionosphere sensor."
+}
+]
+},
+{
+"n": 32,
+"title": "GNSS for Detecting Natural and Man-Made Hazards",
+"intro": "The ionosphere as an alarm bell.",
+"sections": [
+{
+"title": "Introduction",
+"text": "Earthquakes, tsunamis, volcanoes and even explosions shake the atmosphere. The waves travel up and leave fingerprints in GNSS TEC."
+},
+{
+"title": "Ionospheric observables",
+"text": "Filtered TEC from dense GNSS networks reveals travelling disturbances from below."
+},
+{
+"title": "Earthquakes and tsunamis",
+"text": "Big earthquakes push air upward and the signature reaches the ionosphere within ~10 min. Tsunamis create gravity waves that GNSS can see over the open ocean."
+},
+{
+"title": "Volcanic eruptions",
+"text": "Explosive eruptions send acoustic waves into the ionosphere, visible in TEC."
+},
+{
+"title": "Thunderstorms",
+"text": "Strong convective storms create atmospheric gravity waves seen as ripples in TEC."
+},
+{
+"title": "Asteroids and meteors",
+"text": "Large bolides exploding in the atmosphere leave detectable ionospheric signatures."
+},
+{
+"title": "From space",
+"text": "GNSS receivers on satellites (radio occultation) add views of disturbances from orbit."
+},
+{
+"title": "Combining ground and space",
+"text": "Merging ground networks with space observations gives a fuller 3D picture."
+},
+{
+"title": "Coupled models",
+"text": "Models linking ocean, atmosphere and ionosphere predict what a tsunami's signal should look like, so it can be detected."
+},
+{
+"title": "Inversion",
+"text": "Working backwards from TEC changes to estimate the source — like the tsunami height."
+},
+{
+"title": "Man-made hazards",
+"text": "Rocket launches, underground nuclear tests and large explosions also leave ionospheric fingerprints."
+},
+{
+"title": "Precursors?",
+"text": "Claims of pre-earthquake ionospheric signals exist but are still debated."
+},
+{
+"title": "Outlook",
+"text": "Real-time GNSS ionospheric monitoring could add minutes to tsunami warnings."
+}
+]
+},
+{
+"n": 33,
+"title": "GNSS Radio Occultation",
+"intro": "Profiling the atmosphere from orbit.",
+"sections": [
+{
+"title": "The idea",
+"text": "A low-orbit satellite watches a GNSS satellite set or rise behind Earth's limb. The atmosphere bends the signal — and that bending reveals temperature, pressure and humidity profiles."
+},
+{
+"title": "System design",
+"text": "Missions like COSMIC need accurate receivers, good clocks and many occultations per day around the globe."
+},
+{
+"title": "Design considerations",
+"text": "Open-loop tracking for the turbulent lower troposphere, precise orbits and antenna design all matter."
+},
+{
+"title": "Science",
+"text": "Occultation data is one of the most valuable inputs to weather forecasts and gives a stable, calibration-free climate record. It also profiles the ionosphere."
+}
+]
+},
+{
+"n": 34,
+"title": "GNSS Reflectometry (GNSS-R)",
+"intro": "Using reflected GNSS signals as a free radar.",
+"sections": [
+{
+"title": "Introduction",
+"text": "GNSS signals bounce off oceans, land and ice. Catching the reflections turns every satellite into a free bistatic radar."
+},
+{
+"title": "General characteristics",
+"text": "Weak, spread-out reflections from a \"glistening zone\" around the mirror point. Receivers map them as delay-Doppler maps."
+},
+{
+"title": "Geometry",
+"text": "The specular point, its delay and Doppler depend on where the transmitter and receiver are — computed precisely to locate the measurement."
+},
+{
+"title": "Fundamentals",
+"text": "Bistatic radar equation, surface roughness and polarisation decide how much power comes back."
+},
+{
+"title": "Reflection models",
+"text": "Models of how rough surfaces scatter the signal turn measured waveforms into geophysical values."
+},
+{
+"title": "Ocean winds",
+"text": "Rougher sea = more spread reflection → wind speed. NASA's CYGNSS uses this to measure winds inside hurricanes."
+},
+{
+"title": "Ocean altimetry",
+"text": "Reflection delay gives sea-surface height — promising for dense coverage, still being refined."
+},
+{
+"title": "Soil moisture",
+"text": "Wetter soil reflects more strongly — from space or from ground stations."
+},
+{
+"title": "Snow and ice",
+"text": "Reflections measure snow depth, sea-ice extent and thickness hints."
+},
+{
+"title": "Other land variables",
+"text": "Vegetation, flooding and wetlands also show up in reflected signals."
+},
+{
+"title": "Summary",
+"text": "GNSS-R is a cheap, growing Earth-observation technique using signals that are already everywhere."
+}
+]
+}
+]
+}
