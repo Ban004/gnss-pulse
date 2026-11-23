@@ -40,12 +40,12 @@ def fmt(it):
 
 def digest(items, site_url=None):
     if not items:
-        send("🛰️ GNSS Pulse: no new items in the last 24h.")
+        send("🛰️ BAN Pulse: no new items in the last 24h.")
         return
     items = sorted(items, key=lambda x: -x["importance"])
     jobs = [i for i in items if i["category"] in ("job", "internship", "phd", "postdoc")]
     papers = [i for i in items if i not in jobs]
-    parts = [f"🛰️ <b>GNSS Pulse daily digest</b>: {len(items)} new items"]
+    parts = [f"🛰️ <b>BAN Pulse daily digest</b>: {len(items)} new items"]
     if jobs:
         parts += ["\n<b>💼 Positions</b>"] + [fmt(i) for i in jobs[:15]]
     if papers:

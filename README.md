@@ -1,4 +1,4 @@
-# 🛰️ GNSS Pulse
+# 🛰️ BAN Pulse
 
 Free daily GNSS aggregator covering papers, jobs and news. It runs on GitHub Actions, is served on GitHub Pages, and sends alerts through Telegram.
 

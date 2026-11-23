@@ -1,4 +1,4 @@
-"""GNSS Pulse: collect → dedup → filter → classify → save → notify."""
+"""BAN Pulse: collect → dedup → filter → classify → save → notify."""
 import datetime as dt
 import json
 import os

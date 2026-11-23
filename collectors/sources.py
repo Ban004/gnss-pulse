@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) GNSS-Pulse/0.2 (personal research aggregator)"}
+UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) BAN-Pulse/0.2 (personal research aggregator)"}
 TIMEOUT = 30
 
 
