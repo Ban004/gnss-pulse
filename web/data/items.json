@@ -1,12 +1,55 @@
 {
- "updated": "2026-11-23T01:06:24+00:00",
+ "updated": "2026-11-23T06:11:04+00:00",
  "failed_sources": [
-  "OpenAlex 'GNSS reflectometry'",
-  "OpenAlex 'BeiDou'",
-  "GNSS PhD position",
+  "arXiv 'all:\"satellite navigation\"'",
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Observation of Equatorial Plasma Bubbles Using Geostationary Beidou Satellites and All-Sky Imager",
+   "url": "https://doi.org/10.1007/978-981-95-7940-2_10",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026",
+   "kind_hint": "book_chapter",
+   "doi": "10.1007/978-981-95-7940-2_10",
+   "venue": "Springer Proceedings in Physics",
+   "authors": "Ernest P. Macalalad, Wynn Dunn Gil D. Improso, Tung Yuan Hsiao",
+   "issn": [
+    "0930-8989",
+    "1867-4941"
+   ],
+   "id": "ece0258589818680",
+   "relevant": true,
+   "category": "book_chapter",
+   "ai_summary": "Uses geostationary Beidou satellites and all‑sky imagers to detect equatorial plasma bubbles, informing GNSS ionospheric error models.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Beijing, China",
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-23T06:11:04+00:00"
+  },
+  {
+   "title": "South Korea's KPS Satellite Navigation System Enters Final Design Review, Moving Toward Satellite Production Ahead of 2029 First Launch - BigGo Finance",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5fOEMzeVZaSkJVckNGOTVVTEx1ZU5LLS1nbEVUUTVGeVJpM1N0OWI3R0lkNUVTSG1NcUNYcThXQnNSaGpDRE1EZkw0bTZaanRNTzJ2NjJoR19mZERfdWJHVTdjXy1memQ5UmN1eks4SUtoNlB6MHc?oc=5",
+   "summary": "South Korea's KPS Satellite Navigation System Enters Final Design Review, Moving Toward Satellite Production Ahead of 2029 First Launch &nbsp;&nbsp; BigGo Finance",
+   "source": "Google News GNSS",
+   "date": "2026-11-23",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News GNSS",
+   "id": "5db38f765adacc72",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "South Korea’s KPS satellite navigation system reaches final design review, aiming for first launch in 2029.\nRepresents a new regional GNSS initiative.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-23T06:11:04+00:00"
+  },
   {
    "title": "Resilient UAV Routes for Emergency Services Using 5G Networks",
    "url": "https://doi.org/10.1007/978-3-032-36098-4_55",
