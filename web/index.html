@@ -86,8 +86,19 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .reel .acts a,.reel .acts button{flex:1;text-align:center;padding:11px;border-radius:10px;border:0;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;background:#ffffff26;color:#fff}
 .reel .acts a{background:#fff;color:#000}
 .reel .acts .star{position:static;font-size:15px}.reel .acts .star.on{color:#ffd33d}
-.reels .x{position:fixed;top:14px;right:16px;z-index:16;background:#0008;color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
-.reel .pos{position:absolute;top:22px;right:64px;font-size:12px;opacity:.6}
+.reels .x,.reels .play{position:fixed;top:14px;right:16px;z-index:16;background:#0008;color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+.reel .pos{position:absolute;top:42px;left:24px;font-size:12px;opacity:.6}
+.reels .play{right:62px}
+.reel .card{overflow:hidden;user-select:none}
+.reel .card>*{z-index:1}.reel .card>h2,.reel .card>.m,.reel .card>.sum,.reel .card>.src,.reel .card>.acts{position:relative}
+.reel .bg{position:absolute;inset:0;z-index:0;background:center/cover;opacity:0;transition:opacity .8s}.reel .bg.ok{opacity:1}.reel .bg video{width:100%;height:100%;object-fit:cover}
+.reel .card::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(#0006,transparent 20%,transparent 30%,#000d 62%)}
+.reel.on .bg{animation:kb 14s ease-out forwards}@keyframes kb{to{transform:scale(1.18) translate(-3%,-2%)}}
+.reel .bar{position:absolute;top:0;left:0;height:3px;width:0;background:#fff;z-index:2}
+.reels.auto .reel.on .bar{animation:bar 8s linear forwards}@keyframes bar{to{width:100%}}
+.reel .burst{position:absolute;inset:0;display:grid;place-items:center;font-size:110px;color:#ffd33d;z-index:3;pointer-events:none;animation:burst .7s ease-out forwards}
+@keyframes burst{from{transform:scale(.3);opacity:0}40%{transform:scale(1.1);opacity:1}to{opacity:0}}
+.reels .cr{position:fixed;bottom:4px;left:8px;font-size:10px;opacity:.45}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}
 </style>
 </head>
@@ -177,6 +188,34 @@ function panel(title,t,rows,n=6){return`<div class="panel"><h3>${title}<a data-g
   <div class="sub">${esc(LABEL[i.category]||i.category)} · ${esc(i.venue||i.source)}${kind(i)=="job"&&i.region?" · "+esc(i.region):""}</div></div>`).join("")
   ||`<div class="row sub">Nothing new in the last 24 hours.</div>`}</div>`}
 
+// --- Reels: NASA background images by topic, auto-advance, double-tap to save ---
+const TOPICS=[[/ionosph|scintill|\btec\b|space weather|solar/i,"aurora from space"],[/reflectometr|ocean|\bsea\b|ship|maritime|soil moisture|snow|water vapo|troposph|weather/i,"ocean from space"],
+  [/vehicle|urban|autonomous|\bins\b|inertial|uav|drone|robot|lidar|slam|smartphone/i,"city lights at night from space"],[/geodes|earthquake|deformation|tecton|crust|reference frame|sea level|glacier/i,"earth topography"],
+  [/clock|orbit|constellation|\bleo\b|launch|satellite/i,"satellite orbit earth"],[/antenna|receiver|signal|interference|jamming|spoof/i,"antenna tracking station"]];
+const topic=i=>kind(i)=="job"?"mission control":(TOPICS.find(([re])=>re.test(i.title+" "+(i.ai_summary||"")))||[0,"GPS satellite"])[1];
+const imgCache={},REEL_SECS=8;let auto=localStorage.reelAuto=="1",reelT;
+// NASA image/video library: free, no key, CORS-open. Videos use the ~1 MB "~mobile.mp4" rendition.
+const nasa=(q,t)=>imgCache[t+q]??=fetch(`https://images-api.nasa.gov/search?media_type=${t}&page_size=60&q=`+encodeURIComponent(q))
+  .then(r=>r.json()).then(d=>d.collection.items.map(i=>t=="video"?(id=>`https://images-assets.nasa.gov/video/${encodeURIComponent(id)}/${encodeURIComponent(id)}~mobile.mp4`)(i.data[0].nasa_id)
+    :i.links?.[0]?.href).filter(Boolean)).catch(()=>[]);
+const hash=s=>[...s].reduce((h,c)=>h*31+c.charCodeAt(0)|0,0)>>>0;
+function loadBg(s){if(!s||s.dataset.bg)return;s.dataset.bg=1;
+  const b=s.querySelector(".bg"),h=hash(s.dataset.id),q=s.dataset.q;
+  const img=()=>nasa(q,"image").then(u=>{if(!u.length)return;const im=new Image();
+    im.onload=()=>{b.style.backgroundImage=`url("${im.src}")`;b.classList.add("ok")};im.src=u[h%u.length]});
+  if(h%2)return img();  // half the cards get a video, the rest a photo
+  nasa(q,"video").then(u=>{if(!u.length)return img();const v=document.createElement("video");
+    Object.assign(v,{muted:true,loop:true,playsInline:true,autoplay:s.classList.contains("on"),src:u[h%u.length]});
+    v.oncanplay=()=>b.classList.add("ok");v.onerror=()=>{v.remove();img()};b.append(v)})}
+function reelOn(s){document.querySelectorAll(".reel.on").forEach(x=>x.classList.remove("on"));s.classList.add("on");
+  document.querySelectorAll(".reels video").forEach(v=>v.pause());s.querySelector("video")?.play().catch(()=>{});
+  loadBg(s);loadBg(s.nextElementSibling);clearTimeout(reelT);
+  if(auto)reelT=setTimeout(()=>{if(s.isConnected&&s.nextElementSibling)s.nextElementSibling.scrollIntoView({behavior:"smooth"})},REEL_SECS*1000)}
+const reelIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)reelOn(e.target)}),{threshold:.6});
+document.addEventListener("dblclick",e=>{const s=e.target.closest(".reel[data-save]");if(!s||e.target.closest("a,button"))return;
+  const id=s.dataset.save;if(!isSaved(id)){if(!Object.keys(folders).length)folders.General=[];toggle(Object.keys(folders)[0],id)}
+  s.querySelector(".card").insertAdjacentHTML("beforeend",'<span class="burst">★</span>');setTimeout(render,700)});
+
 function render(){
   history.replaceState(null,"","#"+tab);
   const all=items.filter(matches),count=k=>all.filter(i=>kind(i)==k).length;
@@ -184,6 +223,7 @@ function render(){
     k=="reels"?"":k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${savedIds().size}</span>`:k=="calls"?`<span class="n">${cfp.conferences.filter(c=>confStatus(c)[0]!="closed").length}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
   const meta=`<div class="meta">${items.length} items tracked · last updated ${updated?new Date(updated).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}):"n/a"}</div>`;
   let html=meta;
+  clearTimeout(reelT);
   if(tab=="reels"){
     // freshest + most important first, then everything else newest first
     const feed=[...all].sort((a,b)=>isNew(b)-isNew(a)||(isNew(a)&&b.importance-a.importance)||byDate(a,b));
@@ -195,18 +235,18 @@ function render(){
         title:x.title,label:"Special issue call",st:[daysTo(x.deadline)<=14?"soon":"open",`Deadline ${fmt(x.deadline)} · ${daysTo(x.deadline)} days left`],sum:x.summary,src:[x.journal||x.source,x.tier!="unknown"&&x.tier].filter(Boolean).join(" · "),url:x.url}))];
     for(let n=0;n<calls.length;n++)feed.splice(Math.min(n*6+2,feed.length),0,calls[n]);
     const y=$(".reels")?.scrollTop;
-    $("#view").innerHTML=`<div class="reels" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button>${feed.map((i,n)=>{if(i.call)return`<section class="reel k-call"><div class="card"><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
+    $("#view").innerHTML=`<div class="reels ${auto?"auto":""}" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button><button class="play" data-act="auto" title="Auto-advance every ${REEL_SECS}s">${auto?"❚❚":"▶"}</button><span class="cr">Images &amp; video: NASA</span>${feed.map((i,n)=>{if(i.call)return`<section class="reel k-call" data-q="earth from space" data-id="${esc(i.title)}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
       <h2>${esc(i.title)}</h2><div class="m"><span class="st ${i.st[0]}">${esc(i.st[1])}</span></div>
       ${i.sum?`<div class="sum">${esc(i.sum)}</div>`:""}${i.src?`<div class="src">${esc(i.src)}</div>`:""}
       <div class="acts"><a href="${esc(i.url)}" target="_blank" rel="noopener">Open call ↗</a></div></div></section>`;
       const k=kind(i),s=isSaved(i.id);
-      return`<section class="reel k-${k}"><div class="card"><span class="kind">${esc(LABEL[i.category]||i.category)}${isNew(i)?" · 🔥 New":""}</span><span class="pos">${n+1}/${feed.length}</span>
+      return`<section class="reel k-${k}" data-q="${topic(i)}" data-id="${i.id}" data-save="${i.id}"><div class="card"><div class="bg"></div><i class="bar"></i><span class="kind">${esc(LABEL[i.category]||i.category)}${isNew(i)?" · 🔥 New":""}</span><span class="pos">${n+1}/${feed.length}</span>
       <h2>${esc(i.title)}</h2>
       <div class="m">${i.tier&&!["unknown","conference","preprint","book"].includes(i.tier)?`<span class="tag">${esc(i.tier)}</span>`:""}${i.importance>=4?`<span class="tag">Key</span>`:""}${i.deadline?`<span class="tag">Deadline ${esc(i.deadline)}</span>`:""}</div>
       ${i.ai_summary||i.summary?`<div class="sum">${esc(i.ai_summary||i.summary.slice(0,400)+(i.summary.length>400?"…":""))}</div>`:""}
       <div class="src">${esc(i.venue||i.source)}${i.authors?" · "+esc(i.authors.split(",").slice(0,3).join(",")):""}${k=="job"&&(i.location||i.region)?" · 📍 "+esc(i.location||i.region):""}${i.date?" · "+esc(i.date):""}</div>
       <div class="acts"><a href="${esc(i.url)}" target="_blank" rel="noopener">Open ↗</a><button class="star ${s?"on":""}" data-star="${i.id}">${s?"★ Saved":"☆ Save"}</button></div></div></section>`}).join("")||`<section class="reel"><div class="card"><h2>Nothing matches your search.</h2></div></section>`}</div>`;
-    const r=$(".reels");if(y)r.scrollTop=y;r.focus({preventScroll:true});return;
+    const r=$(".reels");if(y)r.scrollTop=y;r.focus({preventScroll:true});reelIO.disconnect();r.querySelectorAll(".reel").forEach(x=>reelIO.observe(x));return;
   }
   if(tab=="overview"){
     const fresh=all.filter(isNew).sort((a,b)=>b.importance-a.importance||byDate(a,b));
@@ -276,6 +316,7 @@ document.addEventListener("click",e=>{
   if(!e.target.closest(".pop"))closePop();
   const d=e.target.closest("[data-tab],[data-go],[data-sub],[data-region],[data-star],[data-folder],[data-act],[data-call]");if(!d)return;
   if(d.dataset.call){callView=d.dataset.call;render();return}
+  if(d.dataset.act=="auto"){auto=!auto;localStorage.reelAuto=auto?"1":"";render();return}
   if(d.dataset.star){openPop(d,d.dataset.star);return}
   if(d.dataset.folder!==undefined)folder=d.dataset.folder;
   else if(d.dataset.act=="newfolder"){const n=prompt("Folder name:")?.trim();if(n&&!folders[n]){folders[n]=[];store();folder=n}}
