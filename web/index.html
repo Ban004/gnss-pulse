@@ -71,6 +71,23 @@ select{padding:5px 8px;border-radius:8px;border:1px solid var(--line);background
 .dl .past b{color:var(--muted);text-decoration:line-through}.dl .next{border-left-color:var(--hot)}.dl .next b{color:var(--hot)}
 .conf .nt{margin-top:8px;font-size:12.5px;color:var(--muted)}
 .hint{color:var(--muted);font-size:12.5px;margin:-6px 0 14px}
+/* Reels: full-screen vertical feed, native scroll-snap */
+.reels{position:fixed;inset:0;z-index:15;overflow-y:auto;scroll-snap-type:y mandatory;background:#000;color:#fff;overscroll-behavior:contain}
+.reel{height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;padding:24px}
+.reel .card{width:min(460px,100%);height:min(820px,100%);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;position:relative;
+  background:linear-gradient(160deg,var(--g1),#05080f 75%)}
+.reel.k-call{--g1:#6d28d9}.reel.k-paper{--g1:#1f4fa8}.reel.k-job{--g1:#0b6b49}.reel.k-news{--g1:#8a430b}
+.reel .kind{position:absolute;top:22px;left:24px;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+.reel h2{margin:0;font-size:clamp(20px,5vw,26px);line-height:1.25}
+.reel .sum{white-space:pre-line;font-size:15px;line-height:1.5;opacity:.9;max-height:40%;overflow:auto}
+.reel .src{font-size:13px;opacity:.75}
+.reel .tag{background:#ffffff26;color:#fff}
+.reel .acts{display:flex;gap:10px;margin-top:6px}
+.reel .acts a,.reel .acts button{flex:1;text-align:center;padding:11px;border-radius:10px;border:0;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;background:#ffffff26;color:#fff}
+.reel .acts a{background:#fff;color:#000}
+.reel .acts .star{position:static;font-size:15px}.reel .acts .star.on{color:#ffd33d}
+.reels .x{position:fixed;top:14px;right:16px;z-index:16;background:#0008;color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+.reel .pos{position:absolute;top:22px;right:64px;font-size:12px;opacity:.6}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}
 </style>
 </head>
@@ -91,7 +108,7 @@ const kind=i=>KIND[i.category]||"news";
 const LABEL={paper:"Journal",preprint:"Preprint",conference:"Conference",book_chapter:"Book chapter",thesis:"Thesis",
   job:"Job",phd:"PhD",postdoc:"Postdoc",internship:"Internship",news:"News",product:"Product",event:"Event",cfp:"Call for papers",
   dataset:"Dataset",software:"Software",other:"Other"};
-const TABS=[["overview","Today"],["paper","Papers"],["job","Jobs"],["news","News & Industry"],["calls","Calls for Papers"],["saved","Saved"]];
+const TABS=[["overview","Today"],["reels","▶ Reels"],["paper","Papers"],["job","Jobs"],["news","News & Industry"],["calls","Calls for Papers"],["saved","Saved"]];
 let cfp={conferences:[],special_issues:[],wikicfp:[]},callView="conf";
 const today=new Date().toISOString().slice(0,10);
 const daysTo=d=>Math.round((new Date(d+"T00:00")-new Date(today+"T00:00"))/864e5);
@@ -164,9 +181,33 @@ function render(){
   history.replaceState(null,"","#"+tab);
   const all=items.filter(matches),count=k=>all.filter(i=>kind(i)==k).length;
   $("#tabs").innerHTML=TABS.map(([k,l])=>`<button data-tab="${k}" class="${tab==k?"on":""}">${l}${
-    k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${savedIds().size}</span>`:k=="calls"?`<span class="n">${cfp.conferences.filter(c=>confStatus(c)[0]!="closed").length}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
+    k=="reels"?"":k=="overview"?`<span class="n">${all.filter(isNew).length}</span>`:k=="saved"?`<span class="n">${savedIds().size}</span>`:k=="calls"?`<span class="n">${cfp.conferences.filter(c=>confStatus(c)[0]!="closed").length}</span>`:`<span class="n">${count(k)}</span>`}</button>`).join("");
   const meta=`<div class="meta">${items.length} items tracked · last updated ${updated?new Date(updated).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}):"n/a"}</div>`;
   let html=meta;
+  if(tab=="reels"){
+    // freshest + most important first, then everything else newest first
+    const feed=[...all].sort((a,b)=>isNew(b)-isNew(a)||(isNew(a)&&b.importance-a.importance)||byDate(a,b));
+    // open calls (conferences + special issues), soonest deadline first, slotted in every 5th card
+    const q=$("#q").value.trim().toLowerCase(),m=o=>!q||JSON.stringify(o).toLowerCase().includes(q);
+    const calls=[...cfp.conferences.filter(m).map(c=>[c,confStatus(c)]).filter(([,s])=>s[0]!="closed").sort((a,b)=>a[1][2].localeCompare(b[1][2])).map(([c,s])=>({call:1,
+        title:c.edition||c.short,label:"Conference call",st:s,sum:c.name,src:[c.location&&"📍 "+c.location,c.start&&"Starts "+fmt(c.start),c.rank].filter(Boolean).join(" · "),url:c.url,key:c.full_paper_deadline||c.abstract_deadline})),
+      ...[...cfp.special_issues,...cfp.wikicfp.filter(x=>x.kind=="journal")].filter(m).filter(x=>x.deadline&&x.deadline>=today).sort((a,b)=>a.deadline.localeCompare(b.deadline)).map(x=>({call:1,
+        title:x.title,label:"Special issue call",st:[daysTo(x.deadline)<=14?"soon":"open",`Deadline ${fmt(x.deadline)} · ${daysTo(x.deadline)} days left`],sum:x.summary,src:[x.journal||x.source,x.tier!="unknown"&&x.tier].filter(Boolean).join(" · "),url:x.url}))];
+    for(let n=0;n<calls.length;n++)feed.splice(Math.min(n*6+2,feed.length),0,calls[n]);
+    const y=$(".reels")?.scrollTop;
+    $("#view").innerHTML=`<div class="reels" tabindex="0"><button class="x" data-tab="overview" title="Close (Esc)">×</button>${feed.map((i,n)=>{if(i.call)return`<section class="reel k-call"><div class="card"><span class="kind">📢 ${i.label}</span><span class="pos">${n+1}/${feed.length}</span>
+      <h2>${esc(i.title)}</h2><div class="m"><span class="st ${i.st[0]}">${esc(i.st[1])}</span></div>
+      ${i.sum?`<div class="sum">${esc(i.sum)}</div>`:""}${i.src?`<div class="src">${esc(i.src)}</div>`:""}
+      <div class="acts"><a href="${esc(i.url)}" target="_blank" rel="noopener">Open call ↗</a></div></div></section>`;
+      const k=kind(i),s=isSaved(i.id);
+      return`<section class="reel k-${k}"><div class="card"><span class="kind">${esc(LABEL[i.category]||i.category)}${isNew(i)?" · 🔥 New":""}</span><span class="pos">${n+1}/${feed.length}</span>
+      <h2>${esc(i.title)}</h2>
+      <div class="m">${i.tier&&!["unknown","conference","preprint","book"].includes(i.tier)?`<span class="tag">${esc(i.tier)}</span>`:""}${i.importance>=4?`<span class="tag">Key</span>`:""}${i.deadline?`<span class="tag">Deadline ${esc(i.deadline)}</span>`:""}</div>
+      ${i.ai_summary||i.summary?`<div class="sum">${esc(i.ai_summary||i.summary.slice(0,400)+(i.summary.length>400?"…":""))}</div>`:""}
+      <div class="src">${esc(i.venue||i.source)}${i.authors?" · "+esc(i.authors.split(",").slice(0,3).join(",")):""}${k=="job"&&(i.location||i.region)?" · 📍 "+esc(i.location||i.region):""}${i.date?" · "+esc(i.date):""}</div>
+      <div class="acts"><a href="${esc(i.url)}" target="_blank" rel="noopener">Open ↗</a><button class="star ${s?"on":""}" data-star="${i.id}">${s?"★ Saved":"☆ Save"}</button></div></div></section>`}).join("")||`<section class="reel"><div class="card"><h2>Nothing matches your search.</h2></div></section>`}</div>`;
+    const r=$(".reels");if(y)r.scrollTop=y;r.focus({preventScroll:true});return;
+  }
   if(tab=="overview"){
     const fresh=all.filter(isNew).sort((a,b)=>b.importance-a.importance||byDate(a,b));
     const recent=k=>{const f=fresh.filter(i=>kind(i)==k);return f.length?f:all.filter(i=>kind(i)==k).sort(byDate)};
@@ -248,6 +289,7 @@ document.addEventListener("click",e=>{
   render()});
 document.addEventListener("change",e=>{if(e.target.id=="days"){days=+e.target.value;render()}});
 $("#q").addEventListener("input",render);
+document.addEventListener("keydown",e=>{if(e.key=="Escape"&&tab=="reels"&&!document.querySelector(".pop")){tab="overview";render()}});
 fetch("data/calls.json?"+Date.now()).then(r=>r.json()).then(d=>{cfp=d;if(items.length)render()}).catch(()=>{});
 fetch("data/items.json?"+Date.now()).then(r=>r.json()).then(d=>{items=d.items;updated=d.updated;render()})
   .catch(()=>{$("#view").innerHTML=`<div class="empty">No data yet. The collector hasn't run.</div>`});
