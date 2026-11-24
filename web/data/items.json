@@ -1,9 +1,412 @@
 {
- "updated": "2026-11-23T20:30:06+00:00",
+ "updated": "2026-11-24T04:59:53+00:00",
  "failed_sources": [
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Implementation and Software-in-the-Loop Evaluation of a Trans-Domain Digital Twin Architecture for Autonomous Guidance of the Phoenix VTOL UAV Without Online GNSS",
+   "url": "https://arxiv.org/abs/2611.29158v1",
+   "summary": "Autonomous UAV guidance in emergency response, infrastructure monitoring, and cargo transportation requires reliable navigation. However, satellite-based positioning may become unavailable or unreliable in enclosed spaces, blind spots caused by natural obstacles and structures, and environments affected by radio interference and signal spoofing during electronic warfare. This study designs, implements, and evaluates a system based on a Trans-Domain Digital Twin (TDDT) for autonomous guidance of the Phoenix VTOL UAV. Independent navigation, flight dynamics, and meteorological models are coordinated within a cycle of state estimation, prediction, decision-making, command execution, and feedback. Data from inertial, magnetic, pressure, and airspeed sensors, together with environmental information, form the basis for estimation and prediction. Furthermore, a shared state, temporal synchronization, preservation of information provenance, and command traceability establish continuity between models and decisions. The system was tested with a simulated physical twin in a software-in-the-loop environment. Vertical takeoff, movement toward the destination, landing, and autonomous stopping were recorded, and the dynamic model was adjusted to a limited extent based on sensor-derived feedback. Separating the evaluation reference from navigation inputs enabled independent assessment of positioning error and computational performance. The results confirm operational coordination, decision ",
+   "source": "arXiv",
+   "date": "2026-11-22",
+   "kind_hint": "preprint",
+   "doi": null,
+   "venue": "arXiv",
+   "id": "22bc099c8276f46f",
+   "relevant": true,
+   "category": "preprint",
+   "ai_summary": "Develops a Trans‑Domain Digital Twin architecture for GNSS‑denied UAV guidance, implementing software‑in‑the‑loop tests on the Phoenix VTOL platform.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Adaptive Decision-Switching DLL for Robust GNSS Multipath Mitigation",
+   "url": "https://doi.org/10.1016/j.phycom.2026.103484",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-11",
+   "kind_hint": "paper",
+   "doi": "10.1016/j.phycom.2026.103484",
+   "venue": "Physical Communication",
+   "authors": "Ayoub Bengherabi, Messaoud Bengherabi",
+   "issn": [
+    "1874-4907"
+   ],
+   "id": "a3545c1a43cd6089",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Proposes an adaptive decision‑switching DLL algorithm to mitigate GNSS multipath, improving positioning accuracy in challenging signal environments.",
+   "importance": 5,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q2",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "GNSS Spoofing Detection in Unseen Scenarios Using Multi-Channel Satellite Statistical Aggregation",
+   "url": "https://doi.org/10.3390/s26237411",
+   "summary": "Global Navigation Satellite Systems (GNSS) support positioning, navigation, and timing, yet civilian signals are weak and publicly specified, which leaves receivers open to spoofing. Detectors trained on one campaign often degrade when the attack type, receiver, or site changes. This paper asks whether a compact description of how the visible satellites behave as a group carries across such changes. Eight tracking observables are extracted for each visible satellite and reduced to a 24-dimensional epoch vector by mean, maximum, and standard-deviation aggregation across satellites. A single-layer Transformer then encodes ten consecutive epochs and classifies the window. Three public datasets, TEXBAT, OAKBAT, and FGI-SpoofRepo, support two evaluation levels, namely unseen scenarios and unseen datasets. Mean accuracy reaches 99.31% ± 0.98% across scenarios and 96.39% ± 1.59% across datasets, where the interval is one standard deviation over the three held-out datasets. Ablation shows that the standard-deviation channel alone reaches 92.56% across datasets and that the three channels are complementary. The model has 13.5 k parameters and requires 0.260 MFLOPs per pass, and it matches the strongest baseline within 0.12 percentage points at a fraction of the size. Compact statistics of the satellite group, rather than larger per-satellite models, are therefore sufficient for detection that transfers.",
+   "source": "Crossref",
+   "date": "2026-11-23",
+   "kind_hint": "paper",
+   "doi": "10.3390/s26237411",
+   "venue": "Sensors",
+   "authors": "Zehao Lei, Chunlei Pang, Yang Zhang, Qiushi Chen",
+   "issn": [
+    "1424-8220"
+   ],
+   "id": "1464872d04619ba7",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Proposes a compact multi‑channel satellite statistical aggregation method to detect GNSS spoofing across unseen campaigns. Uses eight observables reduced to a 24‑dimensional epoch vector.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "A novel GNSS leveling method based on auxiliary points for measuring deflection of the vertical",
+   "url": "https://doi.org/10.1016/j.measurement.2026.124009",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-11",
+   "kind_hint": "paper",
+   "doi": "10.1016/j.measurement.2026.124009",
+   "venue": "Measurement",
+   "authors": "Jianzhang Li, Xin Jin, Weifang Yang, Xiaoning Su",
+   "issn": [
+    "0263-2241"
+   ],
+   "id": "978b7f89f430ade3",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Introduces a GNSS leveling technique employing auxiliary points to measure the deflection of the vertical. Demonstrates improved accuracy over traditional leveling methods.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Large-Scale Geometric Map-Based Localization of UAVs in GNSS-Denied Urban Environments",
+   "url": "https://doi.org/10.1109/iros61738.2026.11777597",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/iros61738.2026.11777597",
+   "venue": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+   "authors": "Garth J.S. Terlizzi, Kaveh Fathian",
+   "issn": [],
+   "id": "0ca36570d9a1e1ec",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Presents a large‑scale geometric map‑based localization framework for UAVs operating in GNSS‑denied urban settings. Combines visual SLAM with prior city maps.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Impacts of Geomagnetic Storms on Power Systems, Communications and Navigation, and Low-Earth-Orbit Satellite Operations, with Mitigation Strategies",
+   "url": "https://doi.org/10.62051/7w4r8x56",
+   "summary": "Geomagnetic storms affect power system stability, wireless communication and navigation, and low-Earth-orbit satellite operation via magnetosphere-ionosphere-thermosphere coupling. This paper has selected three representative works and systematically compared their research objects, data sources, model construction methods, main results and countermeasures in this study. Geomagnetically induced currents increase transformer reactive power losses and reduce small-signal damping; ionospheric electron density and irregularities cause radio attenuation, scintillation and GNSS positioning errors; and an elevated thermospheric density leads to increased satellite drag and orbital decay. The three studies have recommended optimising neutral-point blocking devices, building frequency-band-specific monitoring and early warning systems, and adding neutral-density forecasting, respectively. These ways are only suitable for small-scale regional samples. They are lack of standardised quantitative indicators, and they have not been widely verified by now. Therefore, this paper proposes the integration of multi-regional observations, standardised evaluation indicators and real-time data assimilation to improve the operational feasibility of geomagnetic storm risk assessment and early warning.",
+   "source": "Crossref",
+   "date": "2026-11-23",
+   "kind_hint": "paper",
+   "doi": "10.62051/7w4r8x56",
+   "venue": "Transactions on Computer Science and Intelligent Systems Research",
+   "authors": "Yifei Chen",
+   "issn": [
+    "2960-2238",
+    "2960-1800"
+   ],
+   "id": "24a0a97cc0025b2c",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Reviews how geomagnetic storms affect power systems, communications, and GNSS positioning, and proposes mitigation strategies for low‑Earth‑orbit satellite operations.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Lightweight Detection and Mitigation of ARP-Based MITM Attack and Software-Driven GPS Spoofing",
+   "url": "https://doi.org/10.1109/issc70693.2026.11792337",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-06",
+   "kind_hint": "conference",
+   "doi": "10.1109/issc70693.2026.11792337",
+   "venue": "2026 36th Irish Signals and Systems Conference (ISSC)",
+   "authors": "Bibin Babu, Parth Sachin Darekar, Muhammad Yunis Daha, Muhammad Usman Hadi",
+   "issn": [],
+   "id": "363a52e4a96c23ea",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Lightweight detection and mitigation of ARP‑based MITM attacks and software‑driven GPS spoofing. Directly addresses GNSS security.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Ireland",
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Optically Transparent Roof-Glass Embedded Antenna with Uni-Directional Radiation Pattern for Vehicular GNSS Applications",
+   "url": "https://doi.org/10.1109/tvt.2026.3756540",
+   "summary": "",
+   "source": "IEEE Trans. Vehicular Technology",
+   "date": "2026",
+   "kind_hint": "paper",
+   "doi": "10.1109/tvt.2026.3756540",
+   "venue": "IEEE Transactions on Vehicular Technology",
+   "authors": "Hanieh Aliakbari, Christian Lötbäck, Xiaotian Li, Buon Kiong Lau",
+   "issn": [
+    "0018-9545",
+    "1939-9359"
+   ],
+   "id": "abf93ceefcee2c59",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Design of an optically transparent roof‑glass embedded antenna with a unidirectional pattern for vehicular GNSS receivers. Enables GNSS reception without compromising vehicle aesthetics.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Evaluation of AI Weather Foundation Models for PWV and ZTD Forecasting over China: GNSS and Radiosonde Based Validation and Implications for Extreme Precipitation Monitoring",
+   "url": "https://doi.org/10.1109/jstars.2026.3756546",
+   "summary": "",
+   "source": "IEEE JSTARS",
+   "date": "2026",
+   "kind_hint": "paper",
+   "doi": "10.1109/jstars.2026.3756546",
+   "venue": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+   "authors": "Zhihao Wang, Hongzhou Chai, Lulu Ming, Yuhao Ye",
+   "issn": [
+    "1939-1404",
+    "2151-1535"
+   ],
+   "id": "def7f8075ab1245a",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Evaluates AI weather foundation models for precipitable water vapor and zenith tropospheric delay using GNSS and radiosonde data over China. Links GNSS‑based atmospheric products to extreme‑precipitation monitoring.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Probabilistic Joint Calibration of Camera, LiDAR, Radar, and GNSS-Based Navigation Systems for Georeferenced Sensor Extrinsics",
+   "url": "https://doi.org/10.1109/iros61738.2026.11777214",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/iros61738.2026.11777214",
+   "venue": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+   "authors": "Bianca Forkel, Philipp Berthold, Thorsten Luettel, Mirko Maehlisch",
+   "issn": [],
+   "id": "39aacd1d78889f22",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Probabilistic joint calibration of camera, LiDAR, radar and GNSS/INS navigation systems to obtain accurate sensor extrinsics. Enhances multi‑sensor georeferencing for autonomous platforms.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "AUG: Perception-Aware UAV Graph-Based Planning for GNSS-Denied Navigation in Feature-Sparse Environments",
+   "url": "https://doi.org/10.1109/iros61738.2026.11776247",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/iros61738.2026.11776247",
+   "venue": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+   "authors": "Enguang Feng, Haohuan Yuan, Hong Zhang, Hao Xu",
+   "issn": [],
+   "id": "5b4b2c5dbdf9659b",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "AUG proposes perception‑aware graph‑based planning for UAVs operating in GNSS‑denied, feature‑sparse environments. Integrates onboard sensing to maintain safe navigation without satellite signals.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "OSM-Aided Inertial Dead-Reckoning for GNSS-Denied Vehicle Localization Using Trajectory-Segment ICP",
+   "url": "https://doi.org/10.1109/mfi71415.2026.11787728",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/mfi71415.2026.11787728",
+   "venue": "2026 IEEE International Conference on Multisensor Fusion and Integration for Intelligent Systems (MFI)",
+   "authors": "Tatsuki Ishikawa, Uljana Reinsalu, Aleksei Tepljakov",
+   "issn": [],
+   "id": "8ccd2003badd227d",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Uses OpenStreetMap data to aid inertial dead‑reckoning for GNSS‑denied vehicle localization via trajectory‑segment ICP. Demonstrates improved accuracy in urban canyons.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Monocular 6-DoF Pose Estimation for Fixed-Wing UAV Landing in GNSS-Denied Environments",
+   "url": "https://doi.org/10.1109/cvaa71532.2026.11782374",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/cvaa71532.2026.11782374",
+   "venue": "2026 6th International Conference on Computer Vision, Application and Algorithm (CVAA)",
+   "authors": "Lulu Hao, Lipu Zhou, Xu Wang, Zhenzhong Wei",
+   "issn": [],
+   "id": "b9ef8e507c396d32",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Monocular 6‑DoF pose estimation method for fixed‑wing UAV landing in GNSS‑denied conditions. Relies on visual cues to achieve precise touchdown.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "Large-Scale 3D Gaussian Splatting SLAM with GNSS-INS-Visual Fusion",
+   "url": "https://doi.org/10.1109/iros61738.2026.11777422",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/iros61738.2026.11777422",
+   "venue": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+   "authors": "Chunxi Xia, Xingxing Li, Anbo Tao, Siqi Chen",
+   "issn": [],
+   "id": "c38a9f80399f4447",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Large‑scale 3D Gaussian splatting SLAM framework fusing GNSS, INS and visual data. Enables high‑fidelity mapping and localization for outdoor robotics.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "FAST-LIVGO: A Degeneracy-Robust LiDAR-Inertial-Visual-GNSS Fusion Odometry",
+   "url": "https://doi.org/10.1109/iros61738.2026.11776821",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/iros61738.2026.11776821",
+   "venue": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+   "authors": "Zhiyu Chen, Chunran Zheng, Jiayu Wen, Xiaolei Zhang",
+   "issn": [],
+   "id": "ae101e14c39d2dcb",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Presents FAST-LIVGO, a LiDAR‑Inertial‑Visual‑GNSS fusion odometry method robust to degeneracy, evaluated on challenging datasets.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "WinTA-GIL: Windowed Trajectory Alignment for GNSS-IMU-LiDAR Heading Refinement in Intermittent Signal Environments",
+   "url": "https://doi.org/10.1109/iros61738.2026.11777140",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/iros61738.2026.11777140",
+   "venue": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+   "authors": "Kaixin Feng, Zhichao Wen, Zhaohong Liao, Xin Xia",
+   "issn": [],
+   "id": "a78388a16a4ea55c",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Introduces WinTA‑GIL, a windowed trajectory alignment technique that refines GNSS‑IMU‑LiDAR heading in environments with intermittent GNSS signals.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1
+  },
+  {
+   "title": "The next major threat to the things you use every day… The i Paper",
+   "url": "https://rntfnd.org/2026/11/23/the-next-major-threat-to-the-things-you-use-every-day-the-paper/",
+   "summary": "Image: Jamming in Zagreb 2019, ESMD What&#8217;s new: Our colleague Andy Proctor got into the press with what most of us in the PNT community have been thinking &#8211; with all these system failures, what could be next &#8211; GPS &#38; PNT?  They could be. &#8211; Well done, Andy! Why it&#8217;s important: Taking advantage of the news cycle to get our message out there can be effective. You never know when you are finally going to reach a decision maker or a key influencer. What else to know:  Andy is Vice President of the Royal Institute of Navigation in the UK. The UK is taking steps to keep satellites and GPS/ GNSS from being a single point of failure. &#160; The next major threat to the things you use every day including maps and taxis From ambulances to dating apps, satellite systems underpin modern life. They&#8217;re also vulnerable to glitches and [&#8230;]",
+   "source": "RNTF (Resilient PNT)",
+   "date": "2026-11-23",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "RNTF (Resilient PNT)",
+   "id": "5c961bc8809d1b80",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "RNTF highlights emerging threats to GNSS/PNT, discussing recent jamming incidents and the need for resilient navigation systems.",
+   "importance": 3,
+   "deadline": null,
+   "location": "Zagreb, Croatia",
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-24T04:59:53+00:00",
+   "media": 1,
+   "image": "https://rntfnd.org/wp-content/uploads/Zagreb-Jamming-1024x576.png"
+  },
   {
    "title": "IGS Global GNSS SINEX Cumulative Post-Seismic Deformation Product from NASA CDDIS",
    "url": "https://doi.org/10.5067/gnss/gnss_igs_cum_psd_001",
@@ -5745,8 +6148,7 @@
    "region": "Other",
    "tier": "Q2",
    "added": "2026-11-15T00:16:17+00:00",
-   "media": 1,
-   "image": "https://d2csxpduxe849s.cloudfront.net/media/E32629C6-9347-4F84-81FEAEF7BFA342B3/C2FA0DB4-EEF1-4767-ADEB07BC6E5ED6F5/C14CAE20-EAFF-4025-8958AD9F7D8E4251/WebsiteWebP_XL-FSPAS_Main Visual_Cyan_Website.webp"
+   "media": 1
   },
   {
    "title": "Short-Campaign GNSS Observations of Horizontal Velocity and Vertical Tidal Response Across the Drygalski Ice Tongue, East Antarctica",
@@ -9286,7 +9688,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-10T10:29:29+00:00"
+   "added": "2026-11-10T10:29:29+00:00",
+   "media": 1
   },
   {
    "title": "Extending Geodetic Estimation Theory by Factor Graph Optimization: A Case Study on GNSS-PPP",
@@ -9311,7 +9714,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-10T10:29:29+00:00"
+   "added": "2026-11-10T10:29:29+00:00",
+   "media": 1
   },
   {
    "title": "Integrated Communication and Jamming Waveform Design for OTFS-Based Comb-Spectrum Jamming with Spatial Index Modulation",
@@ -9333,7 +9737,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T10:29:29+00:00"
+   "added": "2026-11-10T10:29:29+00:00",
+   "media": 1
   },
   {
    "title": "Outlook on Galileo Differentiators",
@@ -9353,7 +9758,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-10T10:29:29+00:00"
+   "added": "2026-11-10T10:29:29+00:00",
+   "media": 1
   },
   {
    "title": "Why Galileo Stands Out: Market Outlook for the European Union’s Unique GNSS Capabilities",
@@ -9373,7 +9779,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-10T10:29:29+00:00"
+   "added": "2026-11-10T10:29:29+00:00",
+   "media": 1
   },
   {
    "title": "Requirements for the position of Lecturer at the Air Traffic Services Personnel Training Organization of Polish Air Force University",
@@ -9393,7 +9800,8 @@
    "location": "Dęblin, Poland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-10T10:29:29+00:00"
+   "added": "2026-11-10T10:29:29+00:00",
+   "media": 1
   },
   {
    "title": "ICL-GNSS 2026 Proceedings",
@@ -9415,7 +9823,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "2026 International Conference on Localization and GNSS (ICL-GNSS)",
@@ -9437,7 +9846,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Measurement-Domain GNSS Integrity Monitoring Using Clock-Free Pseudorange Disagreement",
@@ -9459,7 +9869,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Landmark-Guided Reinforcement Learning for Resilient Navigation Under GNSS Spoofing",
@@ -9481,7 +9892,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "GNSS/Pseudolite/LTE Integration with Adaptive UKF in GNSS-Degraded Environments",
@@ -9503,7 +9915,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "GNSS Jamming and Spoofing Detection Using NMEA Data",
@@ -9525,7 +9938,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "GNSS Precise Orbit Determination from Dense High-Accuracy LEO to Sparse Cislunar Regimes",
@@ -9547,7 +9961,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Multi-Faceted GIS Integration Across the GNSS Processing Chain for Improved Positioning",
@@ -9569,7 +9984,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Interacting Multiple Model for GNSS Jamming Detection Fusing C/N0 and AGC Measurements",
@@ -9591,7 +10007,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Cross-Domain PRN-Level GNSS Spoofing Detection Using Few-Shot Reptile Meta-Learning",
@@ -9613,7 +10030,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Impact of Tropospheric Ducting on GNSS Jamming in the Baltic Region: Reference Station and UAV Observations",
@@ -9635,7 +10053,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "A Multi-Source Spatio-Temporal Data-Driven Method for High-Precision Beidou Positioning Enhancement",
@@ -9657,7 +10076,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Task-Aware Cooperative Mode Selection Based on Discrete-Time Simulation for Cellular and BeiDou Short Message in Power-Grid Inspection",
@@ -9679,7 +10099,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "A BeiDou-Based Intelligent Monitoring System and Multi-Level Trajectory Fusion Framework for Operational Area Estimation: A Case Study on Large-Scale Automated Transplanting",
@@ -9703,7 +10124,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Gradient-Guided Frequency-Domain Polarized Light/Inertial Fusion for Small Robot Orientation in GNSS-Denied Environments",
@@ -9728,7 +10150,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Improving GNSS-Based Terrestrial Water Storage Inversion Using Spatiotemporally Dynamic GRACE-Derived Constraints",
@@ -9753,7 +10176,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-10T03:00:45+00:00"
+   "added": "2026-11-10T03:00:45+00:00",
+   "media": 1
   },
   {
    "title": "Common-cause failures in GNSS time synchronization for digital substations: terrestrial and spaceborne threats and temporal resilience measures",
@@ -9776,7 +10200,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "GNSS Observation Dataset for Ionospheric Modeling over China (March 2024)",
@@ -9797,7 +10222,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Syntonic Nav: Against Truth-Tuned Rivals",
@@ -9818,7 +10244,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "THE TRANSISTOR AS AN N-DENSITY SENSOR. The Single-Transistor Solution for Self-Correcting Atomic Clocks in GPS Satellites and Deep-Space Spacecraft — Eliminating General Relativity, Solar Storm Errors, and Ground-Based Corrections (With Complete ARM-Based Python Implementation)",
@@ -9839,7 +10266,8 @@
    "location": "Multan, Pakistan",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Adaptive Robust Visual-Inertial Localization Method in GNSS-Denied Environments",
@@ -9863,7 +10291,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Determining the heights and horizontal positions of Tatra Mountain peaks using GNSS measurements, mapping services, and LiDAR data",
@@ -9887,7 +10316,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Stochastic Model Refinement for Multi-GNSS Real-Time PPP Based on Orbit and Clock Extrapolation Error Statistics",
@@ -9911,7 +10341,8 @@
    "location": "Wuhan, China",
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Point-Adaptive Detector Selection and Alert Confirmation for Dam GNSS Displacement Monitoring",
@@ -9935,7 +10366,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Three-dimensional Deformation Modeling Via Data-adaptively Distributed Radial Basis Functions Using InSAR and GNSS",
@@ -9960,7 +10392,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Diagnosing epoch-wise GNSS PPP-AR outliers using principal component analysis and Hotelling’s\n                     T \n                     2 \n                    monitoring",
@@ -9985,7 +10418,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Robust GPS/Visual–Inertial Navigation in Dynamic and GPS-Degraded Environments via Dynamic Feature Masking and GPS Measurement Screening",
@@ -10009,7 +10443,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "A Station-Specific Regional Approach to Improve Galileo Single-Frequency Ionospheric Corrections over Europe",
@@ -10033,7 +10468,8 @@
    "location": null,
    "region": "Europe",
    "tier": "Q2",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "Detecting GPS Spoofing Attacks with a Trust Index Using Sensor Cross-Validation Based on Inertial Information",
@@ -10057,7 +10493,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "IAG Newsletter",
@@ -10077,11 +10514,12 @@
    "location": null,
    "region": "Europe",
    "tier": "Q1",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1
   },
   {
    "title": "A zero-shot image matcher and particle filter bring GNSS-free UAV navigation to meter-level accuracy | Newswise - Newswise",
-   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOY3A1YnRCSEstSHhqZXBFUC1WSHRnd2tCa2FIVDlFMDVwbVc5WUlNUnI2c2xrRHpZYmpsb0wwdWd0S0syNGFMRW04Vy1wY01zalltdFdOQVZMM3RsUUI3UUQ1YkMtZ0g0V1hsM09SYS1La0FtZC1XVmRHcXFIeVZaeXJCM2NtZmZpaXluMVBVSXZFekd2c002RXB6RUNoZkxnRjRsY2toV2RKNFZhamY5OHNvcU53RWhKRFdjWU1rZGE2cWgxNVlVVndZTXlHTEHSAc8BQVVfeXFMTmNwNWJ0QkhLLUh4amVwRVAtVkh0Z3drQmthSFQ5RTA1cG1XOVlJTVJyNnNsa0R6WWJqbG9MMHVndEtLMjRhTEVtOFctcGNNc2pZbXRXTkFWTDN0bFFCN1FENWJDLWdINFdYbDNPUmEtS2tBbWQtV1ZkR3FxSHlWWnlyQjNjbWZmaWl5bjFQVUl2RXpHdnNNNkVwekVDaGZMZ0Y0bGNraFdkSjRWYWpmOThzb3FOd0VoSkRXY1lNa2RhNnFoMTVZVVZ3WU15R0xB?oc=5",
+   "url": "https://www.newswise.com/articles/a-zero-shot-image-matcher-and-particle-filter-bring-gnss-free-uav-navigation-to-meter-level-accuracy",
    "summary": "A zero-shot image matcher and particle filter bring GNSS-free UAV navigation to meter-level accuracy | Newswise &nbsp;&nbsp; Newswise",
    "source": "Google News GNSS",
    "date": "2026-11-09",
@@ -10097,11 +10535,13 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1,
+   "image": "https://media.newswise.com/pio/articles/858208/6af1f550c9f4e_29_858208.jpg"
   },
   {
    "title": "Russia Upgrades Iskander-M Missiles to Counter GPS Jamming - Военное дело",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPSVlIdEx4YXNUS2twR2stVGI0Z25OUzdSaEVpSTRJZTlRYTdteWxxaDA3UHVUWExja05aaGxCVTNTWTZtTGdlUjJSd3E5bS1seTZKUHp0ZzBGcllKWGVwZkUxOU9CSFlpemJIWjZSVmVlbHJwVmdvSEdCZFlreEJYZl9fcEF6blNEMHJmdEs1X2w0QmpaNG56WnprOHJtWGpo?oc=5",
+   "url": "https://voennoedelo.com/en/posts/id21984-russia-upgrades-iskander-m-missiles-to-counter-gps-jamming",
    "summary": "Russia Upgrades Iskander-M Missiles to Counter GPS Jamming &nbsp;&nbsp; Военное дело",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-11-09",
@@ -10117,7 +10557,9 @@
    "location": "Russia",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T19:09:58+00:00"
+   "added": "2026-11-09T19:09:58+00:00",
+   "media": 1,
+   "image": "https://voennoedelo.com/uploads/en_materials/big/WDzl4OlYfrNsPGy5ZNru.jpg"
   },
   {
    "title": "Vehicle Lateral Velocity Estimation System embedding Time-Varying Cornering Stiffness Learning Considering Sim-to-Real Gap",
@@ -10138,7 +10580,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "A Phase-Balanced Differential Rydberg-Atom Quantum Receiver for Weak GNSS Signal Detection",
@@ -10158,7 +10601,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "An Inspection Game for Monitor Design Against GNSS Timing Attacks in Synchronous Islanding",
@@ -10178,7 +10622,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "An integrated framework for assessing the vertical component of fiducial suitability in continuous GNSS networks",
@@ -10203,7 +10648,8 @@
    "location": null,
    "region": "Europe",
    "tier": "Q2",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "GNSS-RTK测量技术在工程施工中的应用研究",
@@ -10228,7 +10674,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "A cross-epoch ambiguity tracking method for GNSS/INS/Vision-based urban navigation",
@@ -10253,7 +10700,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "CASSINI Entrepreneurship Days 2026",
@@ -10273,11 +10721,12 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "Advanced Navigation Strengthens PNT Resilience Against GNSS Spoofing - Unmanned Systems Technology",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQcWlHT1J6dTBLeE40ejd5Y1c3N2lUa2tXWk1JYldpZ2dKUzhscXlYcnY2NlA0OWc5NWUxZWZybnZpMmhid0l3UGZHekF0Z3Bwb2ZiTk8xNlBRTzRmMmxrUU1kbm9qUFNFNGtKVHRJTHlJbldyMzA0eFB6YXE2ZjNSUW9hUFNENU1UXzdUdnpOTVkwOTVqcTRmRUpHV1dzN2hZbXFzSWFvMVNZX3M5Z1dwT2gyYi1TTGd0aGtV?oc=5",
+   "url": "https://www.unmannedsystemstechnology.com/feature/advanced-navigation-strengthens-pnt-resilience-against-gnss-spoofing/",
    "summary": "Advanced Navigation Strengthens PNT Resilience Against GNSS Spoofing &nbsp;&nbsp; Unmanned Systems Technology",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-11-09",
@@ -10293,7 +10742,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-09T10:13:23+00:00"
+   "added": "2026-11-09T10:13:23+00:00",
+   "media": 1
   },
   {
    "title": "On the Error Distribution in Precise Levelling Sections",
@@ -10318,7 +10768,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q4",
-   "added": "2026-11-08T23:58:37+00:00"
+   "added": "2026-11-08T23:58:37+00:00",
+   "media": 1
   },
   {
    "title": "Data-Centric Preprocessing for GNSS-Based Orbit Determination via AI, Signal Processing, and Orbital Dynamics",
@@ -10339,7 +10790,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1
   },
   {
    "title": "Global Navigation Satellite System (GNSS) Cumulative Station Coordinates and Descriptions from NASA CDDIS",
@@ -10360,7 +10812,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1
   },
   {
    "title": "Auditable ZED 2i-NAV680D Calibration Evidence Package",
@@ -10381,7 +10834,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1
   },
   {
    "title": "Positioning Systems Course Materials",
@@ -10402,7 +10856,8 @@
    "location": "Barcelona, Spain",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1
   },
   {
    "title": "Over-injection of time-correlated tropospheric constraints induces PPP height shifts: a Gauss–Markov remedy",
@@ -10423,7 +10878,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1
   },
   {
    "title": "Study of options for constructing a low-orbit addition to the global navigation satellite system",
@@ -10447,7 +10903,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1
   },
   {
    "title": "Optimization of satellite navigation-based grader path planning using an enhanced ant colony optimization algorithm",
@@ -10471,11 +10928,12 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1
   },
   {
    "title": "Airbus Adds Galileo Satellites and Medical Helicopters as Nine-Month Revenue Hits EUR 50.6 Billion - ad-hoc-news.de",
-   "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPcDNqZHlzY2FxWEtCdlU3ZnppOEJ0ZzZIdXRQU0FnZVgwdk04blFmaFBkcGdJTlZ2bVlySFpmbGFYakF5blVhR0NmQV8wWVk4dlhCNFotTllRcHI4YUd3LXlGWkNnZVRVZnZaM1EyNXZYMThXVjBQTkFjNUQ3eDZwQjlhUVlQWFZ4alpCemZualhsVW5sX2s1UmlyalVMWjNBS1Jsa2cxT3k2SmdmV0xybzF1ME03TWx6UTJvQzVVa0o0TXM3cE5zNmFXcVRFa0h1UzlpZkxvZTVSS0dzN3NDelR6WXYwTDVzeDNHVXF5ai1ibjUwRHlxUG1GWnpkTFE?oc=5",
+   "url": "https://www.ad-hoc-news.de/boerse/news/unternehmensnachrichten/airbus-adds-galileo-satellites-and-medical-helicopters-as-nine-month-revenue-hits-eur-50-6-billion/70476812",
    "summary": "Airbus Adds Galileo Satellites and Medical Helicopters as Nine-Month Revenue Hits EUR 50.6 Billion &nbsp;&nbsp; ad-hoc-news.de",
    "source": "Google News GNSS",
    "date": "2026-11-08",
@@ -10491,7 +10949,9 @@
    "location": "Toulouse, France",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-08T15:34:39+00:00"
+   "added": "2026-11-08T15:34:39+00:00",
+   "media": 1,
+   "image": "https://mdb.ad-hoc-news.de/bild/bild-2699777_1200_675.webp"
   },
   {
    "title": "Temporal variability of GNSS-derived precipitable water vapor over Uzbekistan during 2021–2025: Insights from GNSS meteorology",
@@ -10515,7 +10975,8 @@
    "location": "Tashkent, Uzbekistan",
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-07T23:59:44+00:00"
+   "added": "2026-11-07T23:59:44+00:00",
+   "media": 1
   },
   {
    "title": "Adaptive Antenna for a GNSS Receiver of an Unmanned Aerial Vehicle",
@@ -10536,7 +10997,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "Deep learning and adaptive carrier Phase–Doppler weighted fusion for GNSS cycle slip detection and repair",
@@ -10560,7 +11022,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "GNSS (Global Navigation Satellite System) data collected during research cruise RR2606 using a Furuno GP-170 instrument system onboard the platform RV Roger Revelle",
@@ -10581,7 +11044,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "GNSS (Global Navigation Satellite System) data collected during research cruise TN454 using a CCTech C-Nav X3 instrument system onboard the platform RV Thomas G. Thompson",
@@ -10602,7 +11066,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "maokang94/TempoXLoc: TempoXLoc: Multi-Hypothesis LiDAR–Satellite Matching and Temporal Fusion for GNSS-Denied Vehicle Localization",
@@ -10623,7 +11088,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "gnssguard: GNSS interference detection from open ADS-B data",
@@ -10644,7 +11110,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "GNSS (Global Navigation Satellite System) data collected during research cruise SR2613 using a Hemisphere V104S instrument system onboard the platform RV Sally Ride",
@@ -10665,7 +11132,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "GNSS check point coordinates for UAV-based pedestrian geolocation in South Korea",
@@ -10686,7 +11154,8 @@
    "location": "Indeogwon, South Korea",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "NOTA GNSS Network - CN64-FUNVISIS Caracas P.S.",
@@ -10707,7 +11176,8 @@
    "location": "Caracas, Venezuela",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "Probabilistic Assessment of Cooperative Positioning Accuracy for a UAV Group...",
@@ -10728,7 +11198,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "EU Space Academy Workshops for start-ups",
@@ -10748,7 +11219,8 @@
    "location": "Prague, Czech Republic",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1
   },
   {
    "title": "Korea To Build Precision Time and Frequency Network To Reduce Reliance On GPS",
@@ -10768,7 +11240,9 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T15:08:57+00:00"
+   "added": "2026-11-07T15:08:57+00:00",
+   "media": 1,
+   "image": "https://rntfnd.org/wp-content/uploads/Atomic-clock-NPL.jpg"
   },
   {
    "title": "Doppler-based pseudorange enhancement with temporal consistency weighting for smartphone GNSS PPP in urban canyons",
@@ -10793,7 +11267,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-07T09:09:44+00:00"
+   "added": "2026-11-07T09:09:44+00:00",
+   "media": 1
   },
   {
    "title": "Infleqtion Runs Optical Atomic Clock at Sea for Two Weeks During AUKUS Navy Exercise",
@@ -10813,7 +11288,9 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T09:09:44+00:00"
+   "added": "2026-11-07T09:09:44+00:00",
+   "media": 1,
+   "image": "https://insidegnss.com/wp-content/uploads/2026/11/image-242.png"
   },
   {
    "title": "A Multimodal Perception Unmanned System Based on GNN and SLAM",
@@ -10838,7 +11315,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "Research on Intelligent Switching and Control Strategy of Air-Sea Amphibious WIG Craft Based on Multi-Sensor Fusion",
@@ -10863,7 +11341,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "UAV Orthomosaic Imagery and U-Net Vegetation Classification Map, Minidoka National Wildlife Refuge, Idaho, 2025",
@@ -10884,7 +11363,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "Robust Joint RTT RSS Indoor Localization Using Particle Swarm Optimization",
@@ -10905,7 +11385,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "Closing Hormuz Without Closing It: Operational Openness and Risk-Mediated Sovereignty",
@@ -10926,7 +11407,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "GNSS与全站仪在工程施工测量中的应用",
@@ -10951,7 +11433,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "GNSS测量技术在工程测量中的应用研究",
@@ -10976,7 +11459,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "Fault-Free Protection Levels, Multi-Receiver Monitoring and Galileo Redundancy for GBAS-Type Differential GNSS at a Reference Station with Real Code Faults",
@@ -10998,7 +11482,8 @@
    "location": "Istanbul, Turkey",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "Real-Time Bayesian Detection of Drift-Evasive GNSS Spoofing in Reinforcement-Learning Based UAV Deconfliction",
@@ -11023,7 +11508,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "Map-Consistent Actual-Array Q-Inverse Decoding for Two-Dimensional Monopulse Angle Estimation Under Spatially Correlated Jamming and Array Mismatch_supp1-3749920.docx",
@@ -11045,7 +11531,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "A Robust Dual-Polarization Adaptive Anti-Jamming Algorithm",
@@ -11067,7 +11554,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "A Multi-track InSAR deformation field mosaicking algorithm incorporating external GNSS constraints and a robust Kalman filter for mining areas",
@@ -11092,11 +11580,12 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "ISRO places NVS-03 in orbit to revive India's NavIC - NewsBytes",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQUXhlb21FUndIdzJjc01fM0pYb3dQOS1lS2NrVFJBUk5hR3hRZFUzdVBXYlNuVlVhOG9ES1JpSkhwUEJiQU03SkJ5MXZTejhUQTlEMGFnWDdtSDZ6MUt5dDdZNThrbE5FR0l4aHVQc3B0UEdfVGcxT0g3YmZWTlYteVZwRDItSXRnWFZ3ZllfM3kwc29NMlpRVTlSaGtoQTZW?oc=5",
+   "url": "https://www.newsbytesapp.com/news/science/isro-places-nvs-03-in-orbit-to-revive-india-s-navic/story",
    "summary": "ISRO places NVS-03 in orbit to revive India's NavIC &nbsp;&nbsp; NewsBytes",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -11112,11 +11601,12 @@
    "location": "Sriharikota, India",
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1
   },
   {
    "title": "What is NavIC? How India's home-grown GPS alternative works, why ISRO's new NVS-03 satellite is important, check how navigation system works - News24Online",
-   "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOWjkyMGlBeVVaa1FLY05ucnlmWFZjR3N4SVByT1gyZzJja1lHMVhsbUFwRmR5WjJubmxQS20tNFZ4UXE4VzhnRXpTdVdtX3ZscVhxNVJ4cnMwVHVaVWVtX29iWU15X2FCcWJrME1aalRRY28yd19RZ0dUUE9XekxzUmg4cW1fYzBGUDRJeVRUSHUtTFF6enVkQUpsdzVaNnJyX21TbTVkUU04QjdGZkkxZjc4eHdBUE5GdEFoTWZ0S0x3WUJEd2tWNi1lWGtTb0VJMGtENXd3R3J5VF9lckZYWmFlOXI3dkp5Uzh2QzZxLWZnb2cxRUNXbFBYUEN0OUVKZ2M00gGHAkFVX3lxTE13WXgzbWRNWkFnWFRWUzAxNksyc2ttRWVMYlJZbFVJLWpQSl9ocnl5TUluaW5uLVd4STBRMUM0Y3hhY2R3ZXllT1o2OVc1azVzdG9jc1RMcEpnQjJ2OXNTTmM2NXBhc0l2Q3VneXQ4UExiNWFLazFFeXpnVi1fV3ZIdVdjTzhnX1BiVks0OEtialFrSG5Wd3AxNkhZMTdBQ1NJRkJmX3R2NFZpWjZFZ2Y1b2VrMFl4Si1WeE82WWhjeXFMYnRpSEdsQkRaX0xWUkRtY1huYlczZWdPTEEzX3BzcXVXZmFKRVk3M1NKblcyTUhVdDNnM2h6cy1TWUE4R0dGN05pbWRV?oc=5",
+   "url": "https://news24online.com/india/what-is-navic-how-indias-home-grown-gps-alternative-works-why-isro-new-nvs-03-satellite-is-important-check-how-navigation-system-works/950831/",
    "summary": "What is NavIC? How India's home-grown GPS alternative works, why ISRO's new NVS-03 satellite is important, check how navigation system works &nbsp;&nbsp; News24Online",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -11132,11 +11622,13 @@
    "location": null,
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1,
+   "image": "https://news24online.com/wp-content/uploads/2026/11/NavIC.jpg.jpeg"
   },
   {
    "title": "India's home-grown GPS alternative: What is NavIC, how does it work and what changes with NVS-03? - Mathrubhumi",
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ0JpTWVKYkNEV3R1LWhhSmFNTk90THJnSU9paE9vaFVjWW40enBkMXY3c0RiU2xLVmpVWHpibTlGa0ZvQ1BhTGVVQm1Xa0FoZ1JpcG5sd0RYSURlSW9MMnBWTG1XSHBnUlVJeTdsTjNEYkd5UEZ0cXc0LVVRZUhocGd0Qmx3Y1p1bDlMVTk0cnQwZHpfd0VCeDlfNWNNR20weWlF0gGoAUFVX3lxTE53djRKeDQ3bzlBQVVHYldBYUpXeU1Sd2FvajNEbHFfUEp2emc3YW5BWWxtS0htbGdYYl9qM3BHc0FwQW1nLUp6TlNtUWFmc0tjRmNhLVVyaUV3akV0bF9RdzZxQ2ZlRlNTUjdSTXhrWWo4OWdqLXBGaFZsdVQtTjFEc3JRQjZtUFpOaUZGU1VyQ1RzX1NFM0x6TGsyNS1Yc3VhbHBFY1F3aw?oc=5",
+   "url": "https://english.mathrubhumi.com/news/india/isro-places-nvs-03-satellite-in-orbit-navic-boost-xwzee0eb",
    "summary": "India's home-grown GPS alternative: What is NavIC, how does it work and what changes with NVS-03? &nbsp;&nbsp; Mathrubhumi",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -11152,11 +11644,13 @@
    "location": null,
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1,
+   "image": "https://img.mathrubhumi.com/view/acePublic/alias/contentid/1uw55y6a7u5zy2avfgt/1/navic-png.jpeg?$p=f162f31&f=16%3A9&w=1200&q=1"
   },
   {
    "title": "ISRO Launches NVS-03: What This Means for India’s NavIC System - Infomance",
-   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbVRJRll3TEVqVTlJLUdCZXRwMGFkcWNaajZmNndHZEpfUnZaWTZaUm8xS05BaWRDSkNzR2w0bU1rck1IQmZoSWJveF9lTGxSUWhSY0JKb1pfelVFLTVkdVNvdEozUkZXRDdKQ0xacGZ3WmMzSEJmUF9wMzNxenhBSVlyR2p2TW55SUxvTUZOMEJHeWtJRGdpaWhZU2dnMU0?oc=5",
+   "url": "https://www.infomance.com/news/india/isro-launches-nvs-03-what-this-means-for-indias-navic-system/",
    "summary": "ISRO Launches NVS-03: What This Means for India’s NavIC System &nbsp;&nbsp; Infomance",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -11172,11 +11666,13 @@
    "location": "Sriharikota, India",
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1,
+   "image": "https://www.infomance.com/wp-content/uploads/2026/11/1m0vr0uc_isro-launch_625x300_30_October_26.webp"
   },
   {
    "title": "ISRO completes NVS-03 orbit manoeuvres, brings India’s next-gen NavIC satellite closer to operation - Business Upturn",
-   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOZlNSMjZ1Z0lrdUd3Q2VLMkpRdVBNMVRtRUgtY1prYWYyOHdSb05lZWk2UFhMeTR5TnhDMnA1WnQteDk3VXZ5N3R0dUJIdXBGVDJpZVpmN2dnRUszekx6dVh6aU45Ykd6TEpWejA4X2h3SGp0UURObXc5XzB5ZXpNaHVkbmpaRG1BUkIyTnJvOHN0YktpNENDTHdzYjNaVDJiWENiUUYtSVU4TElXU1R4ZjlwU1pXanlRZkZ6d2VXS0xVUjZQdENWUkNVVzZ2S0Z5Q3VHWTZR?oc=5",
+   "url": "https://businessupturn.com/sectors/space/isro-completes-nvs-03-orbit-manoeuvres-brings-indias-next-gen-navic-satellite-closer-to-operation/",
    "summary": "ISRO completes NVS-03 orbit manoeuvres, brings India’s next-gen NavIC satellite closer to operation &nbsp;&nbsp; Business Upturn",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -11192,7 +11688,9 @@
    "location": null,
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-07T00:22:25+00:00"
+   "added": "2026-11-07T00:22:25+00:00",
+   "media": 1,
+   "image": "https://businessupturn.com/uploads/media/1793807665912-dv2ju2-police-patrol-central-paris-near-place-de-la-r-publique-following-unrest-and-reports-of-a-curfew-affecting-parts-of-the-city---2026-11-04t212356-768.webp"
   },
   {
    "title": "Dataset for: Role of E-F Coupling on Low-latitude Ingression of Mid-latitude MSTIDs over the Indian Subcontinent",
@@ -11213,7 +11711,8 @@
    "location": "Geneva, Switzerland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Odyssey: An automotive lidar-inertial odometry dataset with GNSS-denied situations",
@@ -11237,7 +11736,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Modernization of Palestine’s national geodetic reference frame through PAL-GRF2023",
@@ -11260,7 +11760,8 @@
    "location": "Ramallah, Palestine",
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Control experiment for the GNSS-R ESA project (ocean)",
@@ -11281,7 +11782,8 @@
    "location": "Reading, United Kingdom",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "GNSS-Denied UAV INS/TAN/MAG Integrated Navigation",
@@ -11302,7 +11804,8 @@
    "location": "Geneva, Switzerland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "NoScatt experiment for the GNSS-R ESA project (ocean)",
@@ -11323,7 +11826,8 @@
    "location": "Reading, United Kingdom",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "High slope stability monitoring method integrating on IMU correction GNSS-RTK model",
@@ -11347,7 +11851,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Sky Region Recognition and Polarization Orientation via Multi-Scale Gradient Connected-Component Extraction for a Bio-Inspired Sensor",
@@ -11370,7 +11875,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Reference-satellite dependence in wide-area PPP-RTK ionospheric modeling: a controlled comparison of undifferenced and between-satellite single-differenced STEC",
@@ -11393,7 +11899,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "APPLICATION OF POLYNOMIAL TRANSFORMATION IN GEOREFERENCE OF GRAPHIC CADASTRAL PLANS",
@@ -11417,7 +11924,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Source data and verification materials for Endpoint omission and cadence dependence in GNSS water vapor phase catalogs",
@@ -11438,7 +11946,8 @@
    "location": "Geneva, Switzerland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "+CYGNSS experiment for the GNSS-R ESA project (ocean)",
@@ -11459,7 +11968,8 @@
    "location": "Paris, France",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Analysis of SMAP-R Polarimetric Information for Improved Sea Surface Wind Retrieval",
@@ -11482,7 +11992,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "FY-3E GNOS-II GNSS-R Level-2 (L2) Ocean Surface Wind Speed Dataset, August–October 2021",
@@ -11503,7 +12014,8 @@
    "location": "Beijing, China",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Covariance ellipse-guided base station selection for tightly coupled PPP/INS/5G UAV positioning",
@@ -11527,7 +12039,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Monthly GNSS ZTD cross-product reproducibility data and analysis code: IGS Repro3, UNR IGS20 and corrected ERA5",
@@ -11548,7 +12061,8 @@
    "location": "Geneva, Switzerland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Application of Kalimuthu Geometric Framework (KGF) to a Current Problem Solved Problem: Regularization of Polar Coordinate Singularity and Gimbal Lock in GNSS / UAV Navigation",
@@ -11569,7 +12083,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "gnss_maras: GNSS-only analysis pipeline for the 6 February 2023 Kahramanmaraş earthquake sequence",
@@ -11590,7 +12105,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Identification of critical displacements and deformations at subsoil assets based on GNSS observation time series",
@@ -11614,7 +12130,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "ДОСЛІДЖЕННЯ ТОЧНОСТІ GNSS-ПРИЙМАЧІВ ІЗ ЛАЗЕРНИМ ВИЗНАЧЕННЯМ КООРДИНАТ",
@@ -11635,7 +12152,9 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1,
+   "image": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/71134734/thumb.png"
   },
   {
    "title": "Comparative Analysis of BDS PPP-B2b on Shore-Based and Ship-Borne Platforms",
@@ -11660,7 +12179,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Construction of an infrastructure system for high-quality development enabled by aerospace information technology",
@@ -11684,7 +12204,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Usage Guide of the Scientific Computing Platform for Geophysical Geodesy Beidou AI 2026",
@@ -11705,7 +12226,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "Effects of signal distortion biases on atmospheric delay modeling and PPP-RTK in multi-receiver-type regional networks",
@@ -11729,11 +12251,12 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1
   },
   {
    "title": "NVS-03 Satellite Activated: How ISRO Is Making India’s NavIC System Stronger - Indianmasterminds",
-   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBqYTRHR1BHallVQjFrUTdSU3dSSWhzZDBYRjd1TVRJUHZPM09JRGFtRGY1YVM2em9lR2lIcjV6Z0s4aTBlMkY0UnhKLVlxbVBjMXR3MmN1c1V3RjJJUHRFTkdqYThTM0Nybmxma3VhVFJYcnhHR05CcFJ3?oc=5",
+   "url": "https://indianmasterminds.com/news/isro-nvs-03-satellite-navic-248540/",
    "summary": "NVS-03 Satellite Activated: How ISRO Is Making India’s NavIC System Stronger &nbsp;&nbsp; Indianmasterminds",
    "source": "Google News GNSS",
    "date": "2026-11-05",
@@ -11749,7 +12272,9 @@
    "location": "India",
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1,
+   "image": "https://indianmasterminds.com/wp-content/uploads/2026/10/1000269914-900x550-1.jpeg"
   },
   {
    "title": "NavIC-03 reaches orbit; smartphone navigation services may take time - INDIA - GENERAL - Kerala Kaumudi",
@@ -11789,11 +12314,13 @@
    "location": "Finland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1,
+   "image": "https://rntfnd.org/wp-content/uploads/GPSThreatMapFinland-5-Nov-26.jpg"
   },
   {
    "title": "India’s NavIC is back: NVS-03 reaches its destination, desi GPS now operational - The Indian Panorama",
-   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNLTd1WjZCMUFod0dLYkg4U3A2dVExelpac09udGlIcHllc1RrRl9iTlhTX3EwZnktQ3JuX0R3ZU9pVm54NFpkeXpCTEFPNVozY3p5RlFXMzJJVmJPZDZSNEIxNm90MEJ1UTFreDlzTWxaWkFvaXV6Y2U0XzhvZWNvNDg0ZERCSm55YXNNTFlDeTRBa2hJcHhmMUFmNXp2anNpZUI1Yy0yRWJfaGJXWXd4RDJB?oc=5",
+   "url": "https://www.theindianpanorama.news/indias-navic-is-back-nvs-03-reaches-its-destination-desi-gps-now-operational/",
    "summary": "India’s NavIC is back: NVS-03 reaches its destination, desi GPS now operational &nbsp;&nbsp; The Indian Panorama",
    "source": "Google News NavIC / ISRO",
    "date": "2026-11-06",
@@ -11809,7 +12336,9 @@
    "location": "India",
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-06T16:13:59+00:00"
+   "added": "2026-11-06T16:13:59+00:00",
+   "media": 1,
+   "image": "https://www.theindianpanorama.news/wp-content/uploads/2026/11/Untitled-19.jpg"
   },
   {
    "title": "Fault-tolerant LiDAR-Visual-GNSS Localization Using a Split Covariance Intersection Filter",
@@ -11834,7 +12363,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q4",
-   "added": "2026-11-06T09:50:10+00:00"
+   "added": "2026-11-06T09:50:10+00:00",
+   "media": 1
   },
   {
    "title": "Towards reliable GNSS PPP: end-to-end integrity monitoring of real-time orbit and clock corrections",
@@ -11859,7 +12389,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-06T09:50:10+00:00"
+   "added": "2026-11-06T09:50:10+00:00",
+   "media": 1
   },
   {
    "title": "Impact of corrections to ionospheric calibrations of legacy geodetic VLBI observations",
@@ -11879,7 +12410,8 @@
    "location": null,
    "region": "Europe",
    "tier": "Q1",
-   "added": "2026-11-06T09:50:10+00:00"
+   "added": "2026-11-06T09:50:10+00:00",
+   "media": 1
   },
   {
    "title": "Autonomous Navigation and Safe Landing of an Aerial Vehicle in a GPS-Denied Martian Environment",
@@ -11903,7 +12435,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T01:09:47+00:00"
+   "added": "2026-11-06T01:09:47+00:00",
+   "media": 1
   },
   {
    "title": "Estrategias para la georreferenciación de levantamientos GNSS dentro del marco geodésico nacional CR-SIRGAS",
@@ -11928,7 +12461,8 @@
    "location": "San José, Costa Rica",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T01:09:47+00:00"
+   "added": "2026-11-06T01:09:47+00:00",
+   "media": 1
   },
   {
    "title": "Camera-Based Visual Deviation Recovery for UAV Stabilization under GNSS Denial",
@@ -11950,7 +12484,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T01:09:47+00:00"
+   "added": "2026-11-06T01:09:47+00:00",
+   "media": 1
   },
   {
    "title": "3D UAV Localization Against GPS Spoofing Based on Collaborative Reinforcement Learning_supp1-3747940.pdf",
@@ -11972,7 +12507,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-06T01:09:47+00:00"
+   "added": "2026-11-06T01:09:47+00:00",
+   "media": 1
   },
   {
    "title": "IGS BDS-3 satellite antenna calibration campaign",
@@ -11997,7 +12533,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-06T01:09:47+00:00"
+   "added": "2026-11-06T01:09:47+00:00",
+   "media": 1
   },
   {
    "title": "Motion Compensation of a Mast-Mounted Interferometric Radar Using GNSS-Synchronized Inertial Sensors",
@@ -12019,7 +12556,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T01:09:47+00:00"
+   "added": "2026-11-06T01:09:47+00:00",
+   "media": 1
   },
   {
    "title": "u-blox Launches SAM-M11N, a 4.4-Gram GNSS Module With a Built-In Antenna",
@@ -12039,7 +12577,9 @@
    "location": "Thalwil, Switzerland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-06T01:09:47+00:00"
+   "added": "2026-11-06T01:09:47+00:00",
+   "media": 1,
+   "image": "https://insidegnss.com/wp-content/uploads/2026/11/SAM-M11N-top-bottom.png"
   },
   {
    "title": "RASR: Range-Aware Scale Recovery for Metric UAV Navigation",
@@ -12060,7 +12600,8 @@
    "location": null,
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "A Spatio-Temporal Fusion Method for Mine Subsidence Based on Decoupling the Basic Deformation Field from Residuals Using InSAR-GNSS",
@@ -12083,7 +12624,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Data from: Rapid contemporary shrinking and loss of ice-capped summits in the western United States",
@@ -12104,7 +12646,8 @@
    "location": "Washington, USA",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Easy4PNT: An easily applied multi-platform precise GNSS toolbox coded in Python using uncombined observation model",
@@ -12128,7 +12671,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Ionospheric responses to the May 2024 geomagnetic storm over the East‑Southeast Asia and Australia",
@@ -12153,7 +12697,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Day-boundary discontinuity elimination method of PPP time transfer with “0 to 0” orbit and clock products",
@@ -12177,7 +12722,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "rinexmod & autorino : deux outils pour l'acquisition et le prétraitement de données multi-GNSS en temps quasi réel orchestrés par Apache Airflow",
@@ -12198,7 +12744,8 @@
    "location": "Geneva, Switzerland",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "L'infrastructure de distribution de données GNSS dans EPOS",
@@ -12219,7 +12766,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Toward a standardized GNSS satellite attitude modeling framework",
@@ -12240,7 +12788,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "A Horsetail-Shaped Kinematic Boundary at an Open Plateau Margin: GNSS Evidence From the Southeastern Tibetan Plateau",
@@ -12261,7 +12810,9 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1,
+   "image": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/71065806/thumb.png"
   },
   {
    "title": "Syntonic Nav: A Navigation Filter with No Parameter Table",
@@ -12282,7 +12833,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Consistent implementation and cross-evaluation of GNSS radiation pressure models across IGS analysis centers",
@@ -12303,7 +12855,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Parallax: How a Community-Built GPS Location Changer Works — and Why It Leads",
@@ -12324,7 +12877,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "A two-dimensional numerical simulation of polarization electric field instability in the mid-latitude ionospheric E region at Wuhan, China",
@@ -12347,7 +12901,8 @@
    "location": "Wuhan, China",
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "Comment on egusphere-2026-5242",
@@ -12368,7 +12923,9 @@
    "location": "Hainan, China",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1,
+   "image": "https://www.egusphere.net/EGUSphere_Graphic_preprints_twitter_avatar_600x335px.png"
   },
   {
    "title": "MODU Ghost-Satellite Catalogue — GNSS Doppler Residual Observations (frozen snapshot, 2026-10-10 to 2026-10-17)",
@@ -12389,7 +12946,8 @@
    "location": "West Kelowna, Canada",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "WayTrace: A Map-to-Language-to-Trace Hierarchy for Embodied Urban Navigation",
@@ -12409,7 +12967,8 @@
    "location": null,
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "EXCELLENCE Career Day",
@@ -12429,7 +12988,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1
   },
   {
    "title": "(Putin’s electronic wall) GPS jamming hits almost all of NATO’s eastern flank in one day – Defence Blog",
@@ -12449,11 +13009,13 @@
    "location": "Eastern Europe",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1,
+   "image": "https://rntfnd.org/wp-content/uploads/Italmilradar-3-Nov-2026.png"
   },
   {
    "title": "Big Antennas, Hard To Jam: Russia’s New Drone Tech Could Break Through Ukraine’s GPS Jamming - The Times of India",
-   "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOTlZUaVNqTkR6MXYyZWw3N2laTXo5UWViRU1TR2tlWFhJTHpOZlVvbktaam0zNFp3eFpoSEt5RFZjS29PUm1remJIbEd6Vkd2RTBiU1dMVWIyMFdNY2xVRUc1d2xIV2haWkxuTGZEbGlVSjEzQnllMzd0anFqNG9MQV9DcGU4MlRpaWdfNkdlOW1fSG11SXdob3VTRFZqaVRabU5OelJETHZXYVRMYS10eWFmS2dRVHVsTWg1TmhSSnpZUnQ1ZGZ6NkhPbjlZYU5nNndRTVRWOWN4Z1hFaWNMdm5DcVhMRml6VFBsYWo0cUxfSWdFbWdHeGl30gH_AUFVX3lxTE9qbkdUVndJb2daZExvWmU1cjlqcVlzX09rTWd2Z21pUDQ2MFl6TXdtTjFmejAxOGRtdzRadmJQbFRGZWp2OE1nRmI3V0lnRTlrVGU1TFF3ZWo4eER5QmFteHplcGdnVzJxcFhpT3d4Ql90OU5CTXU2YmRyWElvNE1LSE9Tb2dpbFU4RjZQY1UyMm1CckxzQ3pSMkkzRzBLb0FZWjluVTRoSDJZOG1ncEZGVTZLVTlSQVFsY2lNeHlZekxVZnBOUFRZQlZkZkIxTHNrbV9vTjgzQmhiQ1NKeEpUQTVFcGlsLW42NjdfSXBzZ3NhdjZMc1gxNzNfdnRvUQ?oc=5",
+   "url": "https://timesofindia.indiatimes.com/videos/explainers/big-antennas-hard-to-jam-russias-new-drone-tech-could-break-through-ukraines-gps-jamming/videoshow/135578861.cms",
    "summary": "Big Antennas, Hard To Jam: Russia’s New Drone Tech Could Break Through Ukraine’s GPS Jamming &nbsp;&nbsp; The Times of India",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-11-05",
@@ -12469,7 +13031,9 @@
    "location": "Moscow, Russia",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T16:46:17+00:00"
+   "added": "2026-11-05T16:46:17+00:00",
+   "media": 1,
+   "image": "https://static.toiimg.com/thumb/msid-135578861,width-1280,height-720,imgsize-28964,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg"
   },
   {
    "title": "The study on consistency and reliability of GNSS receiver antenna type-mean and individual phase center corrections",
@@ -12494,7 +13058,8 @@
    "location": "Poland",
    "region": "Europe",
    "tier": "Q1",
-   "added": "2026-11-05T09:49:14+00:00"
+   "added": "2026-11-05T09:49:14+00:00",
+   "media": 1
   },
   {
    "title": "Design of a Real-Time Dynamic Compensation GNSS Receiver for Time Transfer",
@@ -12516,7 +13081,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T01:05:08+00:00"
+   "added": "2026-11-05T01:05:08+00:00",
+   "media": 1
   },
   {
    "title": "EMTLoc: Energy-Based Meta-Learning for Repeater-Assisted Indoor GNSS Localization",
@@ -12542,7 +13108,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-05T01:05:08+00:00"
+   "added": "2026-11-05T01:05:08+00:00",
+   "media": 1
   },
   {
    "title": "UL-GSR: Uncertainty-Aware Scenario Recognition for Low-Cost GNSS Sensors in Urban Environments",
@@ -12567,7 +13134,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-05T01:05:08+00:00"
+   "added": "2026-11-05T01:05:08+00:00",
+   "media": 1
   },
   {
    "title": "NavIC Satellite NVS-03 Reaches Geosynchronous Orbit After ISRO Manoeuvres - Urban Acres",
@@ -12607,11 +13175,13 @@
    "location": "Munich, Germany",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-05T01:05:08+00:00"
+   "added": "2026-11-05T01:05:08+00:00",
+   "media": 1,
+   "image": "https://insidegnss.com/wp-content/uploads/2026/11/Paul-Shaffer-at-ION-GNSS-2026-scaled.jpg"
   },
   {
    "title": "Artemis II Ionosphere GPS Errors Hit 5,000 km [2026] - https://tech-insider.org/",
-   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNEhKTzZEUTdHajVveGpMRDB1bDBlaHhKa2Ntb2FQUG5VUlVweTJJS3FvOGtjdkZPOGVBZy1uTGNRWGFYd2UxS0RoREtnRmlKSi1PMy1qWDVoZFhKdWlNY25QUHFtbUNpTUNNdmw4YVdzRi0zUm4xMVI5WVZqeDJEa0UxLWI?oc=5",
+   "url": "https://tech-insider.org/artemis-ii-launch-ionosphere-gps-errors-5000-km-2026/",
    "summary": "Artemis II Ionosphere GPS Errors Hit 5,000 km [2026] &nbsp;&nbsp; https://tech-insider.org/",
    "source": "Google News GNSS products",
    "date": "2026-11-04",
@@ -12627,11 +13197,12 @@
    "location": "Florida, USA",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-05T01:05:08+00:00"
+   "added": "2026-11-05T01:05:08+00:00",
+   "media": 1
   },
   {
    "title": "From the Baltic to the Black Sea: Large-Scale GPS Jamming Detected Along NATO Borders - Мілітарний",
-   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQbkhnYkxlVlpmZ1BzT3Y2T3lkQWRTTlFEM29uNFFxVHVCdUJZYlYtT0l4NUFVdWhoUTNtM2NqTExDZ0ZKZlB4SnlRMEpfZ1JGU3N6dnZIYVlfVGVpUENnUl9qd0FrdjJlV21oQmJLMkxVa3JZS1hsdUlheUg3OE8zS19EanhBQTY2bVg3YXJUVGlFTEVRUGc1c1ktcThZUVN1UlN2anlrWTRaQ1p4N1BhaVItRDRtbDQ?oc=5",
+   "url": "https://militarnyi.com/en/news/from-the-baltic-to-the-black-sea-large-scale-gps-jamming-detected-along-nato-borders/",
    "summary": "From the Baltic to the Black Sea: Large-Scale GPS Jamming Detected Along NATO Borders &nbsp;&nbsp; Мілітарний",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-11-04",
@@ -12647,7 +13218,9 @@
    "location": "Baltic and Black Sea region, Europe",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-05T01:05:08+00:00"
+   "added": "2026-11-05T01:05:08+00:00",
+   "media": 1,
+   "image": "https://militarnyi.com/wp-content/uploads/2026/11/glushinnya-NATO-04-11-1.jpg"
   },
   {
    "title": "Velocity-aided collaborative navigation for non-cooperative object localization in GNSS-denied environments",
@@ -12671,7 +13244,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q2",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "GNSS-R System Simulator",
@@ -12692,7 +13266,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Code and Results for \"Trust GNSS, Dead-Reckon or Verify? Scheduling the Response to a Suspected Spoofing Attack\"",
@@ -12713,7 +13288,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "VaporNF: San Francisco Bay Area GNSS Water Vapor Tomography Code and Data",
@@ -12734,7 +13310,8 @@
    "location": "San Francisco, USA",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "SPRB-BD: UMA ARQUITETURA DE REFERÊNCIA PARA SISTEMAS DE POSICIONAMENTO REGIONAL",
@@ -12757,7 +13334,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Interacting multiple-model-driven robust adaptive factor graph optimization for GNSS/SINS/ODO positioning",
@@ -12781,7 +13359,8 @@
    "location": null,
    "region": "Europe",
    "tier": "Q2",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Processed data for \"From waveforms to fault state across scales with explainable AI\"",
@@ -12802,7 +13381,8 @@
    "location": "Hawaii, USA",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Deep Learning-Aided Adaptive Weighting for Tightly Coupled GNSS/INS Integration in Challenging Environments",
@@ -12825,7 +13405,8 @@
    "location": null,
    "region": "Europe",
    "tier": "Q2",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Optimising age-friendly community spaces: GNSS-based analysis of walking behaviours for older adults accessing healthcare",
@@ -12849,7 +13430,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Deep learning-driven indoor positioning and trajectory prediction based on wireless channel state information (CSI)",
@@ -12870,7 +13452,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Comparative analysis of NavIC and GPS STEC over the Indian region with evaluation of the Klobuchar model",
@@ -12895,7 +13478,8 @@
    "location": null,
    "region": "India",
    "tier": "Q2",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Trajectory Design for Timing–Range Bias Separation in GNSS-Referenced C-UAS Radar Testing",
@@ -12919,7 +13503,8 @@
    "location": null,
    "region": "Other",
    "tier": "Q1",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Fully connected baseline topology for regional ionospheric modeling in GNSS network RTK",
@@ -12944,11 +13529,12 @@
    "location": "Graz, Austria",
    "region": "Europe",
    "tier": "Q1",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "India's NavIC is back: NVS-03 reaches its destination, desi GPS now operational - India Today",
-   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRHVSeHNrZEF2T0h5V2t3YldjdHI5bWt0a1BOZzhjOGxJVmotME9BNVpSWDBGeTdVUkpKSjFTNHFlWGItNXFsbmJwV0c2bWtIMXVSZlJhOVd2UDBvc0t6MTZPRlpla3AtSVdaZXJLdWI4WF9MMDhxOXlsVy1FQmthWnpoNlNXYjB6dU4xQjNsbzVWeTdGYWphblZJNjFGTFhXbW9FNVNjYi1oellBZzdnQXNpRDNRVnlOcTlLQWxyNnZEVFhhNmg2eU9pZEhFOWFT0gHWAUFVX3lxTE9Dc3IyZlJXRUxoOFFCcXpDMGVMcjRPelRYU3FSRkdIdGlTYUNidUZOOEhVMFcyRU1hUEZQSzdZbm5VU3k4bVRDaEJnRWc0UWJESThndER4UVhUSEV0X0xUeFJ2am5ybUdmWWdOeFQ2SEplYThmWGliQThua0F6X0RjaFFYN3B5dFU4cG5qZU5nc29Idm5lRGdMMUNHMmFHazdGU3N3Vl9kVTFtNmNuMkJneFZMNFlEVUFPdkMzQ0tmT2l3a1M3UHFKVV9SdjRibmRyOU9Cb3c?oc=5",
+   "url": "https://www.indiatoday.in/science/story/indias-navic-is-back-nvs-03-reaches-its-destination-desi-gps-now-operational-3032100-2026-11-04",
    "summary": "India's NavIC is back: NVS-03 reaches its destination, desi GPS now operational &nbsp;&nbsp; India Today",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -12964,7 +13550,9 @@
    "location": null,
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1,
+   "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202611/indias-navic-is-back-nvs-03-reaches-its-destination--desi-gps-now-operational-04501743-16x9_0.jpeg?VersionId=rpKrb9M5yLXgGnCKWez1uWoE6UhZCGqh"
   },
   {
    "title": "GNSS is an opinion: Apostolos Giannetsos on the Geopolitical Realities of Maritime Cyber Security - Cyprus Shipping News",
@@ -13004,7 +13592,8 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Indonesia working with GAUSS Research Foundation on eLoran & ODFM",
@@ -13024,11 +13613,13 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1,
+   "image": "https://rntfnd.org/wp-content/uploads/Indonesia-Towers-600-mile-spacing-shutterstock_4225280483.jpg"
   },
   {
    "title": "GPS jamming hits almost all of NATO’s eastern flank in one day - The Defence Blog",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNNWx0dTV6MHNianJkTjM4eTItNjFQUW9BTUp4QTAycTVGd3RWOTNLOTNiR0VMUmY3OGtTcUEzOFlRUTZuaWctWGUzLUs1TURTazRBR3dxdEpkTDZJTFVmVlVOTE4zVmxVSEItTjhEOU9LLVI2SUZ0OXpONkZ2Y2YzVzhvRlVKOXlfYTVheVlDMjfSAZYBQVVfeXFMTnJlR1k3ZVBWU1Y0aU5pTUJxZmVPd3pZaTRDcm9rdnVXRThJcjNoTm5WUFlDSmFDVFJoN1RHamtxS3FXb0JLMGpjc3RkSGdEU0t4T3NrMFpyUEdVa0dQbmxrTlQzaUlya1N3R2JBSGE3LXB2RVRGczB4SFUtRTlZMTJoSXJQaGNxQ1loZG5JYldjNFFLaXFR?oc=5",
+   "url": "https://defence-blog.com/gps-jamming-hits-almost-all-of-natos-eastern-flank-in-one-day/",
    "summary": "GPS jamming hits almost all of NATO’s eastern flank in one day &nbsp;&nbsp; The Defence Blog",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-11-04",
@@ -13044,7 +13635,9 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1,
+   "image": "https://defence-blog.com/wp-content/uploads/2026/11/DB_image_3492.jpg"
   },
   {
    "title": "Autonomous Navigation Systems for Satellite Collision Avoidance and Proximity Operations",
@@ -13064,7 +13657,8 @@
    "location": "Bologna, Italy",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "M/F Postdoc : Performance evaluation of GNSS-free LoRaWAN-based tracking systems",
@@ -13084,7 +13678,8 @@
    "location": "France",
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-04T16:35:18+00:00"
+   "added": "2026-11-04T16:35:18+00:00",
+   "media": 1
   },
   {
    "title": "Navigating the Future",
@@ -13105,7 +13700,9 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T09:47:42+00:00"
+   "added": "2026-11-04T09:47:42+00:00",
+   "media": 1,
+   "image": "http://images.tandf.co.uk/common/jackets/crclarge/978100374/9781003740131.jpg"
   },
   {
    "title": "Flood extent, water level, and surface water storage retrieval using spaceborne GNSS reflectometry",
@@ -13127,7 +13724,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T09:47:42+00:00"
+   "added": "2026-11-04T09:47:42+00:00",
+   "media": 1
   },
   {
    "title": "&lt;span data-teams=\"true\"&gt;Reconciling Strong Interference Suppression, High-Dynamic Tracking and Precise RTK Positioning Through PODA Phase Transport",
@@ -13149,11 +13747,12 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T09:47:42+00:00"
+   "added": "2026-11-04T09:47:42+00:00",
+   "media": 1
   },
   {
    "title": "Success Of NVS-03: Why India Needs To Rethink Its Satellite Navigation Strategy – Analysis - Eurasia Review",
-   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOUmd0QXlmZlY4ZUp5MTgwRndKRUZabFZVTXRKVVMyaVFQd1FSbFNvdkdzdnB4X2pxallYcll4WlR6ZjdRT09QX1lOS2Z1dmFkaXEyQ0pwS2UzUWpwanZ2UGVZQ0pTSGI5RURkSDY2cFNaemkweUd1LUZwbUp4N0NNNG96RGVCMS11MXJzSVlsbnJvMWlEcHVLUFNPUjBIelBzOHc3UVZZR0hHLUZGSXdGVFBkR1BNOHF2RWU0QTRWaXQ2TlVHUWc?oc=5",
+   "url": "https://www.eurasiareview.com/04112026-success-of-nvs-03-why-india-needs-to-rethink-its-satellite-navigation-strategy-analysis/",
    "summary": "Success Of NVS-03: Why India Needs To Rethink Its Satellite Navigation Strategy – Analysis &nbsp;&nbsp; Eurasia Review",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -13169,11 +13768,13 @@
    "location": "New Delhi, India",
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-04T09:47:42+00:00"
+   "added": "2026-11-04T09:47:42+00:00",
+   "media": 1,
+   "image": "https://www.eurasiareview.com/wp-content/uploads/2026/11/a-59.jpg"
   },
   {
    "title": "What is the debate on NavIC vs GPS | Explained - The Hindu",
-   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaXNsOUxNQUVMamVkancyQ1NFNW5kV1pYZFZhcnk2MmwyS0o3WkV3Z01ndTBFbGM4UGJzZG0xSlVWTVdnaXBhRXBrWU02ellwdWpyMTAzVlBvZS1weGR4UEctR011ckZJazhhcld0eGhFajlfSUx2OHVzN0hXZ3Z5XzhqejRPNy16NnJGZVpVTFhidUFkSmwzUS1LajFOdzFwd0QtYUFzM2pKZ9IBsAFBVV95cUxPVEhSWGJWZ05HREZsdVlmTWc4MWZ4R3ctR2M4UWcyeTg3Ulpob0w2LS1jT1BTSzNMTjJ4aGtIVkxEOUdHNi1xUUo3aTdEaXRwSExraFlGZ2Y3S3NtbWI0SnUyWUFxNkx0Z2RnY3RMcVREMzBETmNQZkpyV2NoaTdwejVkaWpMZnBlV1pBdnNrX0NXVUlhUVFmaVpOOVZjYzZlUmRlZEpkdHE0VGZsMlpBaA?oc=5",
+   "url": "https://www.thehindu.com/sci-tech/science/what-is-the-debate-on-navic-vs-gps-explained/article71663982.ece",
    "summary": "What is the debate on NavIC vs GPS | Explained &nbsp;&nbsp; The Hindu",
    "source": "Google News GNSS",
    "date": "2026-11-04",
@@ -13189,11 +13790,13 @@
    "location": "New Delhi, India",
    "region": "India",
    "tier": "unknown",
-   "added": "2026-11-04T09:47:42+00:00"
+   "added": "2026-11-04T09:47:42+00:00",
+   "media": 1,
+   "image": "https://th-i.thgim.com/public/incoming/ii9fgc/article71663987.ece/alternates/LANDSCAPE_1200/PTI10_31_2026_000077A.jpg"
   },
   {
    "title": "US Air Force Wants Ukraine’s Next F-16 Weapon to Fly 460 Km and Beat GPS Jamming - UNITED24 Media",
-   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbnFuQkxTZURwTmxVUEFoT0c3WXNPazYtbjV5NmZyY1o2MU96QU1RTE9HM1VrcDdVdUgwbEFsbV9jTjkyX3BaRTlkSUg5UXdWV253VEc4b0lFSmxFN3ltZW5tVFJDbFN1Rm1IOXdQVkFFdi1JcVpGX29HZWpBcktRTWwxVENLNEFvclBMaUNDRERjaVhWOHc2Ymg4WkN4TkZwVEE2RVpEU295TnNYR0ZzR0VPQlpsakdEd1ZwVDhQVFJKZw?oc=5",
+   "url": "https://united24media.com/defense-tech/us-air-force-wants-ukraines-next-f-16-weapon-to-fly-460-km-and-beat-gps-jamming-24067",
    "summary": "US Air Force Wants Ukraine’s Next F-16 Weapon to Fly 460 Km and Beat GPS Jamming &nbsp;&nbsp; UNITED24 Media",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-11-04",
@@ -13209,7 +13812,10 @@
    "location": null,
    "region": "Europe",
    "tier": "unknown",
-   "added": "2026-11-04T09:47:42+00:00"
+   "added": "2026-11-04T09:47:42+00:00",
+   "media": 1,
+   "video": "yt:VQypdqv3KiA",
+   "image": "https://storage.united24media.com/og/2/9f/03383cd7c209be48543811bbb94359f2.jpg"
   },
   {
    "title": "การจดทำฐานขอมลสารสนเทศภมศาสตรดวยอากาศยานไรคนขบ กรณศกษา มหาวทยาลยรามคำแหง (หวหมาก)",
@@ -13233,7 +13839,8 @@
    "location": "Kalasin, Thailand",
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T00:58:35+00:00"
+   "added": "2026-11-04T00:58:35+00:00",
+   "media": 1
   },
   {
    "title": "Genetic Algorithm Based PFOID-SMC with a Sliding Mode Observer for a Quadcopter under Sensing and Communication Constraints",
@@ -13257,7 +13864,9 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T00:58:35+00:00"
+   "added": "2026-11-04T00:58:35+00:00",
+   "media": 1,
+   "image": "https://www.icck.org/images/article/FYwRuh07sdUs4HT.png"
   },
   {
    "title": "Geospatial Applications in Disaster Management and Emergency Response",
@@ -13278,7 +13887,9 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-04T00:58:35+00:00"
+   "added": "2026-11-04T00:58:35+00:00",
+   "media": 1,
+   "image": "http://images.tandf.co.uk/common/jackets/crclarge/978100374/9781003740131.jpg"
   },
   {
    "title": "ANALYSIS OF THE IMPACT OF THE HUNGA-TONGA ERUPTION ON JANUARY 15, 2022, ON IONOSPHERIC DISTURBANCES USING GNSS TEC",
@@ -13302,7 +13913,8 @@
    "location": null,
    "region": "Europe",
    "tier": "Q3",
-   "added": "2026-11-04T00:58:35+00:00"
+   "added": "2026-11-04T00:58:35+00:00",
+   "media": 1
   },
   {
    "title": "Monitoring River Freeze-Thaw State using Polarimetric GNSS-R",

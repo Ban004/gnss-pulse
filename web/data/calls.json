@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T01:06:24+00:00",
+ "updated": "2026-11-24T05:00:27+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -133,10 +133,10 @@
    "url": "https://ipin-conference.org/",
    "rank": "Major",
    "area": "Positioning",
-   "edition": null,
-   "start": null,
-   "end": null,
-   "location": null,
+   "edition": "16th International Conference on Indoor Positioning and Indoor Navigation (IPIN 2026)",
+   "start": "2026-10-05",
+   "end": "2026-10-08",
+   "location": "Rome, Italy",
    "submission_opens": null,
    "abstract_deadline": null,
    "full_paper_deadline": null,
@@ -144,9 +144,9 @@
    "camera_ready": null,
    "submission_type": null,
    "publication": null,
-   "notes": "No future edition beyond 2026 is listed on the page.",
-   "page_hash": "272909b04b7b",
-   "checked": "2026-11-05"
+   "notes": "Proceedings published; indexing by SCOPUS and Web of Science expected soon.",
+   "page_hash": "136c6abeb979",
+   "checked": "2026-11-24"
   },
   {
    "name": "Intl. Conference on Localization and GNSS",
