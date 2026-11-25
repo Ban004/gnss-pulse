@@ -1,9 +1,542 @@
 {
- "updated": "2026-11-24T19:43:07+00:00",
+ "updated": "2026-11-25T03:43:32+00:00",
  "failed_sources": [
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "CRISP: Sparse Risk-Calibrated Front-End Allocation and Fusion for Low-Resolution Snapshot GNSS Positioning",
+   "url": "https://arxiv.org/abs/2611.32307v1",
+   "summary": "Low-resolution global navigation satellite system snapshot receivers face strong coupling among automatic gain control compression, coarse quantization, and waveform distortion from nonlinear interference mitigation. This paper presents Cross-Risk Interference-Resilient Snapshot Positioning, denoted CRISP, an aided single-snapshot architecture that allocates and fuses complementary pre-correlation processors over a bounded position-clock search region under a shared direct position estimation solve budget. On a pre-frozen baseband descriptor partition, offline calibration estimates uncentered second-order position-error cross moments and solves cardinality-constrained simplex programs along east, north, and up axes, retaining validation-screened multibranch combinations while assigning single matched processors elsewhere. An online reliability gate screens the same quantized snapshot to route unfamiliar waveforms toward single-branch protective operators. We characterize profiled contrast shifts after nonlinear suppression and derive a conditional finite-sample excess-risk bound across disjoint splits alongside an exact same-snapshot gating risk identity. Across 17 568 simulated 2-ms GPS L1 C/A trials, CRISP reduces core positioning root-mean-square error by 13.84%, > 100-m gross errors by 41.32%, and multi-geometry error by 12.23% over Snapshot-FD at 1.43 core and 1.51 overall solves per snapshot.",
+   "source": "arXiv",
+   "date": "2026-11-24",
+   "kind_hint": "preprint",
+   "doi": null,
+   "venue": "arXiv",
+   "id": "9d3aa5ad726d5d08",
+   "relevant": true,
+   "category": "preprint",
+   "ai_summary": "Introduces CRISP, a snapshot GNSS positioning architecture that allocates and fuses pre‑correlation processors to mitigate AGC compression and quantization effects.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Gravity Model Testing of GNSS-Aided Inertial Navigation Systems",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11787952",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11787952",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Tim Needham, Sarah Lawrence",
+   "issn": [],
+   "id": "5ff36aedd61e52a3",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Evaluates gravity models by testing GNSS‑aided inertial navigation systems, assessing their impact on navigation accuracy.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Multi-Ray GNSS Radio Occultation of Ionospheric Structure from a Dense Formation of Commercial Nanosatellites",
+   "url": "https://doi.org/10.22541/essoar.15012720/v1",
+   "summary": "Radio occultation (RO) from single satellites cannot separate horizontal ionospheric structure from temporal change. Dense formations of commercial nanosatellites offer a different geometry: several spacecraft navigation receivers observe the same Global Positioning System (GPS) satellite within minutes along neighboring rays. We demonstrate this multi-ray concept with GPS L1 observations from low-cost single-frequency receivers on four Astrocast nanosatellites. In 12~h of data from December 2022, we detected 1,423 RO profiles and 111 events in which at least three spacecraft tracked the same GPS satellite simultaneously. Where tangent points lie within 110~km of each other, at midnight, slant total electron content (STEC) from the code-minus-carrier combination agrees to within 5-7 TECU for most events. As the inter-satellite distance increases to 600~km, differences reach 20~TECU and follow the horizontal gradients of global ionospheric maps. Nanosatellite formations thus provide a promising differential observable of horizontal and vertical ionospheric gradients.",
+   "source": "Crossref",
+   "date": "2026-11-24",
+   "kind_hint": "preprint",
+   "doi": "10.22541/essoar.15012720/v1",
+   "venue": "Crossref",
+   "authors": "Gregor Möller, Natalia Hanna, Hoor Bano, Mona Kosary",
+   "issn": [],
+   "id": "3bea9eb8f1537578",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Demonstrates multi‑ray GNSS radio occultation using four Astrocast nanosatellites, retrieving over 1,400 RO profiles in 12 h to resolve ionospheric horizontal structure.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Lausanne, Switzerland",
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "High-Precision Detection of Gait Toe-off Timing Using RTK-GNSS",
+   "url": "https://doi.org/10.1299/jsmeshd.2025.a-6-1",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2025",
+   "kind_hint": "paper",
+   "doi": "10.1299/jsmeshd.2025.a-6-1",
+   "venue": "The Proceedings of the Symposium on sports and human dynamics",
+   "authors": "Naoto MIYAMOTO, Shunya UDA, Wako KAJIWARA, Keito IGUCHI",
+   "issn": [
+    "2432-9509"
+   ],
+   "id": "ecfbac952993b6fa",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Uses high‑rate RTK‑GNSS to detect precise toe‑off timing in human gait, achieving sub‑centimeter positional accuracy for biomechanical analysis.",
+   "importance": 2,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Relative position estimation for drones in GNSS- and radio-denied environments",
+   "url": "https://doi.org/10.1299/jsmeiip.2026.iip-f6-4",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026",
+   "kind_hint": "paper",
+   "doi": "10.1299/jsmeiip.2026.iip-f6-4",
+   "venue": "The Proceedings of the Conference on Information, Intelligence and Precision Equipment : IIP",
+   "authors": "Koushi KUEODA, Sho YOKOTA",
+   "issn": [
+    "2424-3140"
+   ],
+   "id": "354344c06f0111f0",
+   "relevant": true,
+   "category": "conference",
+   "ai_summary": "Proposes a relative positioning algorithm for UAVs operating without GNSS or radio signals, leveraging inter‑vehicle measurements and onboard sensors.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Runtime Safety Filtering for Learned Small UAS Separation Policies under GNSS Degradation",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11788100",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11788100",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Alex Zongo, Peng Wei",
+   "issn": [],
+   "id": "dfee880933d4fd37",
+   "relevant": true,
+   "category": "conference",
+   "ai_summary": "Introduces a runtime safety filter for learned UAS separation policies that maintains safety under GNSS degradation scenarios.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Added value of CYGNSS and commercial GNSS-R ocean surface wind data for forecasting the impacts of atmospheric river series and hurricane-dust events on North America",
+   "url": "https://doi.org/10.22541/essoar.15012706/v1",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-11-24",
+   "kind_hint": "preprint",
+   "doi": "10.22541/essoar.15012706/v1",
+   "venue": "Crossref",
+   "authors": "Min Huang",
+   "issn": [],
+   "id": "498a237d1046f6e8",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Evaluates the combined use of CYGNSS and commercial GNSS‑R wind data to improve forecasts of atmospheric rivers and hurricane‑dust impacts over North America.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Estimation of the Ski–Snow Friction Coefficient and Aerodynamic Drag in Cross-Country Skiing Using 100-Hz RTK-GNSS",
+   "url": "https://doi.org/10.1299/jsmeshd.2025.b-7-4",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2025",
+   "kind_hint": "paper",
+   "doi": "10.1299/jsmeshd.2025.b-7-4",
+   "venue": "The Proceedings of the Symposium on sports and human dynamics",
+   "authors": "Naoto MIYAMOTO, Shunya UDA, Wako KAJIWARA, Masaki TAKEDA",
+   "issn": [
+    "2432-9509"
+   ],
+   "id": "808373497c497b1f",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Applies 100 Hz RTK‑GNSS to estimate ski‑snow friction and aerodynamic drag during cross‑country skiing, providing high‑resolution motion data.",
+   "importance": 2,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "BOC-HFM: A novel modulation based on HFM subcarriers for future large-scale LEO satellite navigation-augmented systems",
+   "url": "https://doi.org/10.23919/jcc.fa.2024-0503.202610",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-10",
+   "kind_hint": "paper",
+   "doi": "10.23919/jcc.fa.2024-0503.202610",
+   "venue": "China Communications",
+   "authors": "Zhang Shugan, Huang Xinming, Gong Hang",
+   "issn": [
+    "1673-5447"
+   ],
+   "id": "358c2d5c93613ee0",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Presents BOC‑HFM, a new modulation scheme with high‑frequency subcarriers designed for future large‑scale LEO navigation‑augmented satellite systems.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Beijing, China",
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "A Scalable Multi-Layer GNSS Cybersecurity Testbed for Analyzing and Quantifying System-Level Impacts of Jamming and Spoofing in Aviation",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11788014",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11788014",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Zunayeed Bin Zahir, Antonio Ferreira Crespo, Alexandre B. Barreto",
+   "issn": [],
+   "id": "da1a087b6d3c98a7",
+   "relevant": true,
+   "category": "conference",
+   "ai_summary": "Describes a scalable multi‑layer GNSS cybersecurity testbed to assess jamming and spoofing impacts on aviation systems.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Certifiable AI-Assisted GNSS Spoofing Detection for Aviation-Grade CNS and Resilient PNT Systems",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11787942",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11787942",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Ali Pirsiavash, Stanislas Mabin, Antoine Parisé, René Jr Landry",
+   "issn": [],
+   "id": "c4b1e21fd8cee564",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Certifiable AI framework for detecting GNSS spoofing in aviation CNS, improving resilience of PNT services.",
+   "importance": 5,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Performance Evaluation of COTS GNSS Receivers Under Synchronous Multi-Domain Spoofing Attacks",
+   "url": "https://doi.org/10.1109/icmtae72141.2026.11782886",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/icmtae72141.2026.11782886",
+   "venue": "2026 6th International Conference on Mechatronics Technology and Aerospace Engineering (ICMTAE)",
+   "authors": "Yifan Wang, Jiang Liu, Siqi Wang, Baigen Cai",
+   "issn": [],
+   "id": "e8c1391f57d6da52",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Performance evaluation of COTS GNSS receivers under synchronized multi‑domain spoofing attacks, providing vulnerability metrics.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "LLM-Guided Synthetic Data Generation for GPS Spoofing Detection in Commercial Aviation",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11787982",
+   "summary": "",
+   "source": "Crossref",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11787982",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Nina Sutre, Rim Zrelli, Felipe Gohring De Magalhaes, Gabriela Nicolescu",
+   "issn": [],
+   "id": "ae2776fda070a05b",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "LLM‑guided synthetic data generation is applied to train GPS spoofing detectors for commercial aviation. The approach improves detection accuracy while reducing the need for real‑world spoofing recordings.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Joint Probabilistic Calibration of Sensor Extrinsics and Camera Intrinsics with Georeferencing for Camera–LiDAR–Radar–GNSS Sensor Suites",
+   "url": "https://doi.org/10.1109/jsen.2026.3755652",
+   "summary": "",
+   "source": "IEEE Sensors Journal",
+   "date": "2026",
+   "kind_hint": "paper",
+   "doi": "10.1109/jsen.2026.3755652",
+   "venue": "IEEE Sensors Journal",
+   "authors": "Bianca Forkel, Philipp Berthold, Mirko Maehlisch",
+   "issn": [
+    "1530-437X",
+    "1558-1748",
+    "2379-9153"
+   ],
+   "id": "3a1a3f566e6bf8e3",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Joint probabilistic calibration of sensor extrinsics and camera intrinsics using GNSS‑referenced data for Camera‑LiDAR‑Radar‑GNSS suites.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "Q1",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Turning Weakness into Strength: Leveraging Poor Satellite Geometries to Mitigate Urban GNSS Multipath Errors",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11787956",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11787956",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Julian Gutierrez, J Tanner Slagel, Evan Dill",
+   "issn": [],
+   "id": "55292385fa13f54c",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Uses weak satellite geometries to mitigate urban GNSS multipath errors, turning a limitation into a performance advantage.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Combining multi-drone cooperation and A-PNT techniques for enhanced navigation in GNSS-challenging environments",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11788090",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11788090",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Gennaromaria Crispino, Lorenzo Turci, Flavia Causa, Giancarmine Fasano",
+   "issn": [],
+   "id": "2629128bbc92a73f",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Combines multi‑drone cooperation with A‑PNT techniques to improve navigation where GNSS signals are degraded or denied.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "GNSS Integrity Monitoring Navigation Powered by LiDAR and Camera Aiding for Low Altitude Aerial Platforms",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11788093",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11788093",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Lorenzo Turci, Flavia Causa, Gennaromaria Crispino, Roberto Opromolla",
+   "issn": [],
+   "id": "d6116f9ddf2e5c2c",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Proposes GNSS integrity monitoring for low‑altitude aerial platforms using LiDAR and camera aiding to detect anomalies.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Standardized GNSS Resilience Testing for UAV Autopilots: A Two-Phase Testbed and Labeled Dataset Framework",
+   "url": "https://doi.org/10.1109/dasc70579.2026.11788011",
+   "summary": "",
+   "source": "IEEE conferences",
+   "date": "2026-09",
+   "kind_hint": "conference",
+   "doi": "10.1109/dasc70579.2026.11788011",
+   "venue": "2026 AIAA DATC/IEEE 45th Digital Avionics Systems Conference (DASC)",
+   "authors": "Sivasankar Sibi, Lucas Saunders, Raju Dhakal, Laxima Kandel",
+   "issn": [],
+   "id": "200dd432dcc882f4",
+   "relevant": true,
+   "category": "paper",
+   "ai_summary": "Describes a standardized two‑phase testbed and labeled dataset for evaluating UAV autopilot resilience to GNSS disruptions.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "Jammertest: strengthening satellite navigation - ESA",
+   "url": "https://www.esa.int/fi/media-collection-pro/jammertest-strengthening-satellite-navigation",
+   "summary": "Jammertest: strengthening satellite navigation &nbsp;&nbsp; ESA",
+   "source": "Satellite navigation careers",
+   "date": "2026-11-24",
+   "kind_hint": "job",
+   "doi": null,
+   "venue": "Satellite navigation careers",
+   "id": "dfee86eb64adbab1",
+   "relevant": true,
+   "category": "job",
+   "ai_summary": "ESA seeks candidates for the Jammertest project aimed at strengthening satellite navigation resilience.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Paris, France",
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1,
+   "image": "https://media.esa.int/global/public/on-demand/image/2026/11/402598/image-thumb__402598__social_share/social-media-fallback.7e0ae546.jpg"
+  },
+  {
+   "title": "BeiDou Navigation System: History, Satellites, Use - Envanter Medya",
+   "url": "https://envantermedya.com/en/beidou-navigation-system/",
+   "summary": "BeiDou Navigation System: History, Satellites, Use &nbsp;&nbsp; Envanter Medya",
+   "source": "Google News GNSS",
+   "date": "2026-11-24",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News GNSS",
+   "id": "ccfad28f88c5a5ee",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "Overview of the BeiDou Navigation System’s history, satellite constellation and current applications.",
+   "importance": 2,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1
+  },
+  {
+   "title": "EnSilica Agrees Heads of Terms for US$80 Million Satellite Navigation Chip Contract, Its Largest Programme to Date - Yahoo Finance UK",
+   "url": "https://uk.finance.yahoo.com/news/ensilica-agrees-heads-terms-us-081725481.html",
+   "summary": "EnSilica Agrees Heads of Terms for US$80 Million Satellite Navigation Chip Contract, Its Largest Programme to Date &nbsp;&nbsp; Yahoo Finance UK",
+   "source": "Google News GNSS",
+   "date": "2026-11-23",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News GNSS",
+   "id": "db0f4372768b5701",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "EnSilica signs an $80 million heads‑of‑terms deal for a satellite‑navigation chip program, its largest contract to date.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1,
+   "image": "https://s.yimg.com/lo/mysterio/api/d39bebc8c9f949884262e082421ddc9ced034e3d433b782f9a9ca4a6c45c1b46/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fadvfn_uk_848%2F78c513e29ab56114d2b5c19da5430fb8.jpg"
+  },
+  {
+   "title": "China postpones Beidou satellite launch over technical problem - Yeni Safak English",
+   "url": "https://en.yenisafak.com/world/china-postpones-beidou-satellite-launch-over-technical-problem-3532158",
+   "summary": "China postpones Beidou satellite launch over technical problem &nbsp;&nbsp; Yeni Safak English",
+   "source": "Google News GNSS",
+   "date": "2026-11-22",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News GNSS",
+   "id": "8b73501df68b2bf1",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "China postpones a BeiDou satellite launch due to a technical problem, delaying the next generation of the constellation.",
+   "importance": 3,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1,
+   "image": "https://img.piri.net/resim/imagecrop/2020/06/16/09/23/resized_58a06-2020-06-15t111126z_693488614_rc2n9h9yg85p_rtrmadp_3_space-exploration-china-satellite.jpg"
+  },
+  {
+   "title": "Space Force OneWeb Contract Adds GPS Backup – Tech Times",
+   "url": "https://rntfnd.org/2026/11/24/space-force-oneweb-contract-adds-gps-backup-tech-times/",
+   "summary": "Image: Picryl.com What&#8217;s new: Space Force has contracted with OneWeb for PNT services. Why it&#8217;s important: PNT from LEO can be a great augment during local GNSS interference. This is the first we have heard of any Dept. of Defense entity contracting for such a service. What else to know: There are lots of caveats in the article about the announcement, lack of details, etc. Eutelsat owns OneWeb and made the announcement. When Brexit was finalized in 2020 the UK no longer participated in Galileo governance, PRS, etc. That year the U.K. government invested $500M in OneWeb. Part of the rationale was that it could be used for PNT, even though OneWeb was and is a communications platform. PNT can be inferred from comms constellations. It is not clear that this is the intent with the Space Force contract. Eutelsat has an agreement with Iridium STL PNT so it is [&#8230;]",
+   "source": "RNTF (Resilient PNT)",
+   "date": "2026-11-24",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "RNTF (Resilient PNT)",
+   "id": "442249571b10d698",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "Space Force contracts OneWeb to provide LEO‑based PNT services as a backup to GPS. The move aims to enhance resilience against GNSS interference and offers a new augmentation capability.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Washington, D.C., USA",
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-25T03:43:32+00:00",
+   "media": 1,
+   "image": "https://rntfnd.org/wp-content/uploads/one-web-satellites-ground-breaking-904dce.jpg"
+  },
   {
    "title": "Tracking GNSS Deception at Sea: SpoofCloudFinder for Detecting Coordinated Multi-vessel Anomalies in AIS Data",
    "url": "https://doi.org/10.1007/978-3-032-45236-8_35",
@@ -22774,7 +23307,7 @@
   },
   {
    "title": "ISRO to launch NVS-03 satellite tomorrow to revive NavIC - NewsBytes",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdnM1cE1oZ0F0aXVZNUpOMVhCLTVkTUwzS21RMHhrUmRxa0hqa3llWE04NEtVYVF2X1lWMnNJcXFRN0UwMm1jNDZWWkhYWkwyaXNGbW1Zbm9KT3hiaUJsZzhLVUxobjROeDgzUGlVc0RwM3JSZDFlcEthUXAxbnpENXI0WDdhdk15SjlXREZuZy1WTjR2cVhyYzZKSmdSOTE2?oc=5",
+   "url": "https://www.newsbytesapp.com/news/science/isro-to-launch-nvs-03-on-october-30-to-revive-navic/story",
    "summary": "ISRO to launch NVS-03 satellite tomorrow to revive NavIC &nbsp;&nbsp; NewsBytes",
    "source": "Google News NavIC / ISRO",
    "date": "2026-10-29",
@@ -22790,11 +23323,12 @@
    "deadline": null,
    "location": "Sriharikota, India",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1
   },
   {
    "title": "ISRO’s NVS-03 launch set for October 30 to boost NavIC - Kalinga TV",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQaGhDd3Q3NVctYmd1Q2REb3lKek14RmN6eHVSX3ZFU09COEpUOVYydDRvaGI1YUtLdE9FWVU5a2VFOEVHdDFaTzBjSHIzajhDZktUWktXNlFJNV9pX1ROTGU4ZHYzZXZTYWFaX0htT0FqbjRKSGJNM25QRVFXbDh3eGlHcjA2ZlQycjBj?oc=5",
+   "url": "https://kalingatv.com/nation/isros-nvs-03-launch-set-for-october-30-to-boost-navic/",
    "summary": "ISRO’s NVS-03 launch set for October 30 to boost NavIC &nbsp;&nbsp; Kalinga TV",
    "source": "Google News NavIC / ISRO",
    "date": "2026-10-29",
@@ -22810,11 +23344,12 @@
    "deadline": null,
    "location": "Sriharikota, India",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1
   },
   {
    "title": "Ukraine finds Russia’s Geran drones fitted with a compass that works through GPS jamming, but Western electronics still at their core - Euromaidan Press",
-   "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNZ2lfcUV6M3lBcXlIS29YN0hFbmltRjhPLU9FQmFMTHNjRS1DVVZUY0pUMHRzblNaVzlDTHNYdHJtcnAzMlZxeUVVM2N4d0lvYllOMFpUWnNjamkwZlZreld0SFVhMkZTQ2M0cXJRT09iTTlSLTB3VzROM2dXbS1nc18yMW1hZF9LNlJXdjF2SktxOTBmY1Z4RDJ3dGM2azlYRkkwcmNWdlJuclVkVVlESzJ2VG9YaEpsb1VmU2lkTm5ZcVpKZllaN3pvc3ZCWGZUSDdibWlhMXpXUGJQdG4yNlhROWNMamFJQ01GQjYtSUxHSHd0R0ZManV0LW15djBP?oc=5",
+   "url": "https://euromaidanpress.com/2026/10/29/ukraine-finds-russias-geran-drones-fitted-with-a-compass-that-works-through-gps-jamming-but-western-electronics-still-at-their-core/",
    "summary": "Ukraine finds Russia’s Geran drones fitted with a compass that works through GPS jamming, but Western electronics still at their core &nbsp;&nbsp; Euromaidan Press",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-10-29",
@@ -22830,11 +23365,13 @@
    "deadline": null,
    "location": "Ukraine",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://euromaidanpress.com/wp-content/uploads/2026/10/magnetometers-in-geran.webp"
   },
   {
    "title": "GPS jamming over Europe is also disrupting satellites in space - Technology Org",
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ0hlaEdiSlVYdE8temcwNTdKd21VVXZxVVBBLUpieVFpeUx6ME5GZFlLa1U0Y29ramtrd2xCTkJLSXFfWXQycW9ZNUtCamF6R0VMcVFaT0RGcEotdV9ZZWFBMVBTcFE0Sm9WMTBMdWRKQnhFQXpGQTl6R1VLcFNlX1ZGTHZqX1VaaWlSVUktNlZDRHZQZ18yanBkbHV1NkxNODFV?oc=5",
+   "url": "https://www.technology.org/2026/10/29/gps-jamming-over-europe-is-also-disrupting-satellites-in-space/",
    "summary": "GPS jamming over Europe is also disrupting satellites in space &nbsp;&nbsp; Technology Org",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-10-29",
@@ -22850,11 +23387,12 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "LEO PNT Market worth $0.95 billion by 2031 - Exclusive Report by MarketsandMarkets™ - Yahoo Finance",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZ29sbkxZYm1MWnhHMUttWGt5bHhNYlFfLU1lWlpyWEpuU0xEelp6NDBfWWt1aU44SnhTX1o2cEQxLVdEY3RnYnJ1WU9zdlVBTEo5cEtjc3R0N0YyWURHVl9VajRObkRvTXZ2Q1VOdVpPZXotTDhfeGpzVW82eWlSUGhEX3ladDE4a19N?oc=5",
+   "url": "https://finance.yahoo.com/technology/articles/leo-pnt-market-worth-0-105900176.html",
    "summary": "LEO PNT Market worth $0.95 billion by 2031 - Exclusive Report by MarketsandMarkets™ &nbsp;&nbsp; Yahoo Finance",
    "source": "Google News LEO-PNT / jamming / spoofing",
    "date": "2026-10-27",
@@ -22870,7 +23408,9 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1,
+   "image": "https://s.yimg.com/lo/mysterio/api/df371f52e28486c55e27499ee4657310e04cac6e7dda25ee6bd33f30b39c8fa4/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fprnewswire.com%2Fe3354b3cc3c17e2a6f8c9ef61783c9c7.jpg"
   },
   {
    "title": "PhD Researcher: Event-Based GNSS Receivers for Ultra-Low-Power Positioning (fixed-term)",
@@ -22890,7 +23430,8 @@
    "deadline": null,
    "location": "Barcelona, Spain",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "CPI-26-580. Proyecto: «Autonomous robot navigation in the wild using satellite-based 3D geographical information (ROBOSAT).",
@@ -22910,7 +23451,8 @@
    "deadline": null,
    "location": "Valencia, Spain",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "Postdoctoral Researcher: Event-Driven GNSS Receivers for Ultra-Low-Power Positioning (Fixed-term)",
@@ -22930,7 +23472,8 @@
    "deadline": null,
    "location": "Barcelona, Spain",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "Doctoral researcher in GNSS Reflectometry",
@@ -22950,7 +23493,8 @@
    "deadline": null,
    "location": "Esch-sur-Alzette, Luxembourg",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "End-to-End Navigation System Engineer (2 Posts)",
@@ -22970,7 +23514,8 @@
    "deadline": "2026-11-16",
    "location": "Noordwijk, Netherlands",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "Galileo Services Implementation Coordinator",
@@ -22990,7 +23535,8 @@
    "deadline": "2026-11-12",
    "location": "Noordwijk, Netherlands",
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "Distance-Gated 360-Degree Waypoint Views for Pedestrian Walks: Mapping Fused Step-Count and GNSS Distance onto Virtual Routes, with Walking-Triggered Auto-Close, Distance-Based Prefetch and Intro-plus-Loop Omnidirectional Video",
@@ -23010,7 +23556,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Industry Day: Multi-Component Security Monitoring System",
@@ -23030,7 +23577,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:26:57+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "STM32-Based Landmine Detection and GPS Localization Robotic Vehicle",
@@ -23050,11 +23598,12 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "ISRO schedules GSLV-F18 launch carrying NavIC satellite NVS-03 - Telangana Today",
-   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPaHNpbkxlSGRvcENYV2lGc3RBYmhnTGdHOEVmVHdmV2ZmdEZoS3FCWVhKWlpjRW5qbzhIeUlyaVdLcl9ubTJxTXJxR2tSc1pPV01VQ0U0UndnbE5sWWlSQ19jWFVua0tmUDkzQzdrdWhKdVozWDJiSjk3Y2lHUmJZR3RtcjZBWDIyX01YWlZkYjJOY3M?oc=5",
+   "url": "https://telanganatoday.com/isro-schedules-gslv-f18-launch-carrying-navic-satellite-nvs-03",
    "summary": "ISRO schedules GSLV-F18 launch carrying NavIC satellite NVS-03 &nbsp;&nbsp; Telangana Today",
    "source": "Google News GNSS",
    "date": "2026-10-30",
@@ -23070,7 +23619,9 @@
    "deadline": null,
    "location": "Sriharikota, India",
    "added": "2026-10-30T06:05:30+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://media.telanganatoday.com/wp-content/uploads/2026/10/ISRO-1.jpg"
   },
   {
    "title": "Resolution of Polar Coordinate Singularities and Jacobian Collapse in GNSS Satellite Tracking via Kalimuthu Boundary Regularization",
@@ -23090,7 +23641,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Kalimuthu Degenerated Triangle Calculus [K-DTC] as a Unified Geometric Regulator for UAV Collision Avoidance, GNSS Polar Navigation Singularities, and Computer Gimbal Lock",
@@ -23110,7 +23662,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Neural Terrain Classification and Fuzzy Adaptive Covariance Tuning for Improved Outdoor Mobile Robot Localization",
@@ -23130,7 +23683,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "GNSS Polar Navigation and Chart Singularity Resolution via K-DTC Frameworks",
@@ -23150,11 +23704,12 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T06:05:30+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "ISRO set to launch NVS-03 tonight to strengthen India’s NavIC navigation network - Madhyamam",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbUxBNXM3bUZCRHo0YWRHM3RYYXZXWllqaDVrenpFMTRTNHVwQUFIMmdza1V2VDhGYy1WTXBNNUNKbFM0aHh6NlR4NmZYc3ZzS1pNbkhWdTJnRWxWSjdlZTF6amp2UlFzQkoyOUNKZ1M5cjFNY0F6dHdCSndicjJWeVd5TlNfNFhIeWRqOUhPUEp4bHVvUkNtU0Y2T0ZabjVERTdQSE1lN2pqeWQ4NUI3cjNnNGs0bjZxSl9vaVlDeDPSAcYBQVVfeXFMT0FzQ2o5bkR2UUlTQjZRT0hYTGxzVGRnRmtmOVVpOEE0YXViaU85T3JvTG10UUJMckFNVllaTXl2SEQ5RUYxNzZWd3RvaVN3eFRibXJWcVVfa05rSGNsc1RSQXJNd1diTFZVS1lNWUx6MnVTYlpaRnhSclktbnJfclQtbkNfUk13QjFMSTJ0SzdRNWJzM3ZhVzhwdHZkbzg3VVNzbThLQmpGSmp1eWlTQmY5bHc3ZEpjLTU0Wkc3cERlOVdWTGR3?oc=5",
+   "url": "https://madhyamamonline.com/science/isro-set-to-launch-nvs-03-tonight-to-strengthen-indias-navic-navigation-network-1567474",
    "summary": "ISRO set to launch NVS-03 tonight to strengthen India’s NavIC navigation network &nbsp;&nbsp; Madhyamam",
    "source": "Google News GNSS",
    "date": "2026-10-30",
@@ -23170,7 +23725,9 @@
    "deadline": null,
    "location": "Sriharikota, India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://madhyamamonline.com/h-upload/2026/10/30/2939541-202610303996066.jpg"
   },
   {
    "title": "ION GNSS+ 2026: Trust, Resilience and a Sky Getting Fuller",
@@ -23190,7 +23747,9 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1,
+   "image": "https://insidegnss.com/wp-content/uploads/2026/10/Screen-Shot-2026-10-29-at-2.18.21-PM_2.jpg"
   },
   {
    "title": "6 Pulsar Satellites Launched into LEO, Marking the Start of Xona’s Production Constellation",
@@ -23210,7 +23769,9 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1,
+   "image": "https://insidegnss.com/wp-content/uploads/2026/10/crew-11-launch-day-option-key-art-r1-horizontal-program-tile-16-9-without-title.jpg"
   },
   {
    "title": "Inertial Labs, a VIAVI Solutions Company, Accelerates Complex Alt-PNT and Guidance Systems Design with Programmable INS Development Platform",
@@ -23230,7 +23791,9 @@
    "deadline": null,
    "location": "Boulder, USA",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1,
+   "image": "https://insidegnss.com/wp-content/uploads/2026/10/INS-NV.jpg"
   },
   {
    "title": "Plotting scripts for: Global Sampling Characteristics and Coverage Complementarity of 12 GNSS Radio Occultation Constellations",
@@ -23250,7 +23813,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Localize Anywhere Through Adaptive V2X Cooperative Localization for Robust and Precise Urban positioning",
@@ -23270,7 +23834,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Onboard-navigation-aided federated fusion for telemetry tracking of high-dynamic flight-test targets",
@@ -23290,7 +23855,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Rapid earthquake magnitude estimation from fuzzy C-means clustering-weighted fusion of seismogeodetic PGD and PGV",
@@ -23310,7 +23876,9 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1,
+   "image": "https://s3-eu-west-1.amazonaws.com/ppreviews-tf-45897as9a7sa86/70824316/thumb.png"
   },
   {
    "title": "Coseismic Surface Deformation and Fault Slip Distribution of the 2026 Mw 6.8 Kumamoto Earthquake from Multi-Sensor InSAR and GNSS Observations",
@@ -23330,7 +23898,8 @@
    "deadline": null,
    "location": "Japan/Kumamoto",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Improving Water Detection at Tianmu-1 GNSS-R Reflection Points in the Amazon Basin Using Dual-Polarization Observations",
@@ -23350,7 +23919,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Rapid Initial Alignment of Dual-Axis Rotational Inertial Navigation Using Phase-Preserving Angular-Rate Reconstruction and Dynamic Lever-Arm Compensation",
@@ -23370,7 +23940,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Derived observation and model products for sunset-sector F-region restructuring over Taiwan during the 20 January 2026 storm",
@@ -23390,7 +23961,8 @@
    "deadline": null,
    "location": "Taiwan",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Accuracy assessment of real-time single-receiver GNSS velocimetry in marine dynamic environments",
@@ -23410,7 +23982,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "AGGO: Concept and realization of a geodetic observatory in South-America",
@@ -23430,7 +24003,8 @@
    "deadline": null,
    "location": "Argentina",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Multi-constellation and multi-frequency GNSS-IR sea level retrieval using sliding-window and helmert variance component estimation",
@@ -23450,7 +24024,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "KineGuard: An Exogenous Kinematic Gatekeeper Against Feature-Space Illusion and Slow Drag-Off Attacks on Visual-Inertial UAV Navigation.",
@@ -23470,7 +24045,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Are Smartphones Viable for the V2X Transition? A Platoon-Perspective Stability Analysis under Real-World Errors",
@@ -23490,7 +24066,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Gümüşhane – Trabzon Hattı Boyunca Yerkabuğu Hareketlerinin GNSS Verileri ile İzlenmesi",
@@ -23510,7 +24087,8 @@
    "deadline": null,
    "location": "Turkey",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "A method for monitoring aircraft height above ground across diverse landforms using GNSS reflected signals: a field study",
@@ -23530,7 +24108,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "BDSBAS/MSAS Fusion Positioning Algorithm Based on Sliding Window Variance Component Estimation Enhanced by Feedforward Neural Network and Factor Graph Optimization",
@@ -23550,7 +24129,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Measuring Precipitable Water Vapor through Dual-Band GPS at Rubin Observatory",
@@ -23570,7 +24150,8 @@
    "deadline": null,
    "location": "Chile",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Adaptive Orbit-Aided Vector Tracking for Orbit Determination of LEO Satellites",
@@ -23590,7 +24171,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Gradient flow of magnetic inclination and intensity as a GPS-free guidance mechanism",
@@ -23610,7 +24192,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Site-specific GNSS observation quality assessment and adaptive weighting using LightGBM for RTK deformation monitoring",
@@ -23630,7 +24213,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "AetherMMS: a space-time GNSS mission planning framework for mobile mapping systems",
@@ -23650,7 +24234,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Global ionospheric modeling based on spherical radial basis functions",
@@ -23670,7 +24255,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "A Recursive Bayesian Overbounding Filter Using Gaussian-Pareto Distributions",
@@ -23690,7 +24276,8 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Orbit Uncertainty Covariance Adaptation for LEO Phase and Doppler Differential Positioning",
@@ -23710,11 +24297,12 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "ISRO to launch NVS-03 with third atomic clock to enhance NavIC - The News Mill",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNOTFfNUdyeVZ5dmdrZjBPTnRwQndNUmNUWW5VRjA1UEk2ZnhjVHhRa2Y2bnpDRXR0VXd0Vzk1VjI4ODV4Q3ppNmx2d1NTejR3ZG5LVXpDM2pNd3hXWjd3c1JKMU1JcWhOWm1JOVptbV9DM1ppbjQtRUR4dnRrY0FmNE50V1hyVmlCZFVCQ3F3QVNwTXhaTUdrSzlVcw?oc=5",
+   "url": "https://thenewsmill.com/2026/10/isro-to-launch-nvs-03-with-third-atomic-clock-to-enhance-navic/",
    "summary": "ISRO to launch NVS-03 with third atomic clock to enhance NavIC &nbsp;&nbsp; The News Mill",
    "source": "Google News GNSS",
    "date": "2026-10-30",
@@ -23730,11 +24318,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://thenewsmill.com/tnm-og/612542.jpg"
   },
   {
    "title": "NVS-03 and NavIC Navigation System - Drishti IAS",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUEd0a2xIRTBJRGI2Ym03Q2pMQ2pfeUJWcTNhM2lwS2I2dnMxVzNkSU8teXRhekxsM1NUcGlhbnN6RDVacGZYQkt1MzRDcHc4VHdQaWRLUVgtMUtlWVVmQzNERndsR1JEUGJxcHFTS1NFblBEeEJiLU0tZHhON3VtczNtYVAzX1I3U3FMZ2RzVDl0dlJ1WFowVzlFOA?oc=5",
+   "url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/nvs-03-and-navic-navigation-system",
    "summary": "NVS-03 and NavIC Navigation System &nbsp;&nbsp; Drishti IAS",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -23750,11 +24340,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "video": "yt:uW3WNCYxd_k"
   },
   {
    "title": "Isro NVS-03 satellite launch: The science and setbacks behind NavIC, India’s version of GPS | HT Explainers - Hindustan Times",
-   "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNN2liRFZKbE5MLXpIVzktN1hmMl9Oc0tzUWU3akVUcnRIYl9sd0dqeE5NTWVTMG9RZ3FKd25UR1JZTF9ReXN1MUdhaHpvVlRlTy1qX25qajlSNDBFMjNuUVJMbkkyeDBzZV81cDJ5VEdra0Fka2FRU3VNdDg5RzY4eTZoLU5wc0I5TWUwRjAwOG1hcXdITk41TjZwUDFxSGRhcEFNd0VNdzlVV2hmX1JFSkEwcmFzYU5TcktHZGlyNVo1SS1MYWRGaFBFYXpzSWEydmlhX3FVVW1YUnZnVGhYSVVMUV9OSjF4NUVjYnpPTUxZdVNGcDNqM0ZJcW4zQUVPR1haU29mQ053d3BNbVNEcEUtTXBnd9IBlgJBVV95cUxNN2liRFZKbE5MLXpIVzktN1hmMl9Oc0tzUWU3akVUcnRIYl9sd0dqeE5NTWVTMG9RZ3FKd25UR1JZTF9ReXN1MUdhaHpvVlRlTy1qX25qajlSNDBFMjNuUVJMbkkyeDBzZV81cDJ5VEdra0Fka2FRU3VNdDg5RzY4eTZoLU5wc0I5TWUwRjAwOG1hcXdITk41TjZwUDFxSGRhcEFNd0VNdzlVV2hmX1JFSkEwcmFzYU5TcktHZGlyNVo1SS1MYWRGaFBFYXpzSWEydmlhX3FVVW1YUnZnVGhYSVVMUV9OSjF4NUVjYnpPTUxZdVNGcDNqM0ZJcW4zQUVPR1haU29mQ053d3BNbVNEcEUtTXBndw?oc=5",
+   "url": "https://www.hindustantimes.com/ht-explainers/isro-nvs-03-satellite-launch-sriharikota-today-science-setbacks-behind-navic-navigation-system-india-s-version-of-gps-101793329337740-amp.html",
    "summary": "Isro NVS-03 satellite launch: The science and setbacks behind NavIC, India’s version of GPS | HT Explainers &nbsp;&nbsp; Hindustan Times",
    "source": "Google News GNSS",
    "date": "2026-10-30",
@@ -23770,11 +24362,12 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1
   },
   {
    "title": "ESA and Norway pen projects for resilient satellite navigation - European Space Agency",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOSVpZYUJxTE96UGxmaDcwcFNvTkNjTjZ2QXZfQzRYUUg2Wm44S1hpYUNRcTFwRTRVOHpCUndvWFJ6TDc0VW92OGlwQVBCM3BEMHgxYVpnT3ZhV05QT0lmZFNhUVFKQVFKdU9Nal9samxxbngwTW5obmZ5RzBLX3Z0cTA1bXhTWTJUX1RIU09yeFE2QlJuTGlMMWk3ZnRJWVVTMnd4OUVIbHRDQUJDX1ZfQ3pscjVOeFpBaEg4TVhXMTE?oc=5",
+   "url": "https://www.esa.int/Applications/Satellite_navigation/NAVISP/ESA_and_Norway_pen_projects_for_resilient_satellite_navigation",
    "summary": "ESA and Norway pen projects for resilient satellite navigation &nbsp;&nbsp; European Space Agency",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -23790,11 +24383,13 @@
    "deadline": null,
    "location": "Norway",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://media.esa.int/global/public/common/image/2026/10/402136/image-thumb__402136__social_share/gnss-based-electronic-aids-to-navigation-solutions-pillars.01c328ee.jpg"
   },
   {
    "title": "Isro all set to launch latest NavIC constellation satellite on Friday - Business Standard",
-   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQa0djNERsNHBPYjA1TDA1ZnBBcnFFMHoxZ2FUcnR6bzgzUW1mYnFrbkU1bC1WZmp3TjhfTVFhdUVmMk82dk5qOEVQaEltWUprWDlKM3ZXRS0tMmlzb1NhQTJZeFhUNEczZ3hZUi0wQU8wRDhDcGY0ZFhWbXk3T0RGTkFfbW1sQWdjUjVMbER1d1hwajlvSjVxWUtrOC15WmdZd2VaY2lHUFZGYW1TYnM4bzhqSGZmSGNpQ2diN3FpMzdySTB0bjVSM1htU3N1YXgx0gHWAUFVX3lxTE1zU1VUd2VadmtMRVByUnNQTVpWYVNJT3dDajBVVC1lY3ExWHFoT1ltZFZHa2RPR1htNTJ0NWxNTGVwSzk0MVoxOGptVmVLYnllZEE4c3Y1MGJaZWxxc2FUOWREQmJCN1RTaU0tdHEwbzFkUUxCMmc2Sm5sanc4RGJWcTAxTXkwSlNUVGhDRlBhbjJmVks5RUFmMmg2VTVCelE2a0lzXzVUT1gtRGJGU3dDeXlLYnp1ZEh0eXYwRWxiZXpNVjRQY0ZDcG1naEM2NXNrM2tUVVE?oc=5",
+   "url": "https://www.business-standard.com/india-news/india-s-navic-navigation-system-awaits-boost-with-isro-s-nvs-03-launch-126102901510_1.html",
    "summary": "Isro all set to launch latest NavIC constellation satellite on Friday &nbsp;&nbsp; Business Standard",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -23810,11 +24405,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://bsmedia.business-standard.com/_media/bs/img/article/2026-10/29/thumb/fitandfill/1200X628/1793281029-6925.jpg"
   },
   {
    "title": "GSLV-F18 set to launch on Friday night 11.51 for give rebirth to the indigenous navigation system NavIC - DT Next",
-   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQaVdMZDZRRURlaTlmN3hUYzJFTUVkSkVBb0Eyd3pTSjBueVlwam9rOERPMWxFWlZPSkJEaUtsZ3NEQjVRUS1GU1FubzBGY214U0hONTNEY05wdmc5VWxIcExjN0Z3dEdVUGtQZndXVHFzdnpLRnFoSTJmTE1FZmxYUGFjemdRb0I4aHlETG1vOVQ1eXJVNUpFWXlud0NkeUhQcUJ1UXAxNmFyX19IcFpJaXptNlE5R0k0cktJdGM0bXdZcmEtcVpUeTVINFhFUFNKV2RmNtIB4gFBVV95cUxPOEdIQzBnWVZhQjd6cTJuQ1VIazFzSnRKbEc1V0Nta1J4T1ZrdGRTeGFIMnpZYU50SUZQYUJvbmx5T1pxcFVwSFFrYU0xUGhhdEtObTZKWXpFc2VWRXNoc1dJaGNjSVJLQV81bllwdVFlbjlfbDZLbTdPaDd2TVJwcFB3dUJRcklPT0tYcjJ0b0ZUUTBqaGdkdG5UTkhmeUxsZGg0SDBnVzdvX2lMS1ZYMU4xdDBXNGI4M2VFdEFrTlJSc1d1NGc4djItcUNpQmNaWWo2S0JrOU5jQjcyV0RlVkNn?oc=5",
+   "url": "https://www.dtnext.in/news/national/gslv-f18-set-to-launch-on-friday-night-1151-for-give-rebirth-to-the-indigenous-navigation-system-navic",
    "summary": "GSLV-F18 set to launch on Friday night 11.51 for give rebirth to the indigenous navigation system NavIC &nbsp;&nbsp; DT Next",
    "source": "Google News GNSS",
    "date": "2026-10-30",
@@ -23830,11 +24427,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://media.assettype.com/dt-next%2F2026-10-30%2Fnx81jj2g%2FISRO-4.jpg?rect=0%2C0%2C1600%2C840&w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100"
   },
   {
    "title": "Contract for two additional Galileo satellites - Airbus",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdFBKenpHX1hMWENWUzNVMW9nZHdBWnJWRVlfelJZVGxMbE9lb1N4WEdhS2h1SUV5QmY2V2xlaHpTTk9HbjNYaGlZRThKajNpeWxDcWZOUlZOcDF1Q0pvWHRSbzZzcHBNYkhVV29VTjZCazEtSnRVUXVFX3hRN3I1LUJfLTM1ZlZIWWV3NmdBenpWcjVqbTNYeHkwckRkYm1sYUVqUGEwSWFWUGtnclFyVjZCOFlpbnN1Mnpz?oc=5",
+   "url": "https://www.airbus.com/en/newsroom/press-releases/2026-10-airbus-awarded-contract-for-two-additional-galileo-satellites",
    "summary": "Contract for two additional Galileo satellites &nbsp;&nbsp; Airbus",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -23850,11 +24449,13 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1,
+   "image": "https://mediaassets.airbus.com/pm_38_812_812268-atnwlonh68-preview.jpg"
   },
   {
    "title": "ISRO to launch NVS-03 satellite as India looks to revive NavIC navigation system - ThePrint",
-   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZl9qbmg2NzdoNnQybW1jZ3BjYmlmUURaSGhVdUZSRUZheEY2UFlDVWRTWHZWWmY1ZXo4RjlocUwxdXU0OFFEWGxoRTJ1eHNnMkF2Wm1lQTFSYlpRb1lfNnZZZjlFQV8wVWJfTllQdzU3R2ctSzVxczBZRl9jTzhqQ2h6ZG40Z9IBiwFBVV95cUxPaE9UclBkQWxlV000TlFhS3pUUVFkZEF5XzQ0MEVLT19YLTZwV0JjYXgyWUdoYTlZcnp5YUtGaHV5a25yRm9FRndIU1dHXy1VV0ppU3V4dWtYYjBzVDFpaE43TVhab0RIV3FVcS1zT2EzMlRnZi1xTkpCMFNaUUdZZ0tNTXVjeHJoQ25j?oc=5",
+   "url": "https://theprint.in/science/isro-nvs-03-launch-navic-navigation-system/3081997/",
    "summary": "ISRO to launch NVS-03 satellite as India looks to revive NavIC navigation system &nbsp;&nbsp; ThePrint",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -23870,11 +24471,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://staticprintenglish.theprint.in/wp-content/uploads/2025/03/ANI-20250314045700-e1793020654948.jpg"
   },
   {
    "title": "ISRO’s GSLV-F18 To Carry NVS-03, Next-Gen NavIC Satellite With Homegrown Atomic Clock, On 30 October - Swarajya",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPRzdlUTVsTFpya0x5aEtOazNPRTYyN1RPY3N0bTlIbXVadjRaVWp1dXVHdDNEZi1seU14bVNBWU4tVG1hTGc0Vm51NFV1SC1DaWlxRTB3WEcyX3l5dVJ6N0VCamlWNTgwLWlqV2V0YzdjdzR4Wk1kZkNTd3dMQndZWTNPa1FKVmtxemhsNWxoQ3VnWGVZSDFDTWJmYWhTR3pGLXNlREJzZXFFQjI5LXd2UFBkdThTb0w0aFFoZTlQSGhFQnVSMEN3NGlGUE_SAdwBQVVfeXFMT0I2UWYwZ2Y4Y1NWb29wTVAyaUtPelFxaXJ4NnBsenJwSjJSalN1bnRhVWpaVzlUc291X0ZCcW1ONU9aNzduUGk2bG10YnpJLXV0ZkJQekppWU44WThKZjFBMWNENDBsUmVsb3FqQk5QdVU5TVltUlBEb0tnMFVEdHBpSkZ1T0hHSTQzRVZlTG16LWJHeUdKSkhKLVh0NlF0UmJLclBMRlo3RGo5VENXSFZxWWhIbzBYa2RfWlc1WUVFN0FqcUhGX2RiNWRyc18yUHBZNFhkc2Q3UmRiag?oc=5",
+   "url": "https://swarajyamag.com/news-brief/isros-gslv-f18-to-carry-nvs-03-next-gen-navic-satellite-with-homegrown-atomic-clock-on-30-october",
    "summary": "ISRO’s GSLV-F18 To Carry NVS-03, Next-Gen NavIC Satellite With Homegrown Atomic Clock, On 30 October &nbsp;&nbsp; Swarajya",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -23890,11 +24493,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://swarajya.gumlet.io/swarajya/2026-10-28/efnlcphu/TPF05922-1.jpg?w=600&h=315&format=jpg"
   },
   {
    "title": "Isro to launch NVS-03 on Oct 30, but NavIC has a long way to go - The Times of India",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNcXB6V0VDMzJvWFZJTWNvY0FJcGZJS2JBVWQwM3c3ZDhEVndieURBQ0hWQmxzZ0tFdjJaR09XZDZVWllQdGNGQVl5bkdUeXIydmY0NzNxZTJSazhsS2hIdjdwdmNTUGg5NnNBNWhwR1NsNVpidmpWbjA4akVlWWRvZzlsTmdLNmhGNHdjNU0yQ1Vwb2RSdDFsMDVpLVM5WWU5YzIwQ0wtYmd5Z3dfNGpRRHE3SHFoVW9PNjlESEcwX1U4bHdjcXkyaWFn0gHPAUFVX3lxTE54ZUJSYXltMnlZNnRIR3lkTlZLcFRpZTJ1RHFLUlE2SHBuVGhndDFrNkVHeWpnbTM4bnNpMk56U2lQYmVmZjVjbkd6MjY3V3RtVzZkcTQ4cUFEOGdyZWJLaEZTcWRUMWNLUlFlMk9XZ3dPSzNhZG5BSkh3MmtsWnlEc2lpMTVESzVWdmRzZVlyZ0kxcGE0SEZoN05pUDZzeFFqUHBYNklrQzZMTnJsa3NjemlWVVN2RjRwekt5TkViN0Q4blE2dS1QU1VMN3RSUQ?oc=5",
+   "url": "https://timesofindia.indiatimes.com/india/isro-to-launch-nvs-03-on-oct-30-but-navic-has-a-long-way-to-go/articleshow/135286011.cms",
    "summary": "Isro to launch NVS-03 on Oct 30, but NavIC has a long way to go &nbsp;&nbsp; The Times of India",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -23910,11 +24515,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://static.toiimg.com/thumb/msid-135286043,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg"
   },
   {
    "title": "Airbus takes off with contract for two additional Galileo satellites - Computer Weekly",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPOFJpZGVtYm43RTZWanJsNXluVF8zSDhIMzE4bnI0VHpzNXBHQVhiMUxET1RKQjU5QVlDY1Y0Szg1OHE0UTBwcXJ1RHZMRnM0YUN4Sl81ZEUtT2s3ZlBUT1R0T3YwV3hMNjdNclJ3YzBDbkVGcDVWWTUySDZIT1VDWmsxNFlVRGhNWlAzNTlINVYzNVI4NHllNHhuWU5VWm9ublQtd01ONHJyclBBWU1LV1EyQk0?oc=5",
+   "url": "https://www.computerweekly.com/news/366652898/Airbus-takes-off-with-contract-for-two-additional-Galileo-satellites",
    "summary": "Airbus takes off with contract for two additional Galileo satellites &nbsp;&nbsp; Computer Weekly",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -23930,11 +24537,13 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://www.computerweekly.com/rms/computerweekly/airbus-galileo-hero.png"
   },
   {
    "title": "u-blox sets a new benchmark for secure GNSS timing with ZED-X20T - TradingView",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFhwa2FTdDQyWXE0VVJfT2RwajVUclB3ZV9jSDhjZy1QVFUzSlVUb3JsRDlQeU1NRWV0dktlSEM3eVp6Sl8wbGhIZ0VLb2JoRFBvVlFIeWZJeDNFdGhRWEVJbXczNnpQVEVVc1lyaDQ3R1dsNXNuVnpNUHo0Ums5SDF6aXBsbWtqQXhVbXhkdzJ6RU1vdDBNbEdWdlpOclVqNVN0MDhyU01lZXR1b3VlSWV2bVgwNnFKS2c?oc=5",
+   "url": "https://www.tradingview.com/news/eqs:504c50431094b:0-u-blox-sets-a-new-benchmark-for-secure-gnss-timing-with-zed-x20t/",
    "summary": "u-blox sets a new benchmark for secure GNSS timing with ZED-X20T &nbsp;&nbsp; TradingView",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -23950,11 +24559,13 @@
    "deadline": null,
    "location": "Switzerland",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://s.tradingview.com/static/images/illustrations/news-story.jpg"
   },
   {
    "title": "Isro to launch NVS-03: What it means for India's NavIC navigation system - Business Standard",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdDl6X0RicFZuY1J4Wk9URDhQZlhHOEhWMWRqV2YzTkgyY2x1X1RjcDlzd3Q0Q1BDa0pLdkNwekpNMDd1TVZPZE9RR3NQemo2M3pxdzNuWVJwZ0sxdF9CR05MZmlOSV9FemNJN3k2YThubVJCc1dYY3dNa2ZtVU1KT05SVjM4YzJGeFZSOXY2SmFQb20zX2RaRk5GVWtfc0k5MUZsMDB2cDM2V1M2U2VSTnUxZnhvZ0V50gG-AUFVX3lxTE5HNndscnFXRlZmcU9LbDU1M2xMOUFJZU1hVEJteXA3a2c1Z3JFZmFfaTd2RWVxX2E2azJvRXFtelZ5S3lMTUVhcVNLRkpDbjdkZkwwREl1cUVQdmxVdjUyRTYyZW1hNThtXzdqZ2lBdm5SSHZpbl9ONzFLSVJ4c0lTbFhqbTVPMi13OUV1R2hHWEpqSTNDLVRjN3dwMFZiV3V4Y2ROLUtiRXVQNUJvMzRMYndzVWo2NWVjNUVqd2c?oc=5",
+   "url": "https://www.business-standard.com/india-news/isro-nvs-03-satellite-launch-navic-navigation-system-126102900487_1.html",
    "summary": "Isro to launch NVS-03: What it means for India's NavIC navigation system &nbsp;&nbsp; Business Standard",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -23970,11 +24581,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://bsmedia.business-standard.com/_media/bs/img/article/2026-10/29/thumb/fitandfill/1200X628/1793254197-0155.jpg"
   },
   {
    "title": "ISRO Schedules NVS-03 Navigation Satellite Launch for October 30, Aims to Strengthen NavIC Services - www.nationpathindia.com",
-   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZFFrVjFKdHdUVDkycGFxbFZnS1diSXdyOVU1dmZKRU1wOE1NYUdaUGJjUHBjcmE2WGhZVUhoeFZMMW95TEJkX3RCWnF1TWRLVjVjOEhYY0ZyXzhLTnBObkUxRl9FVUNaSC12d2tqczMxMDFGSnVHQUpGV1pMQkRpX0V5aHRwc1RMZGNzcFd2TW9ldVV3?oc=5",
+   "url": "https://www.nationpathindia.com/science/isro-nvs-03-navic-satellite-launch-october-30-2026",
    "summary": "ISRO Schedules NVS-03 Navigation Satellite Launch for October 30, Aims to Strengthen NavIC Services &nbsp;&nbsp; www.nationpathindia.com",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -23990,11 +24603,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://media.nationpathindia.com/articles/2026/10/174ba91d-253a-40b6-8437-ae9839be7c8a.webp"
   },
   {
    "title": "Airbus receives order for two more Galileo satellites with stronger anti-jamming protection - Defence Industry Europe",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQTkVZa3hDdFB5Z2RkWVB2ZjJZOVRHbU0yWHRCWWY4TlotZ3ZSY3oybzBXbEoyY2xzVVN4R2xTQlc3bXlFcmN2RmkxenA5cnQ0RGhCNTYyR0FmWTRHMHVJS2VGMjU4YzYzQ2otX2NlMHk1YVFjaEdhRlJza0J6eXRZNlZXb25EZ3lWMUZlOVRPSDFCeVhWVjJPY3NYQ2ZBdTZoMzBIbEw4anlQSkJNdmhoZnd1R3U1NE1wblVPdg?oc=5",
+   "url": "https://defence-industry.eu/airbus-receives-order-for-two-more-galileo-satellites-with-stronger-anti-jamming-protection/",
    "summary": "Airbus receives order for two more Galileo satellites with stronger anti-jamming protection &nbsp;&nbsp; Defence Industry Europe",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -24010,11 +24625,13 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://defence-industry.eu/wp-content/uploads/2026/10/Airbus-receives-order-for-two-more-Galileo-satellites-with-stronger-anti-jamming-protection.jpg"
   },
   {
    "title": "SAT-JAM online map shows where satellites experience GNSS interference - Shipping Telegraph",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTWc5U2JycUJKVWl6MnRBMG1jbU5WUzkyVzgtWklPcHcxWUxmb0hWdHRNakQwUTBMTjMwZ1BCZFluTE5CeFNCRm5ELVN0dG5oQnduSUVRUlduNHRGMVc0aDktZ2NwZVotVGxLR0Y1VVBJUWhYY0FVRUVWaEFVRVhFR2gtSkVYQVlzN21kXzhXSllleHJGXzVlLUtrT1VOeEJjaGlfbGwyZWk5RVRXTE8yXy1ERlBWOWE2Q2c?oc=5",
+   "url": "https://shippingtelegraph.com/shipping-reports/sat-jam-online-map-shows-where-satellites-experience-gnss-interference/",
    "summary": "SAT-JAM online map shows where satellites experience GNSS interference &nbsp;&nbsp; Shipping Telegraph",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -24030,11 +24647,13 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1,
+   "image": "https://shippingtelegraph.com/wp-content/uploads/2026/10/NEW-ONLINE-MAP-e1793129960760-1024x396.png"
   },
   {
    "title": "ISRO GSLV-F18 to Launch NVS-03 Navigation Satellite on October 30 - Techgenyz",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9Gb1ZtV0NNd1hMaEFMUzRrb1k3R2ZQUlFURG5TVC1aNm40Wm5BUHkwSjVMQUw2bU9xYWNMV3lqVWdTNUFCYW9vSERnOW85WEFXR3NJTEVB?oc=5",
+   "url": "https://techgenyz.com/isro-gslv-f18-nvs-03/",
    "summary": "ISRO GSLV-F18 to Launch NVS-03 Navigation Satellite on October 30 &nbsp;&nbsp; Techgenyz",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -24050,11 +24669,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://techgenyz.com/wp-content/uploads/2026/10/GSLV-F18-on-the-launch-pad.webp"
   },
   {
    "title": "Airbus Wins Contract For Two More Galileo Satellites - Aviation Business Middle East",
-   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9TdUtpMnoxd1pSMGZZV1Ezb3BzbVJYSTJ3dzJ3Y21DSWVlOFltUnZpeXBFMGhXaDZVS3c4SUFZMzlZZDFPVm1jQV9WMUhJcDAzSy0yWFhnMDhGTzlCUDRuX0QycExPS1VMblc2WDJYX3Y5OHhjWjhwT0c1UHE?oc=5",
+   "url": "https://www.aviationbusinessme.com/news/airbus-galileo-second-generation",
    "summary": "Airbus Wins Contract For Two More Galileo Satellites &nbsp;&nbsp; Aviation Business Middle East",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -24070,11 +24691,12 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "From Ukraine’s Starlink dependency to India’s NavIC challenge—lessons in space sovereignty - ThePrint",
-   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSVY4dHdYcDFGV19FR2ExUmRTQWUxMFo1UWZ6ZEp2b21lRFRBQTBRa0NFSkhZdWczT01UbzFNYnZmSkM0MjV5YTQ2blJ6dEUwWHg5MG14cXVTM3AxR3dzZ0lkMGdNQ3RrREtXNFBYZk45eldxNFM3R0NfcjlsaGxiWkhQamZTY2lIVXhVONIBkgFBVV95cUxPY0lpYmtDYm5sRmFWMWpmZF80NlhPNUQ3N21zYWE0TW5EYWRyYkFxN2NQR0EtRkZYbGFOOVhPcVZHZHdBNFY2SlU4TW55YTUta0ZfNlo3U1dyZlFiYmh5OEltRmgxeUF0TXhzUURHVUhGR1VqeEdUTnJ5dzgtZ1RuOUE5OHRFUmdUR2NZVTJ1aTBxQQ?oc=5",
+   "url": "https://theprint.in/opinion/starlink-ukraine-lesson-india-space-sovereignty/3082419/",
    "summary": "From Ukraine’s Starlink dependency to India’s NavIC challenge—lessons in space sovereignty &nbsp;&nbsp; ThePrint",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -24090,11 +24712,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://staticprintenglish.theprint.in/wp-content/uploads/2026/03/Snabbit-1-1.jpg"
   },
   {
    "title": "Airbus and Thales Contracted for 2 Galileo Satellites Each - Via Satellite",
-   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPS0NVSlk4MXdnS3pNYnQyUzJqSVVoMGkxR0RWMS1qZURDUGc1a2x2MkF4THEzVEVUOXZzNjlqSmI4QU0yMzR2bVdsdHdkM2RuTlo1VEU2LVd3dXZMU1FscXhLdTc0Y2drOEdoMW82RFdCMEotbTFsc2taSF92bWZxOVQtSGh4OGNpZzlTQVpMMnRaUXlVd0Y0WEc3MDRfcjhwX2t6MFI0T213NFJfdVY4QmNQQUhjRVJOcDVfZXl3?oc=5",
+   "url": "https://www.satellitetoday.com/government-military/2026/10/27/airbus-and-thales-contracted-for-2-galileo-satellites-each/",
    "summary": "Airbus and Thales Contracted for 2 Galileo Satellites Each &nbsp;&nbsp; Via Satellite",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -24110,11 +24734,13 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://www.satellitetoday.com/wp-content/uploads/2026/10/galileo_visuel-02-v3-16-9_mid-high.jpg"
   },
   {
    "title": "ESA orders four new Galileo satellites - Nordic Defence Sector",
-   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSklRSUpTblVMLWJ5ZGhGdDNaMnRwMk5mdktpTTJzM0xnekJfNDU2aktHSmhETDMtUE9takxBUVFTLTVMS28wTHBpR2FfMzRrTFZWTEc5aWt6aGZpd042cnJkckhQWlJtTDFXcWNTdzlOS3Y2M0l5Vk13U1NQMlBGSndKRVpmTjIz?oc=5",
+   "url": "https://nordicdefencesector.com/en/article/esa-orders-four-new-galileo-satellites",
    "summary": "ESA orders four new Galileo satellites &nbsp;&nbsp; Nordic Defence Sector",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -24130,11 +24756,13 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://imagedelivery.net/XO8UY-c6-LfWgEjQsN8IQw/ec9325c7-4f8b-421f-bbd4-3800eeb56200/public"
   },
   {
    "title": "ISRO to launch NVS-03 navigation satellite on October 30, 2026, enhancing NavIC services across India - The Economic Times",
-   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNeDhqcHN2LXJuMWYwQ1VnMFJpRUpSOG1ZNDlMUVNJWDZQelpXandsb0lNTnc5bHBON0wxeU1OcHFBQVdFdGZRS2VOckcwMFZBZ1FwYUNRLWhUUDZPMXlQeXhwOU9tRjJfV3V4dzFDVUdzQmZSSEZuNnlCMWdwU2tBaVp5cHBXWjl4Zi1FRV9jN2o2RF9JRjVNSFkzNnBpUG5lZnJTY09jZWI2UmN1d1N2UVZVVFRpMXpnNmJBZWRsMjZCZlJ5RkRsXzdsZC1BOVFsN2dZeW42OXJmQ0NLRjIxVWFoQnZxT25qQWdOSGpOeXUyT03SAfgBQVVfeXFMUDhXNjBsUV9YWFBvdDRfNm51RUU2Ty1meDUzeTVnYUFac2JwV0k4TG1Sa0ZXeExKWmh0X0FWTXFiY0tVSzNHSUZ3YTV1cmk5Q1cxeC0za2h3Tm9ZU0ZZTDVSci1EQ0x0Q2NnenV2VS1NUWF2RnJnd2RoVUlTX1ZEVGVlMC03YlpHMUd3OWY4eTl5eVdMR1BxM3dVOU9QdWRiY3QtQi13YmpnaDVab0doY2dpOG5UNVpWTzBRdjV2cFowSEFiNHRYTElTX0ZGNFJfTWplSHppaWFvT28xN1dWTHg4ajVQWnhZRVBxSWZDQTlXNkFVbVBBR24?oc=5",
+   "url": "https://m.economictimes.com/science/isro-to-launch-nvs-03-navigation-satellite-on-october-30-2026-enhancing-navic-services-across-india/articleshow/135274210.cms",
    "summary": "ISRO to launch NVS-03 navigation satellite on October 30, 2026, enhancing NavIC services across India &nbsp;&nbsp; The Economic Times",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -24150,11 +24778,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://img.etimg.com/thumb/msid-135274395,width-1200,height-900,imgsize-148774,overlay-economictimes/articleshow.jpg"
   },
   {
    "title": "ISRO to launch NVS-03 navigation satellite on October 30: Why the mission is crucial for NavIC - The Economic Times",
-   "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQaVdPbUNmY3o5VW5Hd3RqaS1HWHh1QTExR1BJMkxfQnN5cnc0U2VyWW9nMi1hNFlwaXhSdmpwdTJhRTMwcERPbVkyb1BqYURxdU9wYnVKSHlwbFFHVXdxNi15Z3NYRUhmVV9CSHpCVmcxbmE5alM1X052b1VDLUdfbWFwMGVSZ0VJaVZTd1RCdWU1LWlYQzhvekFreDBfcHlHLVRkZDhPODBSdFo4bGtGNnRHWVhlRVBjUm1JdFZKa2hEa0I0ZWljYUdGcERLZDRTbmxYS0lJVGkyZnV0dk94SktfdUdzY25maW5aUklSWUJ3WFFrZV9FLUpaNkjSAfwBQVVfeXFMUGlXT21DZmN6OVVuR3d0amktR1h4dUExMUdQSTJMX0JzeXJ3NFNlcllvZzItYTRZcGl4UnZqcHUyYUUzMHBET21ZMm9QamFEcXVPcGJ1Skh5cGxRR1V3cTYteWdzWEVIZlVfQkh6QlZnMW5hOWpTNV9Odm9VQy1HX21hcDBlUmdFSWlWU3dUQnVlNS1pWEM4b3pBa3gwX3B5Ry1UZGQ4TzgwUnRaOGxrRjZ0R1lYZUVQY1JtSXRWSmtoRGtCNGVpY2FHRnBES2Q0U25sWEtJSVRpMmZ1dHZPeEpLX3VHc2NuZmluWlJJUllCd1hRa2VfRS1KWjZI?oc=5",
+   "url": "https://m.economictimes.com/news/new-updates/isro-to-launch-nvs-03-navigation-satellite-on-october-30-why-the-mission-is-crucial-for-navic/amp_articleshow/135299157.cms",
    "summary": "ISRO to launch NVS-03 navigation satellite on October 30: Why the mission is crucial for NavIC &nbsp;&nbsp; The Economic Times",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -24170,11 +24800,13 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1,
+   "image": "https://m.economictimes.com/thumb/width-1200,height-900,imgsize-48158,msid-135299311/isro-to-launch-nvs-03-navigation-satellite-on-october-30-why-the-mission-is-crucial-for-navicbr.jpg"
   },
   {
    "title": "Airbus wins contract to build two more Galileo satellites - Investing.com",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc3JSUl9YM0c2Y19DMjJJWHdrWmRRekpSaVpaUURpLWNJYnN1SXdFa0VRQ3Y4S2M1TWp3b1NOdXN5X25rR3lsbV9lTFRSNGJNQ19FazFQUUN4VllhLUdZeXZFM0JjRDdLV3J4aWN3UDgyQ1M5VDhfTklnRXNEUEJuMHJ2YTRqc0JYc0xIeXMwVjlxVUJRQ3FYWXI1dE1PaGtBajFnLWp6TkNzS0pESXJ1MTlQNkdTMFRUeVY4?oc=5",
+   "url": "https://www.investing.com/news/stock-market-news/airbus-wins-contract-to-build-two-more-galileo-satellites-93CH-4974799",
    "summary": "Airbus wins contract to build two more Galileo satellites &nbsp;&nbsp; Investing.com",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -24190,11 +24822,12 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "The Indian Space Research Organisation (ISRO) is set to launch its NVS-03 navigation satellite aboard the GSLV-F18 rocket from the Second Launch Pad at Satish Dhawan Space Centre (SDSC-SHAR), in Sriharikota on Friday, October 30, at 11:51 p.m., as p - Instagram",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5RSWJnV2paNW9kOVozQVVYSkw5SFNaRDc4R3FuMldtT1RfeE5IWFFQUlVUXzZabS1pdC1YRmxsY1c2VFltQTV2MkxVa09raEtjb0E?oc=5",
+   "url": "https://www.instagram.com/p/DfErF7uiO-R/",
    "summary": "The Indian Space Research Organisation (ISRO) is set to launch its NVS-03 navigation satellite aboard the GSLV-F18 rocket from the Second Launch Pad at Satish Dhawan Space Centre (SDSC-SHAR), in Sriharikota on Friday, October 30, at 11:51 p.m., as p &nbsp;&nbsp; Instagram",
    "source": "Google News GNSS",
    "date": "2026-10-29",
@@ -24210,11 +24843,12 @@
    "deadline": null,
    "location": "India",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "India"
+   "region": "India",
+   "media": 1
   },
   {
    "title": "Airbus awarded contract for additional Galileo satellites - ADS Advance",
-   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVDFOWHJFcUxhN0tURnlOeElQU3l5Ym12UWJEVkpMbUFzVUlJVVBFR0NMYkhkQTkzdlhTTnFjY1loMERkMmpmUU9jUUhPdkN6RmlPXzg2VzV2UVVfa0hGUnNveWFRNi1OWEo4enlXaUNlc2dMSGt4cnEtYWJkcTlEdA?oc=5",
+   "url": "https://www.adsadvance.co.uk/airbus-contract-additional-galileo-satellites/",
    "summary": "Airbus awarded contract for additional Galileo satellites &nbsp;&nbsp; ADS Advance",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -24230,11 +24864,13 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://www.adsadvance.co.uk/wp-content/uploads/2026/10/Airbus-G2satellites-CopyrightAirbus-28102026.jpg"
   },
   {
    "title": "Europe Adds Galileo Satellites With Airbus, Thales Alenia Space Deals - Aviation Week",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPQjMwenJ2QVNWeVNjWUp6NDZHMVdQSXJ1ZHk1SFlLaDViYXptdHp3T2FkV09PNndBSHJfalZuOVd2UkFuenFjbEN0RzZpcWdxVkp0TlozSmI1UlNpUlFtT3U1dERtb3J5c2g2Y2xQcVR1SE01bFVGRDVMRE84Rkk1MXNKWGU3NTJHaW5VSDlPWUJUaVp4MVFXXzh2M1RFbnpLLTJSamhEUF8?oc=5",
+   "url": "https://aviationweek.com/space/satellites/europe-adds-galileo-satellites-airbus-thales-alenia-space-deals",
    "summary": "Europe Adds Galileo Satellites With Airbus, Thales Alenia Space Deals &nbsp;&nbsp; Aviation Week",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -24250,11 +24886,12 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1
   },
   {
    "title": "Why Autonomous Vehicles Cannot Rely on GNSS Alone for Reliable Positioning - Unmanned Systems Technology",
-   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbzJiNkxIRU4yU3pYcHdrbGphR1JwclVORVZQUURRRUVNOUVHekMtcTZob0x3VzRHcnI2bG1JWEMxUHUwcDBRa3I2QUxQYlkyRV9VYndkSlRnclVscmxWWTg2Z0l3TjE1Znk0U0V2NUswUExLeUkwNWRDODBNc2VrUFRyMWJ5dmpCQXdwWFE5UThxQVRPZ1JfeUNONHd1MXZhb3J3Y2dXaEFqb3BkalI3cTk4dlNqdlhIYWZuTlR6RlBIVzA?oc=5",
+   "url": "https://www.unmannedsystemstechnology.com/feature/why-autonomous-vehicles-cannot-rely-on-gnss-alone-for-reliable-positioning/",
    "summary": "Why Autonomous Vehicles Cannot Rely on GNSS Alone for Reliable Positioning &nbsp;&nbsp; Unmanned Systems Technology",
    "source": "Google News GNSS",
    "date": "2026-10-28",
@@ -24270,11 +24907,12 @@
    "deadline": null,
    "location": null,
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Other"
+   "region": "Other",
+   "media": 1
   },
   {
    "title": "Airbus wins two Galileo satellites. Airbus stock sits 11.89 percent below its high - ad-hoc-news.de",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQbHhlTURQeWN0c2pHTE51NmtuOXlxNHpjN2d6TDBldHVfS1RFMG5aLWpGWUdONkxUODhRWnpGQzc3UTFtTUl3eEJ4bVc1Z2pqN0tUeUszQTlEOTdFRFVxSUlvOVluN2VYSEZXbWRNdWFEb0lMbEVjQkJmX0ROc3hheXRiSGVwd0d5aWxnZDNUTXJBamNzZEQxSW0xVUoyVG0zUEVvM1FVZ2k2QjlQMWdlSWh0Zkh6WWR5RlluOFFNS1NuY1ZJMmk4djVCcktLTWZrZGs0VHRHMVJPNE5J?oc=5",
+   "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/airbus-wins-two-galileo-satellites-airbus-stock-sits-11-89-percent-below-its-high/70421102",
    "summary": "Airbus wins two Galileo satellites. Airbus stock sits 11.89 percent below its high &nbsp;&nbsp; ad-hoc-news.de",
    "source": "Google News GNSS",
    "date": "2026-10-27",
@@ -24290,7 +24928,9 @@
    "deadline": null,
    "location": "Europe",
    "added": "2026-10-30T05:51:50+00:00",
-   "region": "Europe"
+   "region": "Europe",
+   "media": 1,
+   "image": "https://mdb.ad-hoc-news.de/bild/bild-2699774_1200_675.webp"
   }
  ]
 }
