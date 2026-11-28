@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T03:13:36+00:00",
+ "updated": "2026-11-28T03:01:33+00:00",
  "conferences": [
   {
    "name": "ION GNSS+ (Intl. Technical Meeting of the ION Satellite Division)",
@@ -133,10 +133,10 @@
    "url": "https://ipin-conference.org/",
    "rank": "Major",
    "area": "Positioning",
-   "edition": "16th International Conference on Indoor Positioning and Indoor Navigation (IPIN 2026)",
-   "start": "2026-10-05",
-   "end": "2026-10-08",
-   "location": "Rome, Italy",
+   "edition": null,
+   "start": null,
+   "end": null,
+   "location": null,
    "submission_opens": null,
    "abstract_deadline": null,
    "full_paper_deadline": null,
@@ -144,9 +144,9 @@
    "camera_ready": null,
    "submission_type": null,
    "publication": null,
-   "notes": "Proceedings published; indexing by SCOPUS and Web of Science expected soon.",
-   "page_hash": "136c6abeb979",
-   "checked": "2026-11-24"
+   "notes": null,
+   "page_hash": "c1e8352c4ba7",
+   "checked": "2026-11-28"
   },
   {
    "name": "Intl. Conference on Localization and GNSS",
@@ -280,20 +280,20 @@
    "url": "https://www.ieee-itsc.org/",
    "rank": "Major",
    "area": "Vehicle positioning",
-   "edition": "IEEE ITSC 2027",
+   "edition": null,
    "start": null,
    "end": null,
-   "location": "Boston, United States",
+   "location": null,
    "submission_opens": null,
    "abstract_deadline": null,
    "full_paper_deadline": null,
    "notification": null,
    "camera_ready": null,
    "submission_type": null,
-   "publication": "IEEE Xplore",
+   "publication": null,
    "notes": null,
-   "page_hash": "e1fd340a158a",
-   "checked": "2026-11-05"
+   "page_hash": "c1e8352c4ba7",
+   "checked": "2026-11-28"
   },
   {
    "name": "EGU General Assembly",
