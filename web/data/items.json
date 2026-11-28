@@ -1,9 +1,59 @@
 {
- "updated": "2026-11-28T03:01:31+00:00",
+ "updated": "2026-11-28T10:54:29+00:00",
  "failed_sources": [
+  "OpenAlex 'GNSS'",
+  "OpenAlex 'satellite navigation'",
+  "OpenAlex 'precise point positioning'",
+  "OpenAlex 'GNSS spoofing'",
+  "OpenAlex 'BeiDou'",
   "ESA Navigation"
  ],
  "items": [
+  {
+   "title": "Connecting Spaceborne Ocean Wind Observations to Improved Tropical Cyclone Forecasts: The Role of Tianmu-1 GNSS-R Assimilation",
+   "url": "https://doi.org/10.5281/zenodo.24527721",
+   "summary": "TM-1 represents China’s first commercial GNSS remote sensing constellation designed for integrated monitoring of the land surface, ocean, three-dimensional atmosphere, and ionospheric environment. Equipped with advanced GNSS Radio Occultation Sounder-II (GNOS-II) payloads, each reflectometry receiver features an eight-channel hardware correlator that simultaneously tracks signals from GPS, BDS, Galileo, and GLONASS satellites at a high sampling frequency of 1 Hz. Owing to its enhanced spatial coverage, short revisit times, and rich signal resources, the TM-1 constellation provides high-density, all-weather observations over the ocean surface, which are particularly valuable for capturing extreme wind environments associated with tropical cyclones. Launched in multiple batches since January 2023, the TM-1 constellation has expanded to 23 satellites in orbit till now. In this work, the TM-1 Level-2 SSW dataset spanning from July 23 to July 25, 2023, is accessed via the official TM-1 website (https://www.tmsats.com/), covering the period of Typhoon Doksuri (2023). During the typhoon event period, observations from 10 satellites are available, yielding a spatial resolution of 25 km and a temporal resolution of 1 hour. Based on the official product specification and published quality assessments of TM-1 sea surface wind products, the root-mean-square error (RMSE) of the SSW product is documented to be below 2 m/s.",
+   "source": "OpenAlex",
+   "date": "2026-11-25",
+   "kind_hint": "dataset",
+   "doi": "10.5281/zenodo.24527721",
+   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+   "issn": [],
+   "id": "169b40edab7188aa",
+   "relevant": true,
+   "category": "dataset",
+   "ai_summary": "Dataset linking Tianmu‑1 GNSS‑R observations with tropical cyclone forecasts, enabling assimilation of spaceborne ocean wind data for improved prediction.",
+   "importance": 4,
+   "deadline": null,
+   "location": "Geneva, Switzerland",
+   "region": "Europe",
+   "tier": "unknown",
+   "added": "2026-11-28T10:54:29+00:00",
+   "media": 1,
+   "image": "https://zenodo.org/static/images/zenodo-og.png"
+  },
+  {
+   "title": "The impact of GPS jamming on flights – and when it can be dangerous - The i Paper",
+   "url": "https://inews.co.uk/news/world/impact-gps-jamming-flights-when-dangerous-4935466",
+   "summary": "The impact of GPS jamming on flights – and when it can be dangerous &nbsp;&nbsp; The i Paper",
+   "source": "Google News LEO-PNT / jamming / spoofing",
+   "date": "2026-11-28",
+   "kind_hint": "news",
+   "doi": null,
+   "venue": "Google News LEO-PNT / jamming / spoofing",
+   "id": "624ed5ea88d27001",
+   "relevant": true,
+   "category": "news",
+   "ai_summary": "Article discusses how GPS jamming can affect aircraft navigation and safety, highlighting risks and mitigation.",
+   "importance": 4,
+   "deadline": null,
+   "location": null,
+   "region": "Other",
+   "tier": "unknown",
+   "added": "2026-11-28T10:54:29+00:00",
+   "media": 1,
+   "image": "https://inews.co.uk/wp-content/uploads/2020/11/PRI_170930171.jpg?crop=0px,99px,2500px,1413px&resize=1200,675"
+  },
   {
    "title": "AI-Enabled Autonomous Area-Keeping for Underwater Vehicles",
    "url": "https://doi.org/10.21279/1454-864x-26-i1-007",
@@ -102,7 +152,7 @@
   },
   {
    "title": "300 Billion Positioning Requests a Day, 30% Ahead of GPS: How China's Satellites Quietly Became the World's New Infrastructure - 巴士的報",
-   "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOcURkQUxFMjRGWnhjd3B2WHZJMGVBSlVZcnRmTTh5QnVRODJUN09wQnE4NDNNVzFuQ1FvaFJFSmJlWkY5dWxCVXdhNWxqSE04NWU0Z3hueGdfZTlreDhHaFJxdUxEbzVfcm4xRUVVLXdlUkh6enVjbVZEQUdSTTk0Rm9VYmVYLW41YVhSLUJyUW9RRk15dFdKWVpvMzRQV2o0OUR0Qnd1UHpISHFDeEdoV1R2MVBGNzlQRV9NS2JHOXZyQ3l5T0ViOXRlQ0Z0TlF4VTUxQ3U0aUZ4QndJckJTcmhwUjJJVUE5TWJna3VsRFFXZEl1Zll6MUxYZUZSY3VYQy1V?oc=5",
+   "url": "https://www.bastillepost.com/global/article/6401724-300-billion-positioning-requests-a-day-30-ahead-of-gps-how-chinas-satellites-quietly-became-the-worlds-new-infrastructure",
    "summary": "300 Billion Positioning Requests a Day, 30% Ahead of GPS: How China's Satellites Quietly Became the World's New Infrastructure &nbsp;&nbsp; 巴士的報",
    "source": "Google News GNSS",
    "date": "2026-11-28",
@@ -118,7 +168,8 @@
    "location": null,
    "region": "Other",
    "tier": "unknown",
-   "added": "2026-11-28T03:01:31+00:00"
+   "added": "2026-11-28T03:01:31+00:00",
+   "media": 1
   },
   {
    "title": "GPS Jamming and AIS Tracking: Injected Positions, False Meetings, and Compliance Risks - News and Statistics - IndexBox",
